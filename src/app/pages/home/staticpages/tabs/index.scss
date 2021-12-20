@@ -13,32 +13,33 @@
   width: 50%;
   background: rgba(128, 128, 128, 0.075);
   cursor: pointer;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.274);
+  // border-bottom: 1px solid rgba(0, 0, 0, 0.274);
   box-sizing: content-box;
   position: relative;
   outline: none;
 }
 .tabs:not(:last-child) {
   width: 30%;
-  border: 1px solid rgba(0, 0, 0, 0.274);
-  border-radius: 5px;
+  // border: 1px solid rgba(0, 0, 0, 0.274);
+  // border-radius: 5px;
 }
 
 .tabs:not(:first-child) {
   width: 30%;
-  border: 1px solid rgba(0, 0, 0, 0.274);
-  border-radius: 5px;
+  // border: 1px solid rgba(0, 0, 0, 0.274);
+  // border-radius: 5px;
 }
 
 .active-tabs {
   background: white;
+  color: #0d6efd;
   border-bottom: 1px solid transparent;
   color: rgb(10, 100, 173);
   font-size: 15px;
 }
 
 .active-tabs::before {
-  content: "";
+  // content: "";
   display: block;
   position: absolute;
   top: -5px;

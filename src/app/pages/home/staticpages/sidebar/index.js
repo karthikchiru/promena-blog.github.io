@@ -30,7 +30,7 @@ const Sidebar  = (props) => {
 
 <div className='posts__main'>
 <p className='lead2'>
-<NavLink key={post.id} to={`/post/${post.id}`}>  
+<NavLink className= 'posts__link' key={post.id} to={`/post/${post.id}`}>  
 <div className = 'posts__title'>{post.blogTitle}
 </div>  </NavLink>
 </p>
