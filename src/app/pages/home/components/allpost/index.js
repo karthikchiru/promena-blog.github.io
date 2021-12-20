@@ -33,7 +33,7 @@ const AllPosts  = (props) => {
    
 <div className='main'>
 <p className='lead1'>
-    <NavLink key={post.id} to={`/post/${post.id}`}>  
+    <NavLink className = 'posts__link' key={post.id} to={`/post/${post.id}`}>  
     <div className = 'post-title'>{post.blogTitle}
     </div>  </NavLink>
     </p>
