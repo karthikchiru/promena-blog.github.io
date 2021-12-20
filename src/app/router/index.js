@@ -1,7 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import Loader from 'app/components/loader';
 import React from 'react';
-import Login from 'app/pages/login';
+import Login from 'app/pages/Login';
 import ForgotPassword from 'app/pages/forgotPassword';
 // import Customer from 'app/pages/dashboard/index';
 // import Header from '../containers/header/index';
