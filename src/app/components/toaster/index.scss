@@ -1,0 +1,32 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.toaster {
+    position: fixed;
+    top: 5rem;
+    left: 0;
+    right: 0;
+    width: max-content;
+    max-width: 50%;
+    text-align: center;
+    padding: 0.7rem 1rem;
+    margin: auto;
+    z-index: 9999;
+    border-radius: 3px;
+    color: black;
+    font-size: 1.6rem;
+    word-break: break-word;
+
+    &__success {
+        background-color: $malachite;
+    }
+
+    &__warning {
+        background-color: orange;
+    }
+
+    &__error {
+        background-color: $primary_color;
+        // color: $color-white-primary;
+    }
+}

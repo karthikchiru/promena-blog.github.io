@@ -1,0 +1,26 @@
+@import 'styles/variables.scss';
+
+input[type='checkbox'] {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 0.2rem;
+  border: solid 1px $primary_color;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background: white;
+}
+
+input[type='checkbox']:checked:after {
+  display: flex;
+  content: '✔';
+  color: $primary_color;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  height: 100%;
+  position: relative;
+  bottom: 0.2rem;
+}

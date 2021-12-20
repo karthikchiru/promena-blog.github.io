@@ -1,0 +1,54 @@
+@import "styles/variables.scss";
+
+.button {
+  margin-top: 2rem;
+  width: 30%;
+  // height: 30%;
+  outline: none;
+  cursor: pointer;
+  color: $color-white-primary;
+  font-family: $monstserrat_semibold;
+  font-size: $font_medium;
+  font-weight: 600;
+  line-height: 1.21;
+
+  padding: 1.6rem;
+  border-radius: 34px;
+  box-shadow: 6px 6px 9px 0 $dark_shadow7, -1px -1px 4px 0 $white_shadow5;
+  border: solid 1px #188fff;
+  background: linear-gradient(312deg, #188fff 44%, #188fff, #188fff);
+
+  &__disabled {
+    box-shadow: 6px 6px 9px 0 #42597a, -1px -1px 4px 0 #42597a;
+    background: #42597a;
+    border: 1px solid #42597a;
+    cursor: not-allowed;
+    opacity: 0.5;
+    color: #fff;
+  }
+}
+
+// .button:active {
+//   box-shadow: inset -6px -6px 6px 0 $primary_color,
+//     inset 6px 6px 8px 0 $primary_color1, inset 6px 6px 8px 0 $primary_color1,
+//     inset -6px -6px 6px 0 $primary_color;
+//   border-style: solid;
+//   border-width: 1px;
+//   border-image-slice: 1;
+//   background: linear-gradient(
+//     312deg,
+//     $primary_color 44%,
+//     $primary_color1,
+//     $primary_color1
+//   );
+//   background-origin: border-box;
+// }
+.button:active {
+  box-shadow: inset -6px -6px 6px 0 #188fff, inset 6px 6px 8px 0 #188fff,
+    inset 6px 6px 8px 0 #188fff, inset -6px -6px 6px 0 #188fff !important;
+  border-style: solid;
+  border-width: 1px;
+  border-image-slice: 1;
+  background: linear-gradient(312deg, #188fff 44%, #188fff, #188fff) !important;
+  background-origin: border-box;
+}

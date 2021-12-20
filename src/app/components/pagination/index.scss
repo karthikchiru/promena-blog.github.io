@@ -1,0 +1,46 @@
+@import 'styles/mixins.scss';
+@import 'styles/variables.scss';
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 3rem;
+    &__list{
+      display: flex;
+      list-style: none;
+    }
+    .list{
+      &__item {
+        cursor: pointer;
+        padding: 0.8rem 1.2rem;
+        border-radius: 0.5rem;
+        border: solid 1px $alto;
+        background-color: white;
+        text-align: left;
+        margin-left: 0.5rem;
+        font-size: $font_verysmall;
+        &__active {
+          background-color: $primary_color;
+          border-radius: 0.4rem;
+          font-family: HelveticaNeue;
+          font-size: $font_verysmall;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          letter-spacing: normal;
+          text-align: left;
+          color: white;
+          pointer-events: none;
+        }
+        &__disabled{
+          cursor: not-allowed;
+        }
+      }
+      &__icon{
+        width: 1rem;
+        height: 0.8rem;
+        object-fit: contain;
+      }
+    }
+   
+  }

@@ -1,0 +1,20 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+.dropdown {
+    text-align: left;
+    font-family: "Montserrat Regular";
+    font-size: $font_small;
+    color: $dark_shadow;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid $alto;
+    background-color: $color-white-primary;
+    // &:first-of-type {
+    //     color: $dark_grey;
+    // }
+    &__pointer {
+        cursor: pointer;
+    }
+}

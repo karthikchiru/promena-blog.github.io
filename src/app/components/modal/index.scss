@@ -1,0 +1,42 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+.backdrop {
+    position: fixed;
+    background-color:  $dark_shadow3;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+
+    &__modal {
+        @include absoluteCenter;
+        // position: absolute;
+        // bottom: 0;
+        // left: 10.7%;
+        // padding: 1rem 2rem;
+        // min-width: 2rem;
+        max-height: 100%;
+        border: solid 1px $gallery;
+        box-shadow: 0 4px 16px 0  $dark_shadow3;
+        // background-color: $color-white-primary;
+        overflow: auto;
+        font-family: $monstserrat_regular;
+        font-size: $font_small;
+        // margin-bottom: 1rem;
+        cursor: pointer;
+    }
+
+    &__arrow-left {
+        width: 8px;
+        height: 8px;
+        border-top: 8px solid transparent;
+        border-bottom: 8px solid transparent;
+        border-right: 8px solid $color-white-primary;
+        left: 10%;
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 1rem;
+    }
+}

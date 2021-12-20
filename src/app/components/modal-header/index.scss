@@ -1,0 +1,32 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.modalHeader {
+    @include flexCenter;
+    position: relative;
+    // margin: 0 1.6rem;
+    padding: 2.4rem 0 1.9rem;
+    border-bottom: 1px solid $grey;
+
+    &__backBtn {
+        position: absolute;
+        left: 0;
+        cursor: pointer;
+    }
+
+    &__title {
+        font-family: $monstserrat_regular;
+        font-size: $font_regular;
+        line-height: 1.41;
+        color: black;
+        flex: 1;
+        text-align: center;
+    }
+
+    &__closeBtn {
+        position: absolute;
+        right: 0;
+        cursor: pointer;
+    }
+
+}

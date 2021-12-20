@@ -1,0 +1,25 @@
+@import 'styles/variables.scss';
+@import 'styles/mixins.scss';
+
+.input {
+    // input[type='number']::-webkit-inner-spin-button,
+    // input[type='number']::-webkit-outer-spin-button {
+    //     -webkit-appearance: none;
+    //     margin: 0;
+    // }
+    &__text {
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid $dark;
+        width: 100%;
+    }
+
+    &__disabled {
+        border: 1px solid $silver_chalice_1;
+        cursor: not-allowed;
+        opacity: 0.7;
+    }
+    &__pointer {
+        cursor: pointer;
+    }
+}

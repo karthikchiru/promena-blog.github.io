@@ -1,0 +1,73 @@
+@import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
+
+.ForgotPassword {
+  &__container {
+    width: 100%;
+    height: calc(100% - 60px);
+  }
+  &__wrapper {
+    @include absoluteCenter;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+  }
+  &__logo {
+    margin-bottom: 2rem;
+    width: 30%;
+  }
+  &__header {
+    width: 25%;
+    align-items: center;
+    font-size: $font_button;
+    font-weight: bold;
+    margin: 2rem 2rem 0 0;
+    cursor: pointer;
+  }
+  &__input {
+    margin: 2rem 0 1rem 0rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid $alto;
+    width: 100%;
+    font-family: $monstserrat_regular;
+    font-size: 1.4rem;
+    &__width {
+      width: 75%;
+    }
+  }
+  &__button {
+    margin-top: 3rem;
+  }
+  &__button:active {
+    box-shadow: inset -6px -6px 6px 0 #42597a, inset 6px 6px 8px 0 #42597a,
+      inset 6px 6px 8px 0 #42597a, inset -6px -6px 6px 0 #42597a !important;
+    border-style: solid;
+    border-width: 1px;
+    border: 1px solid #188fff !important;
+    border-image-slice: 1;
+    background: linear-gradient(
+      312deg,
+      #42597a 44%,
+      #42597a,
+      #42597a
+    ) !important;
+    background-origin: border-box;
+  }
+  &__width70 {
+    width: 70%;
+    margin-left: 20%;
+  }
+  &__icon {
+    position: absolute;
+    margin: 1rem 0 0 0;
+    top: 17.8rem;
+    right: 18rem;
+    width: 2rem;
+    font-size: $font_regular;
+    opacity: 0.8;
+    cursor: pointer;
+  }
+}

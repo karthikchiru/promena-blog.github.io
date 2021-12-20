@@ -1,0 +1,42 @@
+@import "../../../../styles/variables.scss";
+@import "../../../../styles/mixins.scss";
+
+.post-container {
+  width: 100% !important;
+  padding: 3rem 5rem !important;
+}
+.post-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.blogpost {
+  width: 60%;
+}
+.post-sidebar {
+  width: 40%;
+  padding-top: 10.3rem;
+}
+.post-read-button {
+  text-align: center;
+  width: 100%;
+  padding: 30px;
+  position: relative;
+}
+.read-next {
+  padding: 10px 14px;
+  margin-top: 3rem;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 10%);
+  z-index: -1;
+  position: relative;
+}
+.line {
+  z-index: 20;
+  width: 100%;
+  position: absolute;
+}
+.fa-angle-down {
+  //   position: absolute;
+  //   padding: 1rem 2rem;
+}

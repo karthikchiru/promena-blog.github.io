@@ -1,0 +1,37 @@
+@import 'styles/variables.scss';
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 0 1rem;
+
+  &__searchIcon {
+    width: 1.5rem;
+  }
+  ::placeholder {
+    opacity: 0.3;
+    font-family: $monstserrat_regular;
+    font-size: $font_medium;
+    line-height: 1.41;
+    color: black;
+  }
+  &__textInput {
+    background-color: white;
+    border: none;
+    width: 100%;
+    padding: 1rem 0.5rem;
+    color: black;
+    font-family: $monstserrat_regular;
+  }
+
+  &__closeIcon {
+    font-size: $font_regular;
+    cursor: pointer;
+  }
+  &__devider{
+    height: 1.5rem;
+    margin-left: 1rem;
+    border-left: solid 1px $primary_color;
+  }
+}

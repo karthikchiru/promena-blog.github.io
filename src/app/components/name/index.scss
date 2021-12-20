@@ -1,0 +1,21 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+.name {
+    &__header {
+        font-family: $monstserrat_semibold;
+        font-size: $font_regular;
+        line-height: 1.41;
+        color: $dark_shadow;
+        position: relative;
+    }
+    &__sub-header {
+        font-family: $monstserrat_regular;
+        margin-left: 3rem;
+    }
+    &__img {
+        top: -2px;
+        opacity: 0.8;
+        position: absolute;
+    }
+}

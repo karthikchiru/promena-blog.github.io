@@ -1,0 +1,12 @@
+@import "../../../styles/mixins.scss";
+@import "../../../styles//variables.scss";
+.editor {
+  height: 200px;
+  max-height: 250px;
+  width: 80%;
+  border: 1px solid $dark;
+  font-family: $monstserrat_regular;
+  font-size: $font_medium;
+  padding: 10px 14px;
+  overflow-y: scroll;
+}

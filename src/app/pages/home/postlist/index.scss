@@ -1,0 +1,114 @@
+@import "../../../../styles/mixins.scss";
+@import "../../../../styles//variables.scss";
+
+.postlist-banner {
+  width: 100%;
+  height: 80vh;
+}
+.postlist {
+  border: 1px solid rgb(245, 230, 230);
+  width: 90%;
+  padding: 1.7rem;
+  background-color: #fff;
+  &:hover {
+    background-color: #188fff;
+    color: black;
+  }
+  h2 a {
+    text-decoration: none;
+  }
+  a:hover {
+    color: #fff;
+  }
+}
+.first-list {
+  border: 1px solid rgb(245, 230, 230);
+  width: 450px;
+  height: 122px;
+  background-color: #fff;
+  &__heading a {
+    // padding: 20px 0 10px 0;
+    color: #fff;
+    // margin-left: 20px;
+    font-family: $monstserrat_regular;
+  }
+  &__content {
+    margin-left: 20px;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  &__arrow {
+    position: absolute;
+    top: 150px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-left: 15px solid #fff;
+    border-bottom: 10px solid transparent;
+  }
+}
+
+h2 {
+  padding: 20px 0 10px 0;
+  margin-left: 20px;
+  color: #188fff;
+  cursor: pointer;
+  font-family: $monstserrat_regular;
+}
+
+span {
+  margin-left: 20px;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.first-list:nth-child(1) {
+  background-color: #188fff;
+  color: #fff !important;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .postlist-banner {
+    width: 100%;
+  }
+  .first-list {
+    border: 1px solid rgb(245, 230, 230);
+    width: 350px;
+    // height: 122px;
+    padding: 10px;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 512px) {
+  .postlist-banner {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .postlist-banner {
+    width: 100%;
+    height: 60%;
+  }
+  .first-list {
+    border: 1px solid rgb(245, 230, 230);
+    width: 350px;
+    // height: 122px;
+    // padding: 10px;
+  }
+  .first-list:nth-child(1) {
+    background-color: #188fff;
+    color: #fff !important;
+    width: 100%;
+  }
+  .postlist {
+    // width: 90%;
+    padding: 0.6rem;
+  }
+  .wrap__postlist {
+    width: 100%;
+  }
+}

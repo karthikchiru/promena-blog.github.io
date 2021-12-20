@@ -1,0 +1,177 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 2;
+  background-color: $dark_shadow4;
+
+  &__dialog {
+    background-color: $dark2;
+    box-shadow: 0.4rem 0 0 0.56rem $dark_shadow4;
+    width: 30%;
+    min-height: 99.4%;
+    max-height: 100%;
+    padding: 2rem;
+    position: absolute;
+    border: 1px solid $dark;
+    right: -14.8%;
+    top: 40%;
+    transform: translate(-50%, -40%);
+    &__title {
+      &__cancelbackground {
+        &__cancel-box {
+          float: right;
+          width: 3.2rem;
+          height: 3.2rem;
+          background: linear-gradient(-45deg, $dark3, $grey6);
+          box-shadow: 4px 4px 9px 0 $dark_shadow3, -4px -4px 11px 0 $grey4,
+            inset 1px 1px 0 0 $dark_shadow4;
+          border-radius: 50%;
+          @include flexCenter;
+        }
+
+        &__cross {
+          border: solid $color-white-primary;
+          border-width: 0 2px 2px 0;
+          padding: 4px;
+          margin: 2px;
+        }
+        &__right-arrow {
+          transform: rotate(-45deg);
+          padding: 4px;
+          margin: 2px;
+        }
+        &__left-arrow {
+          transform: rotate(135deg);
+          margin-left: -0.1rem;
+          padding: 4px;
+        }
+      }
+      &__description {
+        font-family: $monstserrat_regular;
+        font-size: $font_large;
+        float: left;
+        color: $color-white-primary;
+      }
+    }
+    &__background {
+      background-color: $dark_shadow4;
+    }
+
+    &__elements {
+      &__custom-dropdown {
+        padding-top: 1.4rem;
+        width: 100%;
+        font-size: $font_medium;
+        color: $color-white-primary;
+        font-family: Montserrat Regular;
+        position: relative;
+        &__selection {
+          height: 4.5rem;
+          border-radius: 1.2rem;
+          font-family: Montserrat Regular;
+          padding: 1.4rem 0 0 2rem;
+          cursor: pointer;
+          position: relative;
+          box-shadow: 6px 6px 9px 0 $dark_shadow7,
+            -1px -1px 4px 0 $white_shadow5;
+        }
+
+        &__items-holder {
+          width: 100%;
+          margin-top: 1px;
+          z-index: 100;
+          overflow-y: auto;
+          max-height: 150px;
+          font-family: Montserrat Regular;
+          font-size: $font_medium;
+          letter-spacing: 0.19px;
+          color: $color-white-primary;
+          cursor: pointer;
+          position: absolute;
+          &__dropdown-item {
+            border: 1px solid $dark_shadow;
+            padding: 1rem;
+            background-color: $dark2;
+            font-family: Montserrat Regular;
+            font-size: $font_medium;
+          }
+          &__dropdown-item:hover {
+            background: $dark_shadow;
+          }
+        }
+        &__selection::after {
+          display: block;
+          content: "";
+          width: 1rem;
+          height: 1rem;
+          border-right: 2px solid $primary_color3;
+          border-bottom: 2px solid $primary_color3;
+          transform: rotate(45deg);
+          position: absolute;
+          right: 2rem;
+          top: 1.5rem;
+        }
+        &__selection:active,
+        &__selection:focus {
+          border: solid 1px $orange_shadow;
+        }
+      }
+      padding-top: 5rem;
+      &__custominput {
+        background-color: $dark2;
+        width: 100%;
+        height: 4.5rem;
+        margin-top: 14px;
+        padding: 0px 14px 0px 20px;
+        border-radius: 12px;
+        box-shadow: -6px -6px 9px 0 $white_shadow6, 6px 6px 8px 0 $dark_shadow4,
+          inset 6px 6px 8px 0 $dark_shadow10, inset -6px -6px 6px 0 $dark6;
+        font-family: Montserrat Regular;
+        font-size: $font_medium;
+        border-width: 1px;
+        letter-spacing: 0.19px;
+        color: $color-white-primary;
+        border-image: linear-gradient(104deg, $shadow2 5%, $shadow3 94%);
+      }
+      &__custominput:focus {
+        border: solid 1px $orange_shadow;
+      }
+      &__textwidth {
+        width: 100%;
+        margin-top: 1.4rem;
+        padding: 1.4rem 1.4rem 0rem 2rem;
+        border-radius: 12px;
+        box-shadow: -6px -6px 9px 0 $white_shadow6, 6px 6px 8px 0 $dark_shadow4,
+          inset 6px 6px 8px 0 $dark_shadow10, inset -6px -6px 6px 0 $dark6;
+        font-family: Montserrat Regular;
+        font-size: $font_medium;
+        letter-spacing: 0.19px;
+        color: $color-white-primary;
+        background-color: $dark6;
+        border-width: 1px;
+        border-image: linear-gradient(104deg, $shadow2 5%, $shadow3 94%);
+      }
+      &__textwidth:focus {
+        border: solid 1px $orange_shadow;
+      }
+    }
+    &__content {
+      padding: 4rem 0 2rem;
+    }
+    &__footer {
+      padding-top: 5rem;
+      justify-content: space-evenly;
+      &__confirm {
+        width: 60%;
+      }
+    }
+  }
+}

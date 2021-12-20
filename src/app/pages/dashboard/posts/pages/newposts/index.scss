@@ -1,0 +1,48 @@
+@import "../../../../../../styles/variables.scss";
+@import "../../../../../../styles/mixins.scss";
+@import "../../../../../../styles/mixins.scss";
+@import "../../../../../../styles/variables.scss";
+@import "../../../../../components/pageHeader/index.scss";
+@import "../../../../../components/commonTable/index.scss";
+
+.container {
+  display: block;
+  &__elements1 {
+    width: 50%;
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+    justify-content: center;
+  }
+  &__elements2 {
+    align-items: center;
+    position: relative;
+    margin-bottom: 10px;
+    justify-content: center;
+    width: 80%;
+  }
+  &__text-area {
+    padding: 10px 14px;
+    font-size: $font_regular;
+    font-family: $monstserrat_regular;
+  }
+}
+.container1 {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  &__elements3 {
+    width: 15%;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: inline-flex;
+  }
+}
+.dropdown {
+  padding: 7px 0;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-size: $font_regular;
+  font-family: $monstserrat_regular;
+}

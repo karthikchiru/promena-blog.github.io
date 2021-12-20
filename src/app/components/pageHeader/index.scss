@@ -1,0 +1,24 @@
+@import "styles/variables.scss";
+@import "styles/mixins.scss";
+
+.pageHeader {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  &__button {
+    margin: 0;
+    width: 100%;
+    height: auto;
+    background: $dark2;
+    box-shadow: 6px 6px 9px 0 $dark_shadow4, -6px -6px 8px 0 $white_shadow2, inset 4px 4px 8px 0 $white_shadow5,
+      inset -3px -3px 8px 0 $dark_shadow9;
+    border: none;
+  }
+  &__button:active {
+    background: $dark2;
+    box-shadow: 6px 6px 9px 0 $dark_shadow4, -6px -6px 8px 0 $white_shadow2, inset 4px 4px 8px 0 $white_shadow5,
+      inset -3px -3px 8px 0 $dark_shadow9;
+    border: none;
+  }
+}

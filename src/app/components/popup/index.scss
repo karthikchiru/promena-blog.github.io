@@ -1,0 +1,373 @@
+@import " ../../styles/variables.scss";
+@import " ../../styles/mixins.scss";
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 4;
+  background-color: $dark_shadow4;
+  cursor: auto;
+
+  &__dialog {
+    background-color: $dark2;
+    box-shadow: 0.4rem 0 0 0.56rem $dark_shadow4;
+    width: 30%;
+    min-height: 99.4%;
+    max-height: 100%;
+    padding: 2rem;
+    position: absolute;
+    border: 1px solid $dark;
+    right: -14.8%;
+    top: 40%;
+    transform: translate(-50%, -40%);
+    overflow: auto;
+    &__title {
+      &__cancelBackground {
+        &__cancel-box {
+          float: right;
+          width: 2.1\rem;
+          height: 2.1\rem;
+          background: linear-gradient(-45deg, $dark3, $grey6);
+          box-shadow: 4px 4px 9px 0 $dark_shadow3, -4px -4px 11px 0 $grey4,
+            inset 1px 1px 0 0 $dark_shadow4;
+          border-radius: 50%;
+          @include flexCenter;
+          cursor: pointer;
+        }
+
+        &__cross {
+          border: solid $color-white-primary;
+          border-width: 0 2px 2px 0;
+          padding: 4px;
+          margin: 2px;
+        }
+        &__right-arrow {
+          transform: rotate(-45deg);
+          margin-left: 3px;
+        }
+        &__left-arrow {
+          transform: rotate(135deg);
+          margin-left: 0.1rem;
+        }
+      }
+      &__description {
+        font-family: $monstserrat_regular;
+        font-size: 1.5rem;
+        float: left;
+        color: $color-white-primary;
+      }
+    }
+    &__background {
+      background-color: $dark_shadow4;
+    }
+
+    &__elements {
+      padding-top: 5rem;
+      &__label {
+        font-family: $monstserrat_semibold;
+        font-size: 1.5rem;
+        margin: 1rem 0 1rem 0;
+        color: $grey7;
+      }
+      &__custom-dropdown {
+        // padding-top: 1.4rem;
+        width: 100%;
+        font-size: 1rem;
+        color: $color-white-primary;
+        font-family: $monstserrat_regular;
+        font-weight: normal;
+        position: relative;
+        &__selection {
+          // height: 3rem;
+          border-radius: 1.2rem;
+          font-family: $monstserrat_regular;
+          padding: 1rem 1rem;
+          cursor: pointer;
+          position: relative;
+          box-shadow: 6px 6px 9px 0 $dark_shadow7,
+            -1px -1px 4px 0 $white_shadow5;
+          width: 100%;
+        }
+
+        &__items-holder {
+          width: 100%;
+          margin-top: 3px;
+          z-index: 100;
+          overflow-y: auto;
+          max-height: 150px;
+          font-family: $monstserrat_regular;
+          font-size: $font_medium;
+          letter-spacing: 0.19px;
+          color: $color-white-primary;
+          cursor: pointer;
+          position: absolute;
+          border-radius: 8px;
+          background-color: $dark2;
+          box-shadow: 6px 6px 9px 0 $dark_shadow4,
+            -6px -6px 8px 0 $white_shadow2, inset 4px 4px 8px 0 $white_shadow5,
+            inset -3px -3px 8px 0 $dark_shadow9;
+
+          &__dropdown-item {
+            // height: 4.5rem;
+            padding: 1rem 1rem 1rem;
+            font-family: $monstserrat_regular;
+            font-size: 1rem;
+            background: $dark2;
+            cursor: pointer;
+            border-bottom: 1px solid $dark_shadow8;
+          }
+        }
+        &__items-holder-category {
+          width: 90%;
+          margin-top: 3px;
+          z-index: 100;
+          overflow-y: auto;
+          max-height: 150px;
+          font-family: $monstserrat_regular;
+          font-size: $font_medium;
+          letter-spacing: 0.19px;
+          color: $color-white-primary;
+          cursor: pointer;
+          position: absolute;
+          border-radius: 8px;
+          background-color: $dark2;
+          box-shadow: 6px 6px 9px 0 $dark_shadow4,
+            -6px -6px 8px 0 $white_shadow2, inset 4px 4px 8px 0 $white_shadow5,
+            inset -3px -3px 8px 0 $dark_shadow9;
+        }
+        &__selection::after {
+          display: block;
+          content: "";
+          width: 1rem;
+          height: 1rem;
+          border-right: 2px solid $primary_color3;
+          border-bottom: 2px solid $primary_color3;
+          transform: rotate(45deg);
+          position: absolute;
+          right: 2.3rem;
+          top: 0.9rem;
+        }
+        &__selection:active,
+        &__selection:focus {
+          border: solid 1px $orange_shadow;
+        }
+      }
+      &__customInput {
+        outline: none;
+        background: none;
+        border: none;
+        padding-top: 21;
+        color: white;
+        font-size: 0.8rem;
+        font-family: "Montserrat Regular";
+        padding-bottom: 10px;
+      }
+      &__customInput {
+        background-color: $dark2;
+        width: 100%;
+        height: 5rem;
+        // margin-top: 14px;
+        padding: 0px 14px 0px 20px;
+        border-radius: 12px;
+        box-shadow: -6px -6px 9px 0 $white_shadow6, 6px 6px 8px 0 $dark_shadow4,
+          inset 6px 6px 8px 0 $dark_shadow10, inset -6px -6px 6px 0 $dark6;
+        font-family: $monstserrat_regular;
+        font-size: 1.5rem;
+        border-width: 1px;
+        letter-spacing: 0.19px;
+        color: $color-white-primary;
+        border-image: linear-gradient(104deg, $shadow2 5%, $shadow3 94%);
+      }
+      &__customInput:focus {
+        border: solid 1px $orange_shadow;
+      }
+      &__textWidth {
+        width: 100%;
+        // margin-top: 1.4rem;
+        padding: 1.4rem 1.4rem 0rem 2rem;
+        border-radius: 12px;
+        box-shadow: -6px -6px 9px 0 $white_shadow6, 6px 6px 8px 0 $dark_shadow4,
+          inset 6px 6px 8px 0 $dark_shadow10, inset -6px -6px 6px 0 $dark6;
+        font-family: $monstserrat_regular;
+        font-size: $font_medium;
+        letter-spacing: 0.19px;
+        color: $color-white-primary;
+        background-color: $dark6;
+        border-width: 1px;
+        border-image: linear-gradient(104deg, $shadow2 5%, $shadow3 94%);
+      }
+      &__textWidth:focus {
+        border: solid 1px $orange_shadow;
+      }
+      &__image-container {
+        &__wrapper {
+          position: relative;
+          height: 232px;
+          width: 100%;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          overflow: hidden;
+          justify-content: center;
+          box-shadow: -6px -6px 9px 0 $white_shadow6,
+            6px 6px 8px 0 $dark_shadow4, inset 6px 6px 8px 0 $dark_shadow10,
+            inset -6px -6px 6px 0 $dark6;
+          font-family: $monstserrat_regular;
+          font-size: $font_medium;
+          letter-spacing: 0.19px;
+          color: $color-white-primary;
+          background-color: $dark6;
+          border-width: 1px;
+          border-image: linear-gradient(104deg, $shadow2 5%, $shadow3 94%);
+          &__main-image {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+            img {
+              height: 100%;
+              width: 100;
+              object-fit: cover;
+            }
+          }
+          &__image-content {
+            position: relative;
+            &__upload-btn {
+              font-size: $font_medium;
+              font-weight: 500;
+              outline: none;
+              border: none;
+              background: none;
+              font-family: $monstserrat_regular;
+              color: $color-white-primary;
+            }
+          }
+          #cancel-btn {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            cursor: pointer;
+            font-size: 20px;
+            color: $dark2;
+            display: none;
+          }
+        }
+        &__wrapper:active,
+        &__upload-btn:focus {
+          border: solid 1px $orange_shadow;
+        }
+        &__wrapper.active:hover #cancel-btn {
+          display: block;
+          color: linear-gradient(-45deg, $dark3, $grey6);
+        }
+        &__wrapper #cancel-btn:hover {
+          color: $color-white-primary;
+        }
+      }
+
+      &__clr {
+        color: $grey9;
+      }
+    }
+    &__content {
+      padding: 4rem 0 2rem;
+    }
+    &__footer {
+      padding-top: 5rem;
+      justify-content: space-evenly;
+      &__confirm {
+        width: 60%;
+      }
+    }
+
+    &__pad10 {
+      padding-top: 1rem;
+    }
+  }
+
+  &__table {
+    background-color: $color-white-primary;
+    box-shadow: 0.4rem 0 0 0.56rem $dark_shadow4;
+    width: 80%;
+    min-height: 99.4%;
+    max-height: 100%;
+    padding: 2rem;
+    position: absolute;
+    border: 1px solid $dark;
+    @include absoluteCenter;
+    overflow: auto;
+  }
+  &__index {
+    z-index: 5;
+  }
+
+  &__cancel {
+    box-shadow: none;
+  }
+
+  &__mar1 {
+    margin-left: 1rem;
+  }
+
+  &__pad1 {
+    padding: 1.3rem 1.4rem 1rem 2rem;
+  }
+
+  &__pad-left {
+    padding-left: 0.5rem;
+  }
+
+  &__marTop {
+    margin-bottom: 1rem;
+  }
+
+  &__type {
+    margin: 0 0 14px 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    box-shadow: none;
+  }
+
+  &__img-block {
+    @include flexbox;
+    &__input {
+      width: 95%;
+    }
+  }
+  &__cross-btn {
+    @include flexbox;
+    cursor: pointer;
+  }
+
+  &__cross-icon {
+    font-size: 1.5rem;
+    color: white;
+  }
+
+  &__add-btn {
+    width: 40%;
+    padding: 1rem;
+  }
+
+  &__activeTab {
+    box-shadow: inset -6px -6px 6px 0 $dark6, inset 6px 6px 8px 0 $dark_shadow10,
+      inset 6px 6px 8px 0 $dark_shadow10, inset -6px -6px 6px 0 $dark6;
+    border-style: solid;
+    border-width: 1px;
+    border-image-source: linear-gradient(119deg, $shadow2 0%, $shadow3 98%);
+    border-image-slice: 1;
+    background: linear-gradient(to bottom, $dark2, $dark2),
+      linear-gradient(119deg, $shadow2 0%, $shadow3 98%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+  }
+}

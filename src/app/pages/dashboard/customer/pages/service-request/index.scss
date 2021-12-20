@@ -1,0 +1,13 @@
+@import "../../../../../../styles/variables.scss";
+@import "../../../../../../styles/mixins.scss";
+@import "../../../../../components/commonTable/index.scss";
+@import "../../../../../components/tableMenu/index.scss";
+
+.service-request {
+  &__arrow {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+}
