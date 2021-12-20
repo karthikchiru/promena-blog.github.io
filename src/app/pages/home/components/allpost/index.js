@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
 
 
@@ -28,15 +27,14 @@ const AllPosts  = (props) => {
   posts.map(post => {
 
     return(
-      <div className='cards'>
-           <img src={post.blogImage} className='card-image' />
-   
+      <div className='cards' key={post.id}>
+<img src={post.blogImage} className='card-image' />
 <div className='main'>
-<p className='lead1'>
-    <NavLink className = 'posts-link'  to={`/post/${post.id}`}>  
-    <div className = 'post-title'>{post.blogTitle}
-    </div>  </NavLink>
-    </p>
+<h3 className='lead1'>
+    <NavLink  className = 'post-title' to={`/post/${post.id}`}>  
+   {post.blogTitle}
+   </NavLink>
+    </h3>
 
     <div className='card-content'>
       <h1>Surfing in Maldives</h1>
@@ -49,7 +47,7 @@ const AllPosts  = (props) => {
         <li><i className='fa fa-clock-o' aria-hidden='true'></i> 3 min read</li>
       </ul>
 </div>
-<div className='card-content1 padding-class'>
+<div className=' padding-class'>
 <img src={profile}  className='profile-img'  alt='profile-image' />
 <h5>Brison Deon</h5>
 </div>

@@ -2,9 +2,15 @@ import React from 'react'
 import './index.scss';
 import logo from '../../../../../assets/images/promena.png'
 import { useLocation } from 'react-router-dom';
+import {getCategoryDetails} from '../../../../utils/apiCalls';
+
 const Header = () => {
   const location = useLocation();
   let pathName = location.pathname;
+
+  getCategoryDetails((response)=>{
+    console.log(response)
+  })
     return (
      <div>
      {(pathName !== '/' && pathName !== '/registration' && pathName !=='/forgotPassword')?

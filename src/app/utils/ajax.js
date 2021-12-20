@@ -1,13 +1,15 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-unused-vars */
 export function fetchCall(callback, url, method, payload) {
+  // debugger
     return new Promise(function (resolve, reject) {
       const options = {
+        mode:'no-cors',
         method,
-        body: JSON.stringify(payload),
+        body:JSON.stringify(payload),
         headers: {
-          'Content-Type': 'application/json',
-          'platform': 'web',
-          'authorization': ''
+          'Content-Type': 'application/json'
+  
         }
       };
       fetch(url, options)
