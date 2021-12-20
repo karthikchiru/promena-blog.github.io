@@ -65,7 +65,8 @@
     "build:prod": "env-cmd -f .env.prod react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass-lint": "sass-lint -v"
+    "sass-lint": "sass-lint -v",
+    "pre-commit": "lint-staged"
   },
   "sasslintConfig": ".sass-lint.yml",
   "eslintConfig": {
