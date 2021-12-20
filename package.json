@@ -65,7 +65,8 @@
     "build:prod": "env-cmd -f .env.prod react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass-lint": "sass-lint -v"
+    "sass-lint": "sass-lint -v",
+    "pre-commit": "lint-staged && npm run precommit"
   },
   "sasslintConfig": ".sass-lint.yml",
   "eslintConfig": {
@@ -88,7 +89,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": " npx lint-staged"
     }
   },
   "lint-staged": {
