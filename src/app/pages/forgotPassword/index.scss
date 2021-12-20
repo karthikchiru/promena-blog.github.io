@@ -34,6 +34,7 @@
     width: 100%;
     font-family: $monstserrat_regular;
     font-size: 1.4rem;
+    border-radius: 14px;
     &__width {
       width: 75%;
     }
@@ -62,9 +63,9 @@
   }
   &__icon {
     position: absolute;
-    margin: 1rem 0 0 0;
+    // margin: 1rem 0 0 0;
     top: 17.8rem;
-    right: 18rem;
+    right: 15rem;
     width: 2rem;
     font-size: $font_regular;
     opacity: 0.8;
