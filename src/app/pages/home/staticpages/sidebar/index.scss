@@ -25,6 +25,9 @@
     padding: 0px 0 0 20px;
     text-decoration: none;
   }
+  &__link {
+    text-decoration: none;
+  }
   &__content {
     text-align: center;
     margin-top: 1px;
@@ -72,10 +75,13 @@
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 900px) {
+@media screen and (min-width: 760px) and (max-width: 900px) {
   .posts {
     padding: 0;
     height: 16rem;
+    &__ul {
+      padding: 0;
+    }
     &__image {
       padding-left: 0;
     }
