@@ -20,7 +20,7 @@
 .card-image {
   // height: 200px;
   width: 30%;
-  padding-left: 10px;
+  // padding-left: 10px;
 }
 .post-title {
   padding: 0px 0 0 20px;
@@ -48,7 +48,8 @@
   justify-content: space-between;
   padding-top: 4.4rem;
   margin-left: 3rem;
-}
+  list-style-type: none;
+  }
 
 .lead1 {
   font-size: 2rem;

@@ -10,6 +10,7 @@
   align-items: center;
   justify-content: space-evenly;
   background-color: rgba(79, 95, 94, 0.281);
+  padding: 1rem;
   ul {
     list-style-type: none;
   }
@@ -204,7 +205,7 @@ body {
 }
 .topping {
   justify-content: space-between;
-  width: 80%;
+  width: 100%;
 }
 
 
@@ -251,5 +252,5 @@ body {
 }
 .topping {
 justify-content: space-between;
-width: 80%;
+width: 100%;
 }
