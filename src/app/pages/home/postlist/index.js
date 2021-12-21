@@ -1,34 +1,40 @@
-import React from 'react'
+import React,{useEffect, useState} from 'react'
 import './index.scss';
+import { NavLink } from 'react-router-dom';
+import blogPost from '../data/blog.json';
 
 const Postlist = () => {
+
+    const [posts, setPosts] = useState([]);
+
+    useEffect(()=>{
+  
+      const posts = blogPost.data;
+      setPosts(posts);
+    }, posts);
+
+
     return (
         <div className='postlist-banner'>
-            <div className='postlist first-list'>
-            <i className='first-list__arrow first-list__right'></i>
-                <h2 className='first-list__heading'><a href='#'>SEO</a></h2>
-                <span className='first-list__content'>Lorem ipsum dolor sit amet.</span>
-            </div>
-            <div className='postlist'>
-                <h2><a href='#'>CONTENT MARKETING</a> </h2>
-                <span>Lorem ipsum dolor sit amet.</span>
-            </div>
-            <div className='postlist'>
-                <h2><a href=''> WORDPRESS</a> </h2>
-                <span>Lorem ipsum dolor sit amet.</span>
-            </div>
-            <div className='postlist'>
-                <h2><a href=''> DEVELOPMENT</a> </h2>
-                <span>Lorem ipsum dolor sit amet.</span>
-            </div>
-            <div className='postlist'>
-                <h2><a href=''> BUSINESS</a> </h2>
-                <span>Lorem ipsum dolor sit amet.</span>
-            </div>
-            {/* <div className='postlist'>
-                <h2><a href='#'>CONTENT MARKETING</a> </h2>
-                <span>Lorem ipsum dolor sit amet.</span>
-            </div> */}
+       
+                
+                <div key={1} className='postlist first-list'>
+                    <i className='first-list__arrow first-list__right'></i>
+                    <h2 className='first-list__heading'><NavLink to={`/post/${1}`}>CONTENT MARKETING</NavLink></h2>
+                    <span className='first-list__content'>Lorem ipsum dolor sit amet.</span>
+
+                </div>
+                { posts.map(val=>{
+            return(
+                <div key={val.id} className='postlist'>
+                        <h2><NavLink to={`/post/${val.id}`}>{val.blogCategory}</NavLink> </h2>
+                        <span>{val.blogTitle}</span>
+                    </div>
+                    
+            )
+        })}
+           
+ 
         </div>
     )
 }

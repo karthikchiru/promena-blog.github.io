@@ -13,7 +13,7 @@ const Post = (props) => {
 <BlogPost {...props}/>
 </div>
 
-<div className='common post-sidebar'><Tabs/></div>
+<div className='common post-sidebar'><Tabs /></div>
 </div>
 <div className='post-read-button '>
 

@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-/ eslint-disable no-unused-vars /
 import React, {useState} from 'react'
 import './index.scss';
 import Banner from './staticpages/banner';
