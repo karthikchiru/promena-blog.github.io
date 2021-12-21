@@ -18,10 +18,11 @@ const Router = () => {
     <React.Suspense fallback={<Loader />}>
     <Header/>
       <Switch>
+      
         <Route exact path='/' component={Login} />
         <Route exact path='/registration' component={Registration} />
         <Route exact path='/forgotPassword' component={ForgotPassword} />
-        {/* <ProtectedRoute exact path='/customer' component={Customer} /> */}
+        {/* <ProtectedRoute exact path='/home' component={Home} /> */}
         <Route exact path='/home' component={Home} />
         <Route exact path='/post/:postId' component={Post} />
         <Route path={'**'} component={PageNotFound} />
