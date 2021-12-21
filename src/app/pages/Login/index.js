@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './index.scss';
 import Button from '../../components/button/index';
 import { regex } from '../../constants/regex';
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import logo from '../../../assets/images/promena.png';
 import Confirm from '../../components/confirmModal/confirm';
 import Loader from '../../components/loader';
