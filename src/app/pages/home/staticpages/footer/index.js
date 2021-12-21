@@ -12,7 +12,10 @@ const Footer = () => {
     setIsChecked(!isChecked);
   };
   useLayoutEffect(() => {
-  window.scrollTo(0, 0);
+    if(pathName === '/home')
+    {
+      window.scrollTo(0, 0);
+    }
    });
 
     return (
