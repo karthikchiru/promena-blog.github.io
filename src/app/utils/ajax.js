@@ -4,13 +4,8 @@ export function fetchCall(callback, url, method, payload) {
   // debugger
     return new Promise(function (resolve, reject) {
       const options = {
-        mode:'no-cors',
         method,
-        body:JSON.stringify(payload),
-        headers: {
-          'Content-Type': 'application/json'
-  
-        }
+        body:JSON.stringify(payload)
       };
       fetch(url, options)
         .then((res) => {
