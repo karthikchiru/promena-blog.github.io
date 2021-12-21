@@ -55,10 +55,10 @@ const Header = () => {
             <label forHtml='show-ppc'>Ppc</label>
 
   <ul>
-  {category.length && category.map((value)=>{
+  {category.length && category.map((value, index)=>{
    return(
    
-              <li key={value.category_id}><a href='#'>{(val.menuname === 'PPC'  && value.menuname === 1 ? value.category_name:null) || (val.menuname === 'CONTENT'  && value.menuname === 2 ? value.category_name:null) || (val.menuname === 'SOCIAL'  && value.menuname === 3 ? value.category_name:null)}</a></li>
+              <li key={index}><a href='#'>{(val.menuname === 'PPC'  && value.menuname === 1 ? value.category_name:'') || (val.menuname === 'CONTENT'  && value.menuname === 2 ? value.category_name:'') || (val.menuname === 'SOCIAL'  && value.menuname === 3 ? value.category_name:'')}</a></li>
    );
   })}
    </ul>
