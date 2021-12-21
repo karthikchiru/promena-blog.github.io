@@ -21,7 +21,6 @@ const Header = () => {
       console.log(response);
       setcategory(response)
     });
-  
   }, []);
 
 
