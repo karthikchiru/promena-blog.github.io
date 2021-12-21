@@ -47,7 +47,7 @@ const AllPosts  = (props) => {
         <li><i className='fa fa-clock-o' aria-hidden='true'></i> 3 min read</li>
       </ul>
 </div>
-<div className=' padding-class'>
+<div className = 'padding-class'>
 <img src={profile}  className='profile-img'  alt='profile-image' />
 <h5>Brison Deon</h5>
 </div>
