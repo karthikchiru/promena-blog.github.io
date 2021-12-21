@@ -9,3 +9,9 @@ export const getCategoryDetails = (callback, payload) => {
     }, url, API_METHODS.GET, payload);
   };
   
+  export const getMenuDetails = (callback, payload) => {
+    const url = `${API_CONSTANTS.MENU_DETAILS}`;
+    return fetchCall((response) => {
+      callback(response);
+    }, url, API_METHODS.GET, payload);
+  };
