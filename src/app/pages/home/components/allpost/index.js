@@ -39,7 +39,7 @@ console.log(postList.title)
 <img src={post.blogImage} className='card-image' />
 <div className='main'>
 <h3 className='lead1'>
-    <NavLink  className = 'post-title' to={`/post/${post.Blog_id}`}>  
+    <NavLink  className = 'post-title' to={`/post/${post.id}`}>  
    {post.blogTitle}
    </NavLink>
     </h3>

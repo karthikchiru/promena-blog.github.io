@@ -18,12 +18,12 @@ const Postlist = () => {
         <div className='postlist-banner'>
        
                 
-                <div key={1} className='postlist first-list'>
+                {/* <div key={1} className='postlist first-list'>
                     <i className='first-list__arrow first-list__right'></i>
                     <h2 className='first-list__heading'><NavLink to={`/post/${1}`}>CONTENT MARKETING</NavLink></h2>
                     <span className='first-list__content'>Lorem ipsum dolor sit amet.</span>
 
-                </div>
+                </div> */}
                 { posts.map(val=>{
             return(
                 <div key={val.id} className='postlist'>
