@@ -40,13 +40,13 @@ console.log(postList.title)
 <div className='main'>
 <h3 className='lead1'>
     <NavLink  className = 'post-title' to={`/post/${post.Blog_id}`}>  
-   {post.title}
+   {post.blogTitle}
    </NavLink>
     </h3>
 
     <div className='card-content'>
-      <h1>{post.excerpt}</h1>
-      <p>{post.content}</p>
+      <h1>{post.blogCategory}</h1>
+      <p>{post.blogTitle}</p>
  
     </div>
     <ul className='main-ul1'>
