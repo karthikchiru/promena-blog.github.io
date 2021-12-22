@@ -57,7 +57,7 @@ const Header = () => {
   {category.length && category.map((value, index)=>{
    return(
    
-  <li key={val.category_name}><a href='#'>{(val.menuname === 'PPC'  && value.menuname === 1 ? value.category_name:null) || (val.menuname === 'CONTENT'  && value.menuname === 2 ? value.category_name:null) || (val.menuname === 'SOCIAL'  && value.menuname === 3 ? value.category_name:null)}</a></li>
+  <li key={val.menuid}><a href='#'>{(val.menuname === 'PPC'  && value.menuname === 1 ? value.category_name:null) || (val.menuname === 'CONTENT'  && value.menuname === 2 ? value.category_name:null) || (val.menuname === 'SOCIAL'  && value.menuname === 3 ? value.category_name:null)}</a></li>
    );
   })}
    </ul>
