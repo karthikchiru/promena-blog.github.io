@@ -1,7 +1,7 @@
-import React , {useState, useLayoutEffect} from 'react'
+import React , { useState, useLayoutEffect} from 'react'
 import './index.scss'
 import logo from '../../../../../assets/images/promena.png';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
   const location = useLocation();
@@ -11,12 +11,14 @@ const Footer = () => {
   const handleOnChange = () => {
     setIsChecked(!isChecked);
   };
-  useLayoutEffect(() => {
-    if(pathName === '/home')
-    {
-      window.scrollTo(0, 0);
-    }
-   });
+
+  const handleClick = ()=>{
+    window.scrollTo(0, 0);
+  };
+
+useLayoutEffect(() => {
+  // handleClick();
+}, [handleClick]);
 
     return (
       <div>
@@ -48,8 +50,8 @@ const Footer = () => {
                 </div>
                 <div className='footer__center2'>
                     <ul>
-                    <li><Link to='/home' className='desktop-link'>
-                    <i className='fas fa-arrow-alt-circle-right'></i> SEO Guide</Link></li>
+                    <li><a  onClick={handleClick} className='desktop-link'>
+                    <i className='fas fa-arrow-alt-circle-right'></i> SEO Guide</a></li>
                     <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> How Search Engines Work</a></li>
                     <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i>  Local SEO</a></li>
                     <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Link Building Guide</a></li>
