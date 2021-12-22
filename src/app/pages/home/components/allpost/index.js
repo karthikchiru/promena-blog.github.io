@@ -32,11 +32,11 @@ console.log(postList.title)
     <div className='card-container'>
 
 {
-  postList.map(post => {
+  posts.map(post => {
 
     return(
       <div className='cards' key={post.Blog_id}>
-<img src={post.thumbnail} className='card-image' />
+<img src={post.blogImage} className='card-image' />
 <div className='main'>
 <h3 className='lead1'>
     <NavLink  className = 'post-title' to={`/post/${post.Blog_id}`}>  

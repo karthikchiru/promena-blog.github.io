@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 
@@ -9,31 +8,27 @@ import Chart from '../../charts/barchart';
 import blogPost from '../../data/blog.json';
 import Button from 'app/components/button';
 import LoginModal from '../loginmodal'; 
-import { getPostList } from 'app/utils/apiCalls';
+
 
 const BlogPost = (props) => {
 
   const [post,setPost] = useState({});
-  const[postId,setPostId] = useState('');
-
   const [user, setuser] = useState({});
   const [comment, setComment] = useState('');
   
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
-  const [blogPost1, setBlogPost] = useState([]);
+  const[postId,setPostId] = useState('');
    
-  useEffect(() => {
-
-  }, []);
-
-  blogPost1.length && console.log(blogPost1.title);
-
-
+  
   const handleComment = ()=>{
+   
+    // console.log(comment);
     let isLoggedIn = localStorage.getItem('user-state');
+    
     if(isLoggedIn)
     {
+      // debugger
       setShowConfirmModal(false);
       setIsBtnDisabled(true);
       localStorage.clear();
@@ -63,39 +58,32 @@ const BlogPost = (props) => {
    setuser(user);
    setShowConfirmModal(false);
   }
-
+  
 
 useEffect(()=>{
   // eslint-disable-next-line react/prop-types
-          getPostList((res)=>{
-      console.log(res);
-       console.log(res)
-      setBlogPost(res);
-      const postId = props.match.params.Blog_id;
-      //  const post = blogPost1.length && blogPost1?.find(post => post.Blog_id == postId);
-  // console.log(post)
-  // setPost(post);
+  const postId = props.match.params.postId;
+  const post = blogPost.data.find(post => post.id == postId);
+  setPost(post);
   setPostId(postId);
-          });
-}, [post, props.match.params.Blog_id]);
+}, [post, props.match.params.postId]);
 
-if(post.thumbnail == '') return null;
+if(post.blogImage == '') return null;
 
   return(
 <div className='blog'>
-{blogPost1.length && blogPost1.map((post)=>{
-  return(
-    <div key={post.Blog_id} className='blog__container'>
 
-<h3 className='blog__post'>{post.title}</h3>
+<div className='blog__container'>
+
+<h3 className='blog__post'>{post.blogTitle}</h3>
 <div className='post-thumb'>
 
-<span className='blog__post__tag'>{post.category}</span>
-  <img className='blog__img' src={post.thumbnail !== ''? post.thumbnail:null}/>
+<span className='blog__post__tag'>{post.blogCategory}</span>
+  <img className='blog__img' src={post.blogImage}/>
 </div>
 <div className='blog__text'>
 
-<div>{post.content}</div>
+<div>{post.blogText}</div>
 <div className='chart-wrap'>
 <Chart/>
 </div>
@@ -106,6 +94,17 @@ if(post.thumbnail == '') return null;
     <span className='comment-title'>Comment*</span>
     <textarea name='' placeholder='Tell Your Story' onChange={(e)=>handleValueChange(e, 1)} className='comment' id='' cols='30' rows='5'></textarea>
     </div>
+{/* <div className='user-name comment-items'>
+<span className='comment-title' >User*</span>
+<Input placeholder='User Name'  value={user} onValueChange={(e)=>handleValueChange(e, 2)}/>
+</div>
+<div className='user-email comment-items'>
+<span className='comment-title'>Email*</span>
+
+
+
+<Input placeholder='Enter Email' value={email}  onValueChange={(e)=>handleValueChange(e, 3)} />
+</div> */}
 <div className='submit-button comment-items'>
 <Button className='comment-button' buttonClick={handleComment} isBtnDisabled = {isBtnDisabled}>Comment</Button>
 </div>
@@ -118,9 +117,6 @@ if(post.thumbnail == '') return null;
 </div>
 
 </div>
-  )
-})}
-
 </div>
   );
  }
