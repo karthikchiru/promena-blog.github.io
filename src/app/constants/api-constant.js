@@ -5,7 +5,7 @@ const BaseURL = {
 export const API_CONSTANTS = {
  CATEGORY_DETAILS:`${BaseURL.BASE_URL}/categorylist/`,
  MENU_DETAILS:`${BaseURL.BASE_URL}/menulist`,
- POST_LIST:`${BaseURL.BASE_URL}/postpostlist/`
+ POST_LIST:`${BaseURL.BASE_URL}/Blog/`
 };
 
 export const API_METHODS = {

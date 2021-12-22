@@ -1,6 +1,10 @@
 @import "../../../../../styles/mixins.scss";
 @import "../../../../../styles//variables.scss";
 
+.main1 {
+  position: relative;
+}
+
 .posts {
   position: relative;
   // width: 60%;
@@ -93,6 +97,14 @@
       h4 {
         font-size: 11px;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+  .posts {
+    &__lead2 {
+      font-size: medium;
     }
   }
 }
