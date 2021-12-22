@@ -3,9 +3,8 @@
 
 .blog-tabs {
   display: flex;
-  width: 40%;
+  width: 100%;
   position: relative;
-  // transform: translate(170%, -1110%);
 }
 .tabs {
   padding: 15px;
@@ -13,21 +12,16 @@
   width: 50%;
   background: rgba(90, 69, 69, 0.075);
   cursor: pointer;
-  // border-bottom: 1px solid rgba(0, 46, 145, 0.274);
   box-sizing: content-box;
   position: relative;
   outline: none;
 }
 .tabs:not(:last-child) {
-  width: 30%;
-  // border: 1px solid rgba(0, 0, 0, 0.274);
-  // border-radius: 5px;
+  width: 50%;
 }
 
 .tabs:not(:first-child) {
-  width: 30%;
-  // border: 1px solid rgba(0, 0, 0, 0.274);
-  // border-radius: 5px;
+  width: 50%;
 }
 
 .active-tabs {
@@ -39,7 +33,6 @@
 }
 
 .active-tabs::before {
-  // content: "";
   display: block;
   position: relative;
   top: -5px;
@@ -75,15 +68,12 @@ button {
   background: #222;
   margin-bottom: 5px;
 }
-// .content p {
-//   width: 100%;
-// height: 100%;
-// }
+
 .active-content {
   display: block;
   position: relative;
-  width: 30%;
-  // transform: translate(225%, -95%);
+  width: 100%;
+  align-items: center;
 }
 
 @media screen and (min-width: 900px) and (max-width: 1120px) {
@@ -95,9 +85,7 @@ button {
     width: 30%;
     padding: 0;
   }
-  // .content {
-  // padding: 0 !important;
-  // }
+
 }
 
 @media screen and (min-width: 760px) and (max-width: 900px) {

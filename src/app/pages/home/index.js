@@ -24,8 +24,15 @@ const Home = () => {
 <Postlist/>
  </div> 
 </div>
+<div className='post-tab'>
+<div className='all-posts items'>
 <AllPosts/>
+</div>
+<div className='all-tabs items'>
 <Tabs/>
+</div>
+
+</div>
 </div>
     )
 }

@@ -30,8 +30,17 @@
             "blogImage": "https://image.shutterstock.com/z/stock-photo-greeting-card-mockup-a-small-bouquet-of-pink-flowers-and-space-for-text-pink-tulips-invitation-1721640700.jpg",
             "blogText": "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
         },
-     
         {
+            "id": 4,
+            "blogCategory": "MARKETING",
+            "blogTitle": "Lorem ipsum dolor sit amet.",
+            "slug": "",
+            "postedOn": "Feb 21, 2018",
+            "author": "Albi",
+            "blogImage": "https://image.shutterstock.com/z/stock-photo-greeting-card-mockup-a-small-bouquet-of-pink-flowers-and-space-for-text-pink-tulips-invitation-1721640700.jpg",
+            "blogText": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        }
+        ,{
             "id": 5,
             "blogCategory": "CONTENT WRITING",
             "blogTitle": "Lorem ipsum dolor sit amet.",
