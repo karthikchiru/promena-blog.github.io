@@ -46,7 +46,7 @@ const Header = () => {
               <li><a href='#'>Drop Menu 4</a></li>
             </ul>
           </li>
-{menu.length && menu.map((val, index)=>{
+{/* {menu.length && menu.map((val, index)=>{
   return(
     <li key = {val.menuid}>
             <a href='#' className='desktop-link'>{val.menuname} <i className='fa fa-caret-down' aria-hidden='true'></i></a>
@@ -64,10 +64,10 @@ const Header = () => {
 
           </li>
   )
-})}
+})} */}
 
        
-          {/* <li>
+           <li>
             <a href='#' className='desktop-link'>CONTENT <i className='fa fa-caret-down' aria-hidden='true'></i></a>
             <input type='checkbox' id='show-content'></input>
             <label forHtml='show-content'>Content</label>
@@ -77,8 +77,8 @@ const Header = () => {
               <li><a href='#'>Drop Menu 3</a></li>
               <li><a href='#'>Drop Menu 4</a></li>
             </ul>
-          </li> */}
-          {/* <li>
+          </li> 
+           <li>
             <a href='#' className='desktop-link'>SOCIAL <i className='fa fa-caret-down' aria-hidden='true'></i></a>
             <input type='checkbox' id='show-social'></input>
             <label forHtml='show-social'>Social</label>
@@ -89,7 +89,7 @@ const Header = () => {
               <li><a href='#'>Menu Item 4</a></li>
               <li><a href='#'>Menu Item 5</a></li>
             </ul>
-          </li> */}
+          </li> 
           <li>
             <a href='#' className='desktop-link'>NEWS <i className='fa fa-caret-down' aria-hidden='true'></i></a>
             <input type='checkbox' id='show-news'></input>
