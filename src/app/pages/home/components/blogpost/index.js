@@ -20,7 +20,7 @@ const BlogPost = (props) => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const[postId,setPostId] = useState('');
    
-  
+  console.log(props)
   const handleComment = ()=>{
    
     // console.log(comment);
