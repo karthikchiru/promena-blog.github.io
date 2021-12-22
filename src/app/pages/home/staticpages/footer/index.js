@@ -38,27 +38,27 @@ useLayoutEffect(() => {
             </div>
                 <div className='footer__center1'>
                 <ul>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Advertize</a></li>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Shop SEJ</a></li>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Privacy Policy</a></li>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Contact</a></li>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> About</a></li>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Toolbox</a></li>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Press Materials</a></li>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Do Not Sell My Personal Info</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Advertize</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Shop SEJ</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Privacy Policy</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Contact</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> About</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Toolbox</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Press Materials</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Do Not Sell My Personal Info</a></li>
                     </ul>
                 </div>
                 <div className='footer__center2'>
                     <ul>
                     <li><a  onClick={handleClick} className='desktop-link'>
                     <i className='fas fa-arrow-alt-circle-right'></i> SEO Guide</a></li>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> How Search Engines Work</a></li>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i>  Local SEO</a></li>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Link Building Guide</a></li>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> On-Page SEO Guide</a></li>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Technical SEO Guide</a></li>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> How to Do an SEO Audit</a></li>
-                    <li><a href='#' className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> SEO Tools</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> How Search Engines Work</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i>  Local SEO</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Link Building Guide</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> On-Page SEO Guide</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> Technical SEO Guide</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> How to Do an SEO Audit</a></li>
+                    <li><a onClick={handleClick} className='desktop-link'> <i className='fas fa-arrow-alt-circle-right'></i> SEO Tools</a></li>
                     </ul>
                 </div>
             <div className='footer__right'>
