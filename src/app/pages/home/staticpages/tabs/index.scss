@@ -3,9 +3,9 @@
 
 .blog-tabs {
   display: flex;
-  width: 40%;
+  width: 100%;
   position: relative;
-  transform: translate(170%, -1110%);
+  // transform: translate(170%, -1800%);
 }
 .tabs {
   padding: 15px;
@@ -19,13 +19,13 @@
   outline: none;
 }
 .tabs:not(:last-child) {
-  width: 30%;
+  width: 50%;
   // border: 1px solid rgba(0, 0, 0, 0.274);
   // border-radius: 5px;
 }
 
 .tabs:not(:first-child) {
-  width: 30%;
+  width: 50%;
   // border: 1px solid rgba(0, 0, 0, 0.274);
   // border-radius: 5px;
 }
@@ -82,8 +82,8 @@ button {
 .active-content {
   display: block;
   position: relative;
-  width: 30%;
-  transform: translate(225%, -95%);
+  width: 100%;
+  align-items: center;
 }
 
 @media screen and (min-width: 900px) and (max-width: 1120px) {

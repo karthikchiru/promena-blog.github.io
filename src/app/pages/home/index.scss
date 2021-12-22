@@ -30,3 +30,22 @@
 //     }
 //   }
 // }
+
+.post-tab {
+  width: 100%;
+  display: flex;
+  // position: relative;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.all-posts {
+  width: 60%;
+  // position: relative;
+  // display: flex;
+}
+
+.all-tabs {
+  width: 40%;
+  padding: 3rem;
+}
