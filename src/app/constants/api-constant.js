@@ -3,8 +3,8 @@ const BaseURL = {
 };
 
 export const API_CONSTANTS = {
- CATEGORY_DETAILS:`${BaseURL.BASE_URL}/categorylist/`,
- MENU_DETAILS:`${BaseURL.BASE_URL}/menulist`,
+ CATEGORY_DETAILS:`${BaseURL.BASE_URL}/category/`,
+ MENU_DETAILS:`${BaseURL.BASE_URL}/mainmenu/`,
  POST_LIST:`${BaseURL.BASE_URL}/Blog/`
 };
 

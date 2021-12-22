@@ -7,6 +7,7 @@ import profile from 'assets/images/profile.png'
 import blogPost from '../../data/blog.json';
 import { NavLink } from 'react-router-dom';
 import {getPostList} from '../../../../utils/apiCalls'
+import moment from 'moment';
 import './index.scss'
 
 
@@ -21,7 +22,7 @@ console.log(postList.title)
     setPosts(posts);
 
     getPostList((response)=>{
-      console.log(response);
+      // console.log(response);
       setPostList(response);
     })
   }, []);
@@ -49,7 +50,7 @@ console.log(postList.title)
  
     </div>
     <ul className='main-ul1'>
-        <li><i className='fa fa-clock-o' aria-hidden='true'>{post.date_created}</i></li>
+        <li><i className='fa fa-clock-o' aria-hidden='true'> {moment(post.date_created).format('ddd-mm-yyyy, A')}</i></li>
         <li><i className='fa fa-eye' aria-hidden='true'></i> 75 reads</li>
         <li><i className='fa fa-clock-o' aria-hidden='true'></i> 3 min read</li>
       </ul>

@@ -5,7 +5,10 @@ export function fetchCall(callback, url, method, payload) {
     return new Promise(function (resolve, reject) {
       const options = {
         method,
-        body:JSON.stringify(payload)
+        body:JSON.stringify(payload),
+        headers: {
+          'Content-Type': 'application/json'
+        }
       };
       fetch(url, options)
         .then((res) => {
