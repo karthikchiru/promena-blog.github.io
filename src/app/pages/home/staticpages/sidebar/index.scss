@@ -15,7 +15,7 @@
   flex-direction: row;
   border-radius: 20px;
   &__image {
-    height: 10em;
+    height: 60%;
     width: 40%;
     padding-left: 10px;
   }
@@ -23,7 +23,7 @@
     width : 60% ;
   }
   &__title {
-    font-size: x-small;
+    font-size: medium;
     text-align: center;
     padding: 0px 0 0 20px;
     text-decoration: none;
@@ -48,15 +48,15 @@
     list-style: none;
   }
 
-  &__lead2 {
-    font-size: 2rem;
-  }
-
+ 
   // .profile-img {
   //   border-radius: 50%;
   // }
   &__content p {
-    font-size: x-small;
+    font-size: medium;
+  }
+  &__content h4 {
+    font-size: large;
   }
 }
 

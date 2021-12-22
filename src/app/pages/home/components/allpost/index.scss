@@ -19,12 +19,10 @@
   padding: 2em 0;
 }
 .card-image {
-  // height: 200px;
   width: 30%;
-  // padding-left: 10px;
 }
 .post-title {
-  padding: 0px 0 0 5rem;
+  text-align: center;
   text-decoration: none !important;
   cursor: pointer !important;
 }
@@ -34,6 +32,9 @@
   padding-left: 3.5rem;
   font-size: 2rem;
   font-family: $monstserrat_regular;
+  h1{
+    font-size: larger;
+  }
 }
 .card-content1 {
   text-align: end;

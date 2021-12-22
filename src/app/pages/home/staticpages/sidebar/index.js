@@ -37,7 +37,7 @@ const Sidebar  = (props) => {
 
 <div className='posts__content'>
  <h4>Surfing in Maldives</h4>
- <p>Lorem ipsum, dolor sit amet consectetur<br/> adipisicing elit. Ratione, recusandae.</p>
+ <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, recusandae.</p>
 
 </div>
 <ul className='posts__ul'>
