@@ -15,3 +15,10 @@ export const getCategoryDetails = (callback, payload) => {
       callback(response);
     }, url, API_METHODS.GET, payload);
   };
+
+  export const getPostList = (callback, payload) => {
+    const url = `${API_CONSTANTS.POST_LIST}`;
+    return fetchCall((response) => {
+      callback(response);
+    }, url, API_METHODS.GET, payload);
+  };
