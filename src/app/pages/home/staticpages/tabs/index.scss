@@ -4,8 +4,8 @@
 .blog-tabs {
   display: flex;
   width: 40%;
-  position: absolute;
-  transform: translate(156%, 2rem);
+  position: relative;
+  transform: translate(170%, -1110%);
 }
 .tabs {
   padding: 15px;
@@ -41,7 +41,7 @@
 .active-tabs::before {
   // content: "";
   display: block;
-  position: absolute;
+  position: relative;
   top: -5px;
   left: 50%;
   transform: translateX(-50%);
@@ -75,15 +75,15 @@ button {
   background: #222;
   margin-bottom: 5px;
 }
-.content p {
-  width: 100%;
+// .content p {
+//   width: 100%;
   // height: 100%;
-}
+// }
 .active-content {
   display: block;
-  position: absolute;
+  position: relative;
   width: 30%;
-  transform: translate(205%, 8em);
+  transform: translate(225%, -95%);
 }
 
 @media screen and (min-width: 900px) and (max-width: 1120px) {
@@ -105,3 +105,23 @@ button {
     padding: 0;
   }
 }
+
+@media screen and (min-width: 320px) and (max-width:760px) {
+  .blog-tabs {
+    position: relative;
+    padding-top: 1rem;
+    transform: translate(0 , 0);
+    width: 100%;
+  }
+  .active-content {
+    position: relative;
+    transform: translate(0 , 0);
+    width: 100%;
+  }
+  .tabs:not(:first-child) {
+    width: 50%;
+  }
+  .tabs:not(:last-child) {
+    width: 50%;
+  }
+} 
