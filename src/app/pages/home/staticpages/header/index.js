@@ -31,14 +31,14 @@ const Header = () => {
     <nav>
       <input type='checkbox' id='show-search'></input>
       <input type='checkbox' id='show-menu'></input>
-      <label forHtml='show-menu' className='menu-icon'><i className='fas fa-bars'></i></label>
+      <label htmlFor='show-menu' className='menu-icon'><i className='fas fa-bars'></i></label>
       <div className='content'>
       <div className='logo'><a href='#'><img src={logo} alt='logo' /></a></div>
         <ul className='links'>
         <li>
             <a href='#' className='desktop-link'>SEO <i className='fa fa-caret-down' aria-hidden='true'></i></a>
             <input type='checkbox' id='show-seo'></input>
-            <label forHtml='show-seo'>Seo</label>
+            <label htmlFor='show-seo'>Seo</label>
             <ul>
               <li><a href='#'>Drop Menu 1</a></li>
               <li><a href='#'>Drop Menu 2</a></li>
@@ -51,7 +51,7 @@ const Header = () => {
     <li key = {val.menuid}>
             <a href='#' className='desktop-link'>{val.menuname} <i className='fa fa-caret-down' aria-hidden='true'></i></a>
             <input type='checkbox' id='show-ppc'></input>
-            <label forHtml='show-ppc'>Ppc</label>
+            <label htmlFor='show-ppc'>Ppc</label>
 
   <ul>
   {category.length && category.map((value, index)=>{
@@ -70,7 +70,7 @@ const Header = () => {
            <li>
             <a href='#' className='desktop-link'>CONTENT <i className='fa fa-caret-down' aria-hidden='true'></i></a>
             <input type='checkbox' id='show-content'></input>
-            <label forHtml='show-content'>Content</label>
+            <label htmlFor='show-content'>Content</label>
             <ul>
               <li><a href='#'>Drop Menu 1</a></li>
               <li><a href='#'>Drop Menu 2</a></li>
@@ -81,7 +81,7 @@ const Header = () => {
            <li>
             <a href='#' className='desktop-link'>SOCIAL <i className='fa fa-caret-down' aria-hidden='true'></i></a>
             <input type='checkbox' id='show-social'></input>
-            <label forHtml='show-social'>Social</label>
+            <label htmlFor='show-social'>Social</label>
             <ul>
               <li><a href='#'>Menu Item 1</a></li>
               <li><a href='#'>Menu Item 2</a></li>
@@ -93,7 +93,7 @@ const Header = () => {
           <li>
             <a href='#' className='desktop-link'>NEWS <i className='fa fa-caret-down' aria-hidden='true'></i></a>
             <input type='checkbox' id='show-news'></input>
-            <label forHtml='show-news'>Services</label>
+            <label htmlFor='show-news'>Services</label>
             <ul>
               <li><a href='#'>Drop Menu 1</a></li>
               <li><a href='#'>Drop Menu 2</a></li>
@@ -104,7 +104,7 @@ const Header = () => {
           <li>
             <a href='#' className='desktop-link'>FOLLOW <i className='fa fa-caret-down' aria-hidden='true'></i></a>
             <input type='checkbox' id='show-social-links'></input>
-            <label forHtml='show-social-links'>Follow Us</label>
+            <label htmlFor='show-social-links'>Follow Us</label>
             <ul className='social-links'>
                     {/* <li><a href='#'>Follow Us</a></li> */}
                     <li><a href='#' className='fa fa-facebook fa-3x'></a></li>
@@ -115,7 +115,7 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <label forHtml='show-search' className='search-icon'><i className='fas fa-search'></i></label>
+      <label htmlFor='show-search' className='search-icon'><i className='fas fa-search'></i></label>
       <form action='#' className='search-box'>
         <input type='text' placeholder='Type Something to Search...' required></input>
         <button type='submit' className='go-icon'><i className='fas fa-long-arrow-alt-right'></i></button>

@@ -5,7 +5,6 @@
   display: flex;
   width: 100%;
   position: relative;
-  // transform: translate(170%, -1800%);
 }
 .tabs {
   padding: 15px;
@@ -13,21 +12,16 @@
   width: 50%;
   background: rgba(90, 69, 69, 0.075);
   cursor: pointer;
-  // border-bottom: 1px solid rgba(0, 46, 145, 0.274);
   box-sizing: content-box;
   position: relative;
   outline: none;
 }
 .tabs:not(:last-child) {
   width: 50%;
-  // border: 1px solid rgba(0, 0, 0, 0.274);
-  // border-radius: 5px;
 }
 
 .tabs:not(:first-child) {
   width: 50%;
-  // border: 1px solid rgba(0, 0, 0, 0.274);
-  // border-radius: 5px;
 }
 
 .active-tabs {
@@ -39,7 +33,6 @@
 }
 
 .active-tabs::before {
-  // content: "";
   display: block;
   position: relative;
   top: -5px;
@@ -75,10 +68,7 @@ button {
   background: #222;
   margin-bottom: 5px;
 }
-// .content p {
-//   width: 100%;
-  // height: 100%;
-// }
+
 .active-content {
   display: block;
   position: relative;
@@ -95,9 +85,7 @@ button {
     width: 30%;
     padding: 0;
   }
-  // .content {
-  // padding: 0 !important;
-  // }
+
 }
 
 @media screen and (min-width: 760px) and (max-width: 900px) {
@@ -106,16 +94,16 @@ button {
   }
 }
 
-@media screen and (min-width: 320px) and (max-width:760px) {
+@media screen and (min-width: 320px) and (max-width: 760px) {
   .blog-tabs {
     position: relative;
     padding-top: 1rem;
-    transform: translate(0 , 0);
+    transform: translate(0, 0);
     width: 100%;
   }
   .active-content {
     position: relative;
-    transform: translate(0 , 0);
+    transform: translate(0, 0);
     width: 100%;
   }
   .tabs:not(:first-child) {
@@ -124,4 +112,4 @@ button {
   .tabs:not(:last-child) {
     width: 50%;
   }
-} 
+}
