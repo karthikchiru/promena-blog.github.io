@@ -3,11 +3,13 @@
 
 .postlist-banner {
   width: 100%;
-  // height: 80vh;
+  // height: 70vh;
 }
 .postlist {
   border: 1px solid rgb(245, 230, 230);
-  width: 100%;
+  // width: 100%;
+  width: 450px;
+  height: 131px;
   padding: 1.7rem;
   background-color: #fff;
   &:hover {
