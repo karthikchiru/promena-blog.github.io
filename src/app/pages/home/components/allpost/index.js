@@ -37,8 +37,8 @@ const AllPosts  = (props) => {
     </h3>
 
     <div className='card-content'>
-      <h1>Surfing in Maldives</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur<br/> adipisicing elit. Ratione, recusandae.</p>
+      <h3>Surfing in Maldives</h3>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, recusandae.</p>
  
     </div>
     <ul className='main-ul1'>

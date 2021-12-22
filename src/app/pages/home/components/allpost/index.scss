@@ -58,11 +58,14 @@
 }
 
 .padding-class {
-  margin-left: 7rem;
+  h5 {
+    font-size: 7px;
+  }
+  // margin-left: 7rem;
 }
 .profile-img {
   border-radius: 45%;
-  margin-left: 1.6rem;
+  // margin-left: 1.6rem;
 }
 .card-content h5 {
   padding: 20px 0 0 10px;
@@ -78,12 +81,14 @@
   }
   .card-content {
     padding: 0;
+    font-size: 11px;
   }
   .main-ul1 {
     font-family: "Montserrat Regular";
     padding-top: 10px;
     display: flex;
-    font-size: small;
+    font-size: 12px;
+    padding-left: 0;
     margin-left: 0;
     justify-content: space-between;
     list-style-type: none;
@@ -91,7 +96,7 @@
     // margin-left: 3rem;
   }
   .lead1 {
-    padding-left: 1rem;
+    padding-left: 2rem;
   }
   .card-container {
     padding: 0;
@@ -99,6 +104,7 @@
   .post-title {
     text-decoration: none;
     padding: 0;
+    font-size: 14px;
   }
   // .profile-img{
   //   display: none;
@@ -123,7 +129,7 @@
     font-family: "Montserrat Regular";
     padding: 0;
     display: flex;
-    font-size: small;
+    // font-size: small;
     margin: 0;
     // justify-content: space-between;
     list-style-type: none;
@@ -140,12 +146,14 @@
   .post-title {
     text-decoration: none;
     padding: 0;
+    font-size: 14px;
   }
   // .profile-img{
   //   display: none;
   // }
   .card-content1 {
     display: none;
+    font-size: 13px;
   }
 }
 @media screen and (min-width: 900px) and (max-width: 1120px) {
