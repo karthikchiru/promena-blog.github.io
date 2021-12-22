@@ -29,7 +29,7 @@ const Sidebar  = (props) => {
       <img src={post.blogImage} className='posts__image' />
 
 <div className='posts__main'>
-<p className='lead2'>
+<p className='posts__lead2'>
 <NavLink className= 'posts__link' key={post.id} to={`/post/${post.id}`}>  
 <div className = 'posts__title'>{post.blogTitle}
 </div>  </NavLink>

@@ -24,8 +24,8 @@ const Home = () => {
 <Postlist/>
  </div> 
 </div>
-<Tabs/>
 <AllPosts/>
+<Tabs/>
 </div>
     )
 }
