@@ -1,6 +1,12 @@
 @import "../../../../../styles/mixins.scss";
 @import "../../../../../styles//variables.scss";
 
+html,
+body {
+  width: auto !important;
+  overflow-x: hidden !important;
+}
+
 .blog {
   width: 100%;
   &__container {

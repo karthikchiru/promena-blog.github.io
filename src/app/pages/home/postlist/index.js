@@ -27,8 +27,8 @@ const Postlist = () => {
                 { posts.map(val=>{
             return(
                 <div key={val.id} className='postlist'>
-                        <h2><NavLink to={`/post/${val.id}`}>{val.blogCategory}</NavLink> </h2>
-                        <span>{val.blogTitle}</span>
+                        <h2><NavLink to={`/post/${val.id}`} >{val.blogCategory}</NavLink> </h2>
+                        <span className='blogTitle'>{val.blogTitle}</span>
                     </div>
                     
             )
