@@ -15,7 +15,6 @@
   box-sizing: content-box;
   position: relative;
   outline: none;
-  font-size: 15px;
 }
 .tabs:not(:last-child) {
   width: 50%;
@@ -86,6 +85,7 @@ button {
     width: 30%;
     padding: 0;
   }
+
 }
 
 @media screen and (min-width: 760px) and (max-width: 900px) {
