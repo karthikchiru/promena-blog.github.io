@@ -81,7 +81,7 @@ span {
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 512px) {
+@media screen and (min-width: 320px) and (max-width: 760px) {
   .postlist-banner {
     width: 100%;
     height: auto;
@@ -89,10 +89,13 @@ span {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 760px) and (max-width: 1024px) {
   .postlist-banner {
     width: 100%;
     height: 60%;
+  }
+  .postlist {
+    width: 100%;
   }
   .first-list {
     border: 1px solid rgb(245, 230, 230);

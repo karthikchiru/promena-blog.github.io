@@ -75,7 +75,7 @@
   color: #188fff;
 }
 
-@media screen and (min-width: 320px) and (max-width: 648px) {
+@media screen and (min-width: 320px) and (max-width: 760px) {
   .cards {
     width: 100%;
     transform: translate(0 , 0);
@@ -91,7 +91,7 @@
     font-family: "Montserrat Regular";
     padding-top: 10px;
     display: flex;
-    font-size: 12px;
+    font-size: 10px;
     padding-left: 0;
     margin-left: 0;
     justify-content: space-between;
@@ -100,7 +100,7 @@
     // margin-left: 3rem;
   }
   .lead1 {
-    padding-left: 2rem;
+    padding-left: 0.5rem;
   }
   .card-container {
     padding: 0;
@@ -118,9 +118,8 @@
   }
 }
 
-@media screen and (min-width: 648px) and (max-width: 900px) {
+@media screen and (min-width: 768px) and (max-width: 1020px) {
   .cards {
-    width: 60%;
     position: relative;
     margin-left: 0;
     padding: 2rem 1rem;
@@ -135,13 +134,10 @@
   .main-ul1 {
     font-family: "Montserrat Regular";
     padding: 0;
+    font-size: 1rem;
     display: flex;
-    // font-size: small;
     margin: 0;
-    // justify-content: space-between;
     list-style-type: none;
-    // padding-top: 4.4rem;
-    // margin-left: 3rem;
   }
   .lead1 {
     padding-left: 2rem;
@@ -163,21 +159,30 @@
     font-size: 13px;
   }
 }
-@media screen and (min-width: 900px) and (max-width: 1120px) {
+@media screen and (min-width: 1024px) and (max-width: 1420px) {
   .cards {
-    width: 60%;
+    width: 100%;
+    display: flex;
     position: relative;
+    // justify-content: space-between;
     margin-left: 0;
     padding: 2rem 1rem;
   }
   .card-content {
     padding-left: 0;
+    h1 {
+      font-size: large;
+    }
+    p {
+      font-size: medium;
+    }
   }
-  .card-content1 {
-    padding-left: 83%;
+  .main-content {
+    float: center;
+    text-align: center;
   }
   .main-ul1 {
-    font-size: medium;
+    font-size: small;
     width: 100%;
     margin: 0;
     padding: 0;
@@ -185,8 +190,24 @@
   }
   .post-title {
     padding: 0;
+    font-size: large;
   }
   .lead1 {
-    padding-left: 2rem;
+    padding-left: 0;
+  }
+  .padding-class {
+    float: right;
+    text-align: right;
+    align-items : end ;
+    .profile-img {
+      float: center;
+      text-align: center;
+    }
+    h5 {
+      // float: right;
+      font-size: 1rem ;
+      padding: 0;
+      margin: 0;
+    }
   }
 }

@@ -37,7 +37,7 @@ console.log(postList.title)
     return(
       <div className='cards' key={post.Blog_id}>
 <img src={post.blogImage} className='card-image' />
-<div className='main'>
+<div className='main-content'>
 <h3 className='lead1'>
     <NavLink  className = 'post-title' to={`/post/${post.id}`}>  
    {post.blogTitle}
