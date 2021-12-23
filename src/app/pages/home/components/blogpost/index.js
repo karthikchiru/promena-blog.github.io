@@ -8,7 +8,7 @@ import Chart from '../../charts/barchart';
 import blogPost from '../../data/blog.json';
 import Button from 'app/components/button';
 import LoginModal from '../loginmodal'; 
-
+import Comments from '../blogComments/comments';
 
 const BlogPost = (props) => {
 
@@ -22,16 +22,16 @@ const BlogPost = (props) => {
    
   const handleComment = ()=>{
     let isLoggedIn = localStorage.getItem('user-state');
-    
     if(isLoggedIn)
     {
       setShowConfirmModal(false);
       setIsBtnDisabled(true);
-      localStorage.clear();
+      document.getElementById('Common_Field').value = '';
     }
     else{
       setShowConfirmModal(true);
       setIsBtnDisabled(true);
+      localStorage.clear();
       if(user !=='' || user !== undefined)
       {
         setIsBtnDisabled(false);
@@ -43,7 +43,7 @@ const BlogPost = (props) => {
   setIsBtnDisabled(true);
   if(key === 1)
     {
-      setComment(val)
+      setComment(val);
     }
     if(comment)
     {
@@ -66,8 +66,6 @@ useEffect(()=>{
 if(post.blogImage == '') return null;
 
   return(
-<div className='blog'>
-
 <div className='blog__container'>
 
 <h3 className='blog__post'>{post.blogTitle}</h3>
@@ -76,30 +74,35 @@ if(post.blogImage == '') return null;
   <img className='blog__img' src={post.blogImage}/>
 </div>
 <div className='blog__text'>
-
 <div>{post.blogText}</div>
+</div>
+
+<div className='comment-box'>
+  <div className='comment-wrap comment-items'>
+{/* <h2>Leave Comment</h2> */}
+    {/* <div className=' comment-items'>
+    <span className='comment-title'>Comment*</span>
+    <textarea name='' placeholder='Tell Your Story' id = 'Common_Field' onChange={(e)=>handleValueChange(e, 1)} className='comment'  cols='30' rows='5'></textarea>
+    </div> */}
+    
+{/* <div className='submit-button comment-items'>
+<Button className='comment-button' buttonClick={handleComment} isBtnDisabled = {isBtnDisabled}>Comment</Button>
+</div> */}
+<Comments
+        commentsUrl='http://localhost:3004/comments'
+        currentUserId='1'
+      />
+{/* {
+  showConfirmModal && (<LoginModal    onConfirm={onConfirm} confirmTitle='Login to Continue' buttonText={'LOGIN'} />)
+} */}
+  </div>
+</div>
 <div className='chart-wrap'>
 <Chart/>
 </div>
-<div className='comment-box'>
-  <div className='comment-wrap comment-items'>
-<h2>Leave Comment</h2>
-    <div className=' comment-items'>
-    <span className='comment-title'>Comment*</span>
-    <textarea name='' placeholder='Tell Your Story' onChange={(e)=>handleValueChange(e, 1)} className='comment' id='' cols='30' rows='5'></textarea>
-    </div>
-<div className='submit-button comment-items'>
-<Button className='comment-button' buttonClick={handleComment} isBtnDisabled = {isBtnDisabled}>Comment</Button>
-</div>
-{
-  showConfirmModal && (<LoginModal    onConfirm={onConfirm} confirmTitle='Login to Continue' buttonText={'LOGIN'} />)
-}
-  </div>
-</div>
 <p className='mt-5 text-muted'>Posted on: {post.postedOn} by {post.author}</p>
-</div>
 
-</div>
+
 </div>
   );
  }
