@@ -20,15 +20,11 @@ const BlogPost = (props) => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const[postId,setPostId] = useState('');
    
-  console.log(props)
   const handleComment = ()=>{
-   
-    // console.log(comment);
     let isLoggedIn = localStorage.getItem('user-state');
     
     if(isLoggedIn)
     {
-      // debugger
       setShowConfirmModal(false);
       setIsBtnDisabled(true);
       localStorage.clear();
@@ -59,7 +55,6 @@ const BlogPost = (props) => {
    setShowConfirmModal(false);
   }
   
-
 useEffect(()=>{
   // eslint-disable-next-line react/prop-types
   const postId = props.match.params.postId;
@@ -77,7 +72,6 @@ if(post.blogImage == '') return null;
 
 <h3 className='blog__post'>{post.blogTitle}</h3>
 <div className='post-thumb'>
-
 <span className='blog__post__tag'>{post.blogCategory}</span>
   <img className='blog__img' src={post.blogImage}/>
 </div>
@@ -94,17 +88,6 @@ if(post.blogImage == '') return null;
     <span className='comment-title'>Comment*</span>
     <textarea name='' placeholder='Tell Your Story' onChange={(e)=>handleValueChange(e, 1)} className='comment' id='' cols='30' rows='5'></textarea>
     </div>
-{/* <div className='user-name comment-items'>
-<span className='comment-title' >User*</span>
-<Input placeholder='User Name'  value={user} onValueChange={(e)=>handleValueChange(e, 2)}/>
-</div>
-<div className='user-email comment-items'>
-<span className='comment-title'>Email*</span>
-
-
-
-<Input placeholder='Enter Email' value={email}  onValueChange={(e)=>handleValueChange(e, 3)} />
-</div> */}
 <div className='submit-button comment-items'>
 <Button className='comment-button' buttonClick={handleComment} isBtnDisabled = {isBtnDisabled}>Comment</Button>
 </div>
@@ -121,4 +104,4 @@ if(post.blogImage == '') return null;
   );
  }
 
-export default BlogPost
+export default BlogPost;
