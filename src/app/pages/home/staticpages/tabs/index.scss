@@ -112,4 +112,7 @@ button {
   .tabs:not(:last-child) {
     width: 50%;
   }
+  .content {
+    padding: 0 !important;
+  }
 }

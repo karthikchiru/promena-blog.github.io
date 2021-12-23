@@ -25,13 +25,27 @@
   }
 }
 
-// @media screen and (min-width : 768px ) and (max-width : 1022px) {
-//   .wrap {
-//     &__banner {
-//       display: none;
-//     }
-//   }
-// }
+@media screen and (min-width : 320px ) and (max-width : 760px) {
+  .wrap {
+    &__banner {
+      display: none;
+    }
+  }
+  .post-tab {
+    width: 100%;
+    display: block !important;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .all-posts{
+    width: 100% !important;
+  }
+  .all-tabs{
+    width: 100% !important;
+    padding: 0 !important;
+  }
+}
 
 .post-tab {
   width: 100%;
