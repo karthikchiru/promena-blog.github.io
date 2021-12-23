@@ -115,11 +115,6 @@ const Header = () => {
           </li>
         </ul>
       </div>
-      <label htmlFor='show-search' className='search-icon'><i className='fas fa-search'></i></label>
-      <form action='#' className='search-box'>
-        <input type='text' placeholder='Type Something to Search...' required></input>
-        <button type='submit' className='go-icon'><i className='fas fa-long-arrow-alt-right'></i></button>
-      </form>
       </nav>
       </div>:null}
       </div>
