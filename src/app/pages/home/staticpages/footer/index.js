@@ -22,7 +22,7 @@ useLayoutEffect(() => {
 
     return (
       <div>
-      {(pathName !== '/' && pathName !=='/registration' && pathName !== '/forgotPassword')?
+      {(pathName !== '/forgotPassword')?
         <div className='footer'>
             <div className='footer__left'>
                 <img src={logo} alt='my home' className='footer__logo' />
