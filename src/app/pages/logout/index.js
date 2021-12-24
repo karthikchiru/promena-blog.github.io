@@ -1,6 +1,12 @@
 import Confirm from 'app/components/confirmModal/confirm';
 import React, {useState} from 'react';
 import { useHistory } from 'react-router';
+import Tippy from '@tippyjs/react'
+// import ReactTooltip from 'react-tooltip';
+// import IconButton from "@material-ui/core/IconButton";
+// import Tooltip from "@material-ui/core/Tooltip";
+// import PersonIcon from "@material-ui/icons/Person";
+// import DeleteIcon from "@material-ui/icons/Delete";
 import './index.scss';
 
 const Logout = () => {
@@ -17,11 +23,16 @@ const Logout = () => {
         history.push('/');
     }
     return (
+      
         <div>
+        <Tippy content='LogOut'>
 <i className='fa fa-sign-out' onClick={handleLogout} aria-hidden='true'></i>
+</Tippy>
 {confirmLogOut &&  <Confirm buttonText={'OK'} isCancelRequired={true} confirmTitle={alertText}
             onConfirm={onConfirm} onCancel={() => { setconfirmLogOut(false) }} />}
+
 </div>
+
     )
 }
 
