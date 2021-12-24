@@ -24,7 +24,7 @@
 nav .content {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: #f3f7f9;
 }
 nav .content .links {
@@ -52,6 +52,7 @@ nav .content .links {
 }
 .content .links li a {
   text-decoration: none;
+  font-size: 20px;
 }
 .content .links li label {
   display: none;
@@ -153,7 +154,7 @@ nav .content .links {
   top: 0;
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1440px) {
+@media screen and (min-width: 1024px) and (max-width: 1420px) {
   .content .links li a,
   .content .links li label {
     color: black;
