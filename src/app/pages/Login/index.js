@@ -25,13 +25,11 @@ const Login = () => {
     email: email,
     password: password,
   };
-// console.log(payload)
+
 const handleLogin = () => {
 setIsShowLoader(true);
-if (validateEmail(email)
-    && password) {
+if (validateEmail(email) && password) {
       setIsLoggedIn(false);
-
 adminLogin((response)=>{
   console.log(response);
 if(response.jwt)
@@ -39,9 +37,9 @@ if(response.jwt)
 history.push('/home');
 setIsBtnDisabled(false);
 }else{
+setAlertText(response.detail);
 setShowConfirmModal(true);
 setIsShowLoader(false);
-setAlertText(response.detail);
 }
     }, payload)
     localStorage.setItem('user-state', isLoggedIn);
