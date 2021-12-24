@@ -15,7 +15,6 @@
   box-sizing: content-box;
   position: relative;
   outline: none;
-  font-size: 15px;
 }
 .tabs:not(:last-child) {
   width: 50%;
@@ -77,18 +76,19 @@ button {
   align-items: center;
 }
 
-@media screen and (min-width: 900px) and (max-width: 1120px) {
-  .blog-tabs {
-    transform: translate(150%, 2rem);
-  }
-  .active-content {
-    transform: translate(200%, 8rem);
-    width: 30%;
-    padding: 0;
-  }
-}
+// @media screen and (min-width: 900px) and (max-width: 1120px) {
+//   .blog-tabs {
+//     transform: translate(150%, 2rem);
+//   }
+//   .active-content {
+//     transform: translate(200%, 8rem);
+//     width: 30%;
+//     padding: 0;
+//   }
 
-@media screen and (min-width: 760px) and (max-width: 900px) {
+// }
+
+@media screen and (min-width: 760px) and (max-width: 1024px) {
   .content {
     padding: 0;
   }
@@ -98,12 +98,11 @@ button {
   .blog-tabs {
     position: relative;
     padding-top: 1rem;
-    transform: translate(0, 0);
     width: 100%;
   }
   .active-content {
     position: relative;
-    transform: translate(0, 0);
+    padding: 0;
     width: 100%;
   }
   .tabs:not(:first-child) {

@@ -25,23 +25,6 @@
   }
 }
 
-
-@media screen and (min-width : 320px ) and (max-width : 760px) {
-  .wrap {
-    width: 100%;
-    &__banner {
-      display: none;
-    }
-    &__postlist {
-      width: 100%;
-      display: block;
-    }
-  }
-  .width-container {
-    padding: 1rem;
-  }
-}
-
 .post-tab {
   width: 100%;
   display: flex;
@@ -59,4 +42,49 @@
 .all-tabs {
   width: 40%;
   padding: 3rem;
+}
+
+@media screen and (min-width : 320px ) and (max-width : 760px) {
+  .wrap {
+    &__banner {
+      display: none;
+    }
+  }
+  .post-tab {
+    width: 100%;
+    display: block !important;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .all-posts{
+    width: 100% !important;
+  }
+  .all-tabs{
+    width: 100% !important;
+    padding: 0 !important;
+  }
+}
+
+@media screen and (min-width : 760px ) and (max-width : 1024px) {
+  .wrap {
+    &__banner {
+      display: none;
+    }
+  }
+  .post-tab {
+    width: 100%;
+    display: flex !important;
+    position: relative;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .all-posts{
+    width: 60% !important;
+  }
+  .all-tabs{
+    width: 40% !important;
+    padding: 0 !important;
+    padding-left: 1rem !important;
+  }
 }

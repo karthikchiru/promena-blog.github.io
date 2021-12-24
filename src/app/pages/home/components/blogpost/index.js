@@ -20,10 +20,14 @@ const BlogPost = (props) => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const[postId,setPostId] = useState('');
    
+  console.log(props)
   const handleComment = ()=>{
+   
+    // console.log(comment);
     let isLoggedIn = localStorage.getItem('user-state');
     if(isLoggedIn)
     {
+      // debugger
       setShowConfirmModal(false);
       setIsBtnDisabled(true);
       document.getElementById('Common_Field').value = '';
@@ -55,6 +59,7 @@ const BlogPost = (props) => {
    setShowConfirmModal(false);
   }
   
+
 useEffect(()=>{
   // eslint-disable-next-line react/prop-types
   const postId = props.match.params.postId;
@@ -70,6 +75,7 @@ if(post.blogImage == '') return null;
 
 <h3 className='blog__post'>{post.blogTitle}</h3>
 <div className='post-thumb'>
+
 <span className='blog__post__tag'>{post.blogCategory}</span>
   <img className='blog__img' src={post.blogImage}/>
 </div>
@@ -79,15 +85,6 @@ if(post.blogImage == '') return null;
 
 <div className='comment-box'>
   <div className='comment-wrap comment-items'>
-{/* <h2>Leave Comment</h2> */}
-    {/* <div className=' comment-items'>
-    <span className='comment-title'>Comment*</span>
-    <textarea name='' placeholder='Tell Your Story' id = 'Common_Field' onChange={(e)=>handleValueChange(e, 1)} className='comment'  cols='30' rows='5'></textarea>
-    </div> */}
-    
-{/* <div className='submit-button comment-items'>
-<Button className='comment-button' buttonClick={handleComment} isBtnDisabled = {isBtnDisabled}>Comment</Button>
-</div> */}
 <Comments
         commentsUrl='http://localhost:3000/comments'
         currentUserId='1'
@@ -106,4 +103,4 @@ if(post.blogImage == '') return null;
   );
  }
 
-export default BlogPost;
+export default BlogPost
