@@ -1,6 +1,4 @@
-.comments {
-  margin-top: 20px;
-}
+
 
 .comments-title {
   font-size: 30px;
@@ -45,10 +43,6 @@
   margin-left: 10px;
 }
 
-.comment {
-  display: flex;
-  margin-bottom: 28px;
-}
 
 .comment-image-container {
   margin-right: 12px;
@@ -94,4 +88,12 @@
 
 .replies {
   margin-top: 20px;
+}
+
+
+@media screen and (min-width : 320px) and (max-width : 760px) {
+  
+  .comment-text {
+    font-size: medium;
+  }
 }

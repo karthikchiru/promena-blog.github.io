@@ -16,7 +16,7 @@
 }
 .post-sidebar {
   width: 40%;
-  padding-top: 10.3rem;
+  // padding-top: 10.3rem;
 }
 .post-read-button {
   text-align: center;
@@ -36,7 +36,22 @@
   width: 100%;
   position: absolute;
 }
-.fa-angle-down {
-  //   position: absolute;
-  //   padding: 1rem 2rem;
+// .fa-angle-down {
+//     position: absolute;
+//     padding: 1rem 2rem;
+// }
+
+@media screen and (min-width : 320px) and (max-width : 760px) {
+
+  .post-wrapper {
+    display: block;
+    width: 100%;
+  }
+  .blogpost {
+    width: 100%;
+  }
+  .post-sidebar {
+    width: 100%;
+  }
+  
 }
