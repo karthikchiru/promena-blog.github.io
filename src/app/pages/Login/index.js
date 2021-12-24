@@ -25,13 +25,11 @@ const Login = () => {
     email: email,
     password: password,
   };
-// console.log(payload)
+
 const handleLogin = () => {
 setIsShowLoader(true);
-if (validateEmail(email)
-    && password) {
+if (validateEmail(email) && password) {
       setIsLoggedIn(false);
-
 adminLogin((response)=>{
   console.log(response);
 if(response.jwt)
