@@ -4,6 +4,7 @@ import './index.scss';
 import logo from '../../../../../assets/images/promena.png'
 import { useLocation } from 'react-router-dom';
 import {getCategoryDetails, getMenuDetails} from '../../../../utils/apiCalls';
+import Logout from 'app/pages/logout';
 
 const Header = () => {
   const location = useLocation();
@@ -33,7 +34,7 @@ const Header = () => {
       <input type='checkbox' id='show-menu'></input>
       <label htmlFor='show-menu' className='menu-icon'><i className='fas fa-bars'></i></label>
       <div className='content'>
-      <div className='logo'><a href='#'><img src={logo} alt='logo' /></a></div>
+     <a href='#'><img src={logo} className='logo' alt='logo' /></a>
         <ul className='links'>
         <li>
             <a href='#' className='desktop-link'>SEO <i className='fa fa-caret-down' aria-hidden='true'></i></a>
@@ -114,6 +115,7 @@ const Header = () => {
             </ul>
           </li>
         </ul>
+        <Logout/>
       </div>
       </nav>
       </div>:null}
