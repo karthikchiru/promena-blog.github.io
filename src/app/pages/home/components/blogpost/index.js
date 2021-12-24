@@ -89,20 +89,19 @@ if(post.blogImage == '') return null;
 <Button className='comment-button' buttonClick={handleComment} isBtnDisabled = {isBtnDisabled}>Comment</Button>
 </div> */}
 <Comments
-        commentsUrl='http://localhost:3004/comments'
+        commentsUrl='http://localhost:3000/comments'
         currentUserId='1'
+        user ={user}
       />
-{/* {
+{
   showConfirmModal && (<LoginModal    onConfirm={onConfirm} confirmTitle='Login to Continue' buttonText={'LOGIN'} />)
-} */}
+}
   </div>
 </div>
 <div className='chart-wrap'>
 <Chart/>
 </div>
 <p className='mt-5 text-muted'>Posted on: {post.postedOn} by {post.author}</p>
-
-
 </div>
   );
  }

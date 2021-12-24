@@ -11,7 +11,7 @@ import {
   deleteComment as deleteCommentApi,
 } from '../commentApi';
 
-const Comments = ({ commentsUrl, currentUserId }) => {
+const Comments = ({ commentsUrl, currentUserId, user }) => {
   const [backendComments, setBackendComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
   const rootComments = backendComments.filter(
@@ -59,7 +59,7 @@ const Comments = ({ commentsUrl, currentUserId }) => {
       setBackendComments(data);
     });
   }, []);
-
+console.log(user)
   return (
     <div className='comments'>
       <h3 className='comments-title'>Comments</h3>

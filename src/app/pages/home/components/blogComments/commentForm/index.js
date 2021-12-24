@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React , { useState } from 'react';
 import Button from '../../../../../components/button';
-import LoginModal from '../../loginmodal';
+// import LoginModal from '../../loginmodal';
 import './index.scss';
 const CommentForm = ({
   submitLabel,
@@ -11,8 +11,8 @@ const CommentForm = ({
 }) => {
   const [text, setText] = useState(initialText);
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
-  const [showConfirmModal, setShowConfirmModal] = useState(false);
-  const [user, setuser] = useState({});
+  // const [showConfirmModal, setShowConfirmModal] = useState(false);
+  // const [user, setuser] = useState({});
 //   const isTextareaDisabled = text.length === 0;
 //   const onSubmit = (event) => {
 //     event.preventDefault();
@@ -31,42 +31,43 @@ if(text)
     setIsBtnDisabled(false); 
 }
   }
-  const onConfirm =(user)=>{
-    setuser(user);
-    setShowConfirmModal(false);
-   }
+  // const onConfirm =(user)=>{
+  //   setuser(user);
+  //   setShowConfirmModal(false);
+  //  }
    const handleComment = ()=>{
     let isLoggedIn = localStorage.getItem('user-state');
     if(isLoggedIn)
     {
-      setShowConfirmModal(false);
+      // setShowConfirmModal(false);
       setIsBtnDisabled(true);
       localStorage.clear();
 
     //   document.getElementById('Common_Field').value = '';
     }
     else{
-      setShowConfirmModal(true);
+      // setShowConfirmModal(true);
       setIsBtnDisabled(true);
-      if(user !=='' || user !== undefined)
-      {
-        setIsBtnDisabled(false);
-      }
+      // if(user !=='' || user !== undefined)
+      // {
+      //   setIsBtnDisabled(false);
+      // }
     }
   }
   return (
     <div>
       <textarea
         className='comment-form-textarea'
+        placeholder='Tell Your Story'
         value={text}
         onChange={(e) => handleValueChange(e, 1)}
       />
       <Button className='comment-form-button' buttonClick={handleComment} isBtnDisabled = {isBtnDisabled}>
         {submitLabel}
       </Button>
-      {
+      {/* {
   showConfirmModal && (<LoginModal    onConfirm={onConfirm} confirmTitle='Login to Continue' buttonText={'LOGIN'} />)
-}
+      } */}
       {hasCancelButton && (
         <button
           type='button'
