@@ -1,12 +1,12 @@
 import { Route, Switch } from 'react-router-dom';
 import Loader from 'app/components/loader';
 import React from 'react';
-import Login from 'app/pages/login';
+// import Login from 'app/pages/login';
 import ForgotPassword from 'app/pages/forgotPassword';
 // import Customer from 'app/pages/dashboard/index';
 // import Header from '../containers/header/index';
 // import ProtectedRoute from 'app/utils/protectedRoutes';
-import Registration from 'app/pages/registration';
+// import Registration from 'app/pages/registration';
 import Header from '../pages/home/staticpages/header';
 import Home from 'app/pages/home';
 import Post from '../pages/home/posts';
@@ -19,11 +19,11 @@ const Router = () => {
     <Header/>
       <Switch>
       
-        <Route exact path='/' component={Login} />
-        <Route exact path='/registration' component={Registration} />
+        {/* <Route exact path='/' component={Login} /> */}
+        {/* <Route exact path='/registration' component={Registration} /> */}
         <Route exact path='/forgotPassword' component={ForgotPassword} />
-        {/* <ProtectedRoute exact path='/home' component={Home} /> */}
-        <Route exact path='/home' component={Home} />
+        <Route exact path='/' component={Home} />
+        {/* <Route exact path='/home' component={Home} /> */}
         <Route exact path='/post/:postId' component={Post} />
         <Route path={'**'} component={PageNotFound} />
       </Switch>

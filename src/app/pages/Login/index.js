@@ -20,6 +20,7 @@ const Login = () => {
   const [alertText, setAlertText] = useState('');
   const [isShowLoader, setIsShowLoader] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  localStorage.removeItem('token');
 
   const payload = {
     email: email,
@@ -34,12 +35,13 @@ adminLogin((response)=>{
   console.log(response);
 if(response.jwt)
 {
+  localStorage.setItem('token', response.jwt);
 history.push('/home');
 setIsBtnDisabled(false);
 }else{
-setAlertText(response.detail);
 setShowConfirmModal(true);
 setIsShowLoader(false);
+setAlertText(response.detail);
 }
     }, payload)
     localStorage.setItem('user-state', isLoggedIn);

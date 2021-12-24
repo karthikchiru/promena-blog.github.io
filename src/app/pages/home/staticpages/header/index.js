@@ -27,7 +27,7 @@ const Header = () => {
 
     return (
      <div>
-     {(pathName !== '/' && pathName !== '/registration' && pathName !=='/forgotPassword')?
+     {( pathName !=='/forgotPassword')?
      <div className='header-wrapper'>
     <nav>
       <input type='checkbox' id='show-search'></input>
