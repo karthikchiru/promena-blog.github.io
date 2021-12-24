@@ -25,7 +25,8 @@ const Logout = () => {
     return (
       
         <div>
-        <Tippy content='LogOut'>
+        <Tippy className='tippy' content='LogOut'>
+ 
 <i className='fa fa-sign-out' onClick={handleLogout} aria-hidden='true'></i>
 </Tippy>
 {confirmLogOut &&  <Confirm buttonText={'OK'} isCancelRequired={true} confirmTitle={alertText}
