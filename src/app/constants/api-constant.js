@@ -3,9 +3,12 @@ const BaseURL = {
 };
 
 export const API_CONSTANTS = {
- CATEGORY_DETAILS:`${BaseURL.BASE_URL}/category/`,
- MENU_DETAILS:`${BaseURL.BASE_URL}/mainmenu/`,
- POST_LIST:`${BaseURL.BASE_URL}/Blog/`
+ CATEGORY_DETAILS:`${BaseURL.BASE_URL}/Category/CreateCategory`,
+ MENU_DETAILS:`${BaseURL.BASE_URL}/Mainmenu/Createmenu`,
+ POST_LIST:`${BaseURL.BASE_URL}/Blog/BlogPost`,
+ ADMIN_REGISTRATION:`${BaseURL.BASE_URL}/Admin/Register`,
+ ADMIN_LOGIN:`${BaseURL.BASE_URL}/Admin/Login`,
+ GET_REGISTRATION:`${BaseURL.BASE_URL}/Admin/Register`
 };
 
 export const API_METHODS = {
