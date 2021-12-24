@@ -72,8 +72,6 @@ if(post.blogImage == '') return null;
 
   return(
 <div className='blog__container'>
-
-<h3 className='blog__post'>{post.blogTitle}</h3>
 <div className='post-thumb'>
 
 <span className='blog__post__tag'>{post.blogCategory}</span>
