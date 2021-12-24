@@ -39,9 +39,9 @@ if(response.jwt)
 history.push('/home');
 setIsBtnDisabled(false);
 }else{
+setAlertText(response.detail);
 setShowConfirmModal(true);
 setIsShowLoader(false);
-setAlertText(response.detail);
 }
     }, payload)
     localStorage.setItem('user-state', isLoggedIn);
