@@ -36,7 +36,7 @@ const Header = () => {
       <div className='content'>
      <a href='#'><img src={logo} className='logo' alt='logo' /></a>
         <ul className='links'>
-        <li>
+       {/* <li>
             <a href='#' className='desktop-link'>SEO <i className='fa fa-caret-down' aria-hidden='true'></i></a>
             <input type='checkbox' id='show-seo'></input>
             <label htmlFor='show-seo'>Seo</label>
@@ -46,8 +46,8 @@ const Header = () => {
               <li><a href='#'>Drop Menu 3</a></li>
               <li><a href='#'>Drop Menu 4</a></li>
             </ul>
-          </li>
-{/* {menu.length && menu.map((val, index)=>{
+       </li>*/}
+ {menu.length && menu.map((val, index)=>{
   return(
     <li key = {val.menuid}>
             <a href='#' className='desktop-link'>{val.menuname} <i className='fa fa-caret-down' aria-hidden='true'></i></a>
@@ -58,16 +58,16 @@ const Header = () => {
   {category.length && category.map((value, index)=>{
    return(
    
-  <li key={val.menuid}><a href='#'>{(val.menuname === 'PPC'  && value.menuname === 1 ? value.category_name:null) || (val.menuname === 'CONTENT'  && value.menuname === 2 ? value.category_name:null) || (val.menuname === 'SOCIAL'  && value.menuname === 3 ? value.category_name:null)}</a></li>
+  <li key={val.menuid}><a href='#'>{(val.menuname === 'Travel'  && value.menuname === 1 ? value.category_name:null) || (val.menuname === 'Software'  && value.menuname === 2 ? value.category_name:null) || (val.menuname === 'SOCIAL'  && value.menuname === 3 ? value.category_name:null)}</a></li>
    );
   })}
    </ul>
 
           </li>
   )
-})} */}
+})} 
 
-       
+       {/*
            <li>
             <a href='#' className='desktop-link'>CONTENT <i className='fa fa-caret-down' aria-hidden='true'></i></a>
             <input type='checkbox' id='show-content'></input>
@@ -100,7 +100,7 @@ const Header = () => {
               <li><a href='#'>Drop Menu 2</a></li>
               <li><a href='#'>Drop Menu 3</a></li>
             </ul>
-          </li>
+</li> */}
           <li><a href='#'>WEBINARS</a></li>
           <li>
             <a href='#' className='desktop-link'>FOLLOW <i className='fa fa-caret-down' aria-hidden='true'></i></a>
