@@ -26,7 +26,7 @@ const LoginModal = ({ onConfirm, confirmTitle, buttonText, className }) => {
     regex.emailRegex.test(email);
   }
 const obj = {
-  user:user,
+  name:user,
  email: email
 }
 

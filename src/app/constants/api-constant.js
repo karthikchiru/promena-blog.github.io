@@ -8,7 +8,10 @@ export const API_CONSTANTS = {
  POST_LIST:`${BaseURL.BASE_URL}/Blog/BlogPost`,
  ADMIN_REGISTRATION:`${BaseURL.BASE_URL}/Admin/Register`,
  ADMIN_LOGIN:`${BaseURL.BASE_URL}/Admin/Login`,
- GET_REGISTRATION:`${BaseURL.BASE_URL}/Admin/Register`
+ GET_ADMIN_REGISTRATION:`${BaseURL.BASE_URL}/Admin/Register`,
+ USER_REGISTRATION:`${BaseURL.BASE_URL}/UserRegister/Register`,
+ USER_TOKEN:`${BaseURL.BASE_URL}/UserToken/CreateToken`,
+ GET_USER_TOKEN:`${BaseURL.BASE_URL}/UserToken/ViewUserToken`
 };
 
 export const API_METHODS = {

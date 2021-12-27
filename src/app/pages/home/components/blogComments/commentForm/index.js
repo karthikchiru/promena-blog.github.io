@@ -1,8 +1,12 @@
+/* eslint-disable no-debugger */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React , { useState } from 'react';
 import Button from '../../../../../components/button';
-// import LoginModal from '../../loginmodal';
+import LoginModal from '../../loginmodal';
+import {userRegistartion, userToken, getUserToken} from '../../../../../utils/apiCalls';
 import './index.scss';
+import Confirm from 'app/components/confirmModal/confirm';
 const CommentForm = ({
   submitLabel,
   hasCancelButton = false,
@@ -11,8 +15,13 @@ const CommentForm = ({
 }) => {
   const [text, setText] = useState(initialText);
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
-  // const [showConfirmModal, setShowConfirmModal] = useState(false);
-  // const [user, setuser] = useState({});
+  const [showLoginConfirmModal, setshowLoginConfirmModal] = useState(false);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [user, setuser] = useState({});
+  // const [userToken, setUserToken] = useState('');
+  // const [alertText, setAlertText] = useState('');
+
+
 //   const isTextareaDisabled = text.length === 0;
 //   const onSubmit = (event) => {
 //     event.preventDefault();
@@ -25,6 +34,7 @@ let val = e.target.value;
 if(key === 1)
 {
     setText(val);
+    // console.log(val)
 }
 if(text)
 {
@@ -33,27 +43,39 @@ if(text)
   }
   // const onConfirm =(user)=>{
   //   setuser(user);
-  //   setShowConfirmModal(false);
+  //   setshowLoginConfirmModal(false);
   //  }
    const handleComment = ()=>{
-    let isLoggedIn = localStorage.getItem('user-state');
-    if(isLoggedIn)
-    {
-      // setShowConfirmModal(false);
-      setIsBtnDisabled(true);
-      localStorage.clear();
-
-    //   document.getElementById('Common_Field').value = '';
-    }
-    else{
-      // setShowConfirmModal(true);
-      setIsBtnDisabled(true);
-      // if(user !=='' || user !== undefined)
-      // {
-      //   setIsBtnDisabled(false);
-      // }
-    }
+     debugger;
+  setIsBtnDisabled(true); 
+ let token = sessionStorage.getItem('user-token');
+//  getUserToken((resposne)=>{
+//    console.log(resposne);
+//  })
+ if(token)
+ {
+  setIsBtnDisabled(false); 
+  console.log(text);
+  setText('');
+  setIsBtnDisabled(true);
+ }else{
+  setIsBtnDisabled(true);
+  setshowLoginConfirmModal(true);
+ }
   }
+
+  const onConfirm =(user)=>{
+    debugger
+    setuser(user);
+    setshowLoginConfirmModal(false);
+    userToken((res)=>{
+    sessionStorage.setItem('user-token', res.jwt);
+    }, user);
+     userRegistartion((response)=>{
+       console.log(response)
+     }, user);
+   }
+
   return (
     <div>
       <textarea
@@ -65,9 +87,10 @@ if(text)
       <Button className='comment-form-button' buttonClick={handleComment} isBtnDisabled = {isBtnDisabled}>
         {submitLabel}
       </Button>
-      {/* {
-  showConfirmModal && (<LoginModal    onConfirm={onConfirm} confirmTitle='Login to Continue' buttonText={'LOGIN'} />)
-      } */}
+      {/* {showConfirmModal && <Confirm onConfirm={()=>{setShowConfirmModal(false)}}  confirmTitle={alertText}  onCancel={()=>{setShowConfirmModal(false)}} isCancelRequired={false}/>} */}
+      {
+  showLoginConfirmModal && (<LoginModal    onConfirm={onConfirm} confirmTitle='Login to Continue' buttonText={'LOGIN'} />)
+      }
       {hasCancelButton && (
         <button
           type='button'

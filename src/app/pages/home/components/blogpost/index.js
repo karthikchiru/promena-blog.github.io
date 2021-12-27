@@ -20,7 +20,7 @@ const BlogPost = (props) => {
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const[postId,setPostId] = useState('');
    
-  console.log(props)
+  // console.log(props)
   const handleComment = ()=>{
    
     // console.log(comment);
@@ -42,22 +42,23 @@ const BlogPost = (props) => {
       }
     }
   }
-  const handleValueChange =(e, key)=>{
-  let val = e.target.value;
-  setIsBtnDisabled(true);
-  if(key === 1)
-    {
-      setComment(val);
-    }
-    if(comment)
-    {
-      setIsBtnDisabled(false);
-    }
-  }
-  const onConfirm =(user)=>{
-   setuser(user);
-   setShowConfirmModal(false);
-  }
+  // const handleValueChange =(e, key)=>{
+  // let val = e.target.value;
+  // setIsBtnDisabled(true);
+  // if(key === 1)
+  //   {
+  //     setComment(val);
+  //   }
+  //   if(comment)
+  //   {
+  //     setIsBtnDisabled(false);
+  //   }
+  // }
+  // const onConfirm =(user)=>{
+  //  setuser(user);
+  //  console.log(user)
+  //  setShowConfirmModal(false);
+  // }
   
 
 useEffect(()=>{
@@ -88,9 +89,9 @@ if(post.blogImage == '') return null;
         currentUserId='1'
         user ={user}
       />
-{
+{/* {
   showConfirmModal && (<LoginModal    onConfirm={onConfirm} confirmTitle='Login to Continue' buttonText={'LOGIN'} />)
-}
+} */}
   </div>
 </div>
 <div className='chart-wrap'>
