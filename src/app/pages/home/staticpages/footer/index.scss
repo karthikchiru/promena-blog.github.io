@@ -65,21 +65,26 @@
     position: relative;
     display: block;
     flex-direction: row;
-
-    width: 35%;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    // width: 35%;
+    &__content {
+    text-align: center;
+    margin: 1rem;
+    }
     &__input {
       justify-content: center;
-      padding: 5px;
+      padding: 0.5rem;
       align-items: center;
       width: 45%;
-      margin: 5px !important;
+      margin: 0.5rem;
     }
     &__newsletter {
-      padding: 5px;
+      padding: 0.8rem;
       // margin: 0.57rem 1rem;
       color: #fff;
-      margin-left: 30%;
-      width: 35%;
+      width: 45%;
       background-color: #ff4500;
       border: 1px solid #ff4500;
       transition: transform 0.5s ease;
@@ -89,10 +94,16 @@
     }
     &__subscribe {
       transition: transform 5ms ease-in;
+      font-size: x-large;
     }
     &__subscribe:hover {
       color: #188fff;
       transform: scale(0.98);
+    }
+    &__select {
+      padding: 0.5rem;
+      width: 45%;
+      
     }
   }
   &__icons {
@@ -159,6 +170,9 @@
     background-color: #000;
   }
 }
+.span1{
+  font-size: x-large !important;
+}
 
 .topping {
   justify-content: space-evenly;
@@ -187,10 +201,11 @@ body {
     }
     &__right {
       width: 100%;
+      justify-content: center ;
       text-align: center;
       align-items: center;
       position: relative;
-      display: contents;
+      // display: contents;
       &__input {
         width: 45%;
         text-align: center;
@@ -209,7 +224,7 @@ body {
   width: 100%;
 }
 
-@media screen and (min-width: 480px) and (max-width: 780px) {
+@media screen and (min-width: 480px) and (max-width: 760px) {
   .footer {
     display: block;
     padding: 2rem 0.5rem;
@@ -233,10 +248,11 @@ body {
     }
     &__right {
       // width: 50%;
+      justify-content: center;
       text-align: center;
       align-items: center;
       position: relative;
-      display: contents;
+      // display: contents;
       &__input {
         width: 45%;
         text-align: center;
