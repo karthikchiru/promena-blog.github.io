@@ -35,6 +35,7 @@ nav .content .links {
   color: black;
   font-size: 30px;
   font-weight: 600;
+  cursor: pointer;
 }
 .content .links li {
   list-style: none;
@@ -140,7 +141,7 @@ nav .content .links {
   width: 100%;
   line-height: 30px;
   margin: 0 !important;
-  padding-right: 1.5rem !important;  
+  padding-right: 1.5rem !important;
   padding: 0 0.4rem;
   border-radius: 0px !important;
 }
