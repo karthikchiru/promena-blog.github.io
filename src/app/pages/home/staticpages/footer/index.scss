@@ -70,8 +70,8 @@
     justify-content: center;
     // width: 35%;
     &__content {
-    text-align: center;
-    margin: 1rem;
+      text-align: center;
+      margin: 1rem;
     }
     &__input {
       justify-content: center;
@@ -103,7 +103,6 @@
     &__select {
       padding: 0.5rem;
       width: 45%;
-      
     }
   }
   &__icons {
@@ -161,7 +160,7 @@
     background-color: rgba(0, 0, 0, 0.829);
   }
   &__icons ul li:nth-child(2) a:hover {
-    background-color: #e4405f;
+    background-color: #075e54;
   }
   &__icons ul li:nth-child(3) a:hover {
     background-color: #0077b5;
@@ -170,7 +169,7 @@
     background-color: #000;
   }
 }
-.span1{
+.span1 {
   font-size: x-large !important;
 }
 
@@ -201,7 +200,7 @@ body {
     }
     &__right {
       width: 100%;
-      justify-content: center ;
+      justify-content: center;
       text-align: center;
       align-items: center;
       position: relative;

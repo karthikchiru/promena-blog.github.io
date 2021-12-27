@@ -3,11 +3,13 @@ import React, {useState, useEffect} from 'react'
 import './index.scss';
 import logo from '../../../../../assets/images/promena.png'
 import { useLocation } from 'react-router-dom';
+import {useHistory} from 'react-router';
 import {getCategoryDetails, getMenuDetails} from '../../../../utils/apiCalls';
 import Logout from 'app/pages/logout';
 
 const Header = () => {
   const location = useLocation();
+  const history = useHistory();
   let pathName = location.pathname;
   const [menu, setMenu] = useState('');
   const [category, setcategory] = useState('');
@@ -34,7 +36,7 @@ const Header = () => {
       <input type='checkbox' id='show-menu'></input>
       <label htmlFor='show-menu' className='menu-icon'><i className='fas fa-bars'></i></label>
       <div className='content'>
-     <a href='#'><img src={logo} className='logo' alt='logo' /></a>
+     <a onClick={()=>history.push('/')}><img src={logo} className='logo' alt='logo' /></a>
         <ul className='links'>
        {/* <li>
             <a href='#' className='desktop-link'>SEO <i className='fa fa-caret-down' aria-hidden='true'></i></a>

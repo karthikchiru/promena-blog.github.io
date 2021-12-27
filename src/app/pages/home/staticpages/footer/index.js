@@ -62,9 +62,9 @@ useLayoutEffect(() => {
 
                 <div className='footer__icons'>
         <ul>
-                    <li><a href='#' className='fa fa-facebook fa-3x'></a></li>
-                    <li><a href='#' className='fa fa-twitter fa-3x'></a></li>
-                    <li><a href='#' className='fa fa-linkedin fa-3x'></a></li>
+                    <li><a href='https://www.facebook.com/PromenaLLP/' className='fa fa-facebook fa-3x'></a></li>
+                    <li><a href='https://api.whatsapp.com/message/DEEJEJJ7JI4KL1' className='fa fa-whatsapp fa-3x'></a></li>
+                    <li><a href='https://in.linkedin.com/company/promena-inc' className='fa fa-linkedin fa-3x'></a></li>
                     <li><a href='#' className='fa fa-envelope-o fa-3x'></a></li>
 </ul>
                 </div>
