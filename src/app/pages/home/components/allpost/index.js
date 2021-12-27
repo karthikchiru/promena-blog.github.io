@@ -15,14 +15,14 @@ const AllPosts  = (props) => {
 
   const [posts, setPosts] = useState([]);
 const [postList, setPostList] = useState([]);
-console.log(postList.title)
+// console.log(postList.title)
   useEffect(()=>{
 
     const posts = blogPost.data;
     setPosts(posts);
 
     getPostList((response)=>{
-      // console.log(response);
+      console.log(response);
       setPostList(response);
     })
   }, []);
@@ -32,21 +32,21 @@ console.log(postList.title)
     <div className='card-container'>
 
 {
-  posts.map(post => {
+  postList.map(post => {
 
     return(
       <div className='cards' key={post.Blog_id}>
-<img src={post.blogImage} className='card-image' />
+<img src={post.thumbnail} className='card-image' />
 <div className='main-content'>
 <h3 className='lead1'>
-    <NavLink  className = 'post-title' to={`/post/${post.id}`}>  
-   {post.blogTitle}
+    <NavLink  className = 'post-title' to={`/post/${post.Blog_id}`}>  
+   {post.title}
    </NavLink>
     </h3>
 
     <div className='card-content'>
-      <h1>{post.blogCategory}</h1>
-      <p>{post.blogTitle}</p>
+      <h1>{post.category}</h1>
+      <p>{post.content}</p>
  
     </div>
     <ul className='main-ul1'>

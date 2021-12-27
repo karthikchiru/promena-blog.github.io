@@ -31,7 +31,7 @@ export const getCategoryDetails = (callback, payload) => {
   };
 
   export const getRegistrationDetails = (callback, payload) => {
-    const url = `${API_CONSTANTS.GET_REGISTRATION}`;
+    const url = `${API_CONSTANTS.GET_ADMIN_REGISTRATION}`;
     return fetchCall((response) => {
       callback(response);
     }, url, API_METHODS.GET, payload);
@@ -42,4 +42,24 @@ export const getCategoryDetails = (callback, payload) => {
     return fetchCall((response) => {
       callback(response);
     }, url, API_METHODS.POST, payload);
+  };
+
+  export const userRegistartion = (callback, payload) => {
+    const url = `${API_CONSTANTS.USER_REGISTRATION}`;
+    return fetchCall((response) => {
+      callback(response);
+    }, url, API_METHODS.POST, payload);
+  };
+
+  export const userToken = (callback, payload) => {
+    const url = `${API_CONSTANTS.USER_TOKEN}`;
+    return fetchCall((response) => {
+      callback(response);
+    }, url, API_METHODS.POST, payload);
+  };
+  export const getUserToken = (callback, payload) => {
+    const url = `${API_CONSTANTS.GET_USER_TOKEN}`;
+    return fetchCall((response) => {
+      callback(response);
+    }, url, API_METHODS.GET, payload);
   };
