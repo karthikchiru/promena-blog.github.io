@@ -95,8 +95,8 @@ useLayoutEffect(() => {
                     </ul>
                 </div>
             <div className='footer__right'>
-                <h2 className='footer__content'>Subscribe to <span className='Footer__right__subscribe'>PROMENA</span></h2>
-                <p className='footer__content'>Subscribe to our daily newsletter to get the latest industry news.</p>
+                <h2 className='footer__right__content'>Subscribe to <span1 className='Footer__right__subscribe'>PROMENA</span1></h2>
+                <p className='footer__right__content'>Subscribe to our daily newsletter to get the latest industry news.</p>
                 <input required type='text' value={email} className='footer__right__input' onChange={(e)=>{handleOnChange(e, 1)}} placeholder='Enter Email'></input>
                 {/* <input required type='text' className='footer__right__input' placeholder='Enter Last Name'></input>
                 <input required type='text' className='footer__right__input' placeholder='Enter Job Title'></input>
@@ -114,7 +114,7 @@ useLayoutEffect(() => {
               {/* <div className='result'>
                 Above checkbox is {isChecked ? 'checked' : 'un-checked'}.
               </div> */}
-              <select name='select' id='' value={dropdown} onChange={(e)=>{handleOnChange(e, 2)}} >
+              <select className='footer__right__select' name='select' id='' value={dropdown} onChange={(e)=>{handleOnChange(e, 2)}} >
               <option value='--Select--'>--Select--</option>
               {category.length && category.map((val)=>{
               return(  <option key ={val.category_id} value={val.category_id}>{val.category_name}</option>)
