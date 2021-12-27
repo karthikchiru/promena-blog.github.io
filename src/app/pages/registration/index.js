@@ -94,14 +94,14 @@ const Registration = () => {
             <div className='registration__input__width'>
             <i className='fad fa-envelope envelope2'></i>
               <input required type='text' onKeyUp={(event) => { handleKeyEnter(event); }}
-                onChange={(e) => inputHandler(e, 1)} className='registration__input' placeholder='Enter Email'></input>
+                onChange={(e) => inputHandler(e, 1)} className='registration__input' placeholder='Enter Username'></input>
             </div>
           </div>
           <div className='u_display_flex u_align_items registration__width70'>
             <div className='registration__input__width'>
             <i className='fad fa-user'></i>
               <input required type='username' onKeyUp={(event) => { handleKeyEnter(event); }}
-                onChange={(e) => inputHandler(e, 2)} className='registration__input' placeholder='Enter Username'></input>
+                onChange={(e) => inputHandler(e, 2)} className='registration__input' placeholder='Enter Email'></input>
             </div>
           </div>
           <div className='u_display_flex u_align_items registration__width70'>
