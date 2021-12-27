@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom';
 import {getPostList} from '../../../../utils/apiCalls'
 import moment from 'moment';
 import './index.scss'
-
+import ReadMore from '../readmore';
 
 const AllPosts  = (props) => {
 
@@ -48,7 +48,7 @@ var pathname = new URL(url).pathname;
 
     <div className='card-content'>
       <h1>{post.category}</h1>
-      <p>{post.content}</p>
+      <ReadMore post={post.content}/>
  
     </div>
     <ul className='main-ul1'>

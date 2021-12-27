@@ -76,6 +76,15 @@
   padding: 20px 0 0 10px;
   color: #188fff;
 }
+.read-more {
+  cursor: pointer;
+  text-align: left;
+}
+#read-more {
+  color: #188fff;
+  cursor: pointer;
+}
+
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
   .cards {
