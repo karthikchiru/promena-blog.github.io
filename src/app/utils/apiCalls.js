@@ -63,3 +63,9 @@ export const getCategoryDetails = (callback, payload) => {
       callback(response);
     }, url, API_METHODS.GET, payload);
   };
+  export const userSubscribe = (callback, payload) => {
+    const url = `${API_CONSTANTS.USER_SUBSCRIPTION}`;
+    return fetchCall((response) => {
+      callback(response);
+    }, url, API_METHODS.POST, payload);
+  };

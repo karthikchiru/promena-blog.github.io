@@ -29,3 +29,20 @@ export function fetchCall(callback, url, method, payload) {
     });
   }
   
+//   export async function getImage(callback, url, method, payload) {
+//     try {
+//         const response = await fetch(url, {
+//             method, 
+//             body:JSON.stringify(payload),
+//             headers: {
+//                 'Content-Type': 'image/jpeg' || 'application/json'
+//             }
+//         })
+//         const blob = await response.blob()
+//         return callback([URL.createObjectURL(blob), null]);
+//     }
+//     catch (error) {
+//         console.error(`get: error occurred ${error}`);
+//         return callback([null, error])
+//     }
+// }   

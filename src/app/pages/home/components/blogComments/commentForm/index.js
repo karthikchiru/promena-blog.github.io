@@ -8,6 +8,7 @@ import {userRegistartion, userToken, getUserToken} from '../../../../../utils/ap
 import './index.scss';
 import Confirm from 'app/components/confirmModal/confirm';
 const CommentForm = ({
+  handleSubmit,
   submitLabel,
   hasCancelButton = false,
   handleCancel,
@@ -18,35 +19,25 @@ const CommentForm = ({
   const [showLoginConfirmModal, setshowLoginConfirmModal] = useState(false);
   const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [user, setuser] = useState({});
-  // const [userToken, setUserToken] = useState('');
-  // const [alertText, setAlertText] = useState('');
+  const isTextareaDisabled = text.length === 0;
 
-
-//   const isTextareaDisabled = text.length === 0;
-//   const onSubmit = (event) => {
-//     event.preventDefault();
-//     handleSubmit(text);
-//     setText('');
-//   };
   const handleValueChange =(e, key)=>{
     setIsBtnDisabled(true);
 let val = e.target.value;
 if(key === 1)
 {
     setText(val);
-    // console.log(val)
 }
 if(text)
 {
     setIsBtnDisabled(false); 
 }
   }
-  // const onConfirm =(user)=>{
-  //   setuser(user);
-  //   setshowLoginConfirmModal(false);
-  //  }
-   const handleComment = ()=>{
+
+   const onSubmit = (e)=>{
      debugger;
+     e.preventDefault();
+     handleSubmit(text);
   setIsBtnDisabled(true); 
  let token = sessionStorage.getItem('user-token');
 //  getUserToken((resposne)=>{
@@ -77,19 +68,18 @@ if(text)
    }
 
   return (
-    <div>
+    <form onSubmit={onSubmit}>
       <textarea
         className='comment-form-textarea'
         placeholder='Tell Your Story'
         value={text}
         onChange={(e) => handleValueChange(e, 1)}
       />
-      <Button className='comment-form-button' buttonClick={handleComment} isBtnDisabled = {isBtnDisabled}>
+      <button className='comment-form-button'  isBtnDisabled = {isBtnDisabled}>
         {submitLabel}
-      </Button>
-      {/* {showConfirmModal && <Confirm onConfirm={()=>{setShowConfirmModal(false)}}  confirmTitle={alertText}  onCancel={()=>{setShowConfirmModal(false)}} isCancelRequired={false}/>} */}
+      </button>
       {
-  showLoginConfirmModal && (<LoginModal    onConfirm={onConfirm} confirmTitle='Login to Continue' buttonText={'LOGIN'} />)
+  showLoginConfirmModal && (<LoginModal onConfirm={onConfirm} confirmTitle='Login to Continue' buttonText={'LOGIN'} />)
       }
       {hasCancelButton && (
         <button
@@ -100,7 +90,7 @@ if(text)
           Cancel
         </button>
       )}
-    </div>
+    </form>
   );
 };
 

@@ -11,7 +11,8 @@ export const API_CONSTANTS = {
  GET_ADMIN_REGISTRATION:`${BaseURL.BASE_URL}/Admin/Register`,
  USER_REGISTRATION:`${BaseURL.BASE_URL}/UserRegister/Register`,
  USER_TOKEN:`${BaseURL.BASE_URL}/UserToken/CreateToken`,
- GET_USER_TOKEN:`${BaseURL.BASE_URL}/UserToken/ViewUserToken`
+ GET_USER_TOKEN:`${BaseURL.BASE_URL}/UserToken/ViewUserToken`,
+ USER_SUBSCRIPTION:`${BaseURL.BASE_URL}/Subscribe/UserSubscribe`
 };
 
 export const API_METHODS = {
