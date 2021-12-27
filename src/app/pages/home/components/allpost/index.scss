@@ -33,7 +33,7 @@
   padding-left: 3.5rem;
   font-size: 2rem;
   font-family: $monstserrat_regular;
-  h1{
+  h1 {
     font-size: larger;
   }
 }
@@ -85,11 +85,10 @@
   cursor: pointer;
 }
 
-
 @media screen and (min-width: 320px) and (max-width: 760px) {
   .cards {
     width: 100%;
-    transform: translate(0 , 0);
+    transform: translate(0, 0);
     position: relative;
     margin-left: 0;
     padding: 2rem 1rem;
@@ -209,14 +208,14 @@
   .padding-class {
     float: right;
     text-align: right;
-    align-items : end ;
+    align-items: end;
     .profile-img {
       float: center;
       text-align: center;
     }
     h5 {
       // float: right;
-      font-size: 1rem ;
+      font-size: 1rem;
       padding: 0;
       margin: 0;
     }

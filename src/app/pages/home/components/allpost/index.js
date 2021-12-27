@@ -15,7 +15,6 @@ const AllPosts  = (props) => {
 
   const [posts, setPosts] = useState([]);
 const [postList, setPostList] = useState([]);
-let path = 'http://localhost:3000/';
 // console.log(postList.title)
   useEffect(()=>{
 
@@ -38,7 +37,7 @@ console.log(posts)
 var pathname = new URL(url).pathname;
     return(
       <div className='cards' key={post.Blog_id}>
-<img src={`https://promenablog.pythonanywhere.com${pathname}`} key={post.thumbnail} className='card-image' />
+<img src={url} key={post.thumbnail} className='card-image' />
 <div className='main-content'>
 <h3 className='lead1'>
     <NavLink  className = 'post-title' to={`/post/${post.Blog_id}`}>  
