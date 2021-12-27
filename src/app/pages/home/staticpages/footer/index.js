@@ -1,21 +1,54 @@
-import React , { useState, useLayoutEffect} from 'react'
+import React , { useState, useLayoutEffect, useEffect} from 'react'
 import './index.scss'
 import logo from '../../../../../assets/images/promena.png';
 import { useLocation } from 'react-router-dom';
+import {getCategoryDetails, userSubscribe} from '../../../../utils/apiCalls';
+import Button from '../../../../components/button';
 
 const Footer = () => {
   const location = useLocation();
   let pathName = location.pathname;
-    const [isChecked, setIsChecked] = useState(false);
+  const [email, setEmail] = useState('');
+  const [category, setCategory] = useState('');
+  const [dropdown, setDropdown] = useState('');
+  const [isBtnDisabled, setIsBtnDisabled] = useState(true);
 
-  const handleOnChange = () => {
-    setIsChecked(!isChecked);
+  useEffect(() => {
+    getCategoryDetails((res)=>{
+console.log(res);
+setCategory(res);
+    })
+  }, [])
+  const handleOnChange = (e, key) => {
+    setIsBtnDisabled(false);
+ let val = e.target.value;
+ if(key === 1)
+ {
+setEmail(val);
+ }else{
+  setDropdown(val);
+ }
+ if(email && dropdown)
+ {
+   setIsBtnDisabled(false);
+ }
   };
 
   const handleClick = ()=>{
     window.scrollTo(0, 0);
   };
 
+  const handleSubscribe = ()=>{
+   const payload = {
+    User_email_Address:email,
+    category_ID:dropdown
+    }
+    setIsBtnDisabled(false);
+
+      userSubscribe((res)=>{
+        console.log(res);
+         }, payload); 
+  }
 useLayoutEffect(() => {
   // handleClick();
 }, [handleClick]);
@@ -64,12 +97,12 @@ useLayoutEffect(() => {
             <div className='footer__right'>
                 <h2 className='footer__content'>Subscribe to <span className='Footer__right__subscribe'>PROMENA</span></h2>
                 <p className='footer__content'>Subscribe to our daily newsletter to get the latest industry news.</p>
-                <input required type='text' className='footer__right__input' placeholder='Enter First Name'></input>
-                <input required type='text' className='footer__right__input' placeholder='Enter Last Name'></input>
+                <input required type='text' value={email} className='footer__right__input' onChange={(e)=>{handleOnChange(e, 1)}} placeholder='Enter Email'></input>
+                {/* <input required type='text' className='footer__right__input' placeholder='Enter Last Name'></input>
                 <input required type='text' className='footer__right__input' placeholder='Enter Job Title'></input>
-                <input required type='text' className='footer__right__input' placeholder='Enter Email'></input>
-                <div className='topping'>
-                <input type='checkbox' id='topping' name='topping' value='SEO' checked={isChecked} onChange={handleOnChange} />
+                <input required type='text' className='footer__right__input' placeholder='Enter Email'></input> */}
+                {/* <div className='topping'>
+                <input type='checkbox' id='topping' name='topping' value='SEO' checked={isChecked} onChange={handleOnChange(e, 1)} />
                 SEO
                 <input type='checkbox' id='topping' name='topping' value='PPC' checked={isChecked} onChange={handleOnChange} />
                 PPC
@@ -77,11 +110,18 @@ useLayoutEffect(() => {
                 CONTENT
                 <input type='checkbox' id='topping' name='topping' value='SOCIAL' checked={isChecked} onChange={handleOnChange} />
                 SOCIAL
-              </div>
-              <div className='result'>
+              </div> */}
+              {/* <div className='result'>
                 Above checkbox is {isChecked ? 'checked' : 'un-checked'}.
-              </div>
-                <button className='footer__right__newsletter'>Subscribe</button>
+              </div> */}
+              <select name='select' id='' value={dropdown} onChange={(e)=>{handleOnChange(e, 2)}} >
+              <option value='--Select--'>--Select--</option>
+              {category.length && category.map((val)=>{
+              return(  <option key ={val.category_id} value={val.category_id}>{val.category_name}</option>)
+              })}
+               
+              </select>
+                <Button buttonClick={handleSubscribe} isBtnDisabled ={isBtnDisabled} className='footer__right__newsletter'>Subscribe</Button>
             </div>
         </div>:null}
         </div>
