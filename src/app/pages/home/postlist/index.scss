@@ -3,20 +3,18 @@
 
 .postlist-banner {
   width: 100%;
-  // height: 70vh;
 }
 .postlist {
   border: 1px solid rgb(245, 230, 230);
-  // width: 100%;
   width: 400px;
-  padding: 1.7rem;
+  padding: $font_xlarge;
   background-color: $color-white-primary;
   &:hover {
     background-color: $blue1;
-    color: black;
+    color: $dark_shadow;
   }
   h2 a {
-    text-decoration: none;
+    @include textnone;
   }
   a:hover {
     color: $color-white-primary;
@@ -28,39 +26,37 @@
   height: 122px;
   background-color: $color-white-primary;
   &__heading a {
-    // padding: 20px 0 10px 0;
     color: $color-white-primary;
-    // margin-left: 20px;
     font-family: $monstserrat_regular;
   }
   &__content {
-    margin-left: 20px;
+    margin-left: $font_large;
     color: $color-white-primary;
-    font-size: 1.5rem;
+    font-size: $font_button;
     font-weight: 500;
   }
   &__arrow {
     position: absolute;
-    top: 150px;
+    top: $font_top3;
     width: 0;
     height: 0;
-    border-top: 10px solid transparent;
+    border-top: 1rem solid transparent;
     border-left: 1.5rem solid $color-white-primary;
-    border-bottom: 10px solid transparent;
+    border-bottom: 1rem solid transparent;
   }
 }
 
 h2 {
-  padding: 20px 0 10px 0;
-  margin-left: 20px;
+  padding: $font_large 0 $font_verysmall 0;
+  margin-left: $font_large;
   color: $blue1;
   cursor: pointer;
   font-family: $monstserrat_regular;
 }
 
 span {
-  margin-left: 20px;
-  font-size: 1.5rem;
+  margin-left: $font_large;
+  font-size: $font_button;
   font-weight: 500;
 }
 
@@ -77,7 +73,7 @@ span {
     border: 1px solid rgb(245, 230, 230);
     width: 350px;
     // height: 122px;
-    padding: 10px;
+    padding: $font_verysmall;
   }
 }
 
@@ -100,8 +96,6 @@ span {
   .first-list {
     border: 1px solid rgb(245, 230, 230);
     width: 350px;
-    // height: 122px;
-    // padding: 10px;
   }
   .first-list:nth-child(1) {
     background-color: $blue1;
@@ -109,7 +103,6 @@ span {
     width: 100%;
   }
   .postlist {
-    // width: 90%;
     padding: 0.6rem;
   }
   .wrap__postlist {

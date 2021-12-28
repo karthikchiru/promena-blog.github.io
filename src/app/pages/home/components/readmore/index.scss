@@ -1,13 +1,14 @@
 @import "../../../../../styles/mixins.scss";
 @import "../../../../../styles//variables.scss";
 
-.read-more {
-    cursor: pointer;
-}
 .read-more1:hover {
-    color: rgb(34, 110, 160);
+    color: rgb(54, 75, 196);
+    cursor: pointer;
 }
 .view-post:hover {
+    color: rgb(54, 75, 196);
     cursor: pointer;
-    color: rgb(34, 110, 160);
+    h1{
+    font-size: $font_button !important;
+    }
 }

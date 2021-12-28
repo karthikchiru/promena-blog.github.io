@@ -1,18 +1,11 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/mixins.scss";
-// *{
-//   padding: 0;
-//   margin: 0;
-//   box-sizing: border-box;
-//   overflow: hidden;
-// }
+
 .width-container {
-  padding: 3rem 5rem;
-  // padding-top: 0;
+  padding: $font_xxlarge $font_top8;
 }
 .wrap {
-  display: flex;
-  flex-direction: row;
+  @include flexrow;
   max-height: 100%;
   width: 100%;
   &__banner {
@@ -26,36 +19,31 @@
 }
 
 .post-tab {
+  @include flexrow;
   width: 100%;
-  display: flex;
-  // position: relative;
-  flex-direction: row;
   justify-content: center;
 }
 
 .all-posts {
-  width: 60%;
-  // position: relative;
-  // display: flex;
+  width: 60%;;
 }
 
 .all-tabs {
   width: 40%;
-  padding: 3rem;
+  padding: $font_xxlarge;
+  padding-right: 0 !important;
 }
 
 @media screen and (min-width : 320px ) and (max-width : 760px) {
   .wrap {
     &__banner {
-      display: none;
+      @include displaynone;
     }
   }
   .post-tab {
     width: 100%;
-    display: block !important;
-    position: relative;
+    @include relativeblock;
     flex-direction: column;
-    justify-content: center;
   }
   .all-posts{
     width: 100% !important;
@@ -66,18 +54,15 @@
   }
 }
 
-@media screen and (min-width : 760px ) and (max-width : 1024px) {
+@media screen and (min-width : 768px ) and (max-width : 1024px) {
   .wrap {
     &__banner {
-      display: none;
+      @include displaynone;
     }
   }
   .post-tab {
-    width: 100%;
-    display: flex !important;
-    position: relative;
-    flex-direction: row;
-    justify-content: center;
+    @include relativeflex;
+    @include flexrow;
   }
   .all-posts{
     width: 60% !important;
@@ -85,6 +70,6 @@
   .all-tabs{
     width: 40% !important;
     padding: 0 !important;
-    padding-left: 1rem !important;
+    padding-left: $font_verysmall !important;
   }
 }
