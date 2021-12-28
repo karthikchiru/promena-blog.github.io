@@ -75,7 +75,7 @@
     }
     &__subscribe {
       transition: transform 5ms ease-in;
-      font-size: x-large;
+      font-size: x-large !important;
     }
     &__subscribe:hover {
       color: #188fff;
@@ -141,14 +141,6 @@
   &__icons ul li:nth-child(4) a:hover {
     background-color: $dark_shadow;
   }
-}
-.span1 {
-  font-size: x-large !important;
-}
-
-.topping {
-  justify-content: space-evenly;
-  display: flex;
 }
 
 body {

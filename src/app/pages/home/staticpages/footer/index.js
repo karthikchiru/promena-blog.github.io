@@ -213,7 +213,7 @@ const handleKeyEnter = (e) =>{
           <div className='footer__right'>
             <h2 className='footer__right__content'>
               Subscribe to 
-              <span1 className='Footer__right__subscribe'>PROMENA</span1>
+              <span className='footer__right__subscribe'>PROMENA</span>
             </h2>
             <p className='footer__right__content'>
               Subscribe to our daily newsletter to get the latest industry news.
