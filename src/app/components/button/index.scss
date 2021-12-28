@@ -15,12 +15,12 @@
   padding: 1.6rem;
   border-radius: 34px;
   box-shadow: 6px 6px 9px 0 $dark_shadow7, -1px -1px 4px 0 $white_shadow5;
-  border: solid 1px $primary_blue;
+  border: solid 1px $blue1;
   background: linear-gradient(
     312deg,
-    $primary_blue 44%,
-    $primary_blue,
-    $primary_blue
+    $blue1 44%,
+    $blue1,
+    $blue1
   );
 
   &__disabled {
@@ -49,17 +49,17 @@
 //   background-origin: border-box;
 // }
 .button:active {
-  box-shadow: inset -6px -6px 6px 0 $primary_blue,
-    inset 6px 6px 8px 0 $primary_blue, inset 6px 6px 8px 0 $primary_blue,
-    inset -6px -6px 6px 0 $primary_blue !important;
+  box-shadow: inset -6px -6px 6px 0 $blue1,
+    inset 6px 6px 8px 0 $blue1, inset 6px 6px 8px 0 $blue1,
+    inset -6px -6px 6px 0 $blue1 !important;
   border-style: solid;
   border-width: 1px;
   border-image-slice: 1;
   background: linear-gradient(
     312deg,
-    $primary_blue 44%,
-    $primary_blue,
-    $primary_blue
+    $blue1 44%,
+    $blue1,
+    $blue1
   ) !important;
   background-origin: border-box;
 }

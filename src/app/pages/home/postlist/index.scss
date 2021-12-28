@@ -12,7 +12,7 @@
   padding: 1.7rem;
   background-color: $color-white-primary;
   &:hover {
-    background-color: $primary_blue;
+    background-color: $blue1;
     color: black;
   }
   h2 a {
@@ -53,7 +53,7 @@
 h2 {
   padding: 20px 0 10px 0;
   margin-left: 20px;
-  color: $primary_blue;
+  color: $blue1;
   cursor: pointer;
   font-family: $monstserrat_regular;
 }
@@ -65,7 +65,7 @@ span {
 }
 
 .first-list:nth-child(1) {
-  background-color: $primary_blue;
+  background-color: $blue1;
   color: $color-white-primary !important;
 }
 
@@ -104,7 +104,7 @@ span {
     // padding: 10px;
   }
   .first-list:nth-child(1) {
-    background-color: $primary_blue;
+    background-color: $blue1;
     color: $color-white-primary !important;
     width: 100%;
   }

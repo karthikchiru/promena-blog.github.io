@@ -33,17 +33,17 @@
   cursor: pointer;
 }
 .read-next:active {
-  box-shadow: inset -6px -6px 6px 0 $primary_blue,
-    inset 6px 6px 8px 0 $primary_blue, inset 6px 6px 8px 0 $primary_blue,
-    inset -6px -6px 6px 0 $primary_blue !important;
+  box-shadow: inset -6px -6px 6px 0 $blue1,
+    inset 6px 6px 8px 0 $blue1, inset 6px 6px 8px 0 $blue1,
+    inset -6px -6px 6px 0 $blue1 !important;
   border-style: solid;
   border-width: 1px;
   border-image-slice: 1;
   background: linear-gradient(
     312deg,
-    $primary_blue 44%,
-    $primary_blue,
-    $primary_blue
+    $blue1 44%,
+    $blue1,
+    $blue1
   ) !important;
   background-origin: border-box;
 }
