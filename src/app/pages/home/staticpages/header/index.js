@@ -38,17 +38,6 @@ const Header = () => {
       <div className='content'>
      <a onClick={()=>history.push('/')}><img src={logo} className='logo' alt='logo' /></a>
         <ul className='links'>
-       {/* <li>
-            <a href='#' className='desktop-link'>SEO <i className='fa fa-caret-down' aria-hidden='true'></i></a>
-            <input type='checkbox' id='show-seo'></input>
-            <label htmlFor='show-seo'>Seo</label>
-            <ul>
-              <li><a href='#'>Drop Menu 1</a></li>
-              <li><a href='#'>Drop Menu 2</a></li>
-              <li><a href='#'>Drop Menu 3</a></li>
-              <li><a href='#'>Drop Menu 4</a></li>
-            </ul>
-       </li>*/}
  {menu.length && menu.map((val, index)=>{
   return(
     <li key = {index}>
@@ -76,11 +65,27 @@ const Header = () => {
             <input type='checkbox' id='show-social-links'></input>
             <label htmlFor='show-social-links'>Follow Us</label>
             <ul className='social-links'>
-                    {/* <li><a href='#'>Follow Us</a></li> */}
-                    <li><a href='#' className='fa fa-facebook fa-3x'></a></li>
-                    <li><a href='#' className='fa fa-twitter fa-3x'></a></li>
-                    <li><a href='#' className='fa fa-linkedin fa-3x'></a></li>
-                    <li><a href='#' className='fa fa-envelope-o fa-3x'></a></li>
+                    <li>
+                  <a
+                    href='https://www.facebook.com/PromenaLLP/'
+                    className='fa fa-facebook fa-3x'
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href='https://api.whatsapp.com/message/DEEJEJJ7JI4KL1'
+                    className='fa fa-whatsapp fa-3x'
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href='https://in.linkedin.com/company/promena-inc'
+                    className='fa fa-linkedin fa-3x'
+                  ></a>
+                </li>
+                <li>
+                  <a href='#' className='fa fa-envelope-o fa-3x'></a>
+                </li>
                   </ul>
                 </li>
               </ul>
