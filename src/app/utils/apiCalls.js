@@ -58,14 +58,30 @@ export const getCategoryDetails = (callback, payload) => {
       callback(response);
     }, url, API_METHODS.POST, payload);
   };
+
   export const getUserToken = (callback, payload) => {
     const url = `${API_CONSTANTS.GET_USER_TOKEN}`;
     return fetchCall((response) => {
       callback(response);
     }, url, API_METHODS.GET, payload);
   };
+
   export const userSubscribe = (callback, payload) => {
     const url = `${API_CONSTANTS.USER_SUBSCRIPTION}`;
+    return fetchCall((response) => {
+      callback(response);
+    }, url, API_METHODS.POST, payload);
+  };
+
+  export const userComment = (callback, payload) => {
+    const url = `${API_CONSTANTS.USER_COMMENT}`;
+    return fetchCall((response) => {
+      callback(response);
+    }, url, API_METHODS.POST, payload);
+  };
+
+  export const getUserComments = (callback, payload) => {
+    const url = `${API_CONSTANTS.GET_USER_COMMENT}`;
     return fetchCall((response) => {
       callback(response);
     }, url, API_METHODS.POST, payload);

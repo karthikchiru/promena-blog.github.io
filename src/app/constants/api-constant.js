@@ -12,7 +12,9 @@ export const API_CONSTANTS = {
  USER_REGISTRATION:`${BaseURL.BASE_URL}/UserRegister/Register`,
  USER_TOKEN:`${BaseURL.BASE_URL}/UserToken/CreateToken`,
  GET_USER_TOKEN:`${BaseURL.BASE_URL}/UserToken/ViewUserToken`,
- USER_SUBSCRIPTION:`${BaseURL.BASE_URL}/Subscribe/UserSubscribe`
+ USER_SUBSCRIPTION:`${BaseURL.BASE_URL}/Subscribe/UserSubscribe`,
+ USER_COMMENT:`${BaseURL.BASE_URL} /Comment/BlogComment`,
+ GET_USER_COMMENT:`${BaseURL.BASE_URL} /Comment/BlogComment`
 };
 
 export const API_METHODS = {

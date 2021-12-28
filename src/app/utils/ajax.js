@@ -37,17 +37,22 @@ export function fetchCall(callback, url, method, payload) {
 //         method, 
 //         body:JSON.stringify(payload),
 //         headers: {
-//             'Content-Type': 'image/jpeg'
+//             'Content-Type': 'application/json'
 //         }
 //       }
 //       fetch(url, options).then((response)=>{
 //         console.log(response)
-//         const blob =  response.blob();
-//       return window.URL.createObjectURL(new Blob(blob), null);
+//         response.json();
+//       }).then((res)=>{
+//         console.log(res)
+//       //   const imageObjectURL = URL.createObjectURL(imageBlob);
+//       // console.log(imageObjectURL);
 //       }).then((res)=>{
 //         res.json();
+//         console.log(res);
 //       }).then((res)=>{
 //         callback(res);
+//         console.log(res)
 //         resolve(res);
 //       }).catch((err)=>{
 //         callback(err);
