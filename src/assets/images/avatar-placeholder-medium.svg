@@ -6,7 +6,7 @@
         <g>
             <g>
                 <g transform="translate(-59 -40) translate(59 40)">
-                    <mask id="k41ijy0l4b" fill="#fff">
+                    <mask id="k41ijy0l4b" fill="$color-white-primary">
                         <use xlink:href="#zp01ikv4za"/>
                     </mask>
                     <use fill="#F0F0F0" xlink:href="#zp01ikv4za"/>

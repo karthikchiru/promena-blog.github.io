@@ -4,6 +4,11 @@ import { useState, useEffect } from 'react';
 import CommentForm from '../commentForm';
 import Comment from '../comment';
 import './index.scss';
+// import {
+//   userComment as createCommentApi,
+//   getUserComments as getCommentsApi
+// } from '../../../../../utils/apiCalls';
+
 import {
   getComments as getCommentsApi,
   createComment as createCommentApi,
@@ -57,6 +62,7 @@ const Comments = ({ commentsUrl, currentUserId, user }) => {
   useEffect(() => {
     getCommentsApi().then((data) => {
       setBackendComments(data);
+      console.log(data);
     });
   }, []);
 console.log(user)

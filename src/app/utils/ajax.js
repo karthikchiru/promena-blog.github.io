@@ -29,20 +29,35 @@ export function fetchCall(callback, url, method, payload) {
     });
   }
   
-//   export async function getImage(callback, url, method, payload) {
-//     try {
-//         const response = await fetch(url, {
-//             method, 
-//             body:JSON.stringify(payload),
-//             headers: {
-//                 'Content-Type': 'image/jpeg' || 'application/json'
-//             }
-//         })
-//         const blob = await response.blob()
-//         return callback([URL.createObjectURL(blob), null]);
-//     }
-//     catch (error) {
-//         console.error(`get: error occurred ${error}`);
-//         return callback([null, error])
-//     }
+//   export function getImage(callback, url, method, payload) {
+//     debugger;
+//     return new Promise(function (resolve, reject)
+//     {
+//       const options = {
+//         method, 
+//         body:JSON.stringify(payload),
+//         headers: {
+//             'Content-Type': 'application/json'
+//         }
+//       }
+//       fetch(url, options).then((response)=>{
+//         console.log(response)
+//         response.json();
+//       }).then((res)=>{
+//         console.log(res)
+//       //   const imageObjectURL = URL.createObjectURL(imageBlob);
+//       // console.log(imageObjectURL);
+//       }).then((res)=>{
+//         res.json();
+//         console.log(res);
+//       }).then((res)=>{
+//         callback(res);
+//         console.log(res)
+//         resolve(res);
+//       }).catch((err)=>{
+//         callback(err);
+//         return err;
+//       })
+
+//     })
 // }   
