@@ -2,91 +2,72 @@
 @import "../../../../../styles/mixins.scss";
 
 .footer {
-  position: relative;
-  display: flex;
-  width: 100%;
-  // height: 300px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-  background-color: rgba(79, 95, 94, 0.281);
-  padding: 1rem;
+  @include relativeflex;
+  @include rowevenly;
+  background-color: $grey10;
+  padding: $font_verysmall;
   ul {
-    list-style-type: none;
+   @include listnone;
   }
   ul li a {
-    text-decoration: none;
+    @include textnone;
     cursor: pointer;
   }
   &__center1 {
-    position: relative;
-    display: block;
-    justify-content: center;
-    flex-direction: column;
-    font-size: 1.3rem;
+    @include relativeblock;
+    @include columncenter;
+    font-size: $font_text;
     font-family: $monstserrat_regular;
     ul li a {
       color: $dark2;
-      // margin-top: 10px;
       letter-spacing: 1.5px;
     }
     li {
-      margin-top: 5px;
+      margin-top: $font_xverysmall;
     }
     transition: transform 2s ease-in-out;
   }
   &__center1 li a:hover:nth-child(2n + 1) {
     transform: scale(0.98);
-    // background-color: $primary_blue;
-    color: $primary_blue;
+    color: $blue1;
   }
   &__center2 {
-    position: relative;
-    display: block;
-    justify-content: center;
+    @include relativeblock;
     flex-direction: column;
-    font-size: 1.3rem;
+    font-size: $font_text;
     font-family: $monstserrat_regular;
     ul li a {
       color: $dark2;
       letter-spacing: 2px;
     }
     li {
-      margin-top: 5px;
+      margin-top: $font_xverysmall;
     }
     transition: transform 3s ease;
   }
   &__center2 li a:hover:nth-child(2n + 1) {
     transform: scale(0.98);
-    // background-color: $primary_blue;
-    color: $primary_blue;
+    color: $blue1;
   }
   &__right {
-    position: relative;
-    display: block;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    // width: 35%;
+    @include relativeblock;
+    @include rowcenter;
     &__content {
       text-align: center;
-      margin: 1rem;
+      margin: $font_verysmall;
     }
     &__input {
       justify-content: center;
-      padding: 0.5rem;
       align-items: center;
+      padding: $font_xverysmall;
       width: 45%;
-      margin: 0.5rem;
+      margin: $font_xverysmall;
     }
     &__newsletter {
       padding: 0.8rem;
-      // margin: 0.57rem 1rem;
       color: $color-white-primary;
       width: 45%;
-      background-color: #ff4500;
-      border: 1px solid #ff4500;
+      background-color: $blue1;
       transition: transform 0.5s ease;
     }
     &__newsletter:hover {
@@ -97,40 +78,34 @@
       font-size: x-large;
     }
     &__subscribe:hover {
-      color: $primary_blue;
+      color: #188fff;
       transform: scale(0.98);
     }
     &__select {
-      padding: 0.5rem;
+      padding: $font_xverysmall;
       width: 45%;
     }
   }
   &__icons {
     display: flex;
     flex-direction: column;
-    margin: 0.5rem;
+    margin: $font_xverysmall;
   }
   &__icons ul {
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    padding: 0;
-    margin: 0;
-    flex-direction: column;
-    // transform: translate(-50%, -50%);
-    display: flex;
+    @include marpad;
+    @include flexcolumn;
   }
 
   &__icons ul li {
-    list-style: none;
+    @include listnone;
     margin: 0 1.5rem;
   }
 
   &__icons ul li .fab {
-    font-size: 30px;
-    line-height: 60px;
+    font-size: $font_xxlarge;
+    line-height: $font_top7;
     transition: 0.3s;
-    color: #000;
+    color: $dark_shadow;
   }
 
   &__icons ul li .fab:hover {
@@ -138,16 +113,14 @@
   }
 
   &__icons ul li a {
-    width: 50px;
-    height: 45px;
-    padding: 13px 0;
-    margin: 7px;
-    justify-content: center;
-    font-size: 20px;
+    width: $font_top8;
+    height: 4.5rem;
+    padding: 1.3rem 0;
+    margin: 0.7rem;
+    @include allcenter;
+    font-size: $font_large;
     border-radius: 50%;
     background-color: $color-white-primary;
-    text-align: center;
-    align-items: center;
     transition: 0.6s;
     box-shadow: 0 5px 4px rgba(0, 0, 0, 0.5);
   }
@@ -160,13 +133,13 @@
     background-color: rgba(0, 0, 0, 0.829);
   }
   &__icons ul li:nth-child(2) a:hover {
-    background-color: #128577;
+    background-color: #075e54;
   }
   &__icons ul li:nth-child(3) a:hover {
     background-color: #0077b5;
   }
   &__icons ul li:nth-child(4) a:hover {
-    background-color: #000;
+    background-color: $dark_shadow;
   }
 }
 .span1 {
@@ -185,36 +158,31 @@ body {
 @media screen and (min-width: 320px) and (max-width: 480px) {
   .footer {
     display: block;
-    padding: 2rem 0.5rem;
+    padding: $font_large $font_xverysmall;
     &__left {
       display: -webkit-inline-box;
-      padding-left: 8rem;
+      padding-left: $font_top6;
     }
     &__center1 {
-      display: flex;
-      align-items: center;
+      @include flexbox;
     }
     &__center2 {
-      display: flex;
-      align-items: center;
+      @include flexbox;
     }
     &__right {
-      width: 100%;
-      justify-content: center;
-      text-align: center;
-      align-items: center;
       position: relative;
-      // display: contents;
+      width: 100%;
+      @include allcenter;
       &__input {
         width: 45%;
         text-align: center;
       }
       &__newsletter {
-        margin-top: 0.5rem;
+        margin-top: $font_xverysmall;
       }
     }
     &__content {
-      padding-right: 5rem;
+      padding-right: $font_top8;
     }
   }
 }
@@ -226,18 +194,15 @@ body {
 @media screen and (min-width: 480px) and (max-width: 760px) {
   .footer {
     display: block;
-    padding: 2rem 0.5rem;
+    padding: $font_large $font_xverysmall;
     &__left {
       display: flex;
-      // width: 50%;
       display: -webkit-inline-box;
-      padding-left: 8rem;
+      padding-left: $font_top6;
     }
     &__center1 {
       width: 50%;
-      display: flex;
-      position: absolute;
-      align-items: center;
+      @include absolueflex;
     }
     &__center2 {
       width: 50%;
@@ -246,22 +211,18 @@ body {
       align-items: center;
     }
     &__right {
-      // width: 50%;
-      justify-content: center;
-      text-align: center;
-      align-items: center;
+      @include allcenter;
       position: relative;
-      // display: contents;
       &__input {
         width: 45%;
         text-align: center;
       }
       &__newsletter {
-        margin-top: 0.5rem;
+        margin-top: $font_xverysmall;
       }
     }
     &__content {
-      padding-right: 5rem;
+      padding-right: $font_top8;
     }
   }
 }

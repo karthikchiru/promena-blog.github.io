@@ -13,14 +13,14 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    width: 50%;
+    height: 95%;
     transform: translate(-50%, -50%);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 50%;
-    height: 95%;
-    background-color: $color-white-primary !important;
+    background-color: #fff !important;
     border-radius: 0px;
     box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 10%);
     opacity: 1;
@@ -56,7 +56,7 @@
     cursor: pointer;
     padding: 0.5rem 0;
     font-family: $monstserrat_regular;
-    color: $primary_blue;
+    color: #188fff;
   }
   &__width70 {
     width: 100%;
@@ -75,9 +75,9 @@
     font-weight: 500;
     min-height: 2.35294rem;
     line-height: 1.2rem;
-    color: $color-white-primary;
-    background: $primary_blue !important;
-    border: 1px solid $primary_blue !important;
+    color: #fff;
+    background: #188fff !important;
+    border: 1px solid #188fff !important;
     font-size: 18px;
     border-radius: 2rem;
     margin-top: 3rem;
@@ -106,14 +106,14 @@
     justify-content: flex-end;
     align-items: center;
     font-weight: bold;
-    color: $color-white-primary;
+    color: #fff;
     cursor: pointer;
   }
   &__element2 {
     font-size: 1.2rem;
     cursor: pointer;
     font-family: $monstserrat_regular;
-    color: $primary_blue;
+    color: #188fff;
     margin-top: 1em;
     font-weight: 500;
     min-height: 2.35294rem;
@@ -124,7 +124,7 @@
     }
   }
   &__content {
-    color: $color-white-primary;
+    color: #fff;
     font-weight: 700;
     color: black;
     margin-top: 8rem;
@@ -180,7 +180,7 @@
       margin: 1.2rem 0;
       padding-left: 35px;
       border-radius: 13px;
-      font-size: 1.5rem;
+      font-size: 15px;
       border: 1px solid $alto;
       width: 100%;
       line-height: 1.8;
@@ -190,11 +190,11 @@
     }
 
     &__password {
-      font-size: $font_medium;
+      font-size: 1.4rem;
       cursor: pointer;
       padding: 0.5rem 0;
       font-family: $monstserrat_regular;
-      color: $primary_blue;
+      color: #188fff;
       margin-right: 40px;
     }
     &__element1 {
@@ -302,11 +302,11 @@
     }
 
     &__password {
-      font-size: $font_medium;
+      font-size: 1.4rem;
       cursor: pointer;
       padding: 0.5rem 0;
       font-family: $monstserrat_regular;
-      color: $primary_blue;
+      color: #188fff;
       margin-right: 33px;
     }
     &__element1 {
@@ -318,7 +318,7 @@
     &__button2 {
       padding: 1.2rem !important;
       width: 50% !important;
-      font-size: $font_medium !important;
+      font-size: 1.4rem !important;
     }
     &__content {
       margin-top: 0;
@@ -390,7 +390,7 @@
       cursor: pointer;
       padding: 0.5rem 0;
       font-family: $monstserrat_regular;
-      color: $primary_blue;
+      color: #188fff;
       margin-right: 33px;
     }
     &__element1 {
