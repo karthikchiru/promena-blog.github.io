@@ -87,7 +87,6 @@ if(post.blogImage == '') return null;
 <Comments
         commentsUrl='http://localhost:3000/comments'
         currentUserId='1'
-        user ={user}
       />
 {/* {
   showConfirmModal && (<LoginModal    onConfirm={onConfirm} confirmTitle='Login to Continue' buttonText={'LOGIN'} />)
