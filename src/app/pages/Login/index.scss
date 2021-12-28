@@ -31,7 +31,7 @@
     flex-direction: column;
     width: 30%;
     height: 90%;
-    background-color: #fff !important;
+    background-color: $color-white-primary !important;
     border-radius: 0px;
     box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 10%);
     opacity: 1;
@@ -59,7 +59,7 @@
     cursor: pointer;
     padding: 0.5rem 0;
     font-family: $monstserrat_regular;
-    color: #188fff;
+    color: $primary_blue;
   }
   &__width70 {
     width: 100%;
@@ -78,9 +78,9 @@
     font-weight: 500;
     min-height: 2.35294rem;
     line-height: 1rem;
-    color: #fff !important;
-    background: #188fff !important;
-    border: 1px solid #188fff !important;
+    color: $color-white-primary !important;
+    background: $primary_blue !important;
+    border: 1px solid $primary_blue !important;
     font-size: 16px;
     border-radius: 2rem;
     width: 68% !important;
@@ -108,7 +108,7 @@
     justify-content: flex-end;
     align-items: center;
     font-weight: bold;
-    color: #fff;
+    color: $color-white-primary;
     cursor: pointer;
   }
   &__element1 {
@@ -116,17 +116,17 @@
     // font-size: 1.1rem;
     cursor: pointer;
     font-family: $monstserrat_regular;
-    color: #188fff;
+    color: $primary_blue;
     font-weight: 700;
     min-height: 2.35294rem;
     font-size: 1.8rem;
     margin-left: 0;
     background: 0 0;
-    border: 1px solid #188fff;
+    border: 1px solid $primary_blue;
     font-family: inherit;
     padding: 0.6em 1.3em;
     margin-top: 1.2rem;
-    background-color: #fff;
+    background-color: $color-white-primary;
     border-radius: 2rem;
     display: inline-block;
     zoom: 1;
@@ -135,7 +135,7 @@
     bottom: 4rem;
   }
   &__content {
-    color: #fff;
+    color: $color-white-primary;
     font-size: 11px;
     font-weight: 500;
     color: black;
@@ -145,13 +145,13 @@
   }
 }
 .envelope1 {
-  font-size: 15px;
+  font-size: 1.5rem;
   color: rgb(156, 146, 146);
   left: 10px;
   top: 41.5px !important;
 }
 .lock1 {
-  font-size: 15px;
+  font-size: 1.5rem;
   color: rgb(168, 164, 164);
   left: 10px;
   top: 41.5px !important;
@@ -191,7 +191,7 @@
       margin: 1.2rem 0;
       padding-left: 35px;
       border-radius: 13px;
-      font-size: 15px;
+      font-size: 1.5rem;
       border: 1px solid $alto;
       width: 100%;
       line-height: 1.8;
@@ -201,11 +201,11 @@
     }
 
     &__password {
-      font-size: 1.4rem;
+      font-size: $font_medium;
       cursor: pointer;
       padding: 0.5rem 0;
       font-family: $monstserrat_regular;
-      color: #188fff;
+      color: $primary_blue;
       margin-right: 40px;
     }
     &__element1 {
@@ -229,7 +229,7 @@
     top: 46px !important;
   }
   .lock1 {
-    font-size: 15px;
+    font-size: 1.5rem;
     color: rgb(168, 164, 164);
     left: 10px;
     top: 44px !important;
@@ -350,11 +350,11 @@
     }
 
     &__password {
-      font-size: 1.4rem;
+      font-size: $font_medium;
       cursor: pointer;
       padding: 0.5rem 0;
       font-family: $monstserrat_regular;
-      color: #188fff;
+      color: $primary_blue;
       margin-right: 33px;
     }
     &__element1 {
@@ -378,7 +378,7 @@
     top: 43px !important;
   }
   .lock1 {
-    font-size: 15px;
+    font-size: 1.5rem;
     color: rgb(168, 164, 164);
     left: 10px;
     top: 42px !important;
@@ -436,7 +436,7 @@
       cursor: pointer;
       padding: 0.5rem 0;
       font-family: $monstserrat_regular;
-      color: #188fff;
+      color: $primary_blue;
       margin-right: 33px;
     }
     &__element1 {

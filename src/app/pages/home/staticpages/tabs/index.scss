@@ -7,7 +7,7 @@
   position: relative;
 }
 .tabs {
-  padding: 15px;
+  padding: 1.5rem;
   text-align: center;
   width: 50%;
   background: rgba(90, 69, 69, 0.075);
@@ -15,7 +15,7 @@
   box-sizing: content-box;
   position: relative;
   outline: none;
-  font-size: 15px;
+  font-size: 1.5rem;
 }
 .tabs:not(:last-child) {
   width: 50%;
@@ -30,7 +30,7 @@
   color: #0d6efd;
   border-bottom: 1px solid rgba(0, 46, 145, 0.274);
   color: rgb(10, 100, 173);
-  font-size: 15px;
+  font-size: 1.5rem;
 }
 
 .active-tabs::before {

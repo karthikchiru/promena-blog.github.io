@@ -75,7 +75,7 @@
         color: $grey7;
       }
       &__custom-dropdown {
-        // padding-top: 1.4rem;
+        // padding-top: $font_medium;
         width: 100%;
         font-size: 1rem;
         color: $color-white-primary;
@@ -188,8 +188,8 @@
       }
       &__textWidth {
         width: 100%;
-        // margin-top: 1.4rem;
-        padding: 1.4rem 1.4rem 0rem 2rem;
+        // margin-top: $font_medium;
+        padding: $font_medium $font_medium 0rem 2rem;
         border-radius: 12px;
         box-shadow: -6px -6px 9px 0 $white_shadow6, 6px 6px 8px 0 $dark_shadow4,
           inset 6px 6px 8px 0 $dark_shadow10, inset -6px -6px 6px 0 $dark6;
@@ -252,8 +252,8 @@
           }
           #cancel-btn {
             position: absolute;
-            right: 15px;
-            top: 15px;
+            right: 1.5rem;
+            top: 1.5rem;
             cursor: pointer;
             font-size: 20px;
             color: $dark2;
@@ -318,7 +318,7 @@
   }
 
   &__pad1 {
-    padding: 1.3rem 1.4rem 1rem 2rem;
+    padding: 1.3rem $font_medium 1rem 2rem;
   }
 
   &__pad-left {

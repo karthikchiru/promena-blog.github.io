@@ -37,8 +37,8 @@
   }
   &__center1 li a:hover:nth-child(2n + 1) {
     transform: scale(0.98);
-    // background-color: #188fff;
-    color: #188fff;
+    // background-color: $primary_blue;
+    color: $primary_blue;
   }
   &__center2 {
     position: relative;
@@ -58,8 +58,8 @@
   }
   &__center2 li a:hover:nth-child(2n + 1) {
     transform: scale(0.98);
-    // background-color: #188fff;
-    color: #188fff;
+    // background-color: $primary_blue;
+    color: $primary_blue;
   }
   &__right {
     position: relative;
@@ -83,7 +83,7 @@
     &__newsletter {
       padding: 0.8rem;
       // margin: 0.57rem 1rem;
-      color: #fff;
+      color: $color-white-primary;
       width: 45%;
       background-color: #ff4500;
       border: 1px solid #ff4500;
@@ -97,7 +97,7 @@
       font-size: x-large;
     }
     &__subscribe:hover {
-      color: #188fff;
+      color: $primary_blue;
       transform: scale(0.98);
     }
     &__select {
@@ -123,7 +123,7 @@
 
   &__icons ul li {
     list-style: none;
-    margin: 0 15px;
+    margin: 0 1.5rem;
   }
 
   &__icons ul li .fab {
@@ -134,7 +134,7 @@
   }
 
   &__icons ul li .fab:hover {
-    color: #fff;
+    color: $color-white-primary;
   }
 
   &__icons ul li a {
@@ -145,7 +145,7 @@
     justify-content: center;
     font-size: 20px;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: $color-white-primary;
     text-align: center;
     align-items: center;
     transition: 0.6s;
@@ -160,7 +160,7 @@
     background-color: rgba(0, 0, 0, 0.829);
   }
   &__icons ul li:nth-child(2) a:hover {
-    background-color: #075e54;
+    background-color: #128577;
   }
   &__icons ul li:nth-child(3) a:hover {
     background-color: #0077b5;

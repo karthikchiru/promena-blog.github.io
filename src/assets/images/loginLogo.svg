@@ -5,11 +5,11 @@
                 <g>
                     <g>
                         <path fill="#F8F8F8" fill-rule="nonzero" d="M17.837 3.508c2.312 0 4.185 1.874 4.185 4.185v12.904c0 2.311-1.873 4.184-4.185 4.184H4.211c-2.311 0-4.184-1.873-4.184-4.184V7.693c0-2.311 1.873-4.185 4.184-4.185h13.626zM15.67 7.661H8.512c-.263 0-.515.105-.701.29l-4.045 4.044c-.624.625-.182 1.693.701 1.693H9.65c.552 0 .997.45.991 1l-.05 5.198c-.008.886 1.065 1.337 1.693.71l4.086-4.087c.186-.186.29-.438.29-.702V8.652c0-.547-.444-.991-.991-.991z" transform="translate(-134 -62) translate(134 62) translate(5.6 4.2)"/>
-                        <path stroke="#FFF" stroke-width="2.94" d="M7.571 1.663c-.819 1.341-.148 3.076 0 3.437h6.908c.148-.361.819-2.094 0-3.437-1.295-2.12-5.613-2.12-6.908 0z" transform="translate(-134 -62) translate(134 62) translate(5.6 4.2)"/>
+                        <path stroke="$color-white-primary" stroke-width="2.94" d="M7.571 1.663c-.819 1.341-.148 3.076 0 3.437h6.908c.148-.361.819-2.094 0-3.437-1.295-2.12-5.613-2.12-6.908 0z" transform="translate(-134 -62) translate(134 62) translate(5.6 4.2)"/>
                     </g>
                 </g>
                 <g>
-                    <g fill="#FFF" font-family="Montserrat-Black, Montserrat" font-size="19.6" font-weight="700">
+                    <g fill="$color-white-primary" font-family="Montserrat-Black, Montserrat" font-size="19.6" font-weight="700">
                         <text transform="translate(-134 -62) translate(134 62) translate(42 1.4) translate(0 1.4)">
                             <tspan x="0" y="19">MY</tspan>
                         </text>
