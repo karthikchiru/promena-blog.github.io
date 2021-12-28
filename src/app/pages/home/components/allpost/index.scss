@@ -3,21 +3,18 @@
 
 .cards {
   position: relative;
-  // width: 60%;
+  @include flexrow;
   max-width: 100%;
   justify-content: space-around;
   background-size: cover;
-  margin-left: 25px;
-  margin-top: 1.6em;
-  padding: 30px;
-  display: flex;
-  flex-direction: row;
-  border-radius: 20px;
+  margin-top: $font_button;
+  padding: $font_xxlarge;
+  border-radius: $font_large;
   box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 10%);
-  background-color: #f3f7f9;
+  background-color: $color_white6;
 }
 .card-container {
-  padding: 2em 0;
+  padding: $font_large 0;
 }
 .card-image {
   width: 30%;
@@ -29,56 +26,49 @@
 }
 .card-content {
   text-align: center;
-  margin-top: 1px;
-  padding-left: 3.5rem;
-  font-size: 2rem;
+  font-size: $font_large;
   font-family: $monstserrat_regular;
   h1 {
-    font-size: larger;
+    font-size: $font_large;
   }
 }
 .card-content1 {
   text-align: end;
   position: absolute;
-  margin-top: 1px;
   padding-left: 46%;
-  font-size: 1.5rem;
+  font-size: $font_button;
   font-family: $monstserrat_regular;
 }
 .main-ul1 {
   font-family: $monstserrat_regular;
-  padding-top: 10px;
-  display: flex;
-  font-size: medium;
-  justify-content: space-between;
+  padding-top: $font_verysmall;
+  @include flexbetween;
+  font-size: $font_medium;
   padding-top: 2.4rem;
-  margin-left: 3rem;
-  list-style-type: none;
+  margin-left: $font_xxlarge;
+  @include listnone;
 }
 
 .lead1 {
-  font-size: 2rem;
-  padding-left: 6rem;
+  font-size: $font_large;
 }
 
 .padding-class {
   text-align: center;
   h5 {
-    font-size: 7px;
+    font-size: $font_xxsmall
   }
-  // margin-left: 7rem;
 }
 .profile-img {
   border-radius: 45%;
-  // margin-left: 1.6rem;
 }
 .card-content h5 {
-  padding: 20px 0 0 10px;
+  padding: $font_large 0 0 $font_verysmall;
   color: $blue1;
 }
 .read-more {
-  cursor: pointer;
   text-align: left;
+  font-size: $font_small;
 }
 #read-more {
   color: $blue1;
@@ -91,40 +81,34 @@
     transform: translate(0, 0);
     position: relative;
     margin-left: 0;
-    padding: 2rem 1rem;
+    padding: $font_large$font_verysmall;
   }
   .card-content {
     padding: 0;
-    font-size: 11px;
+    font-size: $font_small;
   }
   .main-ul1 {
     font-family: "Montserrat Regular";
-    padding-top: 10px;
-    display: flex;
-    font-size: 10px;
+    padding-top: $font_verysmall;
+    @include flexbetween;
+    font-size: $font_verysmall;
     padding-left: 0;
     margin-left: 0;
-    justify-content: space-between;
-    list-style-type: none;
-    // padding-top: 4.4rem;
-    // margin-left: 3rem;
+    @include listnone;
   }
   .lead1 {
-    padding-left: 0.5rem;
+    padding-left: $font_xverysmall;
   }
   .card-container {
     padding: 0;
   }
   .post-title {
-    text-decoration: none;
-    padding: 1rem;
-    font-size: 14px;
+    @include textnone;
+    padding: $font_verysmall;
+    font-size: $font_button;
   }
-  // .profile-img{
-  //   display: none;
-  // }
   .card-content1 {
-    display: none;
+    @include displaynone;
   }
 }
 
@@ -132,59 +116,54 @@
   .cards {
     position: relative;
     margin-left: 0;
-    padding: 2rem 1rem;
+    padding: $font_large $font_verysmall
   }
   .card-content {
     padding: 0;
-    font-size: small;
+    font-size: $font_small
     h1 {
-      font-size: medium;
+      font-size: $font_medium;
     }
   }
   .main-ul1 {
     font-family: "Montserrat Regular";
-    padding: 0;
-    font-size: 1rem;
+    font-size: $font_verysmall;
     display: flex;
-    margin: 0;
-    list-style-type: none;
+    @include marpad;
+    @include listnone;
   }
   .lead1 {
-    padding-left: 2rem;
-    font-size: medium;
+    padding-left: $font_large;
+    font-size: $font_medium;
   }
   .card-container {
     padding: 0;
   }
   .post-title {
-    text-decoration: none;
+    @include textnone;
     padding: 0;
-    font-size: 14px;
+    font-size: $font_button;
   }
-  // .profile-img{
-  //   display: none;
-  // }
   .card-content1 {
-    display: none;
-    font-size: 13px;
+    @include displaynone;
+    font-size: $font_small;
   }
 }
 @media screen and (min-width: 1024px) and (max-width: 1420px) {
   .cards {
-    width: 100%;
-    display: flex;
     position: relative;
-    // justify-content: space-between;
+    display: flex;
+    width: 100%;
     margin-left: 0;
-    padding: 2rem 1rem;
+    padding: $font_xxlarge $font_verysmall;
   }
   .card-content {
     padding-left: 0;
     h1 {
-      font-size: large;
+      font-size: $font_large
     }
     p {
-      font-size: medium;
+      font-size: $font_medium;
     }
   }
   .main-content {
@@ -192,15 +171,14 @@
     text-align: center;
   }
   .main-ul1 {
-    font-size: small;
+    font-size: $font_small;
     width: 100%;
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+    @include marpad;
+    @include listnone;
   }
   .post-title {
     padding: 0;
-    font-size: large;
+    font-size: $font_large;
   }
   .lead1 {
     padding-left: 0;
@@ -214,10 +192,8 @@
       text-align: center;
     }
     h5 {
-      // float: right;
-      font-size: 1rem;
-      padding: 0;
-      margin: 0;
+      font-size: $font_verysmall;
+      @include marpad;
     }
   }
 }

@@ -2,136 +2,89 @@
 @import "../../../../../styles/mixins.scss";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 * {
-  margin: 0;
-  padding: 0;
+  @include marpad;
+  @include textnone;
   box-sizing: border-box;
-  text-decoration: none;
   font-family: "Poppins", sans-serif;
 }
 .header-wrapper {
-  background: #f3f7f9;
+  background: $color_white6;
   width: 100%;
 }
 .header-wrapper nav {
-  display: flex;
+  @include flexbetween;
   margin: 0 auto;
-  padding: 3rem;
-  height: 70px;
-  align-items: center;
-  justify-content: space-between;
+  padding: $font_xxlarge;
+  height: $font_medium1;
 }
 nav .content {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-color: #f3f7f9;
+  @include flexaround;
+  background-color: $color_white6;
 }
 nav .content .links {
-  // margin-left: 80px;
   display: flex;
   z-index: 99;
 }
 .content a .logo {
-  color: black;
-  font-size: 30px;
+  color: $dark_shadow;
+  font-size: $font_xxlarge;
   font-weight: 600;
   cursor: pointer;
 }
 .content .links li {
-  list-style: none;
-  // line-height: 70px;
+  @include listnone;
 }
 .content .links li a,
 .content .links li label {
-  color: black;
-  font-size: 18px;
+  color: $dark_shadow;
+  font-size: $font_xlarge;
   font-weight: 500;
-  padding: 9px 20px;
-  border-radius: 5px;
+  padding: 9px $font_large;
+  border-radius: $font_xverysmall;
   transition: all 0.3s ease;
 }
 .content .links li a {
-  text-decoration: none;
-  font-size: 20px;
+  @include textnone;
+  font-size: $font_large;
 }
 .content .links li label {
-  display: none;
+  @include displaynone;
 }
 .content .links li a:hover,
 .content .links li label:hover {
-  background: #f3f7f9;
+  background: $color_white6;
 }
 .header-wrapper .search-icon,
 .header-wrapper .menu-icon {
-  color: black;
-  font-size: 18px;
+  color: $dark_shadow;
+  font-size: $font_xlarge;
   cursor: pointer;
-  line-height: 70px;
-  width: 70px;
+  line-height: $font_medium1;
+  width: $font_medium1;
   text-align: center;
 }
 .header-wrapper .menu-icon {
-  display: none;
+  @include displaynone;
 }
 .header-wrapper #show-search:checked ~ .search-icon i::before {
   content: "\f00d";
 }
 
-// .header-wrapper .search-box {
-//   position: absolute;
-//   height: 100%;
-//   max-width: calc(100% - 50px);
-//   width: 100%;
-//   opacity: 0;
-//   pointer-events: none;
-//   transition: all 0.3s ease;
-// }
-// .header-wrapper #show-search:checked ~ .search-box {
-//   opacity: 1;
-//   pointer-events: auto;
-// }
-// .search-box input {
-//   width: 100%;
-//   height: 100%;
-//   border: none;
-//   outline: none;
-//   font-size: 17px;
-//   color: $color-white-primary;
-//   background: #171c24;
-//   padding: 0 100px 0 1.5rem;
-// }
-// .search-box input::placeholder {
-//   color: #f2f2f2;
-// }
-// .search-box .go-icon {
-//   position: absolute;
-//   right: 10px;
-//   top: 50%;
-//   transform: translateY(-50%);
-//   line-height: 60px;
-//   width: 70px;
-//   background: #171c24;
-//   border: none;
-//   outline: none;
-//   color: $color-white-primary;
-//   font-size: 20px;
-//   cursor: pointer;
-// }
 .header-wrapper input[type="checkbox"] {
-  display: none;
+  @include displaynone;
 }
 
 /* Dropdown Menu code start */
 .content .links ul {
   position: absolute;
-  background: #f3f7f9;
-  top: 80px;
+  background: $color_white6;
+  top: $font_top6;
   z-index: -1;
   opacity: 0;
   visibility: hidden;
 }
 .content .links li:hover > ul {
-  top: 70px;
+  top: $font_medium1;
   opacity: 1;
   visibility: visible;
   transition: all 0.3s ease;
@@ -139,11 +92,10 @@ nav .content .links {
 .content .links ul li a {
   display: block;
   width: 100%;
-  line-height: 30px;
+  line-height: $font_xxlarge;
   margin: 0 !important;
-  padding-right: 1.5rem !important;
+  padding-right: $font_button !important;
   padding: 0 0.4rem;
-  border-radius: 0px !important;
 }
 .content .links ul ul {
   position: absolute;
@@ -160,11 +112,11 @@ nav .content .links {
 @media screen and (min-width: 1024px) and (max-width: 1420px) {
   .content .links li a,
   .content .links li label {
-    color: black;
-    font-size: 14px;
+    color: $dark_shadow;
+    font-size: $font_medium;
     font-weight: 500;
-    padding: 1.5rem;
-    border-radius: 5px;
+    padding: $font_button;
+    border-radius: $font_xverysmall;
     transition: all 0.3s ease;
   }
   .content {
@@ -173,10 +125,10 @@ nav .content .links {
   .header-wrapper .search-icon,
   .header-wrapper .menu-icon {
     color: black;
-    font-size: 18px;
+    font-size: $font_xlarge;
     cursor: pointer;
-    line-height: 70px;
-    width: 70px;
+    line-height: $font_medium1;
+    width: $font_medium1;
     text-align: center;
   }
 }
@@ -188,45 +140,34 @@ nav .content .links {
     padding: 0 !important;
   }
   nav .content {
-    display: flex;
-    justify-content: center;
+    @include flexCenter;
   }
   nav .content .links {
     margin-left: 0;
-    // font-size: xx-large;
   }
   .content .links li a {
-    padding: 8px 13px;
-  }
-  .header-wrapper .search-box {
-    max-width: calc(100% - 100px);
-  }
-  .header-wrapper .search-box input {
-    padding: 0 100px 0 1.5rem;
+    padding: $font_xxsmall $font_text;
   }
   .content .links li a,
   .content .links li label {
-    color: black;
-    font-size: 10px;
+    color: $dark_shadow;
+    font-size: $font_verysmall;
     font-weight: 500;
-    padding: 5px 9px;
-    border-radius: 5px;
+    padding: $font_xverysmall $font_verysmall;
+    border-radius: $font_xverysmall;
     transition: all 0.3s ease;
   }
   .header-wrapper .search-icon,
   .header-wrapper .menu-icon {
-    color: black;
-    font-size: 18px;
-    cursor: pointer;
-    line-height: 70px;
-    width: 70px;
     text-align: center;
+    cursor: pointer;
+    color: $dark_shadow;
+    font-size: $font_xlarge;
+    line-height: $font_medium1;
+    width: $font_medium1;
   }
 }
 
-// @media screen and (min-width: 760px) and (max-width: 912px) {
-
-// }
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
   .header-wrapper .menu-icon {
@@ -238,33 +179,33 @@ nav .content .links {
   nav .content .links {
     display: block;
     position: fixed;
-    background: white;
     height: 100%;
     width: 100%;
-    top: 70px;
     left: -100%;
     margin-left: 0;
     max-width: 350px;
     overflow-y: auto;
-    padding-bottom: 100px;
+    background: $color-white-primary;
+    top: $font_medium1;
+    padding-bottom: $font_top5;
     transition: all 0.3s ease;
   }
   nav #show-menu:checked ~ .content .links {
     left: 0%;
   }
   .content .links li {
-    margin: 1.5rem 20px;
+    margin: $font_button $font_large;
   }
   .content .links li a,
   .content .links li label {
-    line-height: 40px;
-    font-size: 20px;
     display: block;
-    padding: 8px 18px;
     cursor: pointer;
+    padding: $font_xxsmall $font_xlarge;
+    line-height: $font_top9;
+    font-size: $font_large;
   }
   .content .links li a.desktop-link {
-    display: none;
+    @include displaynone;
   }
 
   /* dropdown responsive code start */
@@ -283,16 +224,15 @@ nav .content .links {
     max-height: 100vh;
   }
   .content .links ul li {
-    margin: 7px 10px;
+    margin: $font_xxsmall $font_verysmall;
   }
   .content .links ul li a {
-    font-size: 18px;
-    line-height: 30px;
-    border-radius: 5px !important;
+    font-size: $font_xlarge;
+    line-height: $font_xxlarge;
+    border-radius: $font_xverysmall !important;
   }
 }
 
 .social-links {
-  display: flex;
-  flex-direction: row;
+  @include flexrow;
 }

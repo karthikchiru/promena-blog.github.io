@@ -10,25 +10,20 @@
   }
   &__post {
     text-align: center;
-    margin: 2rem;
+    margin: $font_large;
 
     &__tag {
       text-align: center;
       display: block;
       margin-left: 0 !important;
-      padding: 1rem 0;
+      padding: $font_verysmall 0;
     }
   }
   &__img {
-    width: 100%;
-    // margin-left: 2.5em;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+    @include relativeflex;
   }
   &__text {
-    // width: 80%;
-    margin: 2rem 3rem;
+    margin: $font_large $font_xxlarge;
   }
 }
 
@@ -36,56 +31,51 @@
   width: 80%;
 }
 .chart-wrap {
-  margin: 2rem;
+  margin: $font_large;
 }
 
 .comment-box {
-  display: flex;
-  flex-direction: row;
+  @include flexrow;
+  @include rowcenter;
   width: 100%;
-  align-items: center;
-  justify-content: center;
-  // margin: 20px;
 }
 
 .comment-wrap {
   box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 10%);
   width: 100%;
-  // height: 492px;
   max-height: auto;
-  // margin: 20px;
-  background-color: #f3f7f9;
+  background-color: $color_white6;
 }
 .comment-button {
-  padding: 10px 14px;
-  margin: 5px;
+  padding: $font_verysmall $font_medium;
+  margin: $font_xverysmall;
 }
 .comment {
   width: 100%;
-  padding: 5px;
+  padding: $font_xverysmall;
   font-size: $font_medium;
   font-family: $monstserrat_regular;
 }
 .user-name {
   width: 100%;
-  padding: 5px;
+  padding: $font_xverysmall;
   font-size: $font_medium;
   font-family: $monstserrat_regular;
 }
 .user-email {
   width: 100%;
-  padding: 5px;
+  padding: $font_xverysmall;
   font-size: $font_medium;
   font-family: $monstserrat_regular;
 }
 .comment-items {
-  padding: 5px 20px;
+  padding: $font_xverysmall $font_large;
   display: flex;
   align-items: left;
   flex-direction: column;
 }
 .comment-title {
-  margin: 10px;
+  margin: $font_verysmall;
 }
 
 @media screen and (min-width: 320px) and (max-width: 760px) {

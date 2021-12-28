@@ -36,17 +36,35 @@
   justify-content: center;
 }
 
+@mixin relative {
+  position: relative;
+  width: 100%;
+}
+
 @mixin relativeflex {
   position: relative;
   display: flex;
   width: 100%;
   align-items: center;
+  justify-content: center;
 }
 
 @mixin flexCenter {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+@mixin flexbetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flexaround {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 @mixin flexbox {
@@ -85,6 +103,10 @@
 }
 
 // none to display
+
+@mixin displaynone{
+  display: none;
+}
 
 @mixin listnone {
   list-style-type: none;
