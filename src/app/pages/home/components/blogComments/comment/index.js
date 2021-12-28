@@ -3,66 +3,61 @@ import CommentForm from '../../blogComments/commentForm';
 import './index.scss';
 
 const Comment = ({
-  comment,
-  replies,
-  setActiveComment,
   activeComment,
-  updateComment,
-  deleteComment,
   addComment,
-  parentId = null,
-  currentUserId,
+  comment,
 }) => {
-  const isEditing =
-    activeComment &&
-    activeComment.id === comment.id &&
-    activeComment.type === 'editing';
+  // const isEditing =
+  //   activeComment &&
+  //   activeComment.id === comment.id &&
+  //   activeComment.type === 'editing';
   const isReplying =
     activeComment &&
-    activeComment.id === comment.id &&
+    activeComment.id === comment.Blog_id &&
     activeComment.type === 'replying';
-  const fiveMinutes = 300000;
-  const timePassed = new Date() - new Date(comment.createdAt) > fiveMinutes;
-  const canDelete =
-    currentUserId === comment.userId && replies.length === 0 && !timePassed;
-  const canReply = Boolean(currentUserId);
-  const canEdit = currentUserId === comment.userId && !timePassed;
-  const replyId = parentId ? parentId : comment.id;
-  const createdAt = new Date(comment.createdAt).toLocaleDateString();
+  // const fiveMinutes = 300000;
+  // const timePassed = new Date() - new Date(comment.createdAt) > fiveMinutes;
+  // const canDelete =
+  //   currentUserId === comment.userId && replies.length === 0 && !timePassed;
+  // const canReply = Boolean(currentUserId);
+  // const canEdit = currentUserId === comment.userId && !timePassed;
+  // const replyId = parentId ? parentId : comment.id;
+  const createdAt = new Date(comment.datetime).toLocaleDateString();
+  console.log(comment)
   return (
-    <div key={comment.id} className='comment'>
+    <div key={comment.Blog_id} className='comment'>
       <div className='comment-image-container'>
         <img src='/user-icon.png' />
       </div>
       <div className='comment-right-part'>
         <div className='comment-content'>
-          <div className='comment-author'>{comment.username}</div>
+          <div className='comment-author'>{comment.name}</div>
           <div>{createdAt}</div>
         </div>
-        {!isEditing && <div className='comment-text'>{comment.body}</div>}
-        {isEditing && (
+        { <div className='comment-text'>{comment.Comment}</div>}
+        {/* {isEditing && (
           <CommentForm
             submitLabel='Update'
             hasCancelButton
-            initialText={comment.body}
-            handleSubmit={(text) => updateComment(text, comment.id)}
+            initialText={comment.Comment}
+            // handleSubmit={(text) => updateComment(text, comment.id)}
             handleCancel={() => {
               setActiveComment(null);
             }}
           />
-        )}
+        )} */}
         <div className='comment-actions'>
-          {canReply && (
+          {/* {canReply && (
             <div
               className='comment-action'
               onClick={() =>
-                setActiveComment({ id: comment.id, type: 'replying' })
+                setActiveComment({ id: comment.Blog_id, type: 'replying' })
               }
             >
               Reply
             </div>
-          )}
-          {canEdit && (
+          )} */}
+          {/* {canEdit && (
             <div
               className='comment-action'
               onClick={() =>
@@ -71,23 +66,23 @@ const Comment = ({
             >
               Edit
             </div>
-          )}
-          {canDelete && (
+          )} */}
+          {/* {canDelete && (
             <div
               className='comment-action'
               onClick={() => deleteComment(comment.id)}
             >
               Delete
             </div>
-          )}
+          )} */}
         </div>
         {isReplying && (
           <CommentForm
             submitLabel='Reply'
-            handleSubmit={(text) => addComment(text, replyId)}
+            handleSubmit={(text) => addComment(text)}
           />
         )}
-        {replies.length > 0 && (
+        {/* {replies.length > 0 && (
           <div className='replies'>
             {replies.map((reply) => (
               <Comment
@@ -98,13 +93,13 @@ const Comment = ({
                 updateComment={updateComment}
                 deleteComment={deleteComment}
                 addComment={addComment}
-                parentId={comment.id}
+                parentId={comment.Blog_id}
                 replies={[]}
                 currentUserId={currentUserId}
               />
             ))}
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );

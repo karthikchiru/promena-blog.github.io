@@ -84,5 +84,5 @@ export const getCategoryDetails = (callback, payload) => {
     const url = `${API_CONSTANTS.GET_USER_COMMENT}`;
     return fetchCall((response) => {
       callback(response);
-    }, url, API_METHODS.POST, payload);
+    }, url, API_METHODS.GET, payload);
   };

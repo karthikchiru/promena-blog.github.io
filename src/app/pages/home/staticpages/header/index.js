@@ -27,45 +27,56 @@ const Header = () => {
   }, []);
 
 
-  return (
-    <div>
-      {(pathName !== '/forgotPassword') ?
-        <div className='header-wrapper'>
-          <nav>
-            <input type='checkbox' id='show-search'></input>
-            <input type='checkbox' id='show-menu'></input>
-            <label htmlFor='show-menu' className='menu-icon'><i className='fas fa-bars'></i></label>
-            <div className='content'>
-              <a onClick={() => history.push('/')}><img src={logo} className='logo' alt='logo' /></a>
-              <ul className='links'>
+    return (
+     <div>
+     {( pathName !=='/forgotPassword')?
+     <div className='header-wrapper'>
+    <nav>
+      <input type='checkbox' id='show-search'></input>
+      <input type='checkbox' id='show-menu'></input>
+      <label htmlFor='show-menu' className='menu-icon'><i className='fas fa-bars'></i></label>
+      <div className='content'>
+     <a onClick={()=>history.push('/')}><img src={logo} className='logo' alt='logo' /></a>
+        <ul className='links'>
+       {/* <li>
+            <a href='#' className='desktop-link'>SEO <i className='fa fa-caret-down' aria-hidden='true'></i></a>
+            <input type='checkbox' id='show-seo'></input>
+            <label htmlFor='show-seo'>Seo</label>
+            <ul>
+              <li><a href='#'>Drop Menu 1</a></li>
+              <li><a href='#'>Drop Menu 2</a></li>
+              <li><a href='#'>Drop Menu 3</a></li>
+              <li><a href='#'>Drop Menu 4</a></li>
+            </ul>
+       </li>*/}
+ {menu.length && menu.map((val, index)=>{
+  return(
+    <li key = {index}>
+            <a href='#' className='desktop-link'>{val.menuname} <i className='fa fa-caret-down' aria-hidden='true'></i></a>
+            <input type='checkbox' id='show-ppc'></input>
+            <label htmlFor='show-ppc'>Ppc</label>
 
-                {menu.length && menu.map((val, index) => {
-                  return (
-                    <li key={index}>
-                      <a href='#' className='desktop-link'>{val.menuname} <i className='fa fa-caret-down' aria-hidden='true'></i></a>
-                      <input type='checkbox' id='show-ppc'></input>
-                      <label htmlFor='show-ppc'>Ppc</label>
+  <ul>
+  {category.length && category.map((value, index1)=>{
+   return(
+   
+  <li key={index1}><a href='#'>{
+    (val.menuid === value.menuname ? value.category_name:null) 
+  }</a></li>
+   );
+  })}
+   </ul>
 
-                      <ul>
-                        {category.length && category.map((value, index1) => {
-                          return (
-
-                            <li key={index1}><a href='#'>{(val.menuname === 'Travel' && value.menuname === 1 ? value.category_name : null) || (val.menuname === 'Software' && value.menuname === 2 ? value.category_name : null) || (val.menuname === 'SOCIAL' && value.menuname === 3 ? value.category_name : null)}</a></li>
-                          );
-                        })}
-                      </ul>
-
-                    </li>
-                  )
-                })}
-
-              
-                <li><a href='#'>WEBINARS</a></li>
-                <li>
-                  <a href='#' className='desktop-link'>FOLLOW <i className='fa fa-caret-down' aria-hidden='true'></i></a>
-                  <input type='checkbox' id='show-social-links'></input>
-                  <label htmlFor='show-social-links'>Follow Us</label>
-                  <ul className='social-links'>
+          </li>
+  )
+})} 
+          <li><a href='#'>WEBINARS</a></li>
+          <li>
+            <a href='#' className='desktop-link'>FOLLOW <i className='fa fa-caret-down' aria-hidden='true'></i></a>
+            <input type='checkbox' id='show-social-links'></input>
+            <label htmlFor='show-social-links'>Follow Us</label>
+            <ul className='social-links'>
+                    {/* <li><a href='#'>Follow Us</a></li> */}
                     <li><a href='#' className='fa fa-facebook fa-3x'></a></li>
                     <li><a href='#' className='fa fa-twitter fa-3x'></a></li>
                     <li><a href='#' className='fa fa-linkedin fa-3x'></a></li>

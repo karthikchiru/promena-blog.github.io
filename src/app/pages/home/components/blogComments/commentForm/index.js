@@ -2,11 +2,9 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React , { useState } from 'react';
-import Button from '../../../../../components/button';
 import LoginModal from '../../loginmodal';
 import {userRegistartion, userToken, getUserToken} from '../../../../../utils/apiCalls';
 import './index.scss';
-import Confirm from 'app/components/confirmModal/confirm';
 const CommentForm = ({
   handleSubmit,
   submitLabel,
@@ -17,7 +15,6 @@ const CommentForm = ({
   const [text, setText] = useState(initialText);
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
   const [showLoginConfirmModal, setshowLoginConfirmModal] = useState(false);
-  const [showConfirmModal, setShowConfirmModal] = useState(false);
   const [user, setuser] = useState({});
   const isTextareaDisabled = text.length === 0;
 
@@ -37,7 +34,7 @@ if(text)
    const onSubmit = (e)=>{
      debugger;
      e.preventDefault();
-     handleSubmit(text);
+     handleSubmit(text, user);
   setIsBtnDisabled(true); 
  let token = sessionStorage.getItem('user-token');
 //  getUserToken((resposne)=>{
