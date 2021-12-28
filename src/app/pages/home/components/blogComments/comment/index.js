@@ -3,9 +3,15 @@ import CommentForm from '../../blogComments/commentForm';
 import './index.scss';
 
 const Comment = ({
-  activeComment,
-  addComment,
   comment,
+  replies,
+  setActiveComment,
+  activeComment,
+  updateComment,
+  deleteComment,
+  addComment,
+  parentId = null,
+  currentUserId,
 }) => {
   // const isEditing =
   //   activeComment &&
@@ -15,15 +21,15 @@ const Comment = ({
     activeComment &&
     activeComment.id === comment.Blog_id &&
     activeComment.type === 'replying';
-  // const fiveMinutes = 300000;
-  // const timePassed = new Date() - new Date(comment.createdAt) > fiveMinutes;
+  const fiveMinutes = 300000;
+  const timePassed = new Date() - new Date(comment.datetime) > fiveMinutes;
   // const canDelete =
-  //   currentUserId === comment.userId && replies.length === 0 && !timePassed;
-  // const canReply = Boolean(currentUserId);
+    currentUserId === comment.userId && replies.length === 0 && !timePassed;
+  const canReply = Boolean(currentUserId);
   // const canEdit = currentUserId === comment.userId && !timePassed;
-  // const replyId = parentId ? parentId : comment.id;
+  const replyId = parentId ? parentId : comment.Blog_id;
   const createdAt = new Date(comment.datetime).toLocaleDateString();
-  console.log(comment)
+
   return (
     <div key={comment.Blog_id} className='comment'>
       <div className='comment-image-container'>
@@ -47,7 +53,7 @@ const Comment = ({
           />
         )} */}
         <div className='comment-actions'>
-          {/* {canReply && (
+          {canReply && (
             <div
               className='comment-action'
               onClick={() =>
@@ -56,7 +62,7 @@ const Comment = ({
             >
               Reply
             </div>
-          )} */}
+          )}
           {/* {canEdit && (
             <div
               className='comment-action'
@@ -79,10 +85,10 @@ const Comment = ({
         {isReplying && (
           <CommentForm
             submitLabel='Reply'
-            handleSubmit={(text) => addComment(text)}
+            handleSubmit={(text) => addComment(text, replyId)}
           />
         )}
-        {/* {replies.length > 0 && (
+        {replies.length > 0 && (
           <div className='replies'>
             {replies.map((reply) => (
               <Comment
@@ -99,7 +105,7 @@ const Comment = ({
               />
             ))}
           </div>
-        )} */}
+        )}
       </div>
     </div>
   );

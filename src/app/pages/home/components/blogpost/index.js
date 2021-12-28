@@ -6,63 +6,14 @@ import React , {useState, useEffect} from 'react';
 import './index.scss'
 import Chart from '../../charts/barchart';
 import blogPost from '../../data/blog.json';
-import Button from 'app/components/button';
-import LoginModal from '../loginmodal'; 
 import Comments from '../blogComments/comments';
 
 const BlogPost = (props) => {
-
   const [post,setPost] = useState({});
-  const [user, setuser] = useState({});
-  const [comment, setComment] = useState('');
-  
-  const [isBtnDisabled, setIsBtnDisabled] = useState(true);
-  const [showConfirmModal, setShowConfirmModal] = useState(false);
   const[postId,setPostId] = useState('');
    
-  // console.log(props)
-  const handleComment = ()=>{
-   
-    // console.log(comment);
-    let isLoggedIn = localStorage.getItem('user-state');
-    if(isLoggedIn)
-    {
-      // debugger
-      setShowConfirmModal(false);
-      setIsBtnDisabled(true);
-      document.getElementById('Common_Field').value = '';
-    }
-    else{
-      setShowConfirmModal(true);
-      setIsBtnDisabled(true);
-      localStorage.clear();
-      if(user !=='' || user !== undefined)
-      {
-        setIsBtnDisabled(false);
-      }
-    }
-  }
-  // const handleValueChange =(e, key)=>{
-  // let val = e.target.value;
-  // setIsBtnDisabled(true);
-  // if(key === 1)
-  //   {
-  //     setComment(val);
-  //   }
-  //   if(comment)
-  //   {
-  //     setIsBtnDisabled(false);
-  //   }
-  // }
-  // const onConfirm =(user)=>{
-  //  setuser(user);
-  //  console.log(user)
-  //  setShowConfirmModal(false);
-  // }
-  
-
+ 
 useEffect(()=>{
-  // eslint-disable-next-line react/prop-types
   const postId = props.match.params.postId;
   const post = blogPost.data.find(post => post.id == postId);
   setPost(post);
@@ -88,9 +39,6 @@ if(post.blogImage == '') return null;
         commentsUrl='http://localhost:3000/comments'
         currentUserId='1'
       />
-{/* {
-  showConfirmModal && (<LoginModal    onConfirm={onConfirm} confirmTitle='Login to Continue' buttonText={'LOGIN'} />)
-} */}
   </div>
 </div>
 <div className='chart-wrap'>

@@ -5,13 +5,13 @@ import CommentForm from '../commentForm';
 import Comment from '../comment';
 import './index.scss';
 import {
-  userComment as createCommentApi,
+  // userComment as createCommentApi,
   getUserComments as getCommentsApi
 } from '../../../../../utils/apiCalls';
 
 import {
   // getComments as getCommentsApi,
-  // createComment as createCommentApi,
+  createComment as createCommentApi,
 } from '../commentApi';
 
 const Comments = ({ commentsUrl, currentUserId, user }) => {
@@ -22,31 +22,30 @@ const Comments = ({ commentsUrl, currentUserId, user }) => {
   );
   const getReplies = (commentId) =>
     backendComments
-      .filter((backendComment) => backendComment.parentId === commentId)
+      .filter((backendComment) => backendComment.Blog_id === commentId)
       .sort(
         (a, b) =>
           new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
       );
-  const addComment = (text, user) => {
+  const addComment = (text, parentId) => {
 
-    // createCommentApi(text, parentId).then((comment) => {
-    //   setBackendComments([comment, ...backendComments]);
-    //   setActiveComment(null);
-    // });
-    console.log(text, user);
-    createCommentApi((res)=>{
-      setBackendComments([res, ...backendComments]);
+    createCommentApi(text, parentId).then((comment) => {
+      setBackendComments([comment, ...backendComments]);
       setActiveComment(null);
-    },);
+    });
+    // console.log(text, user);
+    // createCommentApi((res)=>{
+    //   setBackendComments([res, ...backendComments]);
+    //   setActiveComment(null);
+    // },);
   };
-console.log(rootComments)
 
   useEffect(() => {
     getCommentsApi((data)=>{
       setBackendComments(data);
     });
   }, []);
-console.log(user)
+
   return (
     <div className='comments'>
       <h3 className='comments-title'>Comments</h3>
@@ -57,6 +56,7 @@ console.log(user)
           <Comment
             key={rootComment.Blog_id}
             comment={rootComment}
+            replies={getReplies(rootComment.Blog_id)}
             addComment={addComment}
             activeComment={activeComment}
             setActiveComment={setActiveComment}
