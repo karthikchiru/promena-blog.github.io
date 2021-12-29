@@ -59,16 +59,13 @@ setIsBtnDisabled(false);
     <div className={`loginmodal ${className}`} id='login-target' onClick={handleClick}>
       <div className='loginmodal__dialog'>
         <div className='loginmodal__dialog__center-div'>
-          {/* <div className='loginmodal__dialog__content'>
-           
-          </div> */}
               <div className='loginmodal__dialog__footer  u_align_items '>
               <p className='loginmodal__dialog__footer__description'>{confirmTitle}</p>
               <span className='loginmodal__dialog__footer__login-title'>User*</span>
-                <Input className='loginmodal__dialog__button--cancel' onKeyUp ={(e)=>{handleKeyEnter(e)}}  value={user} onValueChange={(e)=>handleValueChange(e, 1)} placeholder='User Name'/>
+                <Input className='loginmodal__dialog__inputs' onKeyUp ={(e)=>{handleKeyEnter(e)}}  value={user} onValueChange={(e)=>handleValueChange(e, 1)} placeholder='User Name'/>
                 <span className='loginmodal__dialog__footer__login-title'>Email*</span>
-                <Input className='loginmodal__dialog__button--cancel' onKeyUp ={(e)=>{handleKeyEnter(e)}} value={email} onValueChange={(e)=>handleValueChange(e, 2)} placeholder='Email'/>
-                <Button className='loginmodal__dialog__button'  isBtnDisabled ={isBtnDisabled} buttonClick={()=>onConfirm(obj)}>{buttonText}</Button>
+                <Input className='loginmodal__dialog__inputs' onKeyUp ={(e)=>{handleKeyEnter(e)}} value={email} onValueChange={(e)=>handleValueChange(e, 2)} placeholder='Email'/>
+                <Button className='loginmodal__dialog__submitbtn'  isBtnDisabled ={isBtnDisabled} buttonClick={()=>onConfirm(obj)}>{buttonText}</Button>
               </div> 
         </div>
       </div>

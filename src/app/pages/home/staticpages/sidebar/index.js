@@ -14,12 +14,15 @@ const Sidebar  = (props) => {
   const [postList, setPostList] = useState([]);
 
   useEffect(()=>{
+    fetchData();
+  }, []);
+
+  const fetchData = () =>{
     getPostList((response)=>{
       console.log(response);
       setPostList(response);
     })
-  }, []);
-
+  }
   return(
 
     <div className='main1'>
