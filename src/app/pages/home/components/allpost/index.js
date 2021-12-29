@@ -15,7 +15,6 @@ const AllPosts  = (props) => {
 
   const [posts, setPosts] = useState([]);
 const [postList, setPostList] = useState([]);
-// console.log(postList.title)
   useEffect(()=>{
 
     const posts = blogPost.data;
