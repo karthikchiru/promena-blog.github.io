@@ -25,7 +25,7 @@ const Logout = () => {
     return (
       
         <div>
-        <Tippy arrow={true} className='tippy' content='LogOut'>
+        <Tippy followCursor={true} className='tippy' content='LogOut'>
  
 <i className='fa fa-sign-out' onClick={handleLogout} aria-hidden='true'></i>
 </Tippy>
