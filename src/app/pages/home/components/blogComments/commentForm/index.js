@@ -34,7 +34,7 @@ if(text)
    const onSubmit = (e)=>{
      debugger;
      e.preventDefault();
-     handleSubmit(text, user);
+    //  handleSubmit(text);
   setIsBtnDisabled(true); 
  let token = sessionStorage.getItem('user-token');
 //  getUserToken((resposne)=>{

@@ -22,30 +22,27 @@
     height: 32rem;
     &__center-div {
       position: absolute;
-      top: 35%;
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 80%;
     }
-
-    &__button {
+    &__inputs {
+      background: $color-white-primary;
+      padding: $font_medium;
+      color: $dark_shadow;
+      margin: $font_verysmall 0;
+      font-family: $monstserrat_regular;
+      padding: $font_verysmall;
+      font-size: $font_medium;
+      border-radius: $font_text;
+      border: 1px solid $alto;
+    }
+    &__submitbtn {
       width: 16.4rem;
       padding: $font_verysmall;
       border: none;
       color: $color-white-primary;
-      position: absolute;
-      transform: translate(32%, 20%);
-      &--cancel {
-        background: $color-white-primary;
-        padding: $font_medium;
-        color: $dark_shadow;
-        margin: $font_verysmall 0;
-        font-family: $monstserrat_regular;
-        padding: $font_verysmall;
-        font-size: $font_medium;
-        border-radius: $font_text;
-        border: 1px solid $alto;
-      }
     }
 
     &__button:focus {
