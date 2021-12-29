@@ -68,4 +68,4 @@ const handleComment =() => {
   );
  }
 
-export default React.memo(BlogPost)
+export default BlogPost

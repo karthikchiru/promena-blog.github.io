@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-unused-vars */
 
 
@@ -10,18 +11,31 @@ import {getPostList} from '../../../../utils/apiCalls'
 import moment from 'moment';
 import './index.scss'
 import ReadMore from '../readmore';
+import axios from 'axios';
 
 const AllPosts  = (props) => {
 
   const [posts, setPosts] = useState([]);
 const [postList, setPostList] = useState([]);
-  useEffect(()=>{
+// const [base64, setBase64] = useState('');
+// console.log(base64)
+// useEffect(() => {
+//   axios
+//     .get(
+//       'http://promenablog.pythonanywhere.com/Blog/BlogPost').then((res)=>{
+//         res.data.map((resp)=>{
+//           var binaryData = [];
+//           console.log(resp.thumbnail)
+// binaryData.push(resp);
+// setBase64(URL.createObjectURL(new Blob(binaryData, {type: 'application/image'})));
+//         })
+//       })
+//     }, []);
 
+  useEffect(()=>{
     const posts = blogPost.data;
     setPosts(posts);
-console.log(posts)
     getPostList((response)=>{
-      console.log(response);
       setPostList(response);
     })
   }, []);
@@ -34,9 +48,10 @@ console.log(posts)
   postList.map(post => {
     var url = post.thumbnail;
 var pathname = new URL(url).pathname;
+
     return(
       <div className='cards' key={post.Blog_id}>
-<img src={url} key={post.thumbnail} className='card-image' />
+<img src={pathname} key={post.Blog_id} className='card-image' />
 <div className='main-content'>
 <h3 className='lead1'>
     <NavLink  className = 'post-title' to={`/post/${post.Blog_id}`}>  
