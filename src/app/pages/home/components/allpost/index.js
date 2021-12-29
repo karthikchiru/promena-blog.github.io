@@ -47,11 +47,11 @@ const [postList, setPostList] = useState([]);
 {
   postList.map(post => {
     var url = post.thumbnail;
-var pathname = new URL(url).pathname;
+
 
     return(
       <div className='cards' key={post.Blog_id}>
-<img src={pathname} key={post.Blog_id} className='card-image' />
+<img src={url} key={post.Blog_id} className='card-image' />
 <div className='main-content'>
 <h3 className='lead1'>
     <NavLink  className = 'post-title' to={`/post/${post.Blog_id}`}>  
