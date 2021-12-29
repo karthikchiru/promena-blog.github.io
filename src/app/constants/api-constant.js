@@ -14,7 +14,8 @@ export const API_CONSTANTS = {
  GET_USER_TOKEN:`${BaseURL.BASE_URL}/UserToken/ViewUserToken`,
  USER_SUBSCRIPTION:`${BaseURL.BASE_URL}/Subscribe/UserSubscribe`,
  USER_COMMENT:`${BaseURL.BASE_URL}/Comment/BlogComment`,
- GET_USER_COMMENT:`${BaseURL.BASE_URL}/Comment/BlogComment`
+ GET_USER_COMMENT:`${BaseURL.BASE_URL}/Comment/BlogComment`,
+ GET_REPLY_COMMENTS:`${BaseURL.BASE_URL}/ReplyComment/`
 };
 
 export const API_METHODS = {
