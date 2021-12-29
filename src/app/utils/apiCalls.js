@@ -86,3 +86,10 @@ export const getCategoryDetails = (callback, payload) => {
       callback(response);
     }, url, API_METHODS.GET, payload);
   };
+
+  export const getReplyComments = (callback, payload) => {
+    const url = `${API_CONSTANTS.GET_REPLY_COMMENTS}`;
+    return fetchCall((response) => {
+      callback(response);
+    }, url, API_METHODS.GET, payload);
+  };

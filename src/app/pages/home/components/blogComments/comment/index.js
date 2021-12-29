@@ -7,8 +7,6 @@ const Comment = ({
   replies,
   setActiveComment,
   activeComment,
-  updateComment,
-  deleteComment,
   addComment,
   parentId = null,
   currentUserId,
@@ -96,8 +94,6 @@ const Comment = ({
                 key={reply.id}
                 setActiveComment={setActiveComment}
                 activeComment={activeComment}
-                updateComment={updateComment}
-                deleteComment={deleteComment}
                 addComment={addComment}
                 parentId={comment.Blog_id}
                 replies={[]}

@@ -6,7 +6,8 @@ import Comment from '../comment';
 import './index.scss';
 import {
   // userComment as createCommentApi,
-  getUserComments as getCommentsApi
+  getUserComments as getCommentsApi,
+  getReplyComments as getReplyCommentsApi
 } from '../../../../../utils/apiCalls';
 
 import {
@@ -16,13 +17,14 @@ import {
 
 const Comments = ({ commentsUrl, currentUserId, user }) => {
   const [backendComments, setBackendComments] = useState([]);
+  const [backendReplyComments, setBackendReplyComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
   const rootComments = backendComments.filter(
     (backendComment) => backendComment.Blog_id 
   );
   const getReplies = (commentId) =>
-    backendComments
-      .filter((backendComment) => backendComment.Blog_id === commentId)
+  backendReplyComments
+      .filter((backendComment) => backendComment.Blog_id === commentId )
       .sort(
         (a, b) =>
           new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
@@ -44,6 +46,9 @@ const Comments = ({ commentsUrl, currentUserId, user }) => {
     getCommentsApi((data)=>{
       setBackendComments(data);
     });
+    getReplyCommentsApi((data)=>{
+      setBackendReplyComments(data);
+    })
   }, []);
 
   return (
