@@ -14,8 +14,6 @@ const Sidebar  = (props) => {
   const [postList, setPostList] = useState([]);
 
   useEffect(()=>{
-
-   
     getPostList((response)=>{
       console.log(response);
       setPostList(response);
@@ -26,14 +24,12 @@ const Sidebar  = (props) => {
 
     <div className='main1'>
 
-{
+{ postList.length &&
   postList.map(post => {
-    var url = post.thumbnail;
-// var pathname = new URL(url).pathname;
 
     return(
       <div className='posts' key={post.Blog_id}>
-      <img src={url} key={post.thumbnail} className='posts__image' />
+      <img src={post.thumbnail} key={post.thumbnail} className='posts__image' />
       <div className='posts__maincontent'>
       <h3 className='posts__lead2'>
           <NavLink  className = 'posts__link' to={`/post/${post.Blog_id}`}>  

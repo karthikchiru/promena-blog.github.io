@@ -5,14 +5,14 @@ import CommentForm from '../commentForm';
 import Comment from '../comment';
 import './index.scss';
 import {
-  // userComment as createCommentApi,
+  userComment as createCommentApi,
   getUserComments as getCommentsApi,
   getReplyComments as getReplyCommentsApi
 } from '../../../../../utils/apiCalls';
 
 import {
   // getComments as getCommentsApi,
-  createComment as createCommentApi,
+  // createComment as createCommentApi,
 } from '../commentApi';
 
 const Comments = ({ commentsUrl, currentUserId, user }) => {

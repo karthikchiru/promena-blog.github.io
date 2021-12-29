@@ -8,7 +8,7 @@ const Comment = ({
   setActiveComment,
   activeComment,
   addComment,
-  parentId = null,
+  parentId = 0,
   currentUserId,
 }) => {
   // const isEditing =
@@ -91,7 +91,7 @@ const Comment = ({
             {replies.map((reply) => (
               <Comment
                 comment={reply}
-                key={reply.id}
+                key={reply.Blog_id}
                 setActiveComment={setActiveComment}
                 activeComment={activeComment}
                 addComment={addComment}
