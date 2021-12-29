@@ -40,20 +40,17 @@ export function fetchCall(callback, url, method, payload) {
 //             'Content-Type': 'application/json'
 //         }
 //       }
-//       fetch(url, options).then((response)=>{
-//         console.log(response)
-//         response.json();
-//       }).then((res)=>{
-//         console.log(res)
-//       //   const imageObjectURL = URL.createObjectURL(imageBlob);
-//       // console.log(imageObjectURL);
-//       }).then((res)=>{
-//         res.json();
+//       fetch(url, options).then((res)=>{
 //         console.log(res);
+//        return res.json();
+     
 //       }).then((res)=>{
-//         callback(res);
-//         console.log(res)
-//         resolve(res);
+//         if(res.thumbnail)
+// {
+//   callback(res);
+//   console.log(res.thumbnail)
+//   resolve(res);
+// }
 //       }).catch((err)=>{
 //         callback(err);
 //         return err;
@@ -61,3 +58,8 @@ export function fetchCall(callback, url, method, payload) {
 
 //     })
 // }   
+// .then((res)=>{
+//   debugger
+// //   const imageObjectURL = URL.createObjectURL(imageBlob);
+// // console.log(imageObjectURL);
+// })

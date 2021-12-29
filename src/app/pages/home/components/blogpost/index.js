@@ -54,4 +54,4 @@ if(post.blogImage == '') return null;
   );
  }
 
-export default React.memo(BlogPost)
+export default BlogPost

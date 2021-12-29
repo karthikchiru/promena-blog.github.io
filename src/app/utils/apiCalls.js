@@ -23,6 +23,12 @@ export const getCategoryDetails = (callback, payload) => {
       callback(response);
     }, url, API_METHODS.GET, payload);
   };
+  // export const getPostLists = (callback, payload) => {
+  //   const url = `${API_CONSTANTS.POST_LIST}`;
+  //   return getImage((response) => {
+  //     callback(response);
+  //   }, url, API_METHODS.GET, payload);
+  // };
 
   export const adminRegistartion = (callback, payload) => {
     const url = `${API_CONSTANTS.ADMIN_REGISTRATION}`;
