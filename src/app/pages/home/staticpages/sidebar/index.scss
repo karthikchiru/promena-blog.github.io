@@ -12,7 +12,7 @@
   &__image {
     height: 60%;
     width: 40%;
-    padding-left: $font_verysmall;
+    // padding-left: $font_verysmall;
   }
   &__maincontent{
     width : 60% ;
@@ -25,6 +25,7 @@
   }
   &__link {
     @include textnone;
+    font-size: $font_button;
   }
   &__content {
     text-align: center;

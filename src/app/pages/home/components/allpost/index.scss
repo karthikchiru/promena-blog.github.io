@@ -41,11 +41,11 @@
 }
 .main-ul1 {
   font-family: $monstserrat_regular;
-  padding-top: $font_verysmall;
+  padding-top: $font_xxlarge;
   @include flexbetween;
   font-size: $font_medium;
-  padding-top: 2.4rem;
-  margin-left: $font_xxlarge;
+  // padding-top: 2.4rem;
+  // margin-left: $font_xxlarge;
   @include listnone;
 }
 
