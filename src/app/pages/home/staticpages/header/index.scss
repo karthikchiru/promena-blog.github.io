@@ -24,6 +24,7 @@ nav .content {
 nav .content .links {
   display: flex;
   z-index: 99;
+  padding-left: 0!important;
 }
 .content a .logo {
   color: $dark_shadow;
@@ -39,7 +40,7 @@ nav .content .links {
   color: $dark_shadow;
   font-size: $font_xlarge;
   font-weight: 500;
-  padding: 9px $font_large;
+  padding: $font_verysmall $font_xxlarge;
   border-radius: $font_xverysmall;
   transition: all 0.3s ease;
 }
@@ -89,10 +90,17 @@ nav .content .links {
   visibility: visible;
   transition: all 0.3s ease;
 }
+.social-links{
+  font-size: $font_xxlarge !important; 
+}
+.fa-3x{
+  font-size: $font_large !important; 
+}
 .content .links ul li a {
   display: block;
   width: 100%;
-  line-height: $font_xxlarge;
+  font-size: small;
+  line-height: $font_top8;
   margin: 0 !important;
   padding-right: $font_button !important;
   padding: 0 0.4rem;
@@ -115,7 +123,7 @@ nav .content .links {
     color: $dark_shadow;
     font-size: $font_medium;
     font-weight: 500;
-    padding: $font_button;
+    padding: $font_xxsmall $font_xxlarge;
     border-radius: $font_xverysmall;
     transition: all 0.3s ease;
   }
