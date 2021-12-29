@@ -13,7 +13,7 @@ import moment from 'moment';
 const BlogPost = (props) => {
   const [post,setPost] = useState({});
   const[postId,setPostId] = useState('');
-   
+   const [comment, setComment] = useState(false)
  
 useEffect(()=>{
   getPostList((res)=>{
@@ -27,6 +27,10 @@ useEffect(()=>{
 
 if(post.blogImage == '') return null;
 
+const handleComment =() => {
+  setComment(!comment)
+}
+
   return(
 <div className='blog__container'>
 <div className='post-thumb'>
@@ -36,15 +40,25 @@ if(post.blogImage == '') return null;
 </div>
 <div className='blog__text'>
 <div>{post.content}</div>
+<div className='comment1'>
+<button className='comment1__button1' onClick={handleComment}>Comment</button>
+</div>
 </div>
 
+
+
+
 <div className='comment-box'>
-  <div className='comment-wrap comment-items'>
-<Comments
-        commentsUrl='http://localhost:3000/comments'
-        currentUserId='1'
-      />
+ 
+  {comment && 
+      <div className='comment-wrap comment-items'>
+      <Comments
+    commentsUrl='http://localhost:3000/comments'
+    currentUserId='1'
+  />
   </div>
+  }
+
 </div>
 <div className='chart-wrap'>
 <Chart/>
