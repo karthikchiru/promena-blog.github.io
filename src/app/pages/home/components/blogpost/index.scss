@@ -50,6 +50,19 @@
   padding: $font_verysmall $font_medium;
   margin: $font_xverysmall;
 }
+.comment1{
+  @include allcenter;
+&__button1{
+  padding: $font_verysmall $font_medium;
+  margin: $font_large;
+  background-color: $color-white-primary;
+  color: $dark_shadow;
+  font-size: $font_verysmall;
+  box-shadow: 0 0px 6px 0 rgba(6, 9, 19, 0.384);
+  border-radius: $font_verysmall ;
+  @include allcenter;
+}
+}
 .comment {
   width: 100%;
   padding: $font_xverysmall;
