@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 
@@ -13,17 +14,18 @@ import moment from 'moment';
 const BlogPost = (props) => {
   const [post,setPost] = useState({});
   const[postId,setPostId] = useState('');
-   const [comment, setComment] = useState(false)
+   const [comment, setComment] = useState(false);
  
 useEffect(()=>{
+  debugger
+  const postId = props.match.params.postId;
   getPostList((res)=>{
-    const postId = props.match.params.postId;
     const post = res.find(post => post.Blog_id == postId);
     setPost(post);
     setPostId(postId);
   });
 
-}, [post, props.match.params.postId]);
+}, [ props.match.params.postId]);
 
 if(post.blogImage == '') return null;
 
