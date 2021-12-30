@@ -8,13 +8,12 @@ const ReadMore = ({post}) => {
 
   return (
     <p className='read-more'>
-      {isReadMore ? post.slice(0, 300): post }
-      {post.length > 300 &&
+      {isReadMore ? post.slice(0, 200): post }
+      {post.length > 200 &&
         <span onClick={toggleReadMore} className='read-more1'>
           {isReadMore ? '...Read More' : ' ...Show less'}
         </span>
       }
-      <h1 className='view-post'>View Post</h1>
     </p>
   )
 }

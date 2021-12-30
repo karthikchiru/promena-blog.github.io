@@ -1,6 +1,9 @@
 @import "../../../../../styles/mixins.scss";
 @import "../../../../../styles//variables.scss";
 
+.read-more1{
+    font-size: x-large;
+}
 .read-more1:hover {
     color: rgb(54, 75, 196);
     cursor: pointer;
@@ -10,5 +13,23 @@
     cursor: pointer;
     h1{
     font-size: $font_button !important;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+    .read-more1{
+        font-size: $font_xlarge;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1020px) {
+    .read-more1{
+        font-size: $font_xlarge;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1420px) {
+    .read-more1{
+        font-size: $font_large;
     }
 }
