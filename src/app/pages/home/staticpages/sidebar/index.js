@@ -42,7 +42,7 @@ const Sidebar = (props) => {
                 <ReadMore post={post.content} />
               </div>
               <ul className='posts__ul'>
-                <li><i className='fa fa-clock-o' aria-hidden='true'> {moment(post.date_created).format('ddd-mm-yyyy, A')}</i></li>
+                <li><i className='fa fa-clock-o' aria-hidden='true'> {moment(post.date_created).format('MMM-Do-YY, hh:mm A')}</i></li>
                 <li><i className='fa fa-eye' aria-hidden='true'></i> 75 reads</li>
                 <li><i className='fa fa-clock-o' aria-hidden='true'></i> 3 min read</li>
               </ul>
@@ -52,7 +52,6 @@ const Sidebar = (props) => {
       }
     </div>
   )
-
 }
 
 export default Sidebar;

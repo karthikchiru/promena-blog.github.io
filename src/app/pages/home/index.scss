@@ -70,7 +70,10 @@
     }
   }
   .post-tab {
-    @include relativeflex;
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
     @include flexrow;
   }
   .all-posts{
