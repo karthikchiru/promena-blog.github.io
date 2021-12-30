@@ -1,9 +1,11 @@
 @import "../../../../../styles/mixins.scss";
 @import "../../../../../styles//variables.scss";
 
-.cards {
-  position: relative;
-  display: block;
+.card-container {
+  padding: $font_large 0;
+}
+.card {
+  @include relativeblock;
   max-width: 100%;
   @include allcenter;
   justify-content: space-around;
@@ -13,80 +15,40 @@
   border-radius: $font_large;
   box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 10%);
   background-color: $color_white6;
-}
-.card-container {
-  padding: $font_large 0;
-}
-.card-image {
-  width: 35%;
-  // height: 200px;
-}
-.main-content{
-  display: flex;
-  // padding-left: $font_button;
-}
-.post-title {
-  font-size: $font_large;
-  float: center;
-  text-align: center;
-  text-decoration: none !important;
-  cursor: pointer !important;
-}
-.card-content {
-  text-align: center;
-  font-size: $font_large;
-  font-family: $monstserrat_regular;
-  h2 {
+  &__title {
     font-size: $font_large;
-    color: $dark_shadow;
-    font-weight: 800;
-    @include marpad;
+    float: center;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer !important;
   }
-}
-.card-content1 {
-  text-align: end;
-  position: absolute;
-  padding-left: 46%;
-  font-size: $font_button;
-  font-family: $monstserrat_regular;
-}
-.main-ul1 {
-  font-family: $monstserrat_regular;
-  padding-top: $font_large;
-  @include flexbetween;
-  font-size: $font_large;
-  @include listnone;
-}
-
-.lead1 {
-  font-size: $font_large;
-}
-
-.padding-class {
-  text-align: center;
-  h5 {
-    font-size: $font_xxsmall
+  &__content{
+    display: flex;
   }
-}
-.profile-img {
-  border-radius: 45%;
-}
-.card-content h5 {
-  padding: $font_large 0 0 $font_verysmall;
-  color: $blue1;
+  &__image {
+    width: 35%;
+    height: 200px;
+  }
+  &__ul1 {
+    font-family: $monstserrat_regular;
+    padding-top: $font_large;
+    @include flexbetween;
+    font-size: $font_large;
+    @include listnone;
+  }
 }
 .read-more {
   text-align: left;
   font-size: $font_xlarge;
   padding-left: $font_button
 }
-#read-more {
-  color: $blue1;
-  cursor: pointer;
-}
+
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
-  .cards {
+  .card-container {
+    padding: 0;
+  }
+  .card {
     width: 100%;
     transform: translate(0, 0);
     position: relative;
@@ -97,101 +59,76 @@
     h1{
       font-size: $font_xlarge;
     }
+    &__image {
+      width: 40%;
+      height: 150px;
+    }
+    &__content {
+      padding: 0;
+      font-size: $font_small;
+    }
+    &__ul1 {
+      font-family: "Montserrat Regular";
+      @include flexbetween;
+      font-size: $font_small;
+      padding-left: 0;
+      margin-left: 0;
+      @include listnone;
+    }
+    &__title {
+      @include textnone;
+      font-size: $font_button;
+    }
   }
-  .card-image {
-    width: 40%;
-    height: 150px;
-  }
-  .card-content {
-    padding: 0;
-    font-size: $font_small;
-  }
-  .card-content h2 {
-    font-size: $font_xlarge;
-    color: $dark_shadow;
-    font-weight: 500;
-    @include marpad;
-}
-  .main-ul1 {
-    font-family: "Montserrat Regular";
-    @include flexbetween;
-    font-size: $font_small;
-    padding-left: 0;
-    margin-left: 0;
-    @include listnone;
-  }
-  .lead1 {
-    padding-left: $font_xverysmall;
-  }
-  .card-container {
-    padding: 0;
-  }
-  .post-title {
-    @include textnone;
-    // padding: $font_verysmall;
-    font-size: $font_button;
-  }
-  .card-content1 {
-    @include displaynone;
-  }
-  .padding-class {
-    @include displaynone;
-}
 .read-more{
   font-size: $font_xsmall;
-  padding-left: $font_xsmall;
+  padding-left: $font_xverysmall;
 }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1020px) {
-  .cards {
+  .card-container {
+    padding: 0;
+  }
+  .card {
     position: relative;
     display: block;
     @include allcenter;
     margin-left: 0;
-    padding: $font_large $font_verysmall
-  }
-  .card-image{
-    width: 40%;
-    max-height: 150px;
-  }
-  .read-more{
-    font-size: $font_button;
-    padding-left: $font_xxsmall;
-  }
-  .card-content {
-    padding: 0;
-    font-size: $font_small
+    padding: $font_large $font_verysmall;
     h1 {
-      font-size: $font_medium;
+      font-size: $font_large;
+    }
+    &__title {
+      @include textnone;
+      padding: 0;
+      font-size: $font_button;
+    }
+    &__content {
+      padding: 0;
+      font-size: $font_small;
+    }
+    &__image{
+      width: 40%;
+      max-height: 150px;
+    }
+    &__ul1 {
+      font-family: "Montserrat Regular";
+      font-size: $font_small;
+      display: flex;
+      padding: 0 $font_xxlarge 0 $font_xxlarge;
+      @include listnone;
     }
   }
-  .main-ul1 {
-    font-family: "Montserrat Regular";
-    font-size: $font_verysmall;
-    display: flex;
-    @include marpad;
-    @include listnone;
-  }
-  .lead1 {
-    padding-left: $font_large;
+  .read-more{
     font-size: $font_medium;
-  }
-  .card-container {
-    padding: 0;
-  }
-  .post-title {
-    @include textnone;
-    padding: 0;
-    font-size: $font_button;
-  }
-  .card-content1 {
-    @include displaynone;
-    font-size: $font_small;
+    padding-left: $font_xxsmall;
   }
 }
+
+
 @media screen and (min-width: 1024px) and (max-width: 1420px) {
-  .cards {
+  .card {
     position: relative;
     display: block;
     width: 100%;
@@ -200,45 +137,20 @@
     h1{
       font-size: $font_large;
     }
-  }
-  // .card-content {
-  //   padding-left: 0;
-  //   h1 {
-  //     font-size: $font_large
-  //   }
-  //   p {
-  //     font-size: $font_medium;
-  //   }
-  // }
-  .main-content {
-    float: center;
-    text-align: center;
-  }
-  .main-ul1 {
-    font-size: $font_xlarge;
-    width: 100%;
-    @include marpad;
-    @include listnone;
-    padding: 0 $font_xxlarge
-  }
-  .post-title {
-    padding: 0;
-    font-size: $font_large;
-  }
-  .lead1 {
-    padding-left: 0;
-  }
-  .padding-class {
-    float: right;
-    text-align: right;
-    align-items: end;
-    .profile-img {
+    &__content {
       float: center;
       text-align: center;
     }
-    h5 {
-      font-size: $font_verysmall;
+    &__title {
+      padding: 0;
+      font-size: $font_large;
+    }
+    &__ul1 {
+      font-size: $font_xlarge;
+      width: 100%;
       @include marpad;
+      @include listnone;
+      padding: $font_xlarge $font_xxlarge 0 $font_xxlarge;
     }
   }
 }

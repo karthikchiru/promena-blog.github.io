@@ -31,17 +31,17 @@ const AllPosts = () => {
 
 
           return (
-            <div className='cards' key={post.Blog_id}>
-              <NavLink className='post-title' to={`/post/${post.Blog_id}`}>
+            <div className='card' key={post.Blog_id}>
+              <NavLink className='card__title' to={`/post/${post.Blog_id}`}>
                 {post.title}
               </NavLink>
               <h1>{post.category}</h1>
-              <div className='main-content'>
-                <img src={url} key={post.Blog_id} className='card-image' />
+              <div className='card__content'>
+                <img src={url} key={post.Blog_id} className='card__image' />
                 <ReadMore className='readmore-content' post = {post.content} />
               </div>
-              <ul className='main-ul1'>
-                <li><i className='fa fa-clock-o' aria-hidden='true'> {moment(post.date_created).format('ddd-mm-yyyy, A')}</i></li>
+              <ul className='card__ul1'>
+                <li><i className='fa fa-clock-o' aria-hidden='true'> {moment(post.date_created).format('MMM-Do-YY, hh:mm A') }</i></li>
                 <li><i className='fa fa-eye' aria-hidden='true'></i> 75 reads</li>
                 <li><i className='fa fa-clock-o' aria-hidden='true'></i> 3 min read</li>
               </ul>
