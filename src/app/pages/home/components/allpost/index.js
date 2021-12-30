@@ -33,8 +33,7 @@ const AllPosts = () => {
               <h1>{post.category}</h1>
               <div className='main-content'>
                 <img src={url} key={post.Blog_id} className='card-image' />
-                <ReadMore className='readmore-content' post = {post.content} />
-                {/* <div ></div> */}
+                <ReadMore className='readmore-content' post={post.content} />
               </div>
               <ul className='main-ul1'>
                 <li><i className='fa fa-clock-o' aria-hidden='true'> {moment(post.date_created).format('ddd-mm-yyyy, A')}</i></li>
