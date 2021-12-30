@@ -34,13 +34,13 @@ if(text)
    const onSubmit = (e)=>{
      debugger;
      e.preventDefault();
-    //  handleSubmit(text);
+     handleSubmit(text, null ,user);
   setIsBtnDisabled(true); 
  let token = sessionStorage.getItem('user-token');
 //  getUserToken((resposne)=>{
 //    console.log(resposne);
 //  })
- if(token)
+ if(token !== undefined)
  {
   setIsBtnDisabled(false); 
   console.log(text);
@@ -53,7 +53,6 @@ if(text)
   }
 
   const onConfirm =(user)=>{
-    debugger
     setuser(user);
     setshowLoginConfirmModal(false);
     userToken((res)=>{

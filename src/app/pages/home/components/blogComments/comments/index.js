@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useState, useEffect } from 'react';
@@ -19,9 +20,11 @@ const Comments = ({ commentsUrl, currentUserId, user }) => {
   const [backendComments, setBackendComments] = useState([]);
   const [backendReplyComments, setBackendReplyComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
+
   const rootComments = backendComments.filter(
     (backendComment) => backendComment.Blog_id 
   );
+  debugger
   const getReplies = (commentId) =>
   backendReplyComments
       .filter((backendComment) => backendComment.Blog_id === commentId )
@@ -29,11 +32,13 @@ const Comments = ({ commentsUrl, currentUserId, user }) => {
         (a, b) =>
           new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
       );
+
   const addComment = (text, parentId) => {
 
-    createCommentApi(text, parentId).then((comment) => {
+    createCommentApi(text, parentId, user).then((comment) => {
       setBackendComments([comment, ...backendComments]);
       setActiveComment(null);
+      console.log(user)
     });
     // console.log(text, user);
     // createCommentApi((res)=>{
