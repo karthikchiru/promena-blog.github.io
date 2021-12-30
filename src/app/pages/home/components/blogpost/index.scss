@@ -102,3 +102,13 @@
     width: 90%;
   }
 }
+
+@media screen and (min-width: 1024px) and (max-width:1420px) {
+  .blog{
+  &__post {
+    &__tag {
+      font-size: $font_xxlarge;
+    }
+  }
+}
+}
