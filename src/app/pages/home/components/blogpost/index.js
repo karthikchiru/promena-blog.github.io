@@ -1,6 +1,5 @@
-/* eslint-disable no-debugger */
-/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
+
 
 
 import React, { useState, useEffect } from 'react';
@@ -16,7 +15,6 @@ const BlogPost = (props) => {
   const [comment, setComment] = useState(false);
 
   useEffect(() => {
-    debugger
     const postId = props.match.params.postId;
     getPostList((res) => {
       const post = res.find(post => post.Blog_id == postId);
@@ -56,6 +54,7 @@ const BlogPost = (props) => {
             <Comments
               commentsUrl='http://localhost:3000/comments'
               currentUserId='1'
+              blogId = {props.match.params.postId}
             />
           </div>
         }
