@@ -12,7 +12,6 @@ const Comment = ({
   parentId = null,
   currentUserId,
 }) => {
-  debugger
   // const isEditing =
   //   activeComment &&
   //   activeComment.id === comment.id &&

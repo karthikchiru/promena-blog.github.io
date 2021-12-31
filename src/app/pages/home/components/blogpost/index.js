@@ -17,7 +17,6 @@ const BlogPost = (props) => {
    const [comment, setComment] = useState(false);
  
 useEffect(()=>{
-  debugger
   const postId = props.match.params.postId;
   getPostList((res)=>{
     const post = res.find(post => post.Blog_id == postId);
@@ -57,6 +56,7 @@ const handleComment =() => {
       <Comments
     commentsUrl='http://localhost:3000/comments'
     currentUserId='1'
+    blogId = {props.match.params.postId}
   />
   </div>
   }

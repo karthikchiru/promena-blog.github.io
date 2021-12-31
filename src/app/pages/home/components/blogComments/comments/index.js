@@ -16,15 +16,14 @@ import {
   // createComment as createCommentApi,
 } from '../commentApi';
 
-const Comments = ({ commentsUrl, currentUserId, user }) => {
+const Comments = ({ commentsUrl, currentUserId, user, blogId }) => {
   const [backendComments, setBackendComments] = useState([]);
   const [backendReplyComments, setBackendReplyComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
-
+console.log(blogId)
   const rootComments = backendComments.filter(
     (backendComment) => backendComment.Blog_id 
   );
-  debugger
   const getReplies = (commentId) =>
   backendReplyComments
       .filter((backendComment) => backendComment.Blog_id === commentId )
@@ -53,6 +52,7 @@ const Comments = ({ commentsUrl, currentUserId, user }) => {
     });
     getReplyCommentsApi((data)=>{
       setBackendReplyComments(data);
+      console.log(data)
     })
   }, []);
 
@@ -60,10 +60,10 @@ const Comments = ({ commentsUrl, currentUserId, user }) => {
     <div className='comments'>
       <h3 className='comments-title'>Comments</h3>
       <div className='comment-form-title'>Write comment</div>
-      <CommentForm submitLabel='Post' />
+      <CommentForm submitLabel='Post' blogId = {blogId} />
       <div className='comments-container'>
         {rootComments.map((rootComment) => (
-          <Comment
+       rootComment.Blog_id == blogId ? <Comment
             key={rootComment.Blog_id}
             comment={rootComment}
             replies={getReplies(rootComment.Blog_id)}
@@ -71,7 +71,7 @@ const Comments = ({ commentsUrl, currentUserId, user }) => {
             activeComment={activeComment}
             setActiveComment={setActiveComment}
             currentUserId={currentUserId}
-          />
+          />:null
         ))}
       </div>
     </div>
