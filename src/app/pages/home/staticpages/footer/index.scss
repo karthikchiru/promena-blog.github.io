@@ -13,6 +13,9 @@
     @include textnone;
     cursor: pointer;
   }
+  &__logo{
+    cursor: pointer;
+  }
   &__center1 {
     @include relativeblock;
     @include columncenter;
@@ -178,10 +181,6 @@ body {
     }
   }
 }
-.topping {
-  justify-content: space-between;
-  width: 100%;
-}
 
 @media screen and (min-width: 480px) and (max-width: 760px) {
   .footer {
@@ -217,8 +216,4 @@ body {
       padding-right: $font_top8;
     }
   }
-}
-.topping {
-  justify-content: space-between;
-  width: 100%;
 }

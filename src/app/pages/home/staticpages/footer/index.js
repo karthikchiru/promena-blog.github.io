@@ -2,12 +2,14 @@ import React, { useState, useLayoutEffect, useEffect } from 'react';
 import './index.scss';
 import logo from '../../../../../assets/images/promena.png';
 import { useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import { getCategoryDetails, userSubscribe } from '../../../../utils/apiCalls';
 import Button from '../../../../components/button';
 import { regex } from 'app/constants/regex';
 
 const Footer = () => {
   const location = useLocation();
+  const history = useHistory();
   let pathName = location.pathname;
   const [email, setEmail] = useState('');
   const [category, setCategory] = useState('');
@@ -33,46 +35,43 @@ const Footer = () => {
       setIsBtnDisabled(false);
     }
   };
-const ValidateEmail =(email)=>{
-const emailRegex = regex.emailRegex;
-return emailRegex.test(email);
-}
-
-const handleKeyEnter = (e) =>{
-  if(e.key === 'Enter' && ValidateEmail(email) && dropdown)
-  {
-    handleSubscribe();
+  const ValidateEmail = (email) => {
+    const emailRegex = regex.emailRegex;
+    return emailRegex.test(email);
   }
-}
+
+  const handleKeyEnter = (e) => {
+    if (e.key === 'Enter' && ValidateEmail(email) && dropdown) {
+      handleSubscribe();
+    }
+  }
   const handleClick = () => {
     window.scrollTo(0, 0);
   };
 
   const handleSubscribe = () => {
-    if(ValidateEmail(email) && dropdown)
-    {
-    const payload = {
-      User_email_Address: email,
-      category_ID: dropdown,
-    };
-    userSubscribe((res) => {
-      console.log(res);
-    }, payload);
-    setCategory('');
-    setDropdown('');
-    setIsBtnDisabled(false);
-  }
+    if (ValidateEmail(email) && dropdown) {
+      const payload = {
+        User_email_Address: email,
+        category_ID: dropdown,
+      };
+      userSubscribe((res) => {
+        console.log(res);
+      }, payload);
+      setCategory('');
+      setDropdown('');
+      setIsBtnDisabled(false);
+    }
   };
 
-  useLayoutEffect(() => {}, [handleClick]);
+  useLayoutEffect(() => { }, [handleClick]);
 
   return (
     <div>
       {pathName !== '/forgotPassword' ? (
         <div className='footer'>
           <div className='footer__left'>
-            <img src={logo} alt='my home' className='footer__logo' />
-
+            <a onClick={() => history.push('/'),handleClick}><img src={logo} alt='my home' className='footer__logo' /></a>
             <div className='footer__icons'>
               <ul>
                 <li>
@@ -103,51 +102,51 @@ const handleKeyEnter = (e) =>{
             <ul>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> Advertize
                 </a>
               </li>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> Shop SEJ
                 </a>
               </li>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> Privacy
                   Policy
                 </a>
               </li>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> Contact
                 </a>
               </li>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> About
                 </a>
               </li>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> Toolbox
                 </a>
               </li>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> Press
                   Materials
                 </a>
               </li>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> Do Not Sell
                   My Personal Info
                 </a>
@@ -163,48 +162,48 @@ const handleKeyEnter = (e) =>{
               </li>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> How Search
                   Engines Work
                 </a>
               </li>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> Local SEO
                 </a>
               </li>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> Link
                   Building Guide
                 </a>
               </li>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> On-Page SEO
                   Guide
                 </a>
               </li>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> Technical
                   SEO Guide
                 </a>
               </li>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> How to Do an
                   SEO Audit
                 </a>
               </li>
               <li>
                 <a onClick={handleClick} className='desktop-link'>
-                   
+
                   <i className='fas fa-arrow-alt-circle-right'></i> SEO Tools
                 </a>
               </li>
@@ -212,7 +211,7 @@ const handleKeyEnter = (e) =>{
           </div>
           <div className='footer__right'>
             <h2 className='footer__right__content'>
-              Subscribe to 
+              Subscribe to
               <span className='footer__right__subscribe'>PROMENA</span>
             </h2>
             <p className='footer__right__content'>

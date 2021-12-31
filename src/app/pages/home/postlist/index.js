@@ -13,7 +13,6 @@ getPostList((res)=>{
 });
     }, posts);
 
-
     return (
         <div className='postlist-banner'>
             {posts.map(val => {
