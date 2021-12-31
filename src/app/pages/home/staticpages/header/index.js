@@ -27,65 +27,63 @@ const Header = () => {
   }, []);
 
 
-    return (
-     <div>
-     {( pathName !=='/forgotPassword')?
-     <div className='header-wrapper'>
-    <nav>
-      <input type='checkbox' id='show-search'></input>
-      <input type='checkbox' id='show-menu'></input>
-      <label htmlFor='show-menu' className='menu-icon'><i className='fas fa-bars'></i></label>
-      <div className='content'>
-     <a onClick={()=>history.push('/')}><img src={logo} className='logo' alt='logo' /></a>
-        <ul className='links'>
- {menu.length && menu.map((val, index)=>{
-  return(
-    <li key = {index}>
-            <a href='#' className='desktop-link'>{val.menuname} <i className='fa fa-caret-down' aria-hidden='true'></i></a>
-            <input type='checkbox' id='show-ppc'></input>
-            <label htmlFor='show-ppc'>Ppc</label>
+  return (
+    <div>
+      {(pathName !== '/forgotPassword') ?
+        <div className='header-wrapper'>
+          <nav>
+            <input type='checkbox' id='show-search'></input>
+            <input type='checkbox' id='show-menu'></input>
+            <label htmlFor='show-menu' className='menu-icon'><i className='fas fa-bars'></i></label>
+            <div className='content'>
+              <a onClick={() => history.push('/')}><img src={logo} className='logo' alt='logo' /></a>
+              <ul className='links'>
+                {menu.length && menu.map((val, index) => {
+                  return (
+                    <li key={index}>
+                      <a href='#' className='desktop-link'>{val.menuname} <i className='fa fa-caret-down' aria-hidden='true'></i></a>
+                      <input type='checkbox' id='show-ppc'></input>
+                      <label htmlFor='show-ppc'>Ppc</label>
+                      <ul>
+                        {category.length && category.map((value, index1) => {
+                          return (
+                            <li key={index1}><a href='#'>{
+                              (val.menuid === value.menuname ? value.category_name : null)
+                            }</a></li>
+                          );
+                        })}
+                      </ul>
 
-  <ul>
-  {category.length && category.map((value, index1)=>{
-   return(
-   
-  <li key={index1}><a href='#'>{
-    (val.menuid === value.menuname ? value.category_name:null) 
-  }</a></li>
-   );
-  })}
-   </ul>
-
-          </li>
-  )
-})} 
-          <li><a href='#'>WEBINARS</a></li>
-          <li>
-            <a href='#' className='desktop-link'>FOLLOW <i className='fa fa-caret-down' aria-hidden='true'></i></a>
-            <input type='checkbox' id='show-social-links'></input>
-            <label htmlFor='show-social-links'>Follow Us</label>
-            <ul className='social-links'>
+                    </li>
+                  )
+                })}
+                <li><a href='#'>WEBINARS</a></li>
+                <li>
+                  <a href='#' className='desktop-link'>FOLLOW <i className='fa fa-caret-down' aria-hidden='true'></i></a>
+                  <input type='checkbox' id='show-social-links'></input>
+                  <label htmlFor='show-social-links'>Follow Us</label>
+                  <ul className='social-links'>
                     <li>
-                  <a
-                    href='https://www.facebook.com/PromenaLLP/'
-                    className='fa fa-facebook fa-3x'
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href='https://api.whatsapp.com/message/DEEJEJJ7JI4KL1'
-                    className='fa fa-whatsapp fa-3x'
-                  ></a>
-                </li>
-                <li>
-                  <a
-                    href='https://in.linkedin.com/company/promena-inc'
-                    className='fa fa-linkedin fa-3x'
-                  ></a>
-                </li>
-                <li>
-                  <a href='#' className='fa fa-envelope-o fa-3x'></a>
-                </li>
+                      <a
+                        href='https://www.facebook.com/PromenaLLP/'
+                        className='fa fa-facebook fa-3x'
+                      ></a>
+                    </li>
+                    <li>
+                      <a
+                        href='https://api.whatsapp.com/message/DEEJEJJ7JI4KL1'
+                        className='fa fa-whatsapp fa-3x'
+                      ></a>
+                    </li>
+                    <li>
+                      <a
+                        href='https://in.linkedin.com/company/promena-inc'
+                        className='fa fa-linkedin fa-3x'
+                      ></a>
+                    </li>
+                    <li>
+                      <a href='#' className='fa fa-envelope-o fa-3x'></a>
+                    </li>
                   </ul>
                 </li>
               </ul>

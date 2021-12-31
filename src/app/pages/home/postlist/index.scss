@@ -13,37 +13,7 @@
     background-color: $blue1;
     color: $dark_shadow;
   }
-  h2 a {
-    @include textnone;
-  }
-  a:hover {
-    color: $color-white-primary;
-  }
-}
-.first-list {
-  border: 1px solid rgb(245, 230, 230);
-  width: 450px;
-  height: 122px;
-  background-color: $color-white-primary;
-  &__heading a {
-    color: $color-white-primary;
-    font-family: $monstserrat_regular;
-  }
-  &__content {
-    margin-left: $font_large;
-    color: $color-white-primary;
-    font-size: $font_button;
-    font-weight: 500;
-  }
-  &__arrow {
-    position: absolute;
-    top: $font_top3;
-    width: 0;
-    height: 0;
-    border-top: 1rem solid transparent;
-    border-left: 1.5rem solid $color-white-primary;
-    border-bottom: 1rem solid transparent;
-  }
+ 
 }
 
 h2 {
@@ -60,20 +30,10 @@ span {
   font-weight: 500;
 }
 
-.first-list:nth-child(1) {
-  background-color: $blue1;
-  color: $color-white-primary !important;
-}
 
 @media screen and (min-width: 1024px) and (max-width: 1440px) {
   .postlist-banner {
     width: 100%;
-  }
-  .first-list {
-    border: 1px solid rgb(245, 230, 230);
-    width: 350px;
-    // height: 122px;
-    padding: $font_verysmall;
   }
 }
 
@@ -92,17 +52,6 @@ span {
   }
   .postlist {
     width: 100%;
-  }
-  .first-list {
-    border: 1px solid rgb(245, 230, 230);
-    width: 350px;
-  }
-  .first-list:nth-child(1) {
-    background-color: $blue1;
-    color: $color-white-primary !important;
-    width: 100%;
-  }
-  .postlist {
     padding: 0.6rem;
   }
   .wrap__postlist {

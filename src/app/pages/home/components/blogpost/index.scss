@@ -27,29 +27,6 @@
   }
 }
 
-.blog-post-text {
-  width: 80%;
-}
-.chart-wrap {
-  margin: $font_large;
-}
-
-.comment-box {
-  @include flexrow;
-  @include rowcenter;
-  width: 100%;
-}
-
-.comment-wrap {
-  box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 10%);
-  width: 100%;
-  max-height: auto;
-  background-color: $color_white6;
-}
-.comment-button {
-  padding: $font_verysmall $font_medium;
-  margin: $font_xverysmall;
-}
 .comment1{
   @include allcenter;
 &__button1{
@@ -63,33 +40,6 @@
   @include allcenter;
 }
 }
-.comment {
-  width: 100%;
-  padding: $font_xverysmall;
-  font-size: $font_medium;
-  font-family: $monstserrat_regular;
-}
-.user-name {
-  width: 100%;
-  padding: $font_xverysmall;
-  font-size: $font_medium;
-  font-family: $monstserrat_regular;
-}
-.user-email {
-  width: 100%;
-  padding: $font_xverysmall;
-  font-size: $font_medium;
-  font-family: $monstserrat_regular;
-}
-.comment-items {
-  padding: $font_xverysmall $font_large;
-  display: flex;
-  align-items: left;
-  flex-direction: column;
-}
-.comment-title {
-  margin: $font_verysmall;
-}
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
   .blog {
@@ -97,9 +47,6 @@
       display: block;
       width: 100%;
     }
-  }
-  .chart-wrap {
-    width: 90%;
   }
 }
 
