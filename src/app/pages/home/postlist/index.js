@@ -17,8 +17,8 @@ getPostList((res)=>{
         <div className='postlist-banner'>
             {posts.map(val => {
                 return (
-                    <div key={val.Blog_id} className='postlist'>
-                        <h2><NavLink to={`/post/${val.Blog_id}`}>{val.category}</NavLink> </h2>
+                    <div key={val.id} className='postlist'>
+                        <h2><NavLink to={`/post/${val.id}`}>{val.category}</NavLink> </h2>
                         <span>{val.title}</span>
                     </div>
                 )

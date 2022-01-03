@@ -32,8 +32,8 @@ const Sidebar = (props) => {
           // var pathname = new URL(url).pathname;
 
           return (
-            <div className='posts' key={post.Blog_id}>
-              <NavLink className='posts__link' to={`/post/${post.Blog_id}`}>
+            <div className='posts' key={post.id}>
+              <NavLink className='posts__link' to={`/post/${post.id}`}>
                 {post.title}
               </NavLink>
               <h1>{post.category}</h1>

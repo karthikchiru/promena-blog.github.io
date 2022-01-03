@@ -19,7 +19,7 @@
     border-radius: $font_large;
     color: $color-white-primary;
     min-height: 23rem;
-    height: 32rem;
+    height: 36rem;
     &__center-div {
       position: absolute;
       top: 50%;
@@ -29,7 +29,7 @@
     }
     &__inputs {
       background: $color-white-primary;
-      padding: $font_medium;
+      padding: 0.5rem !important;
       color: $dark_shadow;
       margin: $font_verysmall 0;
       font-family: $monstserrat_regular;
@@ -42,6 +42,7 @@
       width: 16.4rem;
       padding: $font_verysmall;
       border: none;
+      margin-left: 5rem;
       color: $color-white-primary;
     }
 

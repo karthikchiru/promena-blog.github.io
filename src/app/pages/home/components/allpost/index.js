@@ -16,6 +16,7 @@ const AllPosts = () => {
 
   useEffect(() => {
     getPostList((response) => {
+      if(response)
       setPostList(response);
     });
   }, []);
@@ -31,13 +32,13 @@ const AllPosts = () => {
 
 
           return (
-            <div className='card' key={post.Blog_id}>
-              <NavLink className='card__title' to={`/post/${post.Blog_id}`}>
+            <div className='card' key={post.id}>
+              <NavLink className='card__title' to={`/post/${post.id}`}>
                 {post.title}
               </NavLink>
               <h1>{post.category}</h1>
               <div className='card__content'>
-                <img src={url} key={post.Blog_id} className='card__image' />
+                <img src={url} key={post.id} className='card__image' />
                 <ReadMore className='readmore-content' post = {post.content} />
               </div>
               <ul className='card__ul1'>

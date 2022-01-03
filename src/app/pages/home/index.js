@@ -9,11 +9,6 @@ import Tabs from './staticpages/tabs';
 
 const Home = () => {
 
-    const [switchPost, setSwitchPost] = useState(false);
-        const handlePost =()=>{
-        setSwitchPost(!switchPost);  
-    }
-
     return (
 <div className='width-container'>
 <div className='wrap'>

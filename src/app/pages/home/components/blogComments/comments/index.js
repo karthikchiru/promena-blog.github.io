@@ -20,31 +20,30 @@ const Comments = ({ commentsUrl, currentUserId, user, blogId }) => {
   const [backendComments, setBackendComments] = useState([]);
   const [backendReplyComments, setBackendReplyComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
-console.log(blogId)
   const rootComments = backendComments.filter(
     (backendComment) => backendComment.Blog_id 
   );
   const getReplies = (commentId) =>
   backendReplyComments
-      .filter((backendComment) => backendComment.Blog_id === commentId )
+      .filter((backendComment) => backendComment.CommentId === commentId )
       .sort(
         (a, b) =>
           new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
       );
 
-  const addComment = (text, parentId) => {
+  // const addComment = (text, parentId) => {
 
-    createCommentApi(text, parentId, user).then((comment) => {
-      setBackendComments([comment, ...backendComments]);
-      setActiveComment(null);
-      console.log(user)
-    });
+  //   createCommentApi(text, parentId, user).then((comment) => {
+  //     setBackendComments([comment, ...backendComments]);
+  //     setActiveComment(null);
+  //     console.log(user);
+  //   });
     // console.log(text, user);
     // createCommentApi((res)=>{
     //   setBackendComments([res, ...backendComments]);
     //   setActiveComment(null);
     // },);
-  };
+  // };
 
   useEffect(() => {
     getCommentsApi((data)=>{
@@ -52,7 +51,6 @@ console.log(blogId)
     });
     getReplyCommentsApi((data)=>{
       setBackendReplyComments(data);
-      console.log(data)
     })
   }, []);
 
@@ -62,12 +60,11 @@ console.log(blogId)
       <div className='comment-form-title'>Write comment</div>
       <CommentForm submitLabel='Post' blogId = {blogId} />
       <div className='comments-container'>
-        {rootComments.map((rootComment) => (
+        {rootComments.length >0 && rootComments.map((rootComment) => (
        rootComment.Blog_id == blogId ? <Comment
             key={rootComment.Blog_id}
             comment={rootComment}
-            replies={getReplies(rootComment.Blog_id)}
-            addComment={addComment}
+            replies={getReplies(rootComment.commentId)}
             activeComment={activeComment}
             setActiveComment={setActiveComment}
             currentUserId={currentUserId}

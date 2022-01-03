@@ -29,37 +29,33 @@ export function fetchCall(callback, url, method, payload) {
     });
   }
   
-//   export function getImage(callback, url, method, payload) {
-//     debugger;
-//     return new Promise(function (resolve, reject)
-//     {
-//       const options = {
-//         method, 
-//         body:JSON.stringify(payload),
-//         headers: {
-//             'Content-Type': 'application/json'
-//         }
-//       }
-//       fetch(url, options).then((res)=>{
-//         console.log(res);
-//        return res.json();
-     
-//       }).then((res)=>{
-//         if(res.thumbnail)
-// {
-//   callback(res);
-//   console.log(res.thumbnail)
-//   resolve(res);
-// }
-//       }).catch((err)=>{
-//         callback(err);
-//         return err;
-//       })
-
-//     })
-// }   
-// .then((res)=>{
-//   debugger
-// //   const imageObjectURL = URL.createObjectURL(imageBlob);
-// // console.log(imageObjectURL);
-// })
+  export function fetchLoginCall(callback, url, method, payload) {
+    // debugger
+    let token = sessionStorage.getItem('user-token');
+      return new Promise(function (resolve, reject) {
+        const options = {
+          method,
+          body:JSON.stringify(payload),
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer' [token]
+          }
+        };
+        fetch(url, options)
+          .then((res) => {
+            return res.json();
+          })
+          .then((res) => {
+            if (res.error?.statusCode === 401 || res.error?.status === 401) {
+                console.log(res.error)
+            } else {
+              callback(res);
+              resolve(res);
+            }
+          })
+          .catch((err) => {
+            callback(err);
+            return err;
+          });
+      });
+    }

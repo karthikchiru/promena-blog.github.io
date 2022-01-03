@@ -7,6 +7,7 @@ import {userRegistartion, userToken, getUserToken, userComment as createCommentA
 import './index.scss';
 const CommentForm = ({
   handleSubmit,
+  commentId,
   blogId,
   submitLabel,
   hasCancelButton = false,
@@ -20,8 +21,8 @@ const CommentForm = ({
   const [matchTokens, setMatchTokens] = useState('');
   const [user, setuser] = useState({});
   const isTextareaDisabled = text.length === 0;
+console.log(commentId);
 
-console.log(matchTokens)
   const handleValueChange =(e, key)=>{
     setIsBtnDisabled(true);
 let val = e.target.value;
@@ -34,13 +35,12 @@ if(text)
     setIsBtnDisabled(false); 
 }
   }
-
    const onSubmit = (e)=>{
-     let userDetail = sessionStorage.getItem('user');
+     debugger;
      let date = new Date();
-console.log(userDetail)
      let payload = {
       Blog_id: blogId,
+      commentId: commentId++,
       name: user.name,
       Comment: text,
       datetime: date,
@@ -53,23 +53,23 @@ console.log(userDetail)
       createCommentApi((resp)=>{
         console.log(resp);
              }, payload)
-     }else if(userDetail && token)
-     {
-       payload.name = userDetail.name;
-       payload.email = userDetail.email;
-      createCommentApi((resp)=>{
-        console.log(resp);
-             }, payload)
      }
+    //  else if(userDetail && token)
+    //  {
+    //    payload.name = userDetail.name;
+    //    payload.email = userDetail.email;
+    //   createCommentApi((resp)=>{
+    //     console.log(resp);
+    //          }, payload)
+    //  }
 
     //  handleSubmit(text);
   setIsBtnDisabled(true); 
  let token = sessionStorage.getItem('user-token');
- console.log(token)
 //  getUserToken((resposne)=>{
 //    console.log(resposne);
 //  })
- if(token)
+ if(token !==null)
  {
   setIsBtnDisabled(false); 
   console.log(text);
@@ -82,21 +82,18 @@ console.log(userDetail)
   }
 
   const onConfirm =(user)=>{
-    // if(userRegister.id && userRegister.name && userRegister.email)
-    // {
-    //   getUserToken((data)=>{
-    //     setMatchTokens(data);
-    //   }, userRegister);
-    // }
+    debugger;
+    console.log(user);
     setuser(user);
      userRegistartion((response)=>{
        console.log(response);
        setUserRegister(response);
        let payload = {
          name:response.name,
-         email:response.email
+         email:response.email,
+         password:response.password
        }
-       if(payload)
+       if(payload !=='undefined')
        {
         userToken((res)=>{
         sessionStorage.setItem('user-token', res.jwt);

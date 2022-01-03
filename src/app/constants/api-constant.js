@@ -3,19 +3,19 @@ const BaseURL = {
 };
 
 export const API_CONSTANTS = {
- CATEGORY_DETAILS:`${BaseURL.BASE_URL}/Category/CreateCategory`,
- MENU_DETAILS:`${BaseURL.BASE_URL}/Mainmenu/Createmenu`,
+ CATEGORY_DETAILS:`${BaseURL.BASE_URL}/category/CreateCategeory`,
+ MENU_DETAILS:`${BaseURL.BASE_URL}/mainmenu/Createmenu`,
  POST_LIST:`${BaseURL.BASE_URL}/Blog/BlogPost`,
  ADMIN_REGISTRATION:`${BaseURL.BASE_URL}/Admin/Register`,
  ADMIN_LOGIN:`${BaseURL.BASE_URL}/Admin/Login`,
  GET_ADMIN_REGISTRATION:`${BaseURL.BASE_URL}/Admin/Register`,
- USER_REGISTRATION:`${BaseURL.BASE_URL}/UserRegister/Register`,
+ USER_REGISTRATION:`${BaseURL.BASE_URL}/UserRegister/UserRegister`,
  USER_TOKEN:`${BaseURL.BASE_URL}/UserToken/CreateToken`,
  GET_USER_TOKEN:`${BaseURL.BASE_URL}/UserToken/ViewUserToken`,
  USER_SUBSCRIPTION:`${BaseURL.BASE_URL}/Subscribe/UserSubscribe`,
  USER_COMMENT:`${BaseURL.BASE_URL}/Comment/BlogComment`,
  GET_USER_COMMENT:`${BaseURL.BASE_URL}/Comment/BlogComment`,
- GET_REPLY_COMMENTS:`${BaseURL.BASE_URL}/ReplyComment/`
+ GET_REPLY_COMMENTS:`${BaseURL.BASE_URL}/Comment/ReplyComment`
 };
 
 export const API_METHODS = {

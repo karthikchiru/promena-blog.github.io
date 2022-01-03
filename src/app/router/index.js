@@ -18,7 +18,6 @@ const Router = () => {
     <React.Suspense fallback={<Loader />}>
     <Header/>
       <Switch>
-      
         {/* <Route exact path='/' component={Login} /> */}
         {/* <Route exact path='/registration' component={Registration} /> */}
         <Route exact path='/forgotPassword' component={ForgotPassword} />
