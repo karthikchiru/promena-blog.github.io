@@ -8,6 +8,7 @@ import './index.scss';
 const CommentForm = ({
   handleSubmit,
   commentId,
+  rootCommentId,
   blogId,
   submitLabel,
   hasCancelButton = false,
@@ -21,7 +22,6 @@ const CommentForm = ({
   const [matchTokens, setMatchTokens] = useState('');
   const [user, setuser] = useState({});
   const isTextareaDisabled = text.length === 0;
-console.log(commentId);
 
   const handleValueChange =(e, key)=>{
     setIsBtnDisabled(true);
@@ -37,57 +37,51 @@ if(text)
   }
    const onSubmit = (e)=>{
      debugger;
+     e.preventDefault();
+     rootCommentId.map((val)=>{
+       sessionStorage.setItem('commentId', val.commentId);
+       return val.commentId;
+     });
+     let CommentId = sessionStorage.getItem('commentId');
      let date = new Date();
      let payload = {
       Blog_id: blogId,
-      commentId: commentId++,
+      commentId: ++CommentId,
       name: user.name,
       Comment: text,
       datetime: date,
       email: user.email
      };
      console.log(payload)
-     e.preventDefault();
-     if(user.name !== undefined && user.email !== undefined && payload)
+     if(payload.name !== 'undefined' && payload.email !== 'undefined' && payload)
      {
       createCommentApi((resp)=>{
         console.log(resp);
              }, payload)
      }
-    //  else if(userDetail && token)
-    //  {
-    //    payload.name = userDetail.name;
-    //    payload.email = userDetail.email;
-    //   createCommentApi((resp)=>{
-    //     console.log(resp);
-    //          }, payload)
-    //  }
 
-    //  handleSubmit(text);
-  setIsBtnDisabled(true); 
- let token = sessionStorage.getItem('user-token');
-//  getUserToken((resposne)=>{
-//    console.log(resposne);
-//  })
- if(token !==null)
+  setIsBtnDisabled(true);
+
+ if(payload.name == undefined && user.email == undefined)
  {
+  setIsBtnDisabled(true);
+  setshowLoginConfirmModal(true);
+  localStorage.clear();
+ }else{
   setIsBtnDisabled(false); 
   console.log(text);
   setText('');
   setIsBtnDisabled(true);
- }else{
-  setIsBtnDisabled(true);
-  setshowLoginConfirmModal(true);
  }
   }
 
   const onConfirm =(user)=>{
-    debugger;
     console.log(user);
     setuser(user);
      userRegistartion((response)=>{
        console.log(response);
        setUserRegister(response);
+       sessionStorage.setItem('user',JSON.stringify(user));
        let payload = {
          name:response.name,
          email:response.email,
@@ -96,8 +90,7 @@ if(text)
        if(payload !=='undefined')
        {
         userToken((res)=>{
-        sessionStorage.setItem('user-token', res.jwt);
-        sessionStorage.setItem('user', user);
+        localStorage.setItem('user-token', res.jwt);
         }, payload);
        }
      }, user);

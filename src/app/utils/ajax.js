@@ -2,12 +2,15 @@
 /* eslint-disable no-unused-vars */
 export function fetchCall(callback, url, method, payload) {
   // debugger
+  let token = localStorage.getItem('user-token');
     return new Promise(function (resolve, reject) {
       const options = {
         method,
         body:JSON.stringify(payload),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Accept':'application/json',
+          'Authorization': 'Bearer ' + token
         }
       };
       fetch(url, options)
