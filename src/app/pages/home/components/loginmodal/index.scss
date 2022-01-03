@@ -13,13 +13,13 @@
   &__dialog {
     background-color: $color_white6;
     box-shadow: 0 4px 16px 0 $dark_shadow3;
-    width: 35%;
+    width: 30%;
     padding: $font_large;
     @include absoluteCenter;
     border-radius: $font_large;
     color: $color-white-primary;
     min-height: 23rem;
-    height: 32rem;
+    height: 40rem;
     &__submit{
       text-align: center;
     }
@@ -67,7 +67,6 @@
         line-height: 1.57;
         letter-spacing: normal;
         text-align: center;
-        padding-top: $font_large;
         color: $blue1;
       }
     }
@@ -101,7 +100,7 @@
 @media screen and (min-width:1024px) and (max-width:1420px) {
   .loginmodal {
     &__dialog {
-      width: 30%;
+      width: 35%;
       &__submit{
       text-align: center;
       }
