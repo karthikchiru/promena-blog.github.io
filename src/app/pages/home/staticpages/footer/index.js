@@ -71,7 +71,7 @@ const Footer = () => {
       {pathName !== '/forgotPassword' ? (
         <div className='footer'>
           <div className='footer__left'>
-            <a onClick={() => history.push('/'),handleClick}><img src={logo} alt='my home' className='footer__logo' /></a>
+            <a onClick={() => history.push('/')}><img src={logo} alt='my home' className='footer__logo' /></a>
             <div className='footer__icons'>
               <ul>
                 <li>

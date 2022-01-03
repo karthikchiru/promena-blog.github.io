@@ -20,7 +20,6 @@ const LoginModal = ({ onConfirm, confirmTitle, buttonText, className }) => {
   }
   const [user, setUser] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
 
   const validateEmail = (email)=>{
@@ -28,8 +27,7 @@ const LoginModal = ({ onConfirm, confirmTitle, buttonText, className }) => {
   }
 const obj = {
   name:user,
- email: email,
- password:password
+ email: email
 }
 
 const handleValueChange =(e, key)=>{
@@ -43,18 +41,14 @@ else if(key === 2)
 {
 setEmail(val);
 }
-else if(key === 3)
-{
-setPassword(val);
-}
-if(user && validateEmail(email) && password)
+if(user && validateEmail(email))
 {
 setIsBtnDisabled(false);
 // onConfirm(obj)
 }
 }
 const handleKeyEnter =(e)=>{
-    if(e.key === 'Enter'  && user && validateEmail(email) && password)
+    if(e.key === 'Enter'  && user && validateEmail(email))
     {
 setIsBtnDisabled(false);
     }
@@ -71,8 +65,8 @@ setIsBtnDisabled(false);
                 <Input className='loginmodal__dialog__inputs' onKeyUp ={(e)=>{handleKeyEnter(e)}}  value={user} onValueChange={(e)=>handleValueChange(e, 1)} placeholder='User Name'/>
                 <span className='loginmodal__dialog__footer__login-title'>Email*</span>
                 <Input className='loginmodal__dialog__inputs' onKeyUp ={(e)=>{handleKeyEnter(e)}} value={email} onValueChange={(e)=>handleValueChange(e, 2)} placeholder='Email'/>
-                <span className='loginmodal__dialog__footer__login-title'>Password*</span>
-                <Input className='loginmodal__dialog__inputs' onKeyUp ={(e)=>{handleKeyEnter(e)}} value={password} onValueChange={(e)=>handleValueChange(e, 3)} placeholder='Password'/>
+                </div>
+                <div className='loginmodal__dialog__submit'>
                 <Button className='loginmodal__dialog__submitbtn'  isBtnDisabled ={isBtnDisabled} buttonClick={()=>onConfirm(obj)}>{buttonText}</Button>
               </div> 
         </div>
