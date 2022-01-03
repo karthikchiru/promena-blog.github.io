@@ -22,6 +22,9 @@ h2 {
   color: $blue1;
   cursor: pointer;
   font-family: $monstserrat_regular;
+  a:hover{
+    color: white;
+  }
 }
 
 span {
