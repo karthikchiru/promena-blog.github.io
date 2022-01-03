@@ -5,7 +5,6 @@ import Banner from './staticpages/banner';
 import Postlist from './postlist';
 import AllPosts from '../home/components/allpost';
 import Tabs from './staticpages/tabs';
-import { Offline, Online, Detector} from 'react-detect-offline';
 
 const Home = () => {
 
@@ -13,14 +12,6 @@ const Home = () => {
     const handlePost = () => {
         setSwitchPost(!switchPost);
     }
-
-    <Detector
-        render={({ online }) => (
-            <div className={online ? 'normal' : 'warning'}>
-                You are currently {online ? 'online' : 'offline'}
-            </div>
-        )}
-    />
 
     return (
 

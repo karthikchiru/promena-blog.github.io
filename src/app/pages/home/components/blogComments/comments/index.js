@@ -23,6 +23,9 @@ const Comments = ({ commentsUrl, currentUserId, user, blogId }) => {
   const rootComments = backendComments.filter(
     (backendComment) => backendComment.Blog_id 
   );
+  const rootCommentId = backendComments.filter(
+    (backendComment) => backendComment.commentId 
+  );
   const getReplies = (commentId) =>
   backendReplyComments
       .filter((backendComment) => backendComment.CommentId === commentId )
@@ -58,7 +61,7 @@ const Comments = ({ commentsUrl, currentUserId, user, blogId }) => {
     <div className='comments'>
       <h3 className='comments-title'>Comments</h3>
       <div className='comment-form-title'>Write comment</div>
-      <CommentForm submitLabel='Post' blogId = {blogId} />
+      <CommentForm submitLabel='Post' blogId = {blogId} rootCommentId ={rootCommentId} />
       <div className='comments-container'>
         {rootComments.length >0 && rootComments.map((rootComment) => (
        rootComment.Blog_id == blogId ? <Comment

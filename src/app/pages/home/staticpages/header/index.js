@@ -22,7 +22,7 @@ const Header = () => {
 
     getCategoryDetails((response) => {
       console.log(response);
-      setcategory(response)
+      setcategory(response);
     });
   }, []);
 
