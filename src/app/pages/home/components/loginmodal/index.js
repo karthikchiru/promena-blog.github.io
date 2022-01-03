@@ -65,6 +65,8 @@ setIsBtnDisabled(false);
                 <Input className='loginmodal__dialog__inputs' onKeyUp ={(e)=>{handleKeyEnter(e)}}  value={user} onValueChange={(e)=>handleValueChange(e, 1)} placeholder='User Name'/>
                 <span className='loginmodal__dialog__footer__login-title'>Email*</span>
                 <Input className='loginmodal__dialog__inputs' onKeyUp ={(e)=>{handleKeyEnter(e)}} value={email} onValueChange={(e)=>handleValueChange(e, 2)} placeholder='Email'/>
+                </div>
+                <div className='loginmodal__dialog__submit'>
                 <Button className='loginmodal__dialog__submitbtn'  isBtnDisabled ={isBtnDisabled} buttonClick={()=>onConfirm(obj)}>{buttonText}</Button>
               </div> 
         </div>
