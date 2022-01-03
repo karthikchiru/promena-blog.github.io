@@ -1,6 +1,11 @@
 @import "../../../../../styles/variables.scss";
 @import "../../../../../styles/mixins.scss";
 
+// .company{
+//   @include allcenter;
+//   color: $color-white-primary;
+//   padding-top: 8.5rem;
+// }
 .loginmodal {
   position: fixed;
   background-color: $dark_shadow3;
@@ -11,13 +16,13 @@
   z-index: 999;
 
   &__dialog {
-    background-color: $color_white6;
-    box-shadow: 0 4px 16px 0 $dark_shadow3;
+    background-color: rgba(0,0,0,.5);
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
     width: 30%;
     padding: $font_large;
     @include absoluteCenter;
     border-radius: $font_large;
-    color: $color-white-primary;
+    color: $color-white-primary ;
     min-height: 23rem;
     height: 40rem;
     &__submit{
@@ -56,7 +61,7 @@
       justify-content: space-evenly;
       min-height: 6.6rem;
       &__login-title {
-        color: $dark2;
+        color: $color-white-primary;
       }
       &__description {
         font-family: $monstserrat_regular;
