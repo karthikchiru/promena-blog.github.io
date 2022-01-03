@@ -1,6 +1,6 @@
 /* eslint-disable import/named */
 /* eslint-disable no-unused-vars */
-import { fetchCall, getImage } from '../utils/ajax';
+import { fetchCall, fetchLoginCall } from '../utils/ajax';
 import { API_CONSTANTS, API_METHODS } from '../constants/api-constant';
 
 export const getCategoryDetails = (callback, payload) => {
@@ -47,7 +47,7 @@ export const getCategoryDetails = (callback, payload) => {
 
   export const userRegistartion = (callback, payload) => {
     const url = `${API_CONSTANTS.USER_REGISTRATION}`;
-    return fetchCall((response) => {
+    return fetchLoginCall((response) => {
       callback(response);
     }, url, API_METHODS.POST, payload);
   };

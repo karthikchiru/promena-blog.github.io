@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import './index.scss'
 import Chart from '../../charts/barchart';
 import Comments from '../blogComments/comments';
+import ReadMore from '../readmore';
 import { getPostList } from 'app/utils/apiCalls';
 import moment from 'moment';
 
@@ -17,7 +18,7 @@ const BlogPost = (props) => {
   useEffect(() => {
     const postId = props.match.params.postId;
     getPostList((res) => {
-      const post = res.find(post => post.Blog_id == postId);
+      const post = res.find(post => post.id == postId);
       setPost(post);
       setPostId(postId);
     });
@@ -43,9 +44,6 @@ const BlogPost = (props) => {
           <button className='comment1__button1' onClick={handleComment}>Comment</button>
         </div>
       </div>
-
-
-
 
       <div className='comment-box'>
 

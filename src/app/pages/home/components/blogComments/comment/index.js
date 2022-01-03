@@ -18,7 +18,7 @@ const Comment = ({
   //   activeComment.type === 'editing';
   const isReplying =
     activeComment &&
-    activeComment.id === comment.Blog_id &&
+    activeComment.Blog_id === comment.Blog_id &&
     activeComment.type === 'replying';
   // const fiveMinutes = 300000;
   // const timePassed = new Date() - new Date(comment.datetime) > fiveMinutes;
@@ -28,7 +28,7 @@ const Comment = ({
   // const canEdit = currentUserId === comment.userId && !timePassed;
   const replyId = parentId ? parentId : comment.Blog_id;
   const createdAt = new Date(comment.datetime).toLocaleDateString();
-
+console.log(replies);
   return (
     <div key={comment.Blog_id} className='comment'>
       <div className='comment-image-container'>
@@ -56,7 +56,7 @@ const Comment = ({
             <div
               className='comment-action'
               onClick={() =>
-                setActiveComment({ id: comment.Blog_id, type: 'replying' })
+                setActiveComment({ id: comment.CommentId, type: 'replying' })
               }
             >
               Reply
@@ -84,22 +84,30 @@ const Comment = ({
         {isReplying && (
           <CommentForm
             submitLabel='Reply'
+            commentId = {comment.Blog_id}
             handleSubmit={(text, user) => addComment(text, replyId, user)}
           />
         )}
         {replies.length > 0 && (
           <div className='replies'>
-            {replies.map((reply) => (
-              <Comment
+            {replies.length && replies.map((reply) => (
+        comment.commentId === reply.CommentId ?  <div>
+        <div className='comment-content'>
+          <div className='comment-author'>{comment.name}</div>
+          {/* <div>{new Date(reply.datetime).toLocaleDateString()}</div> */}
+        </div>
+        {<div className='comment-text'>{reply.Reply_message}</div>}
+        {/* <Comment
                 comment={reply}
                 key={reply.Blog_id}
                 setActiveComment={setActiveComment}
-                activeComment={reply.Reply_message}
+                activeComment={activeComment}
                 addComment={addComment}
                 parentId={comment.Blog_id}
                 replies={[]}
-                currentUserId={reply.Blog_id}
-              />
+                currentUserId={reply.CommentId}
+              /> */}
+        </div> :null   
             ))}
           </div>
         )}
