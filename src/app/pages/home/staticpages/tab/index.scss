@@ -1,0 +1,86 @@
+@import "../../../../../styles/variables.scss";
+@import "../../../../../styles/mixins.scss";
+
+.blog-tab {
+  @include relativeflex;
+}
+.tab {
+  padding: $font_button;
+  text-align: center;
+  width: 50%;
+  background: rgba(90, 69, 69, 0.075);
+  cursor: pointer;
+  box-sizing: content-box;
+  position: relative;
+  outline: none;
+  font-size: $font_button;
+}
+.tab:not(:last-child) {
+  width: 50%;
+}
+
+.tab:not(:first-child) {
+  width: 50%;
+}
+
+.active-tab {
+  background: $color-white-primary;
+  color: #0d6efd;
+  border-bottom: 1px solid rgba(0, 46, 145, 0.274);
+  color: rgb(10, 100, 173);
+  font-size: $font_large;
+  cursor: default;
+}
+
+.active-tab::before {
+  @include relativeblock;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 2px);
+  height: $font_xverysmall;
+  background: rgb(8, 79, 185);
+}
+
+button {
+  border: none;
+}
+.content-tab {
+  flex-grow: 1;
+}
+.content {
+  background: $color-white-primary;
+  padding: $font_verysmall;
+  width: 100%;
+  @include displaynone;  
+}
+.content-h1 {
+  text-align: center;
+}
+.active-content {
+  @include relativeblock;
+  width: 100%;
+}
+
+@media screen and (min-width: 760px) and (max-width: 1024px) {
+  .content {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+  .blog-tab {
+    @include relative;
+    padding-top: $font_verysmall
+  }
+  .active-content {
+    @include relative;
+    padding: 0;
+  }
+  .tab:not(:first-child) {
+    width: 50%;
+  }
+  .tab:not(:last-child) {
+    width: 50%;
+  }
+}

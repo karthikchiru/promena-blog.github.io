@@ -1,7 +1,7 @@
 import React, {useLayoutEffect} from 'react'
 import BlogPost from '../components/blogpost';
 // import Sidebar from '../staticpages/sidebar';
-import Tabs from '../staticpages/tabs';
+import Tab from '../staticpages/tab';
 import './index.scss'
 
 const Post = (props) => {
@@ -18,7 +18,7 @@ const Post = (props) => {
 <BlogPost {...props}/>
 </div>
 
-<div className='common post-sidebar'><Tabs /></div>
+<div className='common post-sidebar'><Tab /></div>
 </div>
 <div className='post-read-button '>
 
