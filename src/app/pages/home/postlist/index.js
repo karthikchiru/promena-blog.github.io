@@ -21,6 +21,8 @@ getPostList((res)=>{
                 return (
                     <div key={val.id} className='postlist'>
                     <Helmet>
+                    {/* <title>{val.title}</title> */}
+                        <meta  name='category' content={val.category}/>
                         <meta name='description' content = {val.content}/>
                     </Helmet>
                         <h2><NavLink  to={`/post/${val.id}`}>{val.category}</NavLink> </h2>
