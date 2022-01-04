@@ -20,13 +20,18 @@ h2 {
   padding: $font_verysmall 0 $font_verysmall 0;
   margin-left: $font_large;
   color: $blue1;
+  font-size: $font_button;
   cursor: pointer;
   font-family: $monstserrat_regular;
+  transition: color font-size 0.3ms ease-out;
   a:hover{
     color: white;
+    font-size: $font_xlarge;
   }
 }
-
+.navLink{
+  width: 80%;
+}
 span {
   margin-left: $font_large;
   font-size: $font_button;
