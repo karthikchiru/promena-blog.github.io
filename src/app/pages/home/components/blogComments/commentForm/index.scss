@@ -2,7 +2,7 @@
 @import "../../../../../../styles/variables.scss";
 
 .comments {
-  margin-top: $font_large;
+  margin: $font_large 0;
 }
 
 .comments-title {
@@ -20,7 +20,10 @@
 
 .comment-form-textarea {
   width: 100%;
+  padding: 10px 14px;
   height: $font_top6;
+  font-size: $font_medium;
+  font-family:$monstserrat_regular;
   margin-bottom: $font_xxsmall 0;
   border: 1px solid rgb(107, 114, 12);
 }

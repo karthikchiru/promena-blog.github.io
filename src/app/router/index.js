@@ -12,11 +12,17 @@ import Home from 'app/pages/home';
 import Post from '../pages/home/posts';
 import PageNotFound from '../pages/home/staticpages/pagenotfound';
 import Footer from 'app/pages/home/staticpages/footer';
+import { Helmet } from 'react-helmet';
 
 const Router = () => {
   return (
     <React.Suspense fallback={<Loader />}>
     <Header/>
+    <Helmet>
+      <title >Promena Blogs</title>
+      <meta  name='description' content='promena blogs and its related info'/>
+      <meta name='keywords' content='Technology, Content Writing, Digital Marketing'/>
+    </Helmet>
       <Switch>
         {/* <Route exact path='/' component={Login} /> */}
         {/* <Route exact path='/registration' component={Registration} /> */}
