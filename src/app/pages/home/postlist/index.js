@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './index.scss';
+import { Helmet } from 'react-helmet';
 import { NavLink } from 'react-router-dom';
 import { getPostList } from 'app/utils/apiCalls';
 
@@ -10,6 +11,7 @@ const Postlist = () => {
     useEffect(() => {
 getPostList((res)=>{
     setPosts(res);
+    console.log(res)
 });
     }, posts);
 
@@ -18,6 +20,9 @@ getPostList((res)=>{
             {posts.map(val => {
                 return (
                     <div key={val.id} className='postlist'>
+                    <Helmet>
+                        <meta name='description' content = {val.content}/>
+                    </Helmet>
                         <h2><NavLink  to={`/post/${val.id}`}>{val.category}</NavLink> </h2>
                         <span>{val.title}</span>
                     </div>
