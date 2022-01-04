@@ -39,7 +39,7 @@ const BlogPost = (props) => {
         <img className='blog__img' src={post.thumbnail} />
       </div>
       <div className='blog__text'>
-        <div>{post.content}</div>
+      <div dangerouslySetInnerHTML={{__html: post.content}}></div>
         <div className='comment1'>
           <button className='comment1__button1' onClick={handleComment}>Comment</button>
         </div>

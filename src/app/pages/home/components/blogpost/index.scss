@@ -22,8 +22,12 @@
   &__img {
     @include relativeflex;
   }
-  &__text {
+  &__content {
     margin: $font_large $font_xxlarge;
+    font-size: $font_large;
+    .p{
+      font-size: 2rem
+    }
   }
 }
 
