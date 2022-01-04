@@ -18,6 +18,7 @@ const AllPosts = () => {
     getPostList((response) => {
       if(response)
       setPostList(response);
+      console.log(response)
     });
   }, []);
 
