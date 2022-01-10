@@ -19,13 +19,13 @@ getPostList((res)=>{
         <div className='postlist-banner'>
             {posts.map(val => {
                 return (
-                    <div key={val.id} className='postlist'>
+                    <div key={val.Blog_id} className='postlist'>
                     <Helmet>
                     {/* <title>{val.title}</title> */}
                         <meta  name='category' content={val.category}/>
                         <meta name='description' content = {val.content}/>
                     </Helmet>
-                        <h2><NavLink  to={`/post/${val.id}`}>{val.category}</NavLink> </h2>
+                        <h2><NavLink  to={`/post/${val.Blog_id}`}>{val.category}</NavLink> </h2>
                         <span>{val.title}</span>
                     </div>
                 )

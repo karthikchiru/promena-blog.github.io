@@ -29,7 +29,6 @@ const Header = () => {
 
   return (
     <div>
-      {(pathName !== '/forgotPassword') ?
         <div className='header-wrapper'>
           <nav>
             <input type='checkbox' id='show-search'></input>
@@ -90,7 +89,7 @@ const Header = () => {
               <Logout />
             </div>
           </nav>
-        </div> : null}
+        </div> 
     </div>
   )
 }

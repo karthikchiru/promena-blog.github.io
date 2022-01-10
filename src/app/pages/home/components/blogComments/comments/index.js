@@ -1,22 +1,14 @@
-/* eslint-disable no-debugger */
-/* eslint-disable react/prop-types */
-/* eslint-disable no-unused-vars */
+
 import { useState, useEffect } from 'react';
 import CommentForm from '../commentForm';
 import Comment from '../comment';
 import './index.scss';
 import {
-  userComment as createCommentApi,
   getUserComments as getCommentsApi,
   getReplyComments as getReplyCommentsApi
 } from '../../../../../utils/apiCalls';
 
-import {
-  // getComments as getCommentsApi,
-  // createComment as createCommentApi,
-} from '../commentApi';
-
-const Comments = ({ commentsUrl, currentUserId, user, blogId }) => {
+const Comments = ({currentUserId, blogId }) => {
   const [backendComments, setBackendComments] = useState([]);
   const [backendReplyComments, setBackendReplyComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
@@ -34,23 +26,10 @@ const Comments = ({ commentsUrl, currentUserId, user, blogId }) => {
           new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
       );
 
-  // const addComment = (text, parentId) => {
-
-  //   createCommentApi(text, parentId, user).then((comment) => {
-  //     setBackendComments([comment, ...backendComments]);
-  //     setActiveComment(null);
-  //     console.log(user);
-  //   });
-    // console.log(text, user);
-    // createCommentApi((res)=>{
-    //   setBackendComments([res, ...backendComments]);
-    //   setActiveComment(null);
-    // },);
-  // };
-
   useEffect(() => {
     getCommentsApi((data)=>{
       setBackendComments(data);
+      console.log(data);
     });
     getReplyCommentsApi((data)=>{
       setBackendReplyComments(data);

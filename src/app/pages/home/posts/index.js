@@ -8,8 +8,8 @@ const Post = (props) => {
   const handleClick = ()=>{
     window.scrollTo(0, 0);
   };
+  
   useLayoutEffect(() => {
-    // handleClick();
   }, [handleClick]);
   return(
 <div className='post-container'>

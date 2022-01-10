@@ -81,7 +81,6 @@ setAlertText(response.detail);
   return (
   
     <div className='login'>
-  
       <div className='login__container'>
       <img className='login__img' src = {img} alt = 'bg_image' />
         <div className='login__wrapper'>
