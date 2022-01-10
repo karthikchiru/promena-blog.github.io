@@ -78,7 +78,7 @@ if(text){
         datetime: date,
         email: userInfo.email
        };
-       const fiveMinutes = 60000;
+       const fiveMinutes = 300000;
        const timePassed = new Date() - new Date(payload.datetime) > fiveMinutes;
        if(!timePassed)
  {

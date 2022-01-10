@@ -17,7 +17,7 @@ const BlogPost = (props) => {
   useEffect(() => {
     const postId = props.match.params.postId;
     getPostList((res) => {
-      const post = res.find(post => post.id == postId);
+      const post = res.find(post => post.Blog_id == postId);
       setPost(post);
       setPostId(postId);
     });
