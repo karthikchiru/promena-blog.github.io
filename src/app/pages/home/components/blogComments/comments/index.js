@@ -54,8 +54,6 @@ const displayUsers = backendComments.slice(pagesVisited, pagesVisited + usersPer
 
   const handlePageClick = ({data}) => {
     setPageNumber(data);
-    // let rootCommentId = data.selected + 1;
-
   }
   let pageCount = Math.ceil(backendComments.length/usersPerPage);
   return (
