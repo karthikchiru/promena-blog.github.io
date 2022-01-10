@@ -34,18 +34,18 @@ const AllPosts = () => {
 
 
           return (
-            <div className='card' key={post.id}>
+            <div className='card' key={post.Blog_id}>
             <Helmet>
                     {/* <title></title> */}
                         <meta  name='category' content={post.category}/>
                         <meta name='description' content = {post.content}/>
                     </Helmet>
-              <NavLink className='card__title' to={`/post/${post.id}`}>
+              <NavLink className='card__title' to={`/post/${post.Blog_id}`}>
                 {post.title}
               </NavLink>
               <h1>{post.category}</h1>
               <div className='card__content'>
-                <img src={url} key={post.id} className='card__image' />
+                <img src={url} key={post.Blog_id} className='card__image' />
                 <ReadMore className='readmore-content' post = {post.content} />
               </div>
               <ul className='card__ul1'>

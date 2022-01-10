@@ -1,40 +1,36 @@
+/* eslint-disable quotes */
 /* eslint-disable no-debugger */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import React , { useState, useEffect } from 'react';
 import LoginModal from '../../loginmodal';
-import {userRegistartion, userToken, getUserToken, userComment as createCommentApi} from '../../../../../utils/apiCalls';
+import {userRegistartion, userToken, getUserComments as getCommentsApi, userComment as createCommentApi} from '../../../../../utils/apiCalls';
 import './index.scss';
+import Button from 'app/components/button';
 const CommentForm = ({
-  handleSubmit,
-  commentId,
   rootCommentId,
   blogId,
-  submitLabel,
-  hasCancelButton = false,
-  handleCancel,
   initialText = '',
 }) => {
   const [text, setText] = useState(initialText);
-  const [isBtnDisabled, setIsBtnDisabled] = useState(true);
   const [userRegister, setUserRegister] = useState('');
+  const [timeOut, setTimeOut] = useState('');
   const [showLoginConfirmModal, setshowLoginConfirmModal] = useState(false);
-  const [matchTokens, setMatchTokens] = useState('');
   const [user, setuser] = useState({});
-  const isTextareaDisabled = text.length === 0;
+  const [isBtnDisabled, setIsBtnDisabled] = useState(true);
 
   const handleValueChange =(e, key)=>{
-    setIsBtnDisabled(true);
 let val = e.target.value;
+setIsBtnDisabled(true);
 if(key === 1)
 {
     setText(val);
 }
-if(text)
-{
-    setIsBtnDisabled(false); 
+if(text){
+  setIsBtnDisabled(false);
 }
   }
+
    const onSubmit = (e)=>{
      debugger;
      e.preventDefault();
@@ -42,8 +38,14 @@ if(text)
        sessionStorage.setItem('commentId', val.commentId);
        return val.commentId;
      });
+
      let CommentId = sessionStorage.getItem('commentId');
      let date = new Date();
+     let token = localStorage.getItem('user-token');
+
+  
+     if(user.name !== undefined || user.name != null)
+     {
      let payload = {
       Blog_id: blogId,
       commentId: ++CommentId,
@@ -52,76 +54,117 @@ if(text)
       datetime: date,
       email: user.email
      };
-     console.log(payload)
-     if(payload.name !== 'undefined' && payload.email !== 'undefined' && payload)
+
+     if(payload && token)
      {
       createCommentApi((resp)=>{
         console.log(resp);
-             }, payload)
+        if(resp.success === 'True')
+        {
+          setTimeOut(payload.datetime);
+          location.reload();
+          getCommentsApi((res)=>console.log);
+        }else{
+          setIsBtnDisabled(true);
+        }
+             }, payload);
      }
-
-  setIsBtnDisabled(true);
-
- if(payload.name == undefined && user.email == undefined)
+    }else{
+      let userInfo = JSON.parse(localStorage.getItem('user'));
+      if(userInfo !== "login-target" && userInfo !== null){
+      let payload = {
+        Blog_id: blogId,
+        commentId: ++CommentId,
+        name: userInfo.name,
+        Comment: text,
+        datetime: date,
+        email: userInfo.email
+       };
+       const fiveMinutes = 60000;
+       const timePassed = new Date() - new Date(payload.datetime) > fiveMinutes;
+       if(!timePassed)
  {
-  setIsBtnDisabled(true);
+ localStorage.clear();
+ localStorage.removeItem('user-token');
+ }
+       if(token)
+       {
+        createCommentApi((resp)=>{
+
+          if(resp.success === 'True')
+          {
+            setTimeOut(payload.datetime);
+            location.reload();
+            getCommentsApi((res)=>console.log);
+          }else{
+            setIsBtnDisabled(true);
+          }
+               }, payload)
+       }
+      }
+    }
+
+ if(token === null)
+ {
   setshowLoginConfirmModal(true);
-  localStorage.clear();
  }else{
-  setIsBtnDisabled(false); 
-  console.log(text);
   setText('');
-  setIsBtnDisabled(true);
  }
   }
 
   const onConfirm =(user)=>{
-    console.log(user);
+    debugger;
+    console.log(user + 'user info from popup');
     setuser(user);
      userRegistartion((response)=>{
-       console.log(response);
        setUserRegister(response);
-       sessionStorage.setItem('user',JSON.stringify(user));
+       localStorage.setItem('user',JSON.stringify(user));
+       let userDetail = JSON.parse(localStorage.getItem('user'));
+       console.log(userDetail);
        let payload = {
-         name:response.name,
-         email:response.email,
-         password:response.password
+         name:userDetail.name,
+         email:userDetail.email,
+         password:userDetail.password
        }
-       if(payload !=='undefined')
+       console.log(payload + 'payload to genrate token');
+       if(response.success === 'True')
        {
         userToken((res)=>{
         localStorage.setItem('user-token', res.jwt);
+        console.log(res)
         }, payload);
+       }else if(response.email[0] === 'token with this email already exists.'){
+        userToken((res)=>{
+          if(res.jwt)
+          {
+            localStorage.setItem('user-token', res.jwt);
+            console.log(res);
+          }else if(res.detail === 'user not found'){
+alert('user not found, check your credentials');
+          }
+ 
+          }, payload);
        }
      }, user);
      setshowLoginConfirmModal(false);
    }
 
   return (
-    <form onSubmit={onSubmit}>
+    <div>
       <textarea
         className='comment-form-textarea'
         placeholder='Tell Your Story'
         value={text}
         onChange={(e) => handleValueChange(e, 1)}
       />
-      <button className='comment-form-button'  isBtnDisabled = {isBtnDisabled}>
-        {submitLabel}
-      </button>
+      <Button className='comment-form-button' isBtnDisabled ={isBtnDisabled} buttonClick={onSubmit} >
+       Post
+      </Button>
       {
   showLoginConfirmModal && (<LoginModal onConfirm={onConfirm} confirmTitle='Login to Continue' buttonText={'LOGIN'} />)
       }
-      {hasCancelButton && (
-        <button
-          type='button'
-          className='comment-form-button comment-form-cancel-button'
-          onClick={handleCancel}
-        >
-          Cancel
-        </button>
-      )}
-    </form>
+    </div>
   );
 };
 
-export default CommentForm;
+export default React.memo(CommentForm);

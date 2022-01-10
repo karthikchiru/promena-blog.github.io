@@ -25,7 +25,7 @@ const BlogPost = (props) => {
 
   }, [props.match.params.postId]);
 
-  if (post.blogImage == '') return null;
+  if (post.thumbnail == '') return null;
 
   const handleComment = () => {
     setComment(!comment)
