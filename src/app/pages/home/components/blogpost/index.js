@@ -6,7 +6,6 @@ import React, { useState, useEffect } from 'react';
 import './index.scss'
 import Chart from '../../charts/barchart';
 import Comments from '../blogComments/comments';
-import ReadMore from '../readmore';
 import { getPostList } from 'app/utils/apiCalls';
 import moment from 'moment';
 
@@ -39,7 +38,7 @@ const BlogPost = (props) => {
         <img className='blog__img' src={post.thumbnail} />
       </div>
       <div className='blog__text'>
-      <div dangerouslySetInnerHTML={{__html: post.content}}></div>
+      <div dangerouslySetInnerHTML={{__html: post.content}} style={{fontSize:'18px', marginTop:'1rem'}}></div>
         <div className='comment1'>
           <button className='comment1__button1' onClick={handleComment}>Comment</button>
         </div>
@@ -50,8 +49,6 @@ const BlogPost = (props) => {
         {comment &&
           <div className='comment-wrap comment-items'>
             <Comments
-              commentsUrl='http://localhost:3000/comments'
-              currentUserId='1'
               blogId = {props.match.params.postId}
             />
           </div>

@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 import React, { useState, useLayoutEffect, useEffect } from 'react';
 import './index.scss';
 import logo from '../../../../../assets/images/promena.png';
@@ -31,9 +32,10 @@ const Footer = () => {
     } else {
       setDropdown(val);
     }
-    if (dropdown && ValidateEmail(email)) {
+    if (ValidateEmail(email) && dropdown) {
       setIsBtnDisabled(false);
     }
+
   };
   const ValidateEmail = (email) => {
     const emailRegex = regex.emailRegex;
@@ -41,7 +43,7 @@ const Footer = () => {
   }
 
   const handleKeyEnter = (e) => {
-    if (e.key === 'Enter' && ValidateEmail(email) && dropdown) {
+    if (e.key === 'Enter' && ValidateEmail(email)) {
       handleSubscribe();
     }
   }
@@ -50,17 +52,26 @@ const Footer = () => {
   };
 
   const handleSubscribe = () => {
-    if (ValidateEmail(email) && dropdown) {
+    if (ValidateEmail(email)) {
       const payload = {
         User_email_Address: email,
         category_ID: dropdown,
       };
       userSubscribe((res) => {
-        console.log(res);
+        if(res.success ==='True')
+        {
+          console.log(res.User_email_Address);
+          alert(res.message);
+          setDropdown('');
+          setEmail('');
+          setIsBtnDisabled(true);
+        }else{
+          alert(res.User_email_Address[0]);
+          setDropdown('');
+          setEmail('');
+          setIsBtnDisabled(true);
+        }
       }, payload);
-      setCategory('');
-      setDropdown('');
-      setIsBtnDisabled(false);
     }
   };
 
@@ -217,18 +228,8 @@ const Footer = () => {
             <p className='footer__right__content'>
               Subscribe to our daily newsletter to get the latest industry news.
             </p>
-            <input
-              required
-              type='text'
-              value={email}
-              onKeyUp={(event) => { handleKeyEnter(event); }}
-              className='footer__right__input'
-              onChange={(e) => {
-                handleOnChange(e, 1);
-              }}
-              placeholder='Enter Email'
-            ></input>
             <select
+            required
               className='footer__right__select'
               name='select'
               id=''
@@ -247,6 +248,17 @@ const Footer = () => {
                   );
                 })}
             </select>
+            <input
+              required
+              type='text'
+              value={email}
+              onKeyUp={(event) => { handleKeyEnter(event); }}
+              className='footer__right__input'
+              onChange={(e) => {
+                handleOnChange(e, 1);
+              }}
+              placeholder='Enter Email'
+            ></input>
             <Button
               buttonClick={handleSubscribe}
               isBtnDisabled={isBtnDisabled}
