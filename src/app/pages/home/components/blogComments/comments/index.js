@@ -1,3 +1,4 @@
+/* eslint-disable no-debugger */
 /* eslint-disable no-unused-vars */
 
 import { useState, useEffect } from 'react';
@@ -15,14 +16,13 @@ const Comments = ({currentUserId, blogId }) => {
   const [backendReplyComments, setBackendReplyComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
   const [pageNumber, setPageNumber] = useState(0);
-  const usersPerPage = 2;
+  const usersPerPage = 3;
   const pagesVisited = pageNumber*usersPerPage;
-  const rootComments = backendComments.filter(
-    (backendComment) => backendComment.Blog_id 
-  );
+
   const rootCommentId = backendComments.filter(
     (backendComment) => backendComment.commentId 
   );
+
   const getReplies = (commentId) =>
   backendReplyComments
       .filter((backendComment) => backendComment.CommentId === commentId )
@@ -30,7 +30,7 @@ const Comments = ({currentUserId, blogId }) => {
         (a, b) =>
           new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
       );
-const displayUsers = backendComments.slice(pagesVisited, pagesVisited + usersPerPage).map((user)=>{
+const displayUsers = backendComments.length >0 && backendComments.slice(pagesVisited, pagesVisited + usersPerPage).map((user)=>{
   return(
       user.Blog_id == blogId ? <Comment
            key={user.Blog_id}
@@ -52,8 +52,9 @@ const displayUsers = backendComments.slice(pagesVisited, pagesVisited + usersPer
     })
   }, []);
 
-  const handlePageClick = ({data}) => {
-    setPageNumber(data);
+  const changePage = ({selected}) => {
+    debugger
+    setPageNumber(selected);
   }
   let pageCount = Math.ceil(backendComments.length/usersPerPage);
   return (
@@ -69,20 +70,18 @@ const displayUsers = backendComments.slice(pagesVisited, pagesVisited + usersPer
         nextLabel={'next'}
         breakLabel={'...'}
         pageCount={pageCount}
-        marginPagesDisplayed={3}
-        pageRangeDisplayed={2}
-        onPageChange={handlePageClick}
-        containerClassName={'pagination justify-content-center'}
+        onPageChange={changePage}
+        containerClassName={'paginationBttns pagination justify-content-center'}
         pageClassName={'page-item'}
         pageLinkClassName={'page-link'}
         previousClassName={'page-item'}
-        previousLinkClassName={'page-link'}
+        previousLinkClassName={'previousBttns'}
         nextClassName={'page-item'}
-        nextLinkClassName={'page-link'}
+        nextLinkClassName={'nextBttns'}
         breakClassName={'page-item'}
         breakLinkClassName={'page-link'}
-        activeClassName={'active'}
-
+        activeClassName={'paginationActive'}
+        disabledClassName='paginationDisabled'
       />
     </div>
   );
