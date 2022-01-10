@@ -15,7 +15,7 @@ const Comments = ({currentUserId, blogId }) => {
   const [backendReplyComments, setBackendReplyComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
   const [pageNumber, setPageNumber] = useState(0);
-  const usersPerPage = 2;
+  const usersPerPage = 5;
   const pagesVisited = pageNumber*usersPerPage;
   const rootComments = backendComments.filter(
     (backendComment) => backendComment.Blog_id 
