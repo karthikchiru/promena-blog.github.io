@@ -61,7 +61,6 @@ if(text){
         if(resp.success === 'True')
         {
           location.reload();
-          getCommentsApi((res)=>console.log);
         }else{
           setIsBtnDisabled(true);
         }
@@ -92,7 +91,6 @@ if(text){
           if(resp.success === 'True')
           {
             location.reload();
-            getCommentsApi((res)=>console.log);
           }else{
             setIsBtnDisabled(true);
           }
@@ -112,7 +110,7 @@ if(text){
   const onConfirm =(user)=>{
     setuser(user);
      userRegistartion((response)=>{
-       setUserRegister(response);
+      //  setUserRegister(response);
        localStorage.setItem('user',JSON.stringify(user));
        let userDetail = JSON.parse(localStorage.getItem('user'));
        console.log(userDetail);

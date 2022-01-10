@@ -101,6 +101,26 @@
   margin-top: $font_large;
 }
 
+.paginationBttns{
+  width: 80%;
+  height: 40px;
+}
+.paginationBttns a{
+  padding: 10px;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px rgb(37, 99, 235);
+  color: rgb(37, 99, 235);
+  cursor: pointer;
+}
+.paginationBttns a:hover{
+  color: #fff;
+  background-color: rgb(37, 99, 235);
+}
+.paginationActive a:hover{
+  color: #fff;
+  background-color: rgb(37, 99, 235);
+}
 @media screen and (min-width : 320px) and (max-width : 760px) {
  
   .comment {
