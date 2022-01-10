@@ -14,8 +14,6 @@ const Sidebar = (props) => {
   const [postList, setPostList] = useState([]);
 
   useEffect(() => {
-
-
     getPostList((response) => {
       console.log(response);
       setPostList(response);
@@ -29,7 +27,6 @@ const Sidebar = (props) => {
       {
         postList.map(post => {
           var url = post.thumbnail;
-          // var pathname = new URL(url).pathname;
 
           return (
             <div className='posts' key={post.Blog_id}>

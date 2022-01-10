@@ -2,19 +2,18 @@
 /* eslint-disable no-debugger */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React , { useState, useEffect } from 'react';
+import React , { useState } from 'react';
 import LoginModal from '../../loginmodal';
 import {userRegistartion, userToken, getUserComments as getCommentsApi, userComment as createCommentApi} from '../../../../../utils/apiCalls';
 import './index.scss';
 import Button from 'app/components/button';
+
 const CommentForm = ({
   rootCommentId,
   blogId,
-  initialText = '',
 }) => {
-  const [text, setText] = useState(initialText);
+  const [text, setText] = useState('');
   const [userRegister, setUserRegister] = useState('');
-  const [timeOut, setTimeOut] = useState('');
   const [showLoginConfirmModal, setshowLoginConfirmModal] = useState(false);
   const [user, setuser] = useState({});
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
@@ -61,7 +60,6 @@ if(text){
         console.log(resp);
         if(resp.success === 'True')
         {
-          setTimeOut(payload.datetime);
           location.reload();
           getCommentsApi((res)=>console.log);
         }else{
@@ -93,7 +91,6 @@ if(text){
 
           if(resp.success === 'True')
           {
-            setTimeOut(payload.datetime);
             location.reload();
             getCommentsApi((res)=>console.log);
           }else{
@@ -113,8 +110,6 @@ if(text){
   }
 
   const onConfirm =(user)=>{
-    debugger;
-    console.log(user + 'user info from popup');
     setuser(user);
      userRegistartion((response)=>{
        setUserRegister(response);
@@ -126,7 +121,6 @@ if(text){
          email:userDetail.email,
          password:userDetail.password
        }
-       console.log(payload + 'payload to genrate token');
        if(response.success === 'True')
        {
         userToken((res)=>{
