@@ -10,7 +10,7 @@ const ReadMore = ({post}) => {
   return (
    <div>
         <p className='read-more'>
-      {isReadMore ?  <p dangerouslySetInnerHTML={{__html:DOMPurify.sanitize(post.length ? post.slice(0, 200):post)}} className='read-more'></p>: <p dangerouslySetInnerHTML={{__html:DOMPurify.sanitize(post)}} className='read-more'></p> }
+      {isReadMore ?  <p dangerouslySetInnerHTML={{__html:DOMPurify.sanitize(post.length ? post.slice(0, 400):post)}} className='read-more'></p>: <p dangerouslySetInnerHTML={{__html:DOMPurify.sanitize(post)}} className='read-more'></p> }
       {post.length > 200 &&
         <span onClick={toggleReadMore} className='read-more1'>
           {isReadMore ? '...Read More' : ' ...Show less'}

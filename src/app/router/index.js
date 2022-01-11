@@ -26,7 +26,7 @@ const Router = () => {
       <Switch>
         {/* <Route exact path='/' component={Login} /> */}
         <Route exact path='/admin' component={() => { 
-     window.location.href = 'https://www.pythonanywhere.com/login/'; 
+     window.location.href = 'http://promenablog.pythonanywhere.com/admin/login/?next=/admin/'; 
      return null;
 }}/>
         {/* <Route exact path='/registration' component={Registration} /> */}

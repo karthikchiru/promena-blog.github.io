@@ -7,13 +7,15 @@ import LoginModal from '../../loginmodal';
 import {userRegistartion, userToken, getUserComments as getCommentsApi, userComment as createCommentApi} from '../../../../../utils/apiCalls';
 import './index.scss';
 import Button from 'app/components/button';
+import Confirm from 'app/components/confirmModal/confirm';
 
 const CommentForm = ({
   rootCommentId,
   blogId,
 }) => {
   const [text, setText] = useState('');
-  const [userRegister, setUserRegister] = useState('');
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [alertText, setAlertText] = useState('');
   const [showLoginConfirmModal, setshowLoginConfirmModal] = useState(false);
   const [user, setuser] = useState({});
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
@@ -132,7 +134,9 @@ if(text){
             localStorage.setItem('user-token', res.jwt);
             console.log(res);
           }else if(res.detail === 'user not found'){
-alert('user not found, check your credentials');
+            setShowConfirmModal(true);
+// alert('user not found, check your credentials');
+setAlertText('user not found, Please check your credentials !')
           }
  
           }, payload);
@@ -155,6 +159,10 @@ alert('user not found, check your credentials');
       {
   showLoginConfirmModal && (<LoginModal onConfirm={onConfirm} confirmTitle='Login to Continue' buttonText={'LOGIN'} />)
       }
+      {showConfirmModal && (
+          <Confirm buttonText={'OK'} isCancelRequired={false} confirmTitle={alertText}
+            onConfirm={() => { setShowConfirmModal(false) }} onCancel={() => { setShowConfirmModal(false) }} />
+        )}
     </div>
   );
 };
