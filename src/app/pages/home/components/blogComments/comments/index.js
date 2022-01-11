@@ -64,7 +64,7 @@ const displayComments = rootComments.length >0 && rootComments.slice(pagesVisite
     debugger
     setPageNumber(selected);
   }
-  let pageCount = Math.ceil(backendComments.length/usersPerPage);
+  let pageCount = Math.ceil(rootComments.length/usersPerPage);
   return (
     <div className='comments'>
       <h3 className='comments-title'>Comments</h3>
