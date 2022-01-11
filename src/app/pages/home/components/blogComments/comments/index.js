@@ -61,7 +61,6 @@ const displayComments = rootComments.length >0 && rootComments.slice(pagesVisite
   }, []);
 
   const changePage = ({selected}) => {
-    debugger
     setPageNumber(selected);
   }
   let pageCount = Math.ceil(rootComments.length/usersPerPage);
