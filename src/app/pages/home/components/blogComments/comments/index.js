@@ -11,7 +11,7 @@ import {
   getReplyComments as getReplyCommentsApi
 } from '../../../../../utils/apiCalls';
 
-const Comments = ({currentUserId, blogId }) => {
+const Comments = ({ currentUserId, blogId }) => {
   const [backendComments, setBackendComments] = useState([]);
   const [backendReplyComments, setBackendReplyComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
@@ -19,7 +19,7 @@ const Comments = ({currentUserId, blogId }) => {
 
 
   const rootCommentId = backendComments.filter(
-    (backendComment) => backendComment.commentId 
+    (backendComment) => backendComment.commentId
   );
 
   const rootComments = backendComments.filter(
@@ -27,8 +27,8 @@ const Comments = ({currentUserId, blogId }) => {
   );
 
   const getReplies = (commentId) =>
-  backendReplyComments
-      .filter((backendComment) => backendComment.CommentId === commentId )
+    backendReplyComments
+      .filter((backendComment) => backendComment.CommentId === commentId)
       .sort(
         (a, b) =>
           new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
@@ -50,11 +50,11 @@ const displayComments = rootComments.length >0 && rootComments.slice(pagesVisite
   )
 })
   useEffect(() => {
-    getCommentsApi((data)=>{
+    getCommentsApi((data) => {
       setBackendComments(data);
       console.log(data);
     });
-    getReplyCommentsApi((data)=>{
+    getReplyCommentsApi((data) => {
       setBackendReplyComments(data);
       console.log(data);
     })
@@ -69,7 +69,7 @@ const displayComments = rootComments.length >0 && rootComments.slice(pagesVisite
     <div className='comments'>
       <h3 className='comments-title'>Comments</h3>
       <div className='comment-form-title'>Write comment</div>
-      <CommentForm submitLabel='Post' blogId = {blogId} rootCommentId ={rootCommentId} />
+      <CommentForm submitLabel='Post' blogId={blogId} rootCommentId={rootCommentId} />
       <div className='comments-container'>
         {displayComments}
       </div>
