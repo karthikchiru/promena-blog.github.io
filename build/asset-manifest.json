@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/promena-blog.github.io/static/css/main.7b11f050.chunk.css",
+    "main.js": "/promena-blog.github.io/static/js/main.32cc64db.chunk.js",
+    "main.js.map": "/promena-blog.github.io/static/js/main.32cc64db.chunk.js.map",
+    "runtime-main.js": "/promena-blog.github.io/static/js/runtime-main.d1f239a7.js",
+    "runtime-main.js.map": "/promena-blog.github.io/static/js/runtime-main.d1f239a7.js.map",
+    "static/js/2.672bf9e0.chunk.js": "/promena-blog.github.io/static/js/2.672bf9e0.chunk.js",
+    "static/js/2.672bf9e0.chunk.js.map": "/promena-blog.github.io/static/js/2.672bf9e0.chunk.js.map",
+    "static/js/3.a78f560a.chunk.js": "/promena-blog.github.io/static/js/3.a78f560a.chunk.js",
+    "static/js/3.a78f560a.chunk.js.map": "/promena-blog.github.io/static/js/3.a78f560a.chunk.js.map",
+    "index.html": "/promena-blog.github.io/index.html",
+    "static/css/main.7b11f050.chunk.css.map": "/promena-blog.github.io/static/css/main.7b11f050.chunk.css.map",
+    "static/js/2.672bf9e0.chunk.js.LICENSE.txt": "/promena-blog.github.io/static/js/2.672bf9e0.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/promena-blog.github.io/static/media/Montserrat-Thin.4a799b11.ttf",
+    "static/media/background.c4a311e7.png": "/promena-blog.github.io/static/media/background.c4a311e7.png",
+    "static/media/banner1.7be663c6.jpg": "/promena-blog.github.io/static/media/banner1.7be663c6.jpg",
+    "static/media/banner3.9f6ac2a8.jpg": "/promena-blog.github.io/static/media/banner3.9f6ac2a8.jpg",
+    "static/media/four-not-four.922c7839.gif": "/promena-blog.github.io/static/media/four-not-four.922c7839.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d1f239a7.js",
+    "static/js/2.672bf9e0.chunk.js",
+    "static/css/main.7b11f050.chunk.css",
+    "static/js/main.32cc64db.chunk.js"
+  ]
+}
