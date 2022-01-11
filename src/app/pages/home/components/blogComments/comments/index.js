@@ -16,11 +16,14 @@ const Comments = ({ currentUserId, blogId }) => {
   const [backendReplyComments, setBackendReplyComments] = useState([]);
   const [activeComment, setActiveComment] = useState(null);
   const [pageNumber, setPageNumber] = useState(0);
-  const usersPerPage = 3;
-  const pagesVisited = pageNumber*usersPerPage;
+
 
   const rootCommentId = backendComments.filter(
     (backendComment) => backendComment.commentId
+  );
+
+  const rootComments = backendComments.filter(
+    (backendComment) => backendComment.Blog_id == blogId
   );
 
   const getReplies = (commentId) =>
@@ -30,7 +33,11 @@ const Comments = ({ currentUserId, blogId }) => {
         (a, b) =>
           new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
       );
-const displayUsers = backendComments.length >0 && backendComments.slice(pagesVisited, pagesVisited + usersPerPage).map((user)=>{
+debugger
+      const usersPerPage = 3;
+      const pagesVisited = pageNumber*usersPerPage;
+const displayComments = rootComments.length >0 && rootComments.slice(pagesVisited, pagesVisited + usersPerPage).map((user)=>{
+
   return(
       user.Blog_id == blogId ? <Comment
            key={user.Blog_id}
@@ -49,6 +56,7 @@ const displayUsers = backendComments.length >0 && backendComments.slice(pagesVis
     });
     getReplyCommentsApi((data) => {
       setBackendReplyComments(data);
+      console.log(data);
     })
   }, []);
 
@@ -56,18 +64,19 @@ const displayUsers = backendComments.length >0 && backendComments.slice(pagesVis
     debugger
     setPageNumber(selected);
   }
-  let pageCount = Math.ceil(backendComments.length/usersPerPage);
+  let pageCount = Math.ceil(rootComments.length/usersPerPage);
   return (
     <div className='comments'>
       <h3 className='comments-title'>Comments</h3>
       <div className='comment-form-title'>Write comment</div>
       <CommentForm submitLabel='Post' blogId={blogId} rootCommentId={rootCommentId} />
       <div className='comments-container'>
-        {displayUsers}
+        {displayComments}
       </div>
-      <ReactPaginate
-        previousLabel={'previous'}
-        nextLabel={'next'}
+   {blogId && 
+    <ReactPaginate
+        previousLabel={'<<'}
+        nextLabel={'>>'}
         breakLabel={'...'}
         pageCount={pageCount}
         onPageChange={changePage}
@@ -83,6 +92,7 @@ const displayUsers = backendComments.length >0 && backendComments.slice(pagesVis
         activeClassName={'paginationActive'}
         disabledClassName='paginationDisabled'
       />
+   }
     </div>
   );
 };

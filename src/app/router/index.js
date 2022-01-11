@@ -25,6 +25,10 @@ const Router = () => {
     </Helmet>
       <Switch>
         {/* <Route exact path='/' component={Login} /> */}
+        <Route exact path='/admin' component={() => { 
+     window.location.href = 'https://www.pythonanywhere.com/login/'; 
+     return null;
+}}/>
         {/* <Route exact path='/registration' component={Registration} /> */}
         <Route exact path='/forgotPassword' component={ForgotPassword} />
         <Route exact path='/' component={Home} />

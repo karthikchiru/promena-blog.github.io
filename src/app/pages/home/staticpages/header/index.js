@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <div>
-        <div className='header-wrapper'>
+     {pathName !== '/admin' ?(   <div className='header-wrapper'>
           <nav>
             <input type='checkbox' id='show-search'></input>
             <input type='checkbox' id='show-menu'></input>
@@ -89,7 +89,7 @@ const Header = () => {
               <Logout />
             </div>
           </nav>
-        </div> 
+        </div> ):null}
     </div>
   )
 }
