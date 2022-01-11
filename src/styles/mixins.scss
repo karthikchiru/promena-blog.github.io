@@ -41,6 +41,12 @@
   width: 100%;
 }
 
+@mixin relativewidth {
+  position: relative;
+  width: 100%;
+  display: block;
+}
+
 @mixin relativeflex {
   position: relative;
   display: flex;

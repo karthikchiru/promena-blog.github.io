@@ -129,9 +129,7 @@
 
 @media screen and (min-width: 1024px) and (max-width: 1420px) {
   .card {
-    position: relative;
-    display: block;
-    width: 100%;
+    @include relativewidth;
     margin-left: 0;
     padding: $font_xxlarge $font_verysmall;
     h1{
