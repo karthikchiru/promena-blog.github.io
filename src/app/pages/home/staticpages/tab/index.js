@@ -22,7 +22,7 @@ const Tab = () => {
         <div
           className={toggleState === 1 ? 'content  active-content' : 'content'}
         >
-        <h1 className='content-h1'>This tab is recomended Posts</h1>
+        {/* <h1 className='content-h1'>This tab is recomended Posts</h1> */}
       <div>
       <Sidebar/>
       </div>

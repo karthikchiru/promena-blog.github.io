@@ -28,7 +28,7 @@ const Tabs = () => {
         <div
           className={toggleState === 1 ? 'content  active-content' : 'content'}
         >
-        <h1 className='content-h1'>This tab is new Posts</h1>
+        {/* <h1 className='content-h1'>This tab is new Posts</h1> */}
       <div>
       <Sidebar/>
       </div>
@@ -36,7 +36,7 @@ const Tabs = () => {
           <div
           className={toggleState === 2 ? 'content  active-content' : 'content'}
         >
-        <h1 className='content-h1'>This  tab is Trending Posts</h1>
+        {/* <h1 className='content-h1'>This  tab is Trending Posts</h1> */}
         <div>
        <Sidebar/> 
       </div>

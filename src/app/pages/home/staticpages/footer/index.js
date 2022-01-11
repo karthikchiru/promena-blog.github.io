@@ -79,7 +79,7 @@ const Footer = () => {
 
   return (
     <div>
-      {pathName !== '/forgotPassword' ? (
+      {pathName !== '/admin' ? (
         <div className='footer'>
           <div className='footer__left'>
             <a onClick={() => history.push('/')}><img src={logo} alt='my home' className='footer__logo' /></a>
