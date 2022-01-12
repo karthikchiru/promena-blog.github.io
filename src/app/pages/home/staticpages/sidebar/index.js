@@ -1,5 +1,4 @@
-/* eslint-disable react/jsx-key */
-
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import './index.scss'
 import { NavLink } from 'react-router-dom';
@@ -8,7 +7,6 @@ import moment from 'moment';
 import ReadMore from '../../components/readmore';
 
 
-// eslint-disable-next-line no-unused-vars
 const Sidebar = (props) => {
 
   const [postList, setPostList] = useState([]);

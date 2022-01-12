@@ -1,6 +1,3 @@
-/* eslint-disable no-debugger */
-/* eslint-disable no-unused-vars */
-
 import React, { useState, useEffect } from 'react';
 import CommentForm from '../commentForm';
 import Comment from '../comment';
@@ -14,7 +11,6 @@ import {
 const Comments = ({ currentUserId, blogId }) => {
   const [backendComments, setBackendComments] = useState([]);
   const [backendReplyComments, setBackendReplyComments] = useState([]);
-  const [activeComment, setActiveComment] = useState(null);
   const [pageNumber, setPageNumber] = useState(0);
 
 

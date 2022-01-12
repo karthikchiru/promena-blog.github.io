@@ -2,7 +2,6 @@
 
 import React , { useState } from 'react';
 import LoginModal from '../../loginmodal';
-// import EmojiTextarea  from 'react-emoji-textarea';
 import {userRegistartion, userToken, userComment as createCommentApi} from '../../../../../utils/apiCalls';
 import './index.scss';
 import Button from 'app/components/button';

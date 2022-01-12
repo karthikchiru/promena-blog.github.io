@@ -1,7 +1,4 @@
 /* eslint-disable no-unused-vars */
-
-
-
 import React, { useState, useEffect } from 'react';
 import './index.scss'
 import Chart from '../../charts/barchart';

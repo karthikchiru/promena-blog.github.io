@@ -1,8 +1,5 @@
-/* eslint-disable no-debugger */
 /* eslint-disable no-unused-vars */
 export function fetchCall(callback, url, method, payload) {
-  // debugger
-  // let token = localStorage.getItem('user-token');
     return new Promise(function (resolve, reject) {
       const options = {
         method,

@@ -5,12 +5,11 @@ import { NavLink } from 'react-router-dom';
 import { getPostList } from 'app/utils/apiCalls';
 
 const Postlist = () => {
-
     const [posts, setPosts] = useState([]);
 
-    useEffect(() => {
+useEffect(() => {
 getPostList((res)=>{
-    setPosts(res);
+setPosts(res);
 });
     }, []);
 
@@ -21,7 +20,6 @@ getPostList((res)=>{
                     <div key={index} className='postlist'>
                     <HelmetProvider>
                     <Helmet>
-                    {/* <title>{val.title}</title> */}
                         <meta  name='category' content={val.category}/>
                         <meta name='description' content = {val.content}/>
                     </Helmet>
