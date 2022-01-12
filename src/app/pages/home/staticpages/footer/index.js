@@ -85,7 +85,7 @@ const Footer = () => {
     }
   };
 
-  useLayoutEffect(() => { }, [handleClick]);
+  useLayoutEffect(() => {handleClick() }, []);
 
   return (
     <div>

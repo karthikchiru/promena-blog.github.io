@@ -1,7 +1,7 @@
 /* eslint-disable no-debugger */
 /* eslint-disable no-unused-vars */
 
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import CommentForm from '../commentForm';
 import Comment from '../comment';
 import './index.scss';
@@ -36,15 +36,13 @@ const Comments = ({ currentUserId, blogId }) => {
 debugger
       const usersPerPage = 5;
       const pagesVisited = pageNumber*usersPerPage;
-const displayComments = rootComments.length >0 && rootComments.slice(pagesVisited, pagesVisited + usersPerPage).map((user)=>{
+const displayComments =  rootComments.slice(pagesVisited, pagesVisited + usersPerPage).map((user)=>{
 
   return(
       user.Blog_id == blogId ? <Comment
            key={user.Blog_id}
            comment={user}
            replies={getReplies(user.commentId)}
-           activeComment={activeComment}
-           setActiveComment={setActiveComment}
            currentUserId={currentUserId}
          />:null
   )
@@ -96,4 +94,4 @@ const displayComments = rootComments.length >0 && rootComments.slice(pagesVisite
   );
 };
 
-export default Comments;
+export default React.memo(Comments);

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './index.scss';
-import { Helmet } from 'react-helmet';
+import { Helmet,   HelmetProvider } from 'react-helmet-async';
 import { NavLink } from 'react-router-dom';
 import { getPostList } from 'app/utils/apiCalls';
 
@@ -20,11 +20,13 @@ getPostList((res)=>{
             {posts.map(val => {
                 return (
                     <div key={val.Blog_id} className='postlist'>
+                    <HelmetProvider>
                     <Helmet>
                     {/* <title>{val.title}</title> */}
                         <meta  name='category' content={val.category}/>
                         <meta name='description' content = {val.content}/>
                     </Helmet>
+                    </HelmetProvider>
                         <h2><NavLink  to={`/post/${val.Blog_id}`}>{val.category}</NavLink> </h2>
                         <span>{val.title}</span>
                     </div>
