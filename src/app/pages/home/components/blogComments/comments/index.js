@@ -36,11 +36,11 @@ const Comments = ({ currentUserId, blogId }) => {
 debugger
       const usersPerPage = 5;
       const pagesVisited = pageNumber*usersPerPage;
-const displayComments =  rootComments.slice(pagesVisited, pagesVisited + usersPerPage).map((user)=>{
+const displayComments =  rootComments.slice(pagesVisited, pagesVisited + usersPerPage).map((user, index)=>{
 
   return(
       user.Blog_id == blogId ? <Comment
-           key={user.Blog_id}
+           key={index}
            comment={user}
            replies={getReplies(user.commentId)}
            currentUserId={currentUserId}

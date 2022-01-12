@@ -10,7 +10,7 @@ const Comment = ({
   const createdAt = new Date(comment.datetime).toLocaleDateString();
 
   return (
-    <div key={comment.Blog_id} className='comment'>
+    <div key={comment.Comment} className='comment'>
       <div className='comment-image-container'>
         <img src={Img} />
       </div>

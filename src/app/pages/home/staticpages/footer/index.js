@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import React, { useState, useLayoutEffect, useEffect } from 'react';
 import './index.scss';
 import logo from '../../../../../assets/images/promena.png';
@@ -57,7 +56,6 @@ const Footer = () => {
   };
 
   const handleSubscribe = () => {
-    debugger
     if (ValidateEmail(email)) {
       const payload = {
         User_email_Address: email,
@@ -250,9 +248,9 @@ const Footer = () => {
             >
               <option value='--Select--'>--Select--</option>
               {category.length &&
-                category.map((val) => {
+                category.map((val, index) => {
                   return (
-                    <option key={val.category_id} value={val.category_id}>
+                    <option key={index} value={val.category_id}>
                       {val.category_name}
                     </option>
                   );
@@ -270,7 +268,7 @@ const Footer = () => {
               placeholder='Enter Email'
             ></input>
             <Button
-              buttonClick={handleSubscribe}
+              buttonClick={()=>{handleSubscribe()}}
               isBtnDisabled={isBtnDisabled}
               className='footer__right__newsletter'
             >

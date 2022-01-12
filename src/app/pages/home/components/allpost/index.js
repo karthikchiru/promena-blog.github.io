@@ -29,13 +29,13 @@ const AllPosts = () => {
     <div className='card-container'>
 
       {
-        postList.map(post => {
+        postList.map((post, index) => {
           var url = post.thumbnail;
 
 
           return (
          
-            <div className='card' key={post.Blog_id}>
+            <div className='card' key={index}>
             <HelmetProvider >
             <Helmet>
                     {/* <title></title> */}

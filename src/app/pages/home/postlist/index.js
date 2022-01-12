@@ -11,15 +11,14 @@ const Postlist = () => {
     useEffect(() => {
 getPostList((res)=>{
     setPosts(res);
-    console.log(res)
 });
-    }, posts);
+    }, []);
 
     return (
         <div className='postlist-banner'>
-            {posts.map(val => {
+            {posts.map((val, index )=> {
                 return (
-                    <div key={val.Blog_id} className='postlist'>
+                    <div key={index} className='postlist'>
                     <HelmetProvider>
                     <Helmet>
                     {/* <title>{val.title}</title> */}
