@@ -55,6 +55,13 @@ const Footer = () => {
     window.scrollTo(0, 0);
   };
 
+const handleLogo = () =>{
+window.scrollTo(0, 0);
+setTimeout(() => {
+  history.push('/');
+}, 1000);
+}
+
   const handleSubscribe = () => {
     if (ValidateEmail(email)) {
       const payload = {
@@ -90,7 +97,7 @@ const Footer = () => {
       {pathName !== '/admin' ? (
         <div className='footer'>
           <div className='footer__left'>
-            <a onClick={() => history.push('/')}><img src={logo} alt='my home' className='footer__logo' /></a>
+            <a onClick={() => {handleLogo()}}><img src={logo} alt='my home' className='footer__logo' /></a>
             <div className='footer__icons'>
               <ul>
                 <li>
