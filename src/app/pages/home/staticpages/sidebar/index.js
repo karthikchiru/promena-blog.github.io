@@ -8,7 +8,6 @@ import ReadMore from '../../components/readmore';
 
 
 const Sidebar = (props) => {
-
   const [postList, setPostList] = useState([]);
 
   useEffect(() => {
@@ -19,13 +18,10 @@ const Sidebar = (props) => {
   }, []);
 
   return (
-
     <div className='main1'>
-
       {
         postList.map(post => {
           var url = post.thumbnail;
-
           return (
             <div className='posts' key={post.Blog_id}>
               <NavLink className='posts__link' to={`/post/${post.Blog_id}`}>

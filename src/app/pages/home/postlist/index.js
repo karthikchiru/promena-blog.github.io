@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { getPostList } from 'app/utils/apiCalls';
 
 const Postlist = () => {
-    const [posts, setPosts] = useState([]);
+const [posts, setPosts] = useState([]);
 
 useEffect(() => {
 getPostList((res)=>{
