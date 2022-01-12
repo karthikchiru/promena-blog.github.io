@@ -14,7 +14,6 @@
 /.eslintcache
 /yarn.lock
 # production
-/build
 
 # misc
 .DS_Store
