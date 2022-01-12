@@ -1,11 +1,9 @@
-/* eslint-disable quotes */
 /* eslint-disable no-debugger */
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
+
 import React , { useState } from 'react';
 import LoginModal from '../../loginmodal';
 // import EmojiTextarea  from 'react-emoji-textarea';
-import {userRegistartion, userToken, getUserComments as getCommentsApi, userComment as createCommentApi} from '../../../../../utils/apiCalls';
+import {userRegistartion, userToken, userComment as createCommentApi} from '../../../../../utils/apiCalls';
 import './index.scss';
 import Button from 'app/components/button';
 import Confirm from 'app/components/confirmModal/confirm';
@@ -71,7 +69,7 @@ if(text){
      }
     }else{
       let userInfo = JSON.parse(localStorage.getItem('user'));
-      if(userInfo !== "login-target" && userInfo !== null){
+      if(userInfo !== 'login-target' && userInfo !== null){
       let payload = {
         Blog_id: blogId,
         commentId: ++CommentId,
