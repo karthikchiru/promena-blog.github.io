@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import React, { useState, useLayoutEffect, useEffect } from 'react';
 import './index.scss';
 import logo from '../../../../../assets/images/promena.png';
@@ -7,6 +6,8 @@ import { useHistory } from 'react-router';
 import { getCategoryDetails, userSubscribe } from '../../../../utils/apiCalls';
 import Button from '../../../../components/button';
 import { regex } from 'app/constants/regex';
+import Confirm from 'app/components/confirmModal/confirm';
+import Loader from 'app/components/loader';
 
 const Footer = () => {
   const location = useLocation();
@@ -16,6 +17,9 @@ const Footer = () => {
   const [category, setCategory] = useState('');
   const [dropdown, setDropdown] = useState('');
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
+  const [showConfirmModal, setShowConfirmModal] = useState(false);
+  const [alertText, setAlertText] = useState('');
+  const [isShowLoader, setIsShowLoader] = useState(false);
 
   useEffect(() => {
     getCategoryDetails((res) => {
@@ -51,6 +55,13 @@ const Footer = () => {
     window.scrollTo(0, 0);
   };
 
+const handleLogo = () =>{
+window.scrollTo(0, 0);
+setTimeout(() => {
+  history.push('/');
+}, 1000);
+}
+
   const handleSubscribe = () => {
     if (ValidateEmail(email)) {
       const payload = {
@@ -58,15 +69,19 @@ const Footer = () => {
         category_ID: dropdown,
       };
       userSubscribe((res) => {
+        setIsShowLoader(true);
         if(res.success ==='True')
         {
-          console.log(res.User_email_Address);
-          alert(res.message);
+          setIsShowLoader(false);
+          setShowConfirmModal(true);
+          setAlertText(res.message);
           setDropdown('');
           setEmail('');
           setIsBtnDisabled(true);
         }else{
-          alert(res.User_email_Address[0]);
+          setIsShowLoader(false);
+          setShowConfirmModal(true);
+          setAlertText(res.User_email_Address[0]);
           setDropdown('');
           setEmail('');
           setIsBtnDisabled(true);
@@ -75,14 +90,14 @@ const Footer = () => {
     }
   };
 
-  useLayoutEffect(() => { }, [handleClick]);
+  useLayoutEffect(() => {handleClick() }, []);
 
   return (
     <div>
       {pathName !== '/admin' ? (
         <div className='footer'>
           <div className='footer__left'>
-            <a onClick={() => history.push('/')}><img src={logo} alt='my home' className='footer__logo' /></a>
+            <a onClick={() => {handleLogo()}}><img src={logo} alt='my home' className='footer__logo' /></a>
             <div className='footer__icons'>
               <ul>
                 <li>
@@ -240,9 +255,9 @@ const Footer = () => {
             >
               <option value='--Select--'>--Select--</option>
               {category.length &&
-                category.map((val) => {
+                category.map((val, index) => {
                   return (
-                    <option key={val.category_id} value={val.category_id}>
+                    <option key={index} value={val.category_id}>
                       {val.category_name}
                     </option>
                   );
@@ -260,7 +275,7 @@ const Footer = () => {
               placeholder='Enter Email'
             ></input>
             <Button
-              buttonClick={handleSubscribe}
+              buttonClick={()=>{handleSubscribe()}}
               isBtnDisabled={isBtnDisabled}
               className='footer__right__newsletter'
             >
@@ -269,6 +284,11 @@ const Footer = () => {
           </div>
         </div>
       ) : null}
+      {showConfirmModal && (
+          <Confirm buttonText={'OK'} isCancelRequired={false} confirmTitle={alertText}
+            onConfirm={() => { setShowConfirmModal(false) }} onCancel={() => { setShowConfirmModal(false) }} />
+        )}
+        {isShowLoader ? <Loader /> : null}
     </div>
   );
 };

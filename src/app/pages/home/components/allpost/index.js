@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 import { getPostList } from '../../../../utils/apiCalls'
 import moment from 'moment';
 import './index.scss';
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import ReadMore from '../readmore';
 
 const AllPosts = () => {
@@ -25,21 +25,24 @@ const AllPosts = () => {
 
 
   return (
-
+   
     <div className='card-container'>
 
       {
-        postList.map(post => {
+        postList.map((post, index) => {
           var url = post.thumbnail;
 
 
           return (
-            <div className='card' key={post.Blog_id}>
+         
+            <div className='card' key={index}>
+            <HelmetProvider >
             <Helmet>
                     {/* <title></title> */}
                         <meta  name='category' content={post.category}/>
                         <meta name='description' content = {post.content}/>
                     </Helmet>
+                    </HelmetProvider>
               <NavLink className='card__title' to={`/post/${post.Blog_id}`}>
                 {post.title}
               </NavLink>
@@ -55,9 +58,11 @@ const AllPosts = () => {
               </ul>
             </div>
           )
+  
         })
       }
     </div>
+  
   )
 
 }
