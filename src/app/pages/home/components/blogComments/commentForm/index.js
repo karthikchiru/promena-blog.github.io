@@ -113,7 +113,6 @@ if(text){
   const onConfirm =(user)=>{
     setuser(user);
      userRegistartion((response)=>{
-      //  setUserRegister(response);
        localStorage.setItem('user',JSON.stringify(user));
        let userDetail = JSON.parse(localStorage.getItem('user'));
        console.log(userDetail);
@@ -136,8 +135,7 @@ if(text){
             console.log(res);
           }else if(res.detail === 'user not found'){
             setShowConfirmModal(true);
-// alert('user not found, check your credentials');
-setAlertText('user not found, Please check your credentials !')
+      setAlertText('user not found, Please check your credentials !')
           }
  
           }, payload);

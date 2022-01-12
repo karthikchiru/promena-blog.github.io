@@ -8,7 +8,6 @@ const Comment = ({
   replies
 }) => {
   const createdAt = new Date(comment.datetime).toLocaleDateString();
-
   return (
     <div key={comment.Comment} className='comment'>
       <div className='comment-image-container'>
