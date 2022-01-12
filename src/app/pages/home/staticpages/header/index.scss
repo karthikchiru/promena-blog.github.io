@@ -8,7 +8,7 @@
   font-family: "Poppins", sans-serif;
 }
 .header-wrapper {
-  background: $color_white6;
+  background: #fff;
   width: 100%;
 }
 .header-wrapper nav {
@@ -16,10 +16,11 @@
   margin: 0 auto;
   padding: $font_xxlarge;
   height: $font_medium1;
+  box-shadow: 0 0px 0px 0.2px rgba(0, 0, 0, 0.5);
 }
 nav .content {
   @include flexaround;
-  background-color: $color_white6;
+  background-color: #fff;
 }
 nav .content .links {
   display: flex;
@@ -81,11 +82,12 @@ nav .content .links {
   background: $color_white6;
   top: $font_top6;
   z-index: -1;
+  border-bottom: 2px solid blue;
   opacity: 0;
   visibility: hidden;
 }
 .content .links li:hover > ul {
-  top: $font_top8;
+  top: 6.9rem;
   opacity: 1;
   visibility: visible;
   transition: all 0.3s ease;
@@ -102,8 +104,8 @@ nav .content .links {
   font-size: small;
   line-height: $font_top8;
   margin: 0 !important;
-  padding-right: $font_button !important;
-  padding: 0 0.4rem;
+  padding: 0 2rem;
+  padding-right: 3.8rem !important;
 }
 .content .links ul ul {
   position: absolute;
@@ -116,6 +118,9 @@ nav .content .links {
 .content .links ul li:hover ul {
   top: 0;
 }
+.content .links li a.desktop-link {
+  padding: 29px 15px !important;
+}
 
 @media screen and (min-width: 1024px) and (max-width: 1420px) {
   .content .links li a,
@@ -123,7 +128,7 @@ nav .content .links {
     color: $dark_shadow;
     font-size: $font_medium;
     font-weight: 500;
-    padding: $font_xxsmall $font_xxlarge;
+    // padding: $font_xxsmall $font_xxlarge;
     border-radius: $font_xverysmall;
     transition: all 0.3s ease;
   }
