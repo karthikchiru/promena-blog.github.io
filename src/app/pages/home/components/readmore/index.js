@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import './index.scss'
 import DOMPurify from 'dompurify'
-// import PropTypes from 'prop-types';
 
 const ReadMore = ({post}) => {
   const [isReadMore, setIsReadMore] = useState(true);

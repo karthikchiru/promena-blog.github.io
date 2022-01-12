@@ -1,5 +1,3 @@
-/* eslint-disable import/named */
-/* eslint-disable no-unused-vars */
 import { fetchCall, fetchLoginCall } from '../utils/ajax';
 import { API_CONSTANTS, API_METHODS } from '../constants/api-constant';
 

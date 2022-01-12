@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import { Route, Redirect } from 'react-router-dom';
 
 const ProtectedRoute = ({ component: Component, path, ...rest }) => {

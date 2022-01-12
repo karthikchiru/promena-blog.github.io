@@ -1,7 +1,3 @@
-/* eslint-disable no-debugger */
-/* eslint-disable no-unused-vars */
-
-
 
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';

@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import React, { useState } from 'react';
 import './index.scss';
 import Button from '../../components/button/index';

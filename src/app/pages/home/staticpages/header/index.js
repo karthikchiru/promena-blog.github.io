@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react'
 import './index.scss';
 import logo from '../../../../../assets/images/promena.png'
