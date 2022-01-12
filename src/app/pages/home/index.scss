@@ -2,7 +2,7 @@
 @import "../../../styles/mixins.scss";
 
 .width-container {
-  padding: $font_xxlarge $font_top8;
+  padding: 0 $font_top8;
 }
 .wrap {
   @include flexrow;
