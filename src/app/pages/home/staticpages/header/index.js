@@ -41,7 +41,7 @@ const Header = () => {
                 {menu.length && menu.map((val, index) => {
                   return (
                     <li key={index}>
-                      <a href='#' className='desktop-link'>{val.menuname} <i className='fa fa-caret-down' aria-hidden='true'></i></a>
+                      <a onClick={() => history.push('/')} className='desktop-link'>{val.menuname} <i className='fa fa-caret-down' aria-hidden='true'></i></a>
                       <input type='checkbox' id='show-ppc'></input>
                       <label htmlFor='show-ppc'>Ppc</label>
                       <ul>
@@ -57,9 +57,9 @@ const Header = () => {
                     </li>
                   )
                 })}
-                <li><a href='#'>WEBINARS</a></li>
+                <li><a onClick={() => history.push('/')}>WEBINARS</a></li>
                 <li>
-                  <a href='#' className='desktop-link'>FOLLOW <i className='fa fa-caret-down' aria-hidden='true'></i></a>
+                  <a onClick={() => history.push('/')} className='desktop-link'>FOLLOW <i className='fa fa-caret-down' aria-hidden='true'></i></a>
                   <input type='checkbox' id='show-social-links'></input>
                   <label htmlFor='show-social-links'>Follow Us</label>
                   <ul className='social-links'>

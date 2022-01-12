@@ -84,6 +84,9 @@ if(text){
  {
  localStorage.clear();
  localStorage.removeItem('user-token');
+ }else if(timePassed){
+  localStorage.clear();
+  localStorage.removeItem('user-token');
  }
        if(token)
        {
