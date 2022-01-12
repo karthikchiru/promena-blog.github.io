@@ -1,16 +1,18 @@
 import React, {useLayoutEffect} from 'react'
 import BlogPost from '../components/blogpost';
-// import Sidebar from '../staticpages/sidebar';
 import Tab from '../staticpages/tab';
 import './index.scss'
 
 const Post = (props) => {
+
   const handleClick = ()=>{
     window.scrollTo(0, 0);
   };
-  
+
   useLayoutEffect(() => {
-  }, [handleClick]);
+  handleClick();
+  }, []);
+
   return(
 <div className='post-container'>
 <div className='post-wrapper'>
@@ -23,7 +25,6 @@ const Post = (props) => {
 <div className='post-read-button '>
 
   <span onClick={handleClick} className='read-next' role='button' >Read Next <i className='fas fa-angle-down'></i></span>
-  {/* <hr  className='line' />  */}
 </div>
 </div>
 
