@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react'
 import './index.scss';
 import logo from '../../../../../assets/images/promena.png'
-import { useLocation } from 'react-router-dom';
+import { NavLink , useLocation } from 'react-router-dom';
+
 import { useHistory } from 'react-router';
 import { getCategoryDetails, getMenuDetails } from '../../../../utils/apiCalls';
 import Logout from 'app/pages/logout';
@@ -46,9 +47,9 @@ const Header = () => {
                       <ul>
                         {category.length && category.map((value, index1) => {
                           return (
-                            <li key={index1}><a href='#'>{
+                            <li key={index1}><NavLink to={'/'}>{
                               (val.menuid === value.menuname ? value.category_name : null)
-                            }</a></li>
+                            }</NavLink></li>
                           );
                         })}
                       </ul>

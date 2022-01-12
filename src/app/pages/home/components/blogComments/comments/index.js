@@ -33,7 +33,6 @@ const Comments = ({ currentUserId, blogId }) => {
         (a, b) =>
           new Date(a.datetime).getTime() - new Date(b.datetime).getTime()
       );
-debugger
       const usersPerPage = 5;
       const pagesVisited = pageNumber*usersPerPage;
 const displayComments =  rootComments.slice(pagesVisited, pagesVisited + usersPerPage).map((user, index)=>{

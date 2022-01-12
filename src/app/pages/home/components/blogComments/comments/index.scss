@@ -29,25 +29,22 @@
 }
 
 .comment-form-button {
-  font-size: $font_button;
-  padding: $font_xxsmall $font_button;
-  background: rgb(59, 130, 246);
-  border-radius: $font_xxsmall;
-  color: $color-white-primary;
+padding: 10px 0;
 }
 
 .comment-form-button:hover:enabled {
   cursor: pointer;
   background: rgb(37, 99, 235);
+  padding: 10px 0;
 }
 
 .comment-form-button:disabled {
-  opacity: 0.7;
-  cursor: default;
+  padding: 10px 0;
+  background: rgb(37, 99, 235);
 }
 
 .comment-form-cancel-button {
-  margin-left: $font_verysmall;
+  padding: 10px 0;
 }
 
 .comment {

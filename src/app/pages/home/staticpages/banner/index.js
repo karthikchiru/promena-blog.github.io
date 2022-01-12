@@ -1,7 +1,7 @@
 import React from 'react';
-import banner1 from '../../../../../assets/images/banner3.jpg'
-import banner2 from '../../../../../assets/images/background.png'
-import banner3 from '../../../../../assets/images/banner1.jpg'
+import banner1 from '../../../../../assets/images/Artboard1.png'
+import banner2 from '../../../../../assets/images/Artboard2.png'
+import banner3 from '../../../../../assets/images/Artboard4.png'
 import './index.scss'
 
 const Banner = () => {
