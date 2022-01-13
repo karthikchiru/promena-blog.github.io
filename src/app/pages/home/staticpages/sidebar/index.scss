@@ -7,9 +7,8 @@
 
 .posts {
   position: relative;
-  display: block;
+  display: flex;
   width: 100%;
-  @include allcenter;
   background-size: cover;
   padding: $font_xverysmall;
   &__image {
@@ -17,9 +16,18 @@
     width: 40%;
   }
   &__maincontent{
-    display: flex;
+    display: block;
     position: relative;
+    margin-left: 1rem;
+    text-align: left;
   } 
+  span {
+    margin-left: 0;
+  }
+  h1 {
+    font-size: $font_xlarge;
+    font-weight: 600;
+  }
   &__link {
     @include textnone;
     font-size: $font_button;
@@ -27,24 +35,31 @@
   }
   &__ul {
     font-family: $monstserrat_regular;
-    font-size: $font_medium;
+    font-size: $font_verysmall;
     @include flexbetween;
     @include listnone;
-    padding: 0 $font_xxlarge
+    padding-left: 0;
   }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1420px) {
   .posts{
+    &__image {
+      width: 40%;
+      height: 25vh;
+    }
     h1{
-      font-size: $font_large;
+      font-size: $font_medium
     }
     .read-more {
       font-size: $font_small;
     }
-    &__ul {
+    span {
       font-size: $font_small;
-      padding: 0 $font_xxlarge
+    }
+    &__ul {
+      font-size: $font_xxsmall;
+      padding: 0 ;
     }
   }
 }
@@ -53,9 +68,15 @@
   .posts {
     padding: 0;
     display: block;
+    @include allcenter;
     position: relative;
+    padding-top: 2rem;
     &__maincontent{
       display: block;
+      text-align: center;
+    }
+    p {
+      margin-bottom: 0;
     }
     &__ul {
       padding: 0;
@@ -65,6 +86,10 @@
       padding-left: 0;
       width: 80%;
     }
+    .read-more {
+      padding-left: 0;
+      margin-bottom: 0;
+    }
   }
 }
 
@@ -72,12 +97,13 @@
   .posts {
     padding: $font_verysmall 0;
     &__image {
+      height: 25vh;
       padding: 0;
       padding-top: $font_large;
     }
     &__ul {
       padding: 0;
-      font-size: $font_small;
+      font-size: $font_xxsmall;
     }
   }
 }

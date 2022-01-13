@@ -39,18 +39,17 @@
       text-decoration: none !important;
     }
     h1{
-font-size: 30px;
+font-size: 2.5rem;
 font-weight: bold;
 letter-spacing: 1px;
     }
     .read-more {
       text-align: left;
-      font-size: $font_xlarge;
-      padding-left: $font_button
+      font-size: $font_small;
     }
   }
-  &__img{
-  
+  span {
+    margin-left: 0;
   }
   &__image {
     height: 250px;
@@ -59,8 +58,9 @@ letter-spacing: 1px;
   &__ul1 {
     font-family: $monstserrat_regular;
     padding-top: $font_large;
+    padding-left: 0;
     @include flexbetween;
-    font-size:8px;
+    font-size:1.4rem;
     @include listnone;
   }
 }
@@ -79,11 +79,15 @@ letter-spacing: 1px;
     margin-left: 0;
     padding: $font_large$font_verysmall;
     @include allcenter;
+    &__main-content{
+      &__category{
+        margin-top: 0;
+      }
+    }
     h1{
-      font-size: $font_xlarge;
+      font-size: $font_medium;
     }
     &__image {
-      width: 40%;
       height: 150px;
     }
     &__content {
@@ -132,7 +136,6 @@ letter-spacing: 1px;
       font-size: $font_small;
     }
     &__image{
-      width: 40%;
       max-height: 150px;
     }
     &__ul1 {
@@ -154,7 +157,7 @@ letter-spacing: 1px;
   .card {
 
     h1{
-      font-size: $font_large;
+      font-size: $font_medium;
     }
     &__content {
       float: center;
@@ -165,11 +168,10 @@ letter-spacing: 1px;
       font-size: $font_large;
     }
     &__ul1 {
-      font-size:15px;
+      font-size: $font_verysmall;
       width: 100%;
       @include marpad;
       @include listnone;
-      padding: $font_xlarge $font_xxlarge 0 $font_xxlarge;
     }
   }
 }
