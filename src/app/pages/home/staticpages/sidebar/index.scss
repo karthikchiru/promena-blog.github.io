@@ -7,6 +7,7 @@
 
 .posts {
   position: relative;
+  margin: 2rem 0;
   display: flex;
   width: 100%;
   background-size: cover;
@@ -35,7 +36,7 @@
   }
   &__ul {
     font-family: $monstserrat_regular;
-    font-size: $font_verysmall;
+    font-size: $font_small;
     @include flexbetween;
     @include listnone;
     padding-left: 0;
@@ -58,7 +59,7 @@
       font-size: $font_small;
     }
     &__ul {
-      font-size: $font_xxsmall;
+      font-size: 1rem;
       padding: 0 ;
     }
   }
