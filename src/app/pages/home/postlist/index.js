@@ -25,7 +25,7 @@ setPosts(res);
                     </Helmet>
                     </HelmetProvider>
                         <h2><NavLink className={`postlist__category-link--${index ===0 ? 'active':'disabled'}`} to={`/post/${val.Blog_id}`}>{val.category}</NavLink> </h2>
-                        <span>{val.title}</span>
+                        <span className={`postlist__category-span--${index ===0 ? 'active':'disabled'}`} >{val.title}</span>
                     </div>
                 )
             })}
