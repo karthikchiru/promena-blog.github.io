@@ -12,7 +12,16 @@
     background-color: $blue1;
     color: $dark_shadow;
   }
- 
+  &:first-child{
+    background-color: $blue1;
+    color: $dark_shadow;
+  }
+ &__category-link{
+&--active{
+  color: #fff !important;
+  cursor: pointer;
+}
+  }
 }
 
 h2 {
