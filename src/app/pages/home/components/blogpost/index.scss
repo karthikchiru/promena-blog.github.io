@@ -5,7 +5,7 @@
   width: 100%;
   &__container {
     display: block;
-    width: 90%;
+    width: 95%;
     align-items: center;
   }
   &__post {
@@ -35,7 +35,7 @@
   @include allcenter;
 &__button1{
   padding: $font_verysmall $font_medium;
-  margin: $font_large;
+  margin: $font_medium;
   background-color: $color-white-primary;
   color: $dark_shadow;
   font-size: $font_verysmall;
