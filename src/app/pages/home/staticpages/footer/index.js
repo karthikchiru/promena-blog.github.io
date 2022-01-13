@@ -59,7 +59,7 @@ const handleLogo = () =>{
 window.scrollTo(0, 0);
 setTimeout(() => {
   history.push('/');
-}, 1000);
+}, 500);
 }
 
   const handleSubscribe = () => {
