@@ -42,7 +42,7 @@ const Header = () => {
                     <li key={index}>
                       <a onClick={() => history.push('/')} className='desktop-link'>{val.menuname} <i className='fa fa-caret-down' aria-hidden='true'></i></a>
                       <input type='checkbox' id='show-ppc'></input>
-                      <label htmlFor='show-ppc'>Ppc</label>
+                      <label htmlFor='show-ppc'>{val.menuname}</label>
                       <ul>
                         {category.length && category.map((value, index1) => {
                           return (

@@ -24,7 +24,7 @@ setPosts(res);
                         <meta name='description' content = {val.content}/>
                     </Helmet>
                     </HelmetProvider>
-                        <h2><NavLink className='postlist__category-link' to={`/post/${val.Blog_id}`}>{val.category}</NavLink> </h2>
+                        <h2><NavLink className={`postlist__category-link--${index ===0 ? 'active':'disabled'}`} to={`/post/${val.Blog_id}`}>{val.category}</NavLink> </h2>
                         <span>{val.title}</span>
                     </div>
                 )
