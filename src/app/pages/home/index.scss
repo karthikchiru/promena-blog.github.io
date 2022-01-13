@@ -75,6 +75,7 @@
     width: 100%;
     justify-content: center;
     @include flexrow;
+    padding-top: $font_verysmall;
   }
   .all-posts{
     width: 60% !important;
