@@ -25,9 +25,9 @@ const Sidebar = (props) => {
           return (
             <div className='posts' key={post.Blog_id}>
               <NavLink className='posts__link' to={`/post/${post.Blog_id}`}>
-                {post.title}
+                {post.category}
               </NavLink>
-              <h1>{post.category}</h1>
+              <h1>{post.title}</h1>
               <div className='posts__maincontent'>
                 <img src={url} key={post.thumbnail} className='posts__image' />
                 <ReadMore post={post.content} />

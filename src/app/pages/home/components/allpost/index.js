@@ -40,9 +40,9 @@ const AllPosts = () => {
                     </Helmet>
                     </HelmetProvider>
               <NavLink className='card__title' to={`/post/${post.Blog_id}`}>
-                {post.title}
+                {post.category}
               </NavLink>
-              <h1>{post.category}</h1>
+              <h1>{post.title}</h1>
               <div className='card__content'>
                 <img src={url} key={post.Blog_id} className='card__image' />
                 <ReadMore className='readmore-content' post = {post.content} />
