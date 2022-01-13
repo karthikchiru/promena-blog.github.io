@@ -185,6 +185,9 @@ nav .content .links {
 
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
+  .header-wrapper nav {
+    padding: 2rem;
+  }
   .header-wrapper .menu-icon {
     display: block;
   }
@@ -212,6 +215,13 @@ nav .content .links {
   .content .links li {
     margin: $font_button $font_large;
   }
+  .content a .logo {
+    transform: translate(0px, 0px);
+  }
+  .logout {
+    transform: translate(0px, 0px) !important;
+}
+
   .content .links li a,
   .content .links li label {
     display: block;
