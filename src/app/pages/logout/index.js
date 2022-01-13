@@ -19,7 +19,7 @@ const Logout = () => {
     }
     return (
       
-        <div>
+        <div className='logout'>
         <Tippy  className='tippy' content='LogOut'>
  
 <i className='fa fa-sign-out' onClick={handleLogout} aria-hidden='true'></i>

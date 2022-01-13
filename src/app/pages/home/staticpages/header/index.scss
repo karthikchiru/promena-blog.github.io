@@ -8,7 +8,7 @@
   font-family: "Poppins", sans-serif;
 }
 .header-wrapper {
-  background: #fff;
+  background: $color-white-primary;
   width: 100%;
 }
 .header-wrapper nav {
@@ -20,7 +20,7 @@
 }
 nav .content {
   @include flexaround;
-  background-color: #fff;
+  background-color: $color-white-primary;
 }
 nav .content .links {
   display: flex;
@@ -29,8 +29,9 @@ nav .content .links {
 }
 .content a .logo {
   color: $dark_shadow;
-  font-size: $font_xxlarge;
-  font-weight: 600;
+  font-size: 50px;
+  font-weight: 500;
+  transform: translate(-67px, 0px);
   cursor: pointer;
 }
 .content .links li {
@@ -119,7 +120,7 @@ nav .content .links {
   top: 0;
 }
 .content .links li a.desktop-link {
-  padding: 3rem 0.5rem !important;
+  padding: 2.9rem 0.5rem !important;
   margin:0 2rem 0 0;
 }
 
