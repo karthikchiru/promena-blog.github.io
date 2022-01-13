@@ -34,24 +34,25 @@ const AllPosts = () => {
             <div className='card' key={index}>
             <HelmetProvider >
             <Helmet>
-                    {/* <title></title> */}
                         <meta  name='category' content={post.category}/>
                         <meta name='description' content = {post.content}/>
                     </Helmet>
                     </HelmetProvider>
-              <NavLink className='card__title' to={`/post/${post.Blog_id}`}>
+              <div className='card__img item'>
+                <img src={url} key={post.Blog_id} className='card__image' />
+              </div>
+           <div className='card__main-content item'>
+           <NavLink className='card__main-content__category' to={`/post/${post.Blog_id}`}>
                 {post.category}
               </NavLink>
-              <h1>{post.title}</h1>
-              <div className='card__content'>
-                <img src={url} key={post.Blog_id} className='card__image' />
-                <ReadMore className='readmore-content' post = {post.content} />
-              </div>
+           <h1>{post.title}</h1>
+              <ReadMore className='card__main-content__readmore-content'  Blog_id={post.Blog_id} post = {post.content} />
               <ul className='card__ul1'>
                 <li><i className='fa fa-clock-o' aria-hidden='true'> {moment(post.date_created).format('MMM-Do-YY, hh:mm A') }</i></li>
                 <li><i className='fa fa-eye' aria-hidden='true'></i> 75 reads</li>
                 <li><i className='fa fa-clock-o' aria-hidden='true'></i> 3 min read</li>
               </ul>
+           </div>
             </div>
           )
   
