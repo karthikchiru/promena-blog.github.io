@@ -4,6 +4,7 @@
 .postlist-banner {
   width: 100%;
 }
+
 .postlist {
   border: 1px solid rgb(245, 230, 230);
   padding: $font_xlarge;
@@ -15,6 +16,28 @@
   &:first-child{
     background-color: $blue1;
     color: $dark_shadow;
+  }
+  &__triangle{
+    color: #fff;
+    transform: translate(-21px, 12px);
+    &--active{
+      color: #fff;
+      position: absolute;
+      font-size: 30px;
+      transform: translate(-21px, 12px);
+    }
+    &--disabled{
+      color: #fff;
+      position: absolute;
+      font-size: 30px;
+      transform: translate(-21px, 12px);
+    }
+    &__triangle:hover{
+      color: #fff;
+      position: absolute;
+      font-size: 30px;
+      transform: translate(-21px, 12px);
+    }
   }
  &__category-link{
 &--active{
@@ -28,6 +51,7 @@
   text-decoration: none !important;
   text-transform: uppercase;
 }
+
   }
  &__category-span{
 &--active{
