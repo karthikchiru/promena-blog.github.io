@@ -141,7 +141,7 @@ letter-spacing: 1px;
     }
     &__ul1 {
       font-family: "Montserrat Regular";
-      font-size: $font_small;
+      font-size: 1.4rem;
       display: flex;
       padding: 0 $font_xxlarge 0 $font_xxlarge;
       @include listnone;
@@ -169,7 +169,7 @@ letter-spacing: 1px;
       font-size: $font_large;
     }
     &__ul1 {
-      font-size: $font_verysmall;
+      font-size: 1.4rem;
       width: 100%;
       @include marpad;
       @include listnone;
