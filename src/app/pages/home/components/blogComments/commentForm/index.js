@@ -1,4 +1,3 @@
-/* eslint-disable no-debugger */
 import React , { useState } from 'react';
 import LoginModal from '../../loginmodal';
 import {userRegistartion, userToken, userComment as createCommentApi, getUserComments} from '../../../../../utils/apiCalls';
@@ -32,7 +31,6 @@ if(text){
   }
 
    const onSubmit = (e)=>{
-     debugger;
      e.preventDefault();
      rootCommentId.map((val)=>{
        sessionStorage.setItem('commentId', val.commentId);
@@ -57,7 +55,6 @@ if(text){
      if(payload && token)
      {
       createCommentApi((resp)=>{
-        console.log(resp);
         if(resp.success === 'True')
         {
         setAlertText('Your comment has successfully been posted !');
@@ -90,9 +87,6 @@ if(text){
  {
  localStorage.clear();
  localStorage.removeItem('user-token');
- }else if(timePassed){
-  localStorage.clear();
-  localStorage.removeItem('user-token');
  }
        if(token)
        {
@@ -129,7 +123,6 @@ if(text){
      userRegistartion((response)=>{
        localStorage.setItem('user',JSON.stringify(user));
        let userDetail = JSON.parse(localStorage.getItem('user'));
-       console.log(userDetail);
        let payload = {
          name:userDetail.name,
          email:userDetail.email,
@@ -139,14 +132,12 @@ if(text){
        {
         userToken((res)=>{
         localStorage.setItem('user-token', res.jwt);
-        console.log(res)
         }, payload);
        }else if(response.email[0] === 'token with this email already exists.'){
         userToken((res)=>{
           if(res.jwt)
           {
             localStorage.setItem('user-token', res.jwt);
-            console.log(res);
           }else if(res.detail === 'user not found'){
             setShowConfirmModal(true);
       setAlertText('user not found, Please check your credentials !')
