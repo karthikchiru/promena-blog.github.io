@@ -23,7 +23,6 @@ const Footer = () => {
 
   useEffect(() => {
     getCategoryDetails((res) => {
-      console.log(res);
       setCategory(res);
     });
   }, []);

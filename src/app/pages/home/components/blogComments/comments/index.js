@@ -13,7 +13,6 @@ const Comments = ({ currentUserId, blogId }) => {
   const [backendReplyComments, setBackendReplyComments] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
 
-
   const rootCommentId = backendComments.filter(
     (backendComment) => backendComment.commentId
   );
@@ -45,11 +44,9 @@ const displayComments =  rootComments.slice(pagesVisited, pagesVisited + usersPe
   useEffect(() => {
     getCommentsApi((data) => {
       setBackendComments(data);
-      console.log(data);
     });
     getReplyCommentsApi((data) => {
       setBackendReplyComments(data);
-      console.log(data);
     })
   }, []);
 
@@ -61,7 +58,8 @@ const displayComments =  rootComments.slice(pagesVisited, pagesVisited + usersPe
     <div className='comments'>
       <h3 className='comments-title'>Comments</h3>
       <div className='comment-form-title'>Write comment</div>
-      <CommentForm submitLabel='Post' blogId={blogId} rootCommentId={rootCommentId} />
+       return rootComments
+      <CommentForm submitLabel='Post' blogId={blogId} backendComments = {backendComments=>setBackendComments(backendComments)} rootCommentId={rootCommentId} />
       <div className='comments-container'>
         {displayComments}
       </div>

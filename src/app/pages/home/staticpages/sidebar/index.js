@@ -12,7 +12,6 @@ const Sidebar = (props) => {
 
   useEffect(() => {
     getPostList((response) => {
-      console.log(response);
       setPostList(response);
     })
   }, []);

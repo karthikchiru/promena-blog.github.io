@@ -2,10 +2,8 @@ import React, { useState, useEffect } from 'react'
 import './index.scss';
 import logo from '../../../../../assets/images/promena.png'
 import { NavLink , useLocation } from 'react-router-dom';
-
 import { useHistory } from 'react-router';
 import { getCategoryDetails, getMenuDetails } from '../../../../utils/apiCalls';
-import Logout from 'app/pages/logout';
 
 const Header = () => {
   const location = useLocation();
@@ -16,12 +14,10 @@ const Header = () => {
 
   useEffect(() => {
     getMenuDetails((response) => {
-      console.log(response);
       setMenu(response)
     });
 
     getCategoryDetails((response) => {
-      console.log(response);
       setcategory(response);
     });
   }, []);
@@ -86,7 +82,6 @@ const Header = () => {
                   </ul>
                 </li>
               </ul>
-              <Logout />
             </div>
           </nav>
         </div> ):null}
