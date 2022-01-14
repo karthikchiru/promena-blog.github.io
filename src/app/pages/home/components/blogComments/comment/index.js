@@ -1,4 +1,3 @@
-
 import React from 'react';
 import './index.scss';
 import Img from '../../../../../../assets/images/user-icon.png'
@@ -9,7 +8,7 @@ const Comment = ({
 }) => {
   const createdAt = new Date(comment.datetime).toLocaleDateString();
   return (
-    <div key={comment.Comment} className='comment'>
+    <div key={comment.commentId} className='comment'>
       <div className='comment-image-container'>
         <img src={Img} />
       </div>

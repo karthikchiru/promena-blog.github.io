@@ -24,6 +24,8 @@ nav .content {
 }
 nav .content .links {
   display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
   z-index: 99;
   padding-left: 0!important;
 }
@@ -31,7 +33,6 @@ nav .content .links {
   color: $dark_shadow;
   font-size: 50px;
   font-weight: 500;
-  transform: translate(-67px, 0px);
   cursor: pointer;
 }
 .content .links li {
@@ -216,12 +217,8 @@ nav .content .links {
   .content .links li {
     margin: $font_button $font_large;
   }
-  .content a .logo {
-    transform: translate(0px, 0px);
-  }
-  .logout {
-    transform: translate(0px, 0px) !important;
-}
+
+
 
   .content .links li a,
   .content .links li label {

@@ -1,13 +1,13 @@
 /* eslint-disable no-debugger */
-
 import React , { useState } from 'react';
 import LoginModal from '../../loginmodal';
-import {userRegistartion, userToken, userComment as createCommentApi} from '../../../../../utils/apiCalls';
+import {userRegistartion, userToken, userComment as createCommentApi, getUserComments} from '../../../../../utils/apiCalls';
 import './index.scss';
 import Button from 'app/components/button';
 import Confirm from 'app/components/confirmModal/confirm';
 
 const CommentForm = ({
+  backendComments,
   rootCommentId,
   blogId,
 }) => {
@@ -17,8 +17,9 @@ const CommentForm = ({
   const [showLoginConfirmModal, setshowLoginConfirmModal] = useState(false);
   const [user, setuser] = useState({});
   const [isBtnDisabled, setIsBtnDisabled] = useState(true);
+ 
 
-  const handleValueChange =(e, key)=>{
+const handleValueChange =(e, key)=>{
 let val = e.target.value;
 setIsBtnDisabled(true);
 if(key === 1)
@@ -41,7 +42,6 @@ if(text){
      let CommentId = sessionStorage.getItem('commentId');
      let date = new Date();
      let token = localStorage.getItem('user-token');
-
   
      if(user.name !== undefined || user.name != null)
      {
@@ -60,7 +60,14 @@ if(text){
         console.log(resp);
         if(resp.success === 'True')
         {
-          location.reload();
+        setAlertText('Your comment has successfully been posted !');
+         getUserComments(()=>{
+           if(payload)
+           {
+            backendComments([...rootCommentId, payload]);
+           }
+         });
+         setShowConfirmModal(true);
         }else{
           setIsBtnDisabled(true);
         }
@@ -93,7 +100,14 @@ if(text){
 
           if(resp.success === 'True')
           {
-            location.reload();
+            setAlertText('Your comment has successfully been posted !');
+            getUserComments(()=>{
+              if(payload)
+           {
+            backendComments([...rootCommentId, payload]);
+           }
+            });
+            setShowConfirmModal(true);
           }else{
             setIsBtnDisabled(true);
           }
