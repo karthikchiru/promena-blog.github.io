@@ -14,12 +14,12 @@
 .header-wrapper nav {
   @include flexbetween;
   margin: 0 auto;
-  padding: $font_xxlarge;
+  padding: $font_xxlarge $font_top7;
   height: $font_medium1;
   box-shadow: 0 0px 0px 0.2px rgba(0, 0, 0, 0.5);
 }
 nav .content {
-  @include flexaround;
+  @include flexbetween;
   background-color: $color-white-primary;
 }
 nav .content .links {
@@ -154,10 +154,12 @@ nav .content .links {
 @media screen and (min-width: 768px) and (max-width: 1020px) {
   .header-wrapper nav {
     max-width: 100%;
-    padding: 0 !important;
+    padding: 3rem 4rem;
   }
   nav .content {
-    @include flexCenter;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   nav .content .links {
     margin-left: 0;
@@ -188,7 +190,7 @@ nav .content .links {
 
 @media screen and (min-width: 320px) and (max-width: 760px) {
   .header-wrapper nav {
-    padding: 2rem;
+    padding: 3rem;
   }
   .header-wrapper .menu-icon {
     display: block;
