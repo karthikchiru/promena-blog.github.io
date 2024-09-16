@@ -20,7 +20,7 @@ const Tabs = () => {
           className={toggleState === 2 ? 'tabs active-tabs' : 'tabs'}
           onClick={() => toggleTab(2)}
         >
-          Recent Blog
+          Trending Blog
         </button>
 </div>
 </div>
@@ -28,7 +28,6 @@ const Tabs = () => {
         <div
           className={toggleState === 1 ? 'content  active-content' : 'content'}
         >
-        <h1 className='content-h1'>this is tab one Posts</h1>
       <div>
       <Sidebar/>
       </div>
@@ -36,7 +35,6 @@ const Tabs = () => {
           <div
           className={toggleState === 2 ? 'content  active-content' : 'content'}
         >
-        <h1 className='content-h1'>this is tab two Posts</h1>
         <div>
        <Sidebar/> 
       </div>

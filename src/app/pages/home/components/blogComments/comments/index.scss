@@ -1,0 +1,129 @@
+@import "../../../../../../styles/mixins.scss";
+@import "../../../../../../styles/variables.scss";
+
+.comments {
+  margin-top: $font_large;
+  border: 1px solid rgb(192, 194, 166);
+  padding: $font_large;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.comments-title {
+  font-size: $font_xxlarge;
+  margin-bottom: $font_large;
+}
+
+.comments-container {
+  margin-top: $font_top9;
+}
+
+.comment-form-title {
+  font-size: $font_large;
+}
+
+.comment-form-textarea {
+  width: 100%;
+  height: $font_top6;
+  margin-bottom: $font_xxsmall 0;
+  border: 1px solid rgb(107, 114, 12);
+}
+
+.comment-form-button {
+padding: 10px 0;
+}
+
+.comment-form-button:hover:enabled {
+  cursor: pointer;
+  background: rgb(37, 99, 235);
+  padding: 10px 0;
+}
+
+.comment-form-button:disabled {
+  padding: 10px 0;
+  background: rgb(37, 99, 235);
+}
+
+.comment-form-cancel-button {
+  padding: 10px 0;
+}
+
+.comment {
+  display: flex;
+  margin-bottom: $font_xxlarge;
+}
+
+.comment-image-container {
+  margin-right: $font_small;
+}
+
+.comment-image-container img {
+  border-radius: $font_top8;
+}
+
+.comment-right-part {
+  width: 100%;
+}
+
+.comment-content {
+  display: flex;
+}
+
+.comment-author {
+  margin-right: $font_xxsmall;
+  font-size: $font_large;
+  color: rgb(59, 130, 246);
+}
+
+.comment-text {
+  font-size: $font_xlarge;
+}
+
+.comment-actions {
+  display: flex;
+  font-size: $font_small;
+  color: rgb(51, 51, 51);
+  cursor: pointer;
+  margin-top: $font_xxsmall;
+}
+
+.comment-action {
+  margin-right: $font_xxsmall;
+}
+
+.comment-action:hover {
+  text-decoration: underline;
+}
+
+.replies {
+  margin-top: $font_large;
+}
+
+.paginationBttns{
+  width: 100%;
+  height: 40px;
+}
+.paginationBttns a{
+  padding: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  margin: 8px;
+  border-radius: 5px;
+  border: 1px rgb(37, 99, 235);
+  color: rgb(37, 99, 235);
+  cursor: pointer;
+}
+.paginationBttns a:hover{
+  color: #fff !important;
+  background-color: rgb(37, 99, 235) !important;
+}
+.paginationActive a{
+  color: #fff !important;
+  background-color: rgb(37, 99, 235) !important;
+}
+@media screen and (min-width : 320px) and (max-width : 760px) {
+ 
+  .comment {
+    padding: 0;
+    margin-bottom: $font_verysmall;
+  }
+}

@@ -11,87 +11,100 @@
   z-index: 999;
 
   &__dialog {
-    background-color: #f3f7f9;
-    box-shadow: 0 4px 16px 0 $dark_shadow3;
-    width: 25%;
-    padding: 2rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 20px;
-    color: white;
+    background-color: rgba(0,0,0,.5);
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    width: 30%;
+    padding: $font_large;
+    @include absoluteCenter;
+    border-radius: $font_large;
+    color: $color-white-primary ;
     min-height: 23rem;
-    height: 32rem;
+    height: 40rem;
+    &__submit{
+      text-align: center;
+    }
     &__center-div {
       position: absolute;
-      top: 35%;
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       width: 80%;
     }
-
-    &__button {
+    &__inputs {
+      background: $color-white-primary;
+      padding: $font_medium;
+      color: $dark_shadow;
+      margin: $font_verysmall 0;
+      font-family: $monstserrat_regular;
+      padding: $font_verysmall;
+      font-size: $font_medium;
+      border-radius: $font_text;
+      border: 1px solid $alto;
+    }
+    &__submitbtn {
       width: 16.4rem;
-      padding: 1rem;
+      padding: $font_verysmall;
       border: none;
-      color: #fff;
-      position: absolute;
-      transform: translate(32%, 20%);
-      &--cancel {
-        background: #fff;
-        padding: 1.4rem;
-        color: black;
-        margin: 10px 0px;
-        font-family: $monstserrat_regular;
-        padding: 10px;
-        // margin: 1rem 0;
-        font-size: 14px;
-        border-radius: 13px;
-        border: 1px solid $alto;
-      }
-      //   &--cancel:active {
-      //     box-shadow: inset -6px -6px 6px 0 $dark6,
-      //       inset 6px 6px 8px 0 $dark_shadow10, inset 6px 6px 8px 0 $dark_shadow10,
-      //       inset -6px -6px 6px 0 $dark6;
-      //     border-style: solid;
-      //     border-width: 1px;
-      //     border-image-source: linear-gradient(119deg, $shadow2 0%, $shadow3 98%);
-      //     border-image-slice: 1;
-      //     background: linear-gradient(to bottom, $dark2, $dark2),
-      //       linear-gradient(119deg, $shadow2 0%, $shadow3 98%);
-      //     background-origin: border-box;
-      //     background-clip: content-box, border-box;
-      //   }
+      color: $color-white-primary;
     }
 
     &__button:focus {
       outline: none;
     }
 
-    // &__content {
-    //   padding: 0rem 0 4rem 0;
-    //   color: #188fff;
-    // }
-
     &__footer {
       justify-content: space-evenly;
-      min-height: 66px;
+      min-height: 6.6rem;
       &__login-title {
-        color: $dark2;
+        color: $color-white-primary;
       }
       &__description {
         font-family: $monstserrat_regular;
-        font-size: 2rem;
+        font-size: $font_large;
         font-weight: 600;
         font-stretch: normal;
         font-style: normal;
         line-height: 1.57;
         letter-spacing: normal;
         text-align: center;
-        padding-top: 20px;
-        color: #188fff;
+        color: $blue1;
       }
     }
   }
 }
+
+
+@media screen and (min-width:320px) and (max-width:760px) {
+  .loginmodal {
+    &__dialog {
+      width: 60%;
+      &__submit{
+      text-align: center;
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width:760px) and (max-width:1020px) {
+  .loginmodal {
+    &__dialog {
+      width: 40%;
+      &__submit{
+      text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (min-width:1024px) and (max-width:1420px) {
+  .loginmodal {
+    &__dialog {
+      width: 35%;
+      &__submit{
+      text-align: center;
+      }
+    }
+  }
+}
+  

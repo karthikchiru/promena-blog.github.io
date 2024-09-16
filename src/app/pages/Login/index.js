@@ -1,14 +1,14 @@
-/* eslint-disable no-debugger */
 import React, { useState } from 'react';
 import './index.scss';
 import Button from '../../components/button/index';
 import { regex } from '../../constants/regex';
-import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router';
 import logo from '../../../assets/images/promena.png';
 import Confirm from '../../components/confirmModal/confirm';
 import Loader from '../../components/loader';
 import img from '../../../assets/images/login-img.png'
-
+import {adminLogin} from '../../utils/apiCalls';
+ 
 const Login = () => {
   const history = useHistory();
   const [email, setEmail] = useState('');
@@ -19,32 +19,33 @@ const Login = () => {
   const [alertText, setAlertText] = useState('');
   const [isShowLoader, setIsShowLoader] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  localStorage.removeItem('token');
+
   const payload = {
     email: email,
     password: password,
   };
 
-  const handleLogin = () => {
-    setIsShowLoader(true);
-    if (validateEmail(email)
-         && password) {
-        debugger;
-        if(payload)
-        {
-          localStorage.setItem('user-state', isLoggedIn);
-          
-        }else{
-       setIsLoggedIn(false);
-        }
-
-      history.push('/home');
-      setIsBtnDisabled(false);
-
-    }else{
-      setShowConfirmModal(true);
-      setAlertText('invalid credentials');
-    }
-  }
+const handleLogin = () => {
+setIsShowLoader(true);
+if (validateEmail(email) && password) {
+      setIsLoggedIn(false);
+adminLogin((response)=>{
+  console.log(response);
+if(response.jwt)
+{
+  localStorage.setItem('token', response.jwt);
+history.push('/home');
+setIsBtnDisabled(false);
+}else{
+setShowConfirmModal(true);
+setIsShowLoader(false);
+setAlertText(response.detail);
+}
+    }, payload)
+    localStorage.setItem('user-state', isLoggedIn);
+}
+}
 
   const validateEmail = (Email)=> {
     const emailRegex = regex.emailRegex;
@@ -79,7 +80,6 @@ const Login = () => {
   return (
   
     <div className='login'>
-  
       <div className='login__container'>
       <img className='login__img' src = {img} alt = 'bg_image' />
         <div className='login__wrapper'>

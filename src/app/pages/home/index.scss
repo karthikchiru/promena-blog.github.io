@@ -1,32 +1,88 @@
 @import "../../../styles/variables.scss";
 @import "../../../styles/mixins.scss";
-// *{
-//   padding: 0;
-//   margin: 0;
-//   box-sizing: border-box;
-//   overflow: hidden;
-// }
+
 .width-container {
-  padding: 3rem 5rem;
-  // padding-top: 0;
+  padding: 0 $font_top8;
 }
 .wrap {
-  display: flex;
-  flex-direction: row;
-  // flex-wrap: wrap;
+  @include flexrow;
+  max-height: 100%;
   width: 100%;
   &__banner {
-    width: 100%;
+    width: 70%;
+    max-height: 100%;
   }
-  // &__postlist {
-  // }
-  width: 100%;
+  &__postlist {
+    width: 30%;
+    max-height: 100%;
+  }
 }
 
-// @media screen and (min-width : 768px ) and (max-width : 1022px) {
-//   .wrap {
-//     &__banner {
-//       display: none;
-//     }
-//   }
-// }
+.post-tab {
+  @include flexrow;
+  width: 100%;
+  justify-content: center;
+}
+
+.all-posts {
+  width: 60%;;
+}
+
+.all-tabs {
+  width: 40%;
+  padding: $font_xxlarge;
+  padding-right: 0 !important;
+}
+
+@media screen and (min-width : 320px ) and (max-width : 760px) {
+  .width-container {
+    padding: $font_xlarge $font_xxlarge;
+  }
+  .wrap {
+    &__banner {
+      @include displaynone;
+    }
+    &__postlist{
+      width: 100%;
+    }
+  }
+  .post-tab {
+    width: 100%;
+    @include relativeblock;
+    flex-direction: column;
+  }
+  .all-posts{
+    width: 100% !important;
+  }
+  .all-tabs{
+    width: 100% !important;
+    padding: 0 !important;
+  }
+}
+
+@media screen and (min-width : 768px ) and (max-width : 1024px) {
+  .width-container {
+    padding: $font_xlarge $font_xxlarge;
+  }
+  .wrap {
+    &__banner {
+      @include displaynone;
+    }
+  }
+  .post-tab {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    @include flexrow;
+    padding-top: $font_verysmall;
+  }
+  .all-posts{
+    width: 60% !important;
+  }
+  .all-tabs{
+    width: 40% !important;
+    padding: 0 !important;
+    padding-left: $font_verysmall !important;
+  }
+}

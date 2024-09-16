@@ -1,66 +1,66 @@
-/* eslint-disable react/jsx-key */
-/* eslint-disable no-unused-vars */
-
-
 
 import React, { useState, useEffect } from 'react';
-import profile from 'assets/images/profile.png'
-import blogPost from '../../data/blog.json';
 import { NavLink } from 'react-router-dom';
-import './index.scss'
+import { getPostList } from '../../../../utils/apiCalls'
+import moment from 'moment';
+import './index.scss';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import ReadMore from '../readmore';
+
+const AllPosts = () => {
+
+  const [postList, setPostList] = useState([]);
+
+  useEffect(() => {
+    getPostList((response) => {
+      if(response)
+      setPostList(response);
+    });
+  }, []);
 
 
-const AllPosts  = (props) => {
-
-  const [posts, setPosts] = useState([]);
-
-  useEffect(()=>{
-
-    const posts = blogPost.data;
-    setPosts(posts);
-  }, posts);
-
-  return(
-
+  return (
+   
     <div className='card-container'>
 
-{
-  posts.map(post => {
+      {
+        postList.map((post, index) => {
+          var url = post.thumbnail;
 
-    return(
-      <div className='cards'>
-           <img src={post.blogImage} className='card-image' />
-   
-<div className='main'>
-<p className='lead1'>
-    <NavLink className = 'posts__link' key={post.id} to={`/post/${post.id}`}>  
-    <div className = 'post-title'>{post.blogTitle}
-    </div>  </NavLink>
-    </p>
 
-    <div className='card-content'>
-      <h1>Surfing in Maldives</h1>
-      <p>Lorem ipsum, dolor sit amet consectetur<br/> adipisicing elit. Ratione, recusandae.</p>
- 
+          return (
+         
+            <div className='card' key={index}>
+            <HelmetProvider >
+            <Helmet>
+                        <meta  name='category' content={post.category}/>
+                        <meta name='description' content = {post.content}/>
+                    </Helmet>
+                    </HelmetProvider>
+              <div className='card__img item'>
+                <img src={url} key={post.Blog_id} className='card__image' />
+              </div>
+           <div className='card__main-content item'>
+           <NavLink className='card__main-content__category' to={`/post/${post.Blog_id}`}>
+                {post.category}
+              </NavLink>
+           <h1>{post.title}</h1>
+              <ReadMore className='card__main-content__readmore-content'  Blog_id={post.Blog_id} post = {post.content} />
+              <ul className='card__ul1'>
+                <li><i className='fa fa-clock-o' aria-hidden='true'> {moment(post.date_created).format('MMM-Do-YY, hh:mm A') }</i></li>
+                <li><i className='fa fa-eye' aria-hidden='true'></i> 75 reads</li>
+                <li><i className='fa fa-clock-o' aria-hidden='true'></i> 3 min read</li>
+              </ul>
+           </div>
+            </div>
+          )
+  
+        })
+      }
     </div>
-    <ul className='main-ul1'>
-        <li><i className='fa fa-clock-o' aria-hidden='true'> 30 hours ago</i></li>
-        <li><i className='fa fa-eye' aria-hidden='true'></i> 75 reads</li>
-        <li><i className='fa fa-clock-o' aria-hidden='true'></i> 3 min read</li>
-      </ul>
-</div>
-<div className='card-content1 padding-class'>
-<img src={profile}  className='profile-img'  alt='profile-image' />
-<h5>Brison Deon</h5>
-</div>
+  
+  )
 
-       </div>
-    )
-  })
 }
-    </div>
-   )
 
- }
-
-export default AllPosts 
+export default React.memo(AllPosts);

@@ -1,36 +1,37 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './index.scss';
+import { Helmet,   HelmetProvider } from 'react-helmet-async';
+import { NavLink } from 'react-router-dom';
+import { getPostList } from 'app/utils/apiCalls';
 
 const Postlist = () => {
+const [posts, setPosts] = useState([]);
+
+useEffect(() => {
+getPostList((res)=>{
+setPosts(res);
+});
+    }, []);
+
     return (
         <div className='postlist-banner'>
-            <div className='postlist first-list'>
-            <i className='first-list__arrow first-list__right'></i>
-                <h2 className='first-list__heading'><a href='#'>SEO</a></h2>
-                <span className='first-list__content'>Lorem ipsum dolor sit amet.</span>
-            </div>
-            <div className='postlist'>
-                <h2><a href='#'>CONTENT MARKETING</a> </h2>
-                <span>Lorem ipsum dolor sit amet.</span>
-            </div>
-            <div className='postlist'>
-                <h2><a href=''> WORDPRESS</a> </h2>
-                <span>Lorem ipsum dolor sit amet.</span>
-            </div>
-            <div className='postlist'>
-                <h2><a href=''> DEVELOPMENT</a> </h2>
-                <span>Lorem ipsum dolor sit amet.</span>
-            </div>
-            <div className='postlist'>
-                <h2><a href=''> BUSINESS</a> </h2>
-                <span>Lorem ipsum dolor sit amet.</span>
-            </div>
-            {/* <div className='postlist'>
-                <h2><a href='#'>CONTENT MARKETING</a> </h2>
-                <span>Lorem ipsum dolor sit amet.</span>
-            </div> */}
+            {posts.map((val, index )=> {
+                return (
+                    <div key={index} className='postlist'>
+                    <HelmetProvider>
+                    <Helmet>
+                        <meta  name='category' content={val.category}/>
+                        <meta name='description' content = {val.content}/>
+                    </Helmet>
+                    </HelmetProvider>
+                    <strong className={`postlist__triangle--${index ===0 ? 'active':'disabled'}`}>▶</strong>
+                        <h2><NavLink className={`postlist__category-link--${index ===0 ? 'active':'disabled'}`} to={`/post/${val.Blog_id}`}>{val.category}</NavLink> </h2>
+                        <span className={`postlist__category-span--${index ===0 ? 'active':'disabled'}`} >{val.title}</span>
+                    </div>
+                )
+            })}
         </div>
     )
 }
 
-export default Postlist;
+export default React.memo(Postlist);

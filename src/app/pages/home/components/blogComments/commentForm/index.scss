@@ -1,0 +1,89 @@
+@import "../../../../../../styles/mixins.scss";
+@import "../../../../../../styles/variables.scss";
+
+.comments {
+  margin: $font_large 0;
+}
+
+.comments-title {
+  font-size: $font_xxlarge;
+  margin-bottom: $font_large;
+}
+
+.comments-container {
+  margin-top: $font_top9;
+}
+
+.comment-form-title {
+  font-size: $font_large;
+}
+
+.comment-form-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  height: $font_top6;
+  font-size: $font_medium;
+  font-family:$monstserrat_regular;
+  margin-bottom: $font_xxsmall 0;
+  border: 1px solid rgb(107, 114, 12);
+}
+
+
+.comment {
+  display: flex;
+  margin-bottom: $font_xxlarge;
+}
+
+.comment-image-container {
+  margin-right: $font_small;
+}
+
+.comment-image-container img {
+  border-radius: $font_top8;
+}
+
+.comment-right-part {
+  width: 100%;
+}
+
+.comment-content {
+  display: flex;
+}
+
+.comment-author {
+  margin-right: $font_xxsmall;
+  font-size: $font_large;
+  color: rgb(59, 130, 246);
+}
+
+.comment-text {
+  font-size: $font_xlarge;
+}
+
+.comment-actions {
+  display: flex;
+  font-size: $font_small;
+  color: rgb(51, 51, 51);
+  cursor: pointer !important;
+  margin-top: $font_xxsmall;
+}
+
+.comment-action {
+  margin-right: $font_xxsmall;
+}
+
+.comment-action:hover {
+  text-decoration: underline;
+}
+
+.replies {
+  margin-top: $font_large;
+}
+
+@media screen and (min-width : 320px) and (max-width : 760px) {
+ 
+  .comment {
+    padding: 0;
+    margin-bottom: $font_verysmall;
+  }
+}

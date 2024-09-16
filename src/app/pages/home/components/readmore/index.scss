@@ -1,0 +1,40 @@
+@import "../../../../../styles/mixins.scss";
+@import "../../../../../styles//variables.scss";
+
+
+.read-more1{
+    font-size: 15px;
+    background: none;
+}
+.read-more1 a{
+    text-decoration: none;
+}
+.read-more1:hover {
+    color: rgb(54, 75, 196);
+    cursor: pointer;
+}
+.view-post:hover {
+    color: rgb(54, 75, 196);
+    cursor: pointer;
+    h1{
+    font-size: $font_button !important;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+    .read-more1{
+        font-size: $font_xlarge;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1020px) {
+    .read-more1{
+        font-size: $font_xlarge;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1420px) {
+    .read-more1{
+        font-size: 15px;
+    }
+}

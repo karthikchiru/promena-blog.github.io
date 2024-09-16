@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import { Route, Redirect } from 'react-router-dom';
 
 const ProtectedRoute = ({ component: Component, path, ...rest }) => {
@@ -7,7 +6,7 @@ const ProtectedRoute = ({ component: Component, path, ...rest }) => {
     <Route
       {...rest}
       render={(props) =>
-        props ? (
+        localStorage.getItem('token') ? (
           <Component {...props} />
         ) : (
           <Redirect to={{ pathname: '/', state: { from: props.location } }} />

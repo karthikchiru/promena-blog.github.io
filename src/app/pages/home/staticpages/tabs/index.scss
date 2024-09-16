@@ -2,51 +2,42 @@
 @import "../../../../../styles/mixins.scss";
 
 .blog-tabs {
-  display: flex;
-  width: 40%;
-  position: absolute;
-  transform: translate(156%, 2rem);
+  @include relativeflex;
 }
 .tabs {
-  padding: 15px;
+  padding: $font_button;
   text-align: center;
   width: 50%;
   background: rgba(90, 69, 69, 0.075);
   cursor: pointer;
-  // border-bottom: 1px solid rgba(0, 46, 145, 0.274);
   box-sizing: content-box;
   position: relative;
   outline: none;
+  font-size: $font_button;
 }
 .tabs:not(:last-child) {
-  width: 30%;
-  // border: 1px solid rgba(0, 0, 0, 0.274);
-  // border-radius: 5px;
+  width: 50%;
 }
 
 .tabs:not(:first-child) {
-  width: 30%;
-  // border: 1px solid rgba(0, 0, 0, 0.274);
-  // border-radius: 5px;
+  width: 50%;
 }
 
 .active-tabs {
-  background: white;
+  background: $color-white-primary;
   color: #0d6efd;
   border-bottom: 1px solid rgba(0, 46, 145, 0.274);
   color: rgb(10, 100, 173);
-  font-size: 15px;
+  font-size: $font_button;
 }
 
 .active-tabs::before {
-  // content: "";
-  display: block;
-  position: absolute;
+  @include relativeblock;
   top: -5px;
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% + 2px);
-  height: 5px;
+  height: $font_xverysmall;
   background: rgb(8, 79, 185);
 }
 
@@ -57,51 +48,38 @@ button {
   flex-grow: 1;
 }
 .content {
-  background: white;
-  padding: 20px;
+  background: $color-white-primary;
+  padding: $font_verysmall;
   width: 100%;
-  height: 100%;
-  display: none;
+  @include displaynone;  
 }
 .content-h1 {
   text-align: center;
 }
-.content h2 {
-  padding: 0px 0 5px 0px;
-}
-.content hr {
-  width: 100px;
-  height: 2px;
-  background: #222;
-  margin-bottom: 5px;
-}
-.content p {
-  width: 100%;
-  // height: 100%;
-}
 .active-content {
-  display: block;
-  position: absolute;
-  width: 30%;
-  transform: translate(205%, 8em);
+  @include relativeblock;
+  width: 100%;
 }
 
-@media screen and (min-width: 900px) and (max-width: 1120px) {
-  .blog-tabs {
-    transform: translate(150%, 2rem);
-  }
-  .active-content {
-    transform: translate(200%, 8rem);
-    width: 30%;
-    padding: 0;
-  }
-  // .content {
-  // padding: 0 !important;
-  // }
-}
-
-@media screen and (min-width: 760px) and (max-width: 900px) {
+@media screen and (min-width: 760px) and (max-width: 1024px) {
   .content {
     padding: 0;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+  .blog-tabs {
+    @include relative;
+    padding-top: $font_verysmall
+  }
+  .active-content {
+    @include relative;
+    padding: 0;
+  }
+  .tabs:not(:first-child) {
+    width: 50%;
+  }
+  .tabs:not(:last-child) {
+    width: 50%;
   }
 }

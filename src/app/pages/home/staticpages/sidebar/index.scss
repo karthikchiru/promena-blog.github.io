@@ -1,98 +1,110 @@
 @import "../../../../../styles/mixins.scss";
 @import "../../../../../styles//variables.scss";
 
+.main1 {
+  position: relative;
+}
+
 .posts {
   position: relative;
-  // width: 60%;
-  max-width: 100%;
-  height: 14em;
-  background-size: cover;
-  // margin-left: 25px;
-  padding: 5px;
+  margin: 2rem 0;
   display: flex;
-  flex-direction: row;
-  border-radius: 20px;
-  // box-shadow: 0 0px 4px 0 rgba(0, 0, 0, 10%);
-  // background-color: #f3f7f9;
-  // margin: 2rem;
+  width: 100%;
+  background-size: cover;
+  padding: $font_xverysmall;
   &__image {
-    height: 10em;
+    height: 60%;
     width: 40%;
-    padding-left: 10px;
   }
-  &__title {
-    font-size: x-small;
-    padding: 0px 0 0 20px;
-    text-decoration: none;
+  &__maincontent{
+    display: block;
+    position: relative;
+    margin-left: 1rem;
+    text-align: left;
+  } 
+  span {
+    margin-left: 0;
+  }
+  h1 {
+    font-size: $font_xlarge;
+    font-weight: 600;
   }
   &__link {
-    text-decoration: none;
+    @include textnone;
+    font-size: $font_button;
+    cursor: pointer !important;
   }
-  &__content {
-    text-align: center;
-    margin-top: 1px;
-    padding-left: 10px;
-    font-size: 1.5rem;
-    font-family: $monstserrat_regular;
-  }
-
   &__ul {
     font-family: $monstserrat_regular;
-    // padding-top: 10px;
-    display: flex;
-    justify-content: space-between;
-    // margin-top: 2.4rem;
-    list-style: none;
-  }
-
-  &__lead2 {
-    font-size: 2rem;
-  }
-
-  // .profile-img {
-  //   border-radius: 50%;
-  // }
-  &__content p {
-    font-size: x-small;
+    font-size: $font_small;
+    @include flexbetween;
+    @include listnone;
+    padding-left: 0;
   }
 }
 
-@media screen and (min-width: 900px) and (max-width: 1120px) {
-  .posts {
-    position: relative;
-    display: flex;
-    width: 100%;
-    height: 16rem;
+@media screen and (min-width: 1024px) and (max-width: 1420px) {
+  .posts{
     &__image {
-      padding: 0;
-      height: 12rem;
       width: 40%;
+      height: 25vh;
+    }
+    h1{
+      font-size: $font_medium
+    }
+    .read-more {
+      font-size: $font_small;
+    }
+    span {
+      font-size: $font_small;
     }
     &__ul {
-      margin: 0;
-      padding: 0;
+      font-size: 1rem;
+      padding: 0 ;
     }
   }
 }
 
-@media screen and (min-width: 760px) and (max-width: 900px) {
+@media screen and (min-width: 768px) and (max-width: 1020px) {
   .posts {
     padding: 0;
-    height: 16rem;
+    display: block;
+    @include allcenter;
+    position: relative;
+    padding-top: 2rem;
+    &__maincontent{
+      display: block;
+      text-align: center;
+    }
+    p {
+      margin-bottom: 0;
+    }
     &__ul {
       padding: 0;
+      font-size:$font_small;
     }
     &__image {
       padding-left: 0;
+      width: 80%;
     }
-    &__title {
-      padding-left: 0.5rem;
-      font-size: 9px;
+    .read-more {
+      padding-left: 0;
+      margin-bottom: 0;
     }
-    &__content {
-      h4 {
-        font-size: 11px;
-      }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 760px) {
+  .posts {
+    padding: $font_verysmall 0;
+    &__image {
+      height: 25vh;
+      padding: 0;
+      padding-top: $font_large;
+    }
+    &__ul {
+      padding: 0;
+      font-size: $font_small;
     }
   }
 }

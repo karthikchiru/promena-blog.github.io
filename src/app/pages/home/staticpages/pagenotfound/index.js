@@ -6,14 +6,13 @@ const PageNotFound = () => {
         return(
 
             <div className='page-not-found'>
+            <h3 className='lead'>Page not found</h3>
             <img src={FournotFour} alt='four-not-four' className='page-not-found__page-items size' />
         
             <div className='page-not-found__page-items'>
-                <h3 className='lead'>Page not found</h3>
                 <NavLink style={{textDecoration:'none', color:'white'}} to='/' className='page-not-found__page-items__link'><span>Go Back</span></NavLink>
             </div>
             </div>
-    
         )
 }
 
